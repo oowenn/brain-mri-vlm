@@ -1,0 +1,20 @@
+# Inventory only: resolve/pin on an allocated Insomnia NVIDIA GPU.
+# Install a matched torch/torchvision CUDA build compatible with the node driver first.
+torch
+torchvision
+transformers
+accelerate
+peft
+bitsandbytes
+huggingface-hub
+safetensors
+Pillow
+ImageHash
+numpy
+pandas
+scikit-learn
+PyYAML
+wandb
+# Dataset acquisition (choose one; Kaggle authentication may be required):
+kagglehub
+# Optional: Nsight Systems (cluster tool), Gradio (stretch demo only).
