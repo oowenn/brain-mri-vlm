@@ -73,6 +73,8 @@ Verify the leakage and reproducibility behavior inside a compute allocation:
 python -m unittest discover -s tests -v
 ```
 
+For visual pair review, open the tracked [notebooks/data_preprocessing.ipynb](notebooks/data_preprocessing.ipynb) in JupyterLab with the **Python (coms6998)** kernel and run its cells in order. It verifies the existing audit, displays accepted/rejected pairs side by side, and provides class/conflict/borderline filters. Set `SOURCE` or `AUDIT_DIR` in the first code cell if your paths differ. Review notes save under ignored `data/reviews/` and do not change manifests. Keep the notebook's outputs cleared when committing; the notebook includes the cleanup command.
+
 ## Cluster readiness
 
 Confirm the course Slurm account, partition, and GPU type before submitting work.
