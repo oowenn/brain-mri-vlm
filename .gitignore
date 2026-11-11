@@ -27,3 +27,9 @@ cluster/*.local
 *.pt
 *.pth
 *.ckpt
+
+# Local planning and reference material
+/docs/
+/COMS 6998 Proposal.pdf
+/HPML-Final-Project-Fall2026.pdf
+/cluster/ssh_config.example

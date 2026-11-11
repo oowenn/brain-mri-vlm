@@ -1,7 +1,0 @@
-# Optional entry for ~/.ssh/config; replace UNI for each teammate.
-Host insomnia
-    HostName insomnia.rcs.columbia.edu
-    User as8254
-    ServerAliveInterval 60
-    ServerAliveCountMax 3
-# Keep host-key verification and normal Duo authentication enabled.
