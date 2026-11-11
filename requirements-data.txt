@@ -1,0 +1,18 @@
+# Data-preparation dependencies tested on Insomnia with Python 3.11.18.
+# Independent of the unverified CUDA/model environment in requirements.in.
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
+imagehash==4.3.2
+kagglehub==1.0.3
+kagglesdk==0.1.38
+numpy==2.4.6
+packaging==26.3
+pillow==13.0.0
+protobuf==7.36.2
+pywavelets==1.9.0
+pyyaml==6.0.3
+requests==2.34.2
+scipy==1.17.1
+tqdm==4.70.1
+urllib3==2.8.0
