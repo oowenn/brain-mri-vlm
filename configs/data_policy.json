@@ -1,0 +1,13 @@
+{
+  "version": "v3-conservative-patients",
+  "labels": ["glioma", "meningioma", "notumor", "pituitary"],
+  "seed": 42,
+  "validation_fraction": 0.15,
+  "source_inventory_sha256": "b5780fad11617bc3d70e32f31723ae598a6d1881a81ad9133c4ca1376bfa5d25",
+  "input_inventory_sha256": "807aef92b23ed98ed6a9eecaecf77b41e9f97c7d5b7b263265b0458a63a6815a",
+  "patient_mapping_sha256": "7561d946a127cf1f7b58f132753be5a760ec0e1e305e901c7753433db224915d",
+  "mapping_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-figshare-recovery:v0",
+  "exclude_training_source_label_disagreements": true,
+  "preserve_test_labels": true,
+  "infer_unknown_patient_ids": false
+}
