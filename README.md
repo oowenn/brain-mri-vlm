@@ -16,6 +16,10 @@ Environment versions, exact GPU, dataset manifests, model revision, and commands
 
 Keep data, weights, credentials, profiler traces, and generated run outputs outside Git; publish selected artifacts through the shared W&B project. Planning notes and reference PDFs are kept locally and are not required to run the project.
 
+## Experiment notes
+
+- [Similarity-threshold calibration](experiments/similarity_calibration.md): patient-held-out data-quality experiment, results and decision to retain the current thresholds. Full code and generated artifacts are linked in W&B.
+
 ## Reproduce the data
 
 Source: Masoud Nickparvar's [Brain Tumor MRI Dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset), Kaggle version **2**, listed as CC BY 4.0. The source combines figshare, SARTAJ and Br35H images. Cite the dataset and retain its attribution when using it. Version 2 reports upstream deduplication; we independently audit it.
