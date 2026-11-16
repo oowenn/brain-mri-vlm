@@ -1,0 +1,9 @@
+baseline B=4 trial=0 warmup 1/10: 2717.01 ms
+baseline B=4 trial=0 warmup 10/10: 1366.98 ms
+baseline B=4 trial=0 measured 1/50: 1400.69 ms
+baseline B=4 trial=0 measured 11/50: 1392.92 ms
+baseline B=4 trial=0 measured 21/50: 1430.86 ms
+baseline B=4 trial=0 measured 31/50: 1435.38 ms
+baseline B=4 trial=0 measured 41/50: 1403.15 ms
+baseline B=4 trial=0 measured 50/50: 1435.95 ms
+PASS: baseline batch 4

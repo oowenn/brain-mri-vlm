@@ -1,0 +1,23 @@
+{
+  "batch_size": 4,
+  "images": 200,
+  "mean_amortized_image_ms": 121.54810916,
+  "mean_batch_ms": 486.19243664,
+  "measurements": 50,
+  "p50_amortized_image_ms": 121.443586125,
+  "p50_batch_ms": 485.7743445,
+  "p95_amortized_image_ms": 124.39919185,
+  "p95_batch_ms": 497.5967674,
+  "peak_allocated_bytes": 1615277568,
+  "peak_reserved_bytes": 1835008000,
+  "throughput_images_s": 8.227195033397424,
+  "trial_mean_batch_ms_std": 0.0,
+  "trials": [
+    {
+      "mean_batch_ms": 486.19243664,
+      "samples": 50,
+      "throughput_images_s": 8.227195033397424,
+      "trial": 0
+    }
+  ]
+}

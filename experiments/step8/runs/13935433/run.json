@@ -1,0 +1,72 @@
+{
+  "base_commit": "c07cc8af2b3581a6d21b4f3af850d6ee4e418e2c",
+  "comparison": {
+    "faster": true,
+    "interpretation": "preliminary improvement within validation gate",
+    "latency_reduction_fraction": 0.6657317303970829,
+    "macro_f1_change": 0.0027681775511814166,
+    "peak_allocated_reduction_fraction": 0.45804886604465944,
+    "preliminary_success": true,
+    "quality_gate_passed": true,
+    "reference_macro_f1": 0.8562927506627541,
+    "speedup": 2.9916091084203615,
+    "validation_floor": 0.8362927506627541
+  },
+  "config": {
+    "baseline_config": "configs/step6.json",
+    "batch_size": 4,
+    "longest_edges": {
+      "baseline": 2048,
+      "image1024": 1024
+    },
+    "measured_batches": 50,
+    "quality_max_invalid_count": 0,
+    "quality_max_macro_f1_drop": 0.02,
+    "reference_run": "experiments/step6/runs/13932242",
+    "scope": "One isolated image-budget change; complete timing/validation and stage diagnostics, retaining failed quality gates. No final-test inference.",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "stage": "step8",
+    "stage_batches_per_trial": 10,
+    "timing_design": "One physical A6000 allocation, four CPU threads, fresh process per setting/seed, alternating order. Same frozen balanced validation workload and Step 6 timing boundary.",
+    "trial_orders": [
+      [
+        "baseline",
+        "image1024"
+      ],
+      [
+        "image1024",
+        "baseline"
+      ],
+      [
+        "baseline",
+        "image1024"
+      ]
+    ],
+    "wandb_entity": "coms6998-team32-fall2026",
+    "wandb_project": "brain-mri-vlm",
+    "warmup_batches": 10
+  },
+  "finished_utc": "2026-11-16T21:05:42.732455+00:00",
+  "started_utc": "2026-11-16T20:51:58.732946+00:00",
+  "status": "passed",
+  "test_set_inference": false,
+  "validation_manifest_sha256": "4a8be8c87af0dd0a5b99a3727675908cba908c085c20dba8c2c8df4caffd0ab9",
+  "wandb_run_id": "imqjpch9",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/imqjpch9",
+  "worker_order": [
+    "baseline-seed42",
+    "image1024-seed42",
+    "image1024-seed43",
+    "baseline-seed43",
+    "baseline-seed44",
+    "image1024-seed44",
+    "baseline-quality",
+    "image1024-quality",
+    "baseline-stages",
+    "image1024-stages"
+  ]
+}

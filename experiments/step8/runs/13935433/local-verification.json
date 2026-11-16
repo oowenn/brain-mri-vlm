@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "runtime_files_checked": 200,
+  "source_files_checked": 46,
+  "execution_commit": "c07cc8af2b3581a6d21b4f3af850d6ee4e418e2c",
+  "scope": "Local transfer hashes and source snapshots; GPU and downloaded W&B verification recorded separately"
+}

@@ -1,0 +1,28 @@
+JobId=13935434 JobName=smolmri-step8-evidence
+   UserId=ct3013(563829) GroupId=user(500) MCS_label=N/A
+   Priority=4848 Nice=0 Account=edu QOS=burst
+   JobState=PENDING Reason=None Dependency=afterok:13935433(unfulfilled)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:10:00 TimeMin=N/A
+   SubmitTime=2026-11-16T15:43:50 EligibleTime=Unknown
+   AccrueTime=Unknown
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-16T15:43:50 Scheduler=Main
+   Partition=burst AllocNode:Sid=2402-login-002:2016929
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=2G,node=1,billing=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=2G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/cluster/publish_step8.sbatch
+   WorkDir=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm
+   StdErr=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step8-evidence-13935434.out
+   StdIn=/dev/null
+   StdOut=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step8-evidence-13935434.out
+   TresPerTask=cpu=1
+   
+

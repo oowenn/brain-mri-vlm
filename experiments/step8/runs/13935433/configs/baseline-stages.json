@@ -1,0 +1,22 @@
+{
+  "baseline_config": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step8/runs/13935433/configs/baseline-quality.json",
+  "batch_size": 4,
+  "gpu_sample_interval_ms": 200,
+  "outputs": "Require exact generated token IDs/raw answers for all matched control, stage, and trace examples",
+  "performance_boundary": "Diagnostic only; performance comes from matched unprofiled Step 8 workers",
+  "reference_run": "experiments/step6/runs/13932242",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "stage": "step7",
+  "stage_batches_per_trial": 10,
+  "stage_method": "Synchronized diagnostic wall times; prefill is first forward minus nested get_image_features; decode is later cached forwards; residual is explicit",
+  "trace_batches_per_trial": 2,
+  "trace_method": "PyTorch CPU+CUDA profiler; one profiler warmup and two active batches per seed; record_shapes/profile_memory true, with_stack false; traces keep native asynchronous stage execution, with only the original whole-batch synchronization",
+  "utilization_boundary": "nvidia-smi samples cover warmups/measurements/file writes; trace GPU activity is union of kernel/copy intervals within annotated batches, not SM occupancy",
+  "wandb_entity": "coms6998-team32-fall2026",
+  "wandb_project": "brain-mri-vlm",
+  "warmup_batches": 10
+}

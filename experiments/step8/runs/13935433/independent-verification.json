@@ -1,0 +1,450 @@
+{
+  "baseline_drift_fraction": 0.006412334928736607,
+  "baseline_exact_timing_batches": 180,
+  "baseline_exact_validation_images": 579,
+  "comparison": {
+    "faster": true,
+    "interpretation": "preliminary improvement within validation gate",
+    "latency_reduction_fraction": 0.6657317303970829,
+    "macro_f1_change": 0.0027681775511814166,
+    "peak_allocated_reduction_fraction": 0.45804886604465944,
+    "preliminary_success": true,
+    "quality_gate_passed": true,
+    "reference_macro_f1": 0.8562927506627541,
+    "speedup": 2.9916091084203615,
+    "validation_floor": 0.8362927506627541
+  },
+  "context": {
+    "baseline": {
+      "generated_token_range": [
+        2,
+        4
+      ],
+      "stage_mean_input_tensor_bytes": 356591424,
+      "stage_pixel_shapes": [
+        [
+          4,
+          17,
+          3,
+          512,
+          512
+        ]
+      ],
+      "validation_input_token_counts": {
+        "916": 2,
+        "917": 1,
+        "1181": 576
+      },
+      "validation_pixel_shapes": [
+        [
+          3,
+          17,
+          3,
+          512,
+          512
+        ],
+        [
+          4,
+          17,
+          3,
+          512,
+          512
+        ]
+      ]
+    },
+    "image1024": {
+      "generated_token_range": [
+        2,
+        4
+      ],
+      "stage_mean_input_tensor_bytes": 104882368,
+      "stage_pixel_shapes": [
+        [
+          4,
+          5,
+          3,
+          512,
+          512
+        ]
+      ],
+      "validation_input_token_counts": {
+        "387": 579
+      },
+      "validation_pixel_shapes": [
+        [
+          3,
+          5,
+          3,
+          512,
+          512
+        ],
+        [
+          4,
+          5,
+          3,
+          512,
+          512
+        ]
+      ]
+    }
+  },
+  "gpu_uuid": "74304abd-be3c-3a80-bc48-a442a8b4260d",
+  "hostname": "ins094",
+  "instrumented_exact_batches": 120,
+  "paired_trials": [
+    {
+      "baseline_mean_ms": 1417.3279422,
+      "order": [
+        "baseline",
+        "image1024"
+      ],
+      "seed": 42,
+      "speedup": 2.967726430678516,
+      "variant_mean_ms": 477.58038866
+    },
+    {
+      "baseline_mean_ms": 1456.792883,
+      "order": [
+        "image1024",
+        "baseline"
+      ],
+      "seed": 43,
+      "speedup": 3.0490518229549357,
+      "variant_mean_ms": 477.7855437
+    },
+    {
+      "baseline_mean_ms": 1438.45832182,
+      "order": [
+        "baseline",
+        "image1024"
+      ],
+      "seed": 44,
+      "speedup": 2.958619290256675,
+      "variant_mean_ms": 486.19243664
+    }
+  ],
+  "quality": {
+    "baseline": {
+      "accuracy": 0.853195164075993,
+      "confusion_matrix": {
+        "columns": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary",
+          "INVALID"
+        ],
+        "counts": [
+          [
+            155,
+            20,
+            0,
+            6,
+            0
+          ],
+          [
+            19,
+            120,
+            3,
+            15,
+            0
+          ],
+          [
+            3,
+            2,
+            116,
+            0,
+            0
+          ],
+          [
+            2,
+            7,
+            8,
+            103,
+            0
+          ]
+        ],
+        "rows": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ]
+      },
+      "invalid_count": 0,
+      "invalid_rate": 0.0,
+      "macro_f1": 0.8562927506627541,
+      "n": 579,
+      "per_class": {
+        "glioma": {
+          "f1": 0.8611111111111112,
+          "precision": 0.8659217877094972,
+          "recall": 0.856353591160221,
+          "support": 181
+        },
+        "meningioma": {
+          "f1": 0.7843137254901961,
+          "precision": 0.8053691275167785,
+          "recall": 0.7643312101910829,
+          "support": 157
+        },
+        "notumor": {
+          "f1": 0.9354838709677419,
+          "precision": 0.9133858267716536,
+          "recall": 0.9586776859504132,
+          "support": 121
+        },
+        "pituitary": {
+          "f1": 0.8442622950819673,
+          "precision": 0.8306451612903226,
+          "recall": 0.8583333333333333,
+          "support": 120
+        }
+      }
+    },
+    "image1024": {
+      "accuracy": 0.8566493955094991,
+      "confusion_matrix": {
+        "columns": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary",
+          "INVALID"
+        ],
+        "counts": [
+          [
+            153,
+            21,
+            0,
+            7,
+            0
+          ],
+          [
+            14,
+            122,
+            3,
+            18,
+            0
+          ],
+          [
+            3,
+            1,
+            116,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            8,
+            105,
+            0
+          ]
+        ],
+        "rows": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ]
+      },
+      "invalid_count": 0,
+      "invalid_rate": 0.0,
+      "macro_f1": 0.8590609282139355,
+      "n": 579,
+      "per_class": {
+        "glioma": {
+          "f1": 0.8693181818181818,
+          "precision": 0.8947368421052632,
+          "recall": 0.8453038674033149,
+          "support": 181
+        },
+        "meningioma": {
+          "f1": 0.7947882736156352,
+          "precision": 0.8133333333333334,
+          "recall": 0.7770700636942676,
+          "support": 157
+        },
+        "notumor": {
+          "f1": 0.9354838709677419,
+          "precision": 0.9133858267716536,
+          "recall": 0.9586776859504132,
+          "support": 121
+        },
+        "pituitary": {
+          "f1": 0.8366533864541833,
+          "precision": 0.8015267175572519,
+          "recall": 0.875,
+          "support": 120
+        }
+      }
+    }
+  },
+  "stages": {
+    "baseline": {
+      "dominant_stage": "preprocessing",
+      "mean_batch_ms": 1444.9532719666668,
+      "measurements": 30,
+      "peak_allocated_bytes": 2980485632,
+      "peak_reserved_bytes": 3487563776,
+      "stages": {
+        "decode": {
+          "fraction": 0.04433259779130842,
+          "mean_ms": 64.05853223333334,
+          "p50_ms": 64.1091555,
+          "p95_ms": 67.6232431
+        },
+        "other": {
+          "fraction": 0.002934069529387847,
+          "mean_ms": 4.239593366666667,
+          "p50_ms": 4.219113,
+          "p95_ms": 4.43166235
+        },
+        "prefill": {
+          "fraction": 0.05250685435435328,
+          "mean_ms": 75.869951,
+          "p50_ms": 75.315849,
+          "p95_ms": 75.7933711
+        },
+        "preprocessing": {
+          "fraction": 0.7092160107054595,
+          "mean_ms": 1024.7839952,
+          "p50_ms": 1025.2534565,
+          "p95_ms": 1056.6437978
+        },
+        "transfer": {
+          "fraction": 0.018416244305567094,
+          "mean_ms": 26.610612466666666,
+          "p50_ms": 26.8456885,
+          "p95_ms": 30.9343711
+        },
+        "vision": {
+          "fraction": 0.17259422331392402,
+          "mean_ms": 249.3905877,
+          "p50_ms": 249.59959700000002,
+          "p95_ms": 251.42690824999997
+        }
+      }
+    },
+    "image1024": {
+      "dominant_stage": "preprocessing",
+      "mean_batch_ms": 486.2065743666667,
+      "measurements": 30,
+      "peak_allocated_bytes": 1615277568,
+      "peak_reserved_bytes": 1835008000,
+      "stages": {
+        "decode": {
+          "fraction": 0.1262246464134624,
+          "mean_ms": 61.37125293333333,
+          "p50_ms": 62.099641,
+          "p95_ms": 62.4967022
+        },
+        "other": {
+          "fraction": 0.008335849027297443,
+          "mean_ms": 4.0529446,
+          "p50_ms": 4.069281500000001,
+          "p95_ms": 4.13890805
+        },
+        "prefill": {
+          "fraction": 0.0587655979433945,
+          "mean_ms": 28.572220066666667,
+          "p50_ms": 28.583270499999998,
+          "p95_ms": 28.73514365
+        },
+        "preprocessing": {
+          "fraction": 0.639519716569778,
+          "mean_ms": 310.93869063333335,
+          "p50_ms": 308.0634075,
+          "p95_ms": 324.5690189
+        },
+        "transfer": {
+          "fraction": 0.01748892778289349,
+          "mean_ms": 8.503231666666666,
+          "p50_ms": 8.5845845,
+          "p95_ms": 9.4724092
+        },
+        "vision": {
+          "fraction": 0.1496652622631742,
+          "mean_ms": 72.76823446666667,
+          "p50_ms": 72.7559945,
+          "p95_ms": 73.51128184999999
+        }
+      }
+    }
+  },
+  "status": "passed",
+  "test_set_inference": false,
+  "timing": {
+    "baseline": {
+      "batch_size": 4,
+      "images": 600,
+      "mean_amortized_image_ms": 359.381595585,
+      "mean_batch_ms": 1437.52638234,
+      "measurements": 150,
+      "p50_amortized_image_ms": 358.746268875,
+      "p50_batch_ms": 1434.9850755,
+      "p95_amortized_image_ms": 374.00137085,
+      "p95_batch_ms": 1496.0054834,
+      "peak_allocated_bytes": 2980485632,
+      "peak_reserved_bytes": 3487563776,
+      "throughput_images_s": 2.7825576275607653,
+      "trial_mean_batch_ms_std": 19.74896887137816,
+      "trials": [
+        {
+          "mean_batch_ms": 1417.3279422,
+          "samples": 50,
+          "throughput_images_s": 2.822212051920132,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 1456.792883,
+          "samples": 50,
+          "throughput_images_s": 2.7457575106783385,
+          "trial": 1
+        },
+        {
+          "mean_batch_ms": 1438.45832182,
+          "samples": 50,
+          "throughput_images_s": 2.7807548813364478,
+          "trial": 2
+        }
+      ]
+    },
+    "image1024": {
+      "batch_size": 4,
+      "images": 600,
+      "mean_amortized_image_ms": 120.12986408333333,
+      "mean_batch_ms": 480.5194563333333,
+      "measurements": 150,
+      "p50_amortized_image_ms": 119.98644200000001,
+      "p50_batch_ms": 479.94576800000004,
+      "p95_amortized_image_ms": 123.3673221625,
+      "p95_batch_ms": 493.46928865,
+      "peak_allocated_bytes": 1615277568,
+      "peak_reserved_bytes": 1835008000,
+      "throughput_images_s": 8.324324743315337,
+      "trial_mean_batch_ms_std": 4.914015803543998,
+      "trials": [
+        {
+          "mean_batch_ms": 477.58038866,
+          "samples": 50,
+          "throughput_images_s": 8.375553299462823,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 477.7855437,
+          "samples": 50,
+          "throughput_images_s": 8.371956943325994,
+          "trial": 1
+        },
+        {
+          "mean_batch_ms": 486.19243664,
+          "samples": 50,
+          "throughput_images_s": 8.227195033397424,
+          "trial": 2
+        }
+      ]
+    }
+  }
+}

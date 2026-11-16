@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 7 is complete, including verified W&B evidence and CPU-only recovery of a trace-accounting error.** CPU preprocessing is the main measured cost (**74.17%**), followed by vision encoding (**13.76%**). Three saved CUDA traces show **18.83% GPU activity** within batch windows. The [Step 7 README](experiments/step7/README.md) explains the evidence, preserved postprocessing failure/recovery, and three proposed techniques. The canonical [Step 6 baseline](experiments/step6/README.md) remains **2.8004 images/s, 1428.367 ms mean batch latency, 2.776 GiB peak allocated memory, and validation macro-F1 0.856293**. [IMPLEMENTATION.md](IMPLEMENTATION.md) tracks progress and teammate setup. A matched [Step 8 image-budget experiment](experiments/step8/README.md) is now implemented and awaiting cluster verification before the midpoint report. Other techniques and final-test inference remain pending.
+Status: **The first inference optimization is verified.** The [Step 8 image-budget experiment](experiments/step8/README.md) changes longest edge 2048 to 1024 at fixed batch 4 and achieves **2.99x speedup**, **45.8% lower peak allocated GPU memory**, and validation macro-F1 **0.8591 versus 0.8563**, with zero invalid outputs. Both settings ran on the same A6000 allocation with three repeated timing trials and full validation. Steps 1–7 and this preliminary Step 9 comparison are complete; other techniques and final-test inference remain pending. [IMPLEMENTATION.md](IMPLEMENTATION.md) tracks progress, limitations and teammate setup. The Word/PDF midpoint report is being finalized from the verified run evidence.
 
 ## Study
 
@@ -17,6 +17,8 @@ The verified environment is pinned in [requirements-cluster.txt](requirements-cl
 Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/`, `experiments/step4/`, `experiments/step5/`, `experiments/step6/`, and `experiments/step7/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
 
 ## Experiment notes
+
+- [Step 8 image-budget experiment](experiments/step8/README.md): verified matched performance/quality results, diagnostic explanation, raw evidence and reproduction.
 
 - [Step 7 profiling](experiments/step7/README.md): stage costs, compressed CUDA traces, exact-output checks, bottleneck explanation, and three proposed changes.
 - [Step 6 baseline benchmark](experiments/step6/README.md): completed sweep and repeated-trial results, quality comparison, raw evidence, file explanations, and teammate launch instructions.

@@ -1,0 +1,2 @@
+index, uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], temperature.gpu, power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]
+0, GPU-74304abd-be3c-3a80-bc48-a442a8b4260d, NVIDIA RTX A6000, 575.57.08, 49140 MiB, 4 MiB, 0 %, 46, 52.76 W, 450 MHz, 5001 MHz

@@ -1,0 +1,7 @@
+{
+  "all_parameters_cuda0": true,
+  "all_parameters_fp16": true,
+  "model_class": "Idefics3ForConditionalGeneration",
+  "parameters": 507482304,
+  "remaining_lora_modules": 0
+}

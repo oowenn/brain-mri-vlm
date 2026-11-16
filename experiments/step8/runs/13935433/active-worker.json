@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/insomnia001/depts/edu/users/ct3013/envs/smolmri/bin/python",
+    "-u",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/scripts/profile_baseline.py",
+    "--mode",
+    "stages",
+    "--config",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step8/runs/13935433/configs/image1024-stages.json",
+    "--source",
+    "/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2",
+    "--checkpoint",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "--prepared",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/data/prepared-v3-conservative-patients",
+    "--output",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step8/runs/13935433/image1024-stages"
+  ],
+  "name": "image1024-stages"
+}

@@ -1,0 +1,1 @@
+sbatch: Job 13935436 to start at 2026-11-16T16:32:40 a using 4 processors on nodes ins093 in partition short

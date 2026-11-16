@@ -1,0 +1,38 @@
+wandb: \ 1 of 201 files downloaded...wandb: | 20 of 201 files downloaded...wandb: / 91 of 201 files downloaded...wandb: - 188 of 201 files downloaded...wandb:   201 of 201 files downloaded.  
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261116_160706-zwfrasg8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step8-13935433-evidence
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zwfrasg8
+wandb: Adding directory to artifact (/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step8/runs/13935433)... Done. 0.6s
+wandb: updating run metadata
+wandb: uploading summary, console lines 0-0
+wandb: 
+wandb: Run summary:
+wandb:             baseline/accuracy 0.8532
+wandb:        baseline/invalid_count 0
+wandb:             baseline/macro_f1 0.85629
+wandb:        baseline/mean_batch_ms 1437.52638
+wandb:         baseline/p50_batch_ms 1434.98508
+wandb:         baseline/p95_batch_ms 1496.00548
+wandb: baseline/peak_allocated_bytes 2980485632
+wandb:  baseline/peak_reserved_bytes 3487563776
+wandb:        baseline/recall/glioma 0.85635
+wandb:    baseline/recall/meningioma 0.76433
+wandb:                           +34 ...
+wandb: 
+wandb: 🚀 View run step8-13935433-evidence at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zwfrasg8
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 0 media file(s), 182 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261116_160706-zwfrasg8/logs
+{
+  "wandb_run_id": "zwfrasg8",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zwfrasg8",
+  "artifact_name": "step8-checkpoint-13935433:v0",
+  "artifact_digest": "694950cc226e987948d00e253655444f",
+  "benchmark_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/imqjpch9"
+}
+PASS: Step 8 W&B results, downloaded evidence, and complete checkpoint verified

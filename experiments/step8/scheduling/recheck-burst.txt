@@ -1,0 +1,1 @@
+sbatch: Job 13935478 to start at 2026-11-16T16:10:31 a using 4 processors on nodes ins083 in partition burst
