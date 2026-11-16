@@ -6,11 +6,11 @@ Latest verified implementation commit: [`0243f2670adffa890c980fffcbb5285ef5cb212
 
 ## Current position
 
-**Step 3 is complete. Step 4 has not started.** The project has frozen data, a verified GPU environment, a working image-to-prediction evaluator, and recorded compatibility results. It does not yet have a full zero-shot validation result, a fine-tuned model, or performance/profile results.
+**Step 3 is complete. Step 4 is being implemented and has not yet produced a verified result.** The project has frozen data, a verified GPU environment, a working image-to-prediction evaluator, and recorded compatibility results. It does not yet have a full zero-shot validation result, a fine-tuned model, or performance/profile results.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md) contains the detailed file inventory and reproduction commands; historical run files remain the evidence for what actually happened.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The most recent execution scope was to finish Step 3 first; this documentation update does not start another experiment.
+The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has now authorized completion of Step 4. Training and profiling remain subsequent roadmap work.
 
 ## Roadmap status
 
@@ -19,7 +19,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 1 | Define the experiment and comparison rules | Defined | Primary model, four labels, quality/performance metrics, matched GPU/batch rules, and 0.02 absolute macro-F1 allowance are documented. The eventual benchmark batch size is still to be selected in Step 6. |
 | 2 | Audit data and freeze splits | Complete | Conservative manifests, source and output hashes, recovered patient constraints, and documented identity limitations. |
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
-| 4 | Run zero-shot evaluation | Next; not started | One complete 579-image validation result with raw answers, parsed labels, macro-F1, per-class recall, confusion matrix, and invalid-response rate. |
+| 4 | Run zero-shot evaluation | In progress | One complete 579-image validation result with raw answers, parsed labels, macro-F1, per-class recall, confusion matrix, and invalid-response rate. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Not started | Reproducible training, selected adapter checkpoint, merged FP16 weights, and merge-equivalence checks. |
 | 6 | Select batch size and measure the FP16 baseline | Not started | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
@@ -302,3 +302,4 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Step 3 completed and published. | Commit `0243f26`; GPU job `13924504`; publisher job `13924530`; [Step 3 evidence](experiments/step3/README.md). Next: full zero-shot validation. |
 | 2026-11-15 | Created the implementation tracker and repository maintenance instructions. | Documentation-only update after the Step 3 checkpoint. No Step 4 run started. |
 | 2026-11-15 | Added the teammate environment and directory handoff. | Verified the existing cluster layout and installed environment; documented per-user setup, fixed inputs, verification, and cross-server limitations. User clarified that setup documentation is required, rather than a binary environment/cache backup. No fresh reinstall or Step 4 run performed. |
+| 2026-11-15 | Started Step 4 implementation. | Added full-validation configuration, stage-aware run labels, Slurm entry points, and independent coverage/metric verification. Full run pending. |

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate a fixed validation sample; quantized modes are compatibility checks."""
+"""Evaluate a fixed validation sample or the full zero-shot validation split."""
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
@@ -63,6 +63,16 @@ def select_sample(rows, per_class, seed):
     return selected
 
 
+def evaluation_protocol(config, precision, per_class_override):
+    stage = config.get('stage', 'step3')
+    per_class = config['per_class'] if per_class_override is None else per_class_override
+    if stage not in ('step3', 'step4'):
+        raise ValueError(f'Unsupported evaluation stage: {stage}')
+    if stage == 'step4' and (precision != 'fp16' or per_class != 0):
+        raise ValueError('Step 4 requires FP16 on the full validation split')
+    return stage, per_class, 'step3-compatibility' if per_class else 'zero-shot-validation'
+
+
 def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
 
@@ -101,33 +111,34 @@ def evaluate(args):
     validate_manifests(args.prepared)
     manifest = args.prepared / 'validation.csv'
     rows = read_csv(manifest)
-    per_class = config['per_class'] if args.per_class is None else args.per_class
+    stage, per_class, scope = evaluation_protocol(config, args.precision, args.per_class)
     selected = select_sample(rows, per_class, config['seed'])
     args.output.mkdir(parents=True, exist_ok=False)
     runtime = runtime_snapshot(torch)
     write_json(args.output / 'environment.json', runtime)
     write_json(args.output / 'selected-images.json', [
         {k: row[k] for k in ('path', 'label', 'sha256', 'group_id')} for row in selected])
-    code_paths = ['scripts/evaluate.py', 'scripts/verify_data.py', 'configs/step3.json',
-                  'configs/data_policy.json']
+    code_paths = ['scripts/evaluate.py', 'scripts/verify_data.py',
+                  str(args.config.resolve().relative_to(REPO)), 'configs/data_policy.json']
     record = dict(status='running', started_utc=datetime.now(timezone.utc).isoformat(),
-                  scope='step3-compatibility' if per_class else 'zero-shot-validation',
+                  stage=stage, scope=scope,
                   precision=args.precision, config=config, per_class=per_class,
                   sample_size=len(selected), validation_manifest_sha256=sha(manifest.read_bytes()),
                   code_sha256={name: sha((REPO / name).read_bytes()) for name in code_paths},
                   base_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip(),
-                  limitation='Small validation sample checks execution and scoring; not a quality or performance benchmark.')
+                  limitation=('Small validation sample checks execution and scoring; not a quality or performance benchmark.'
+                              if per_class else 'Full validation quality only; no final-test inference, training, or performance benchmark.'))
     write_json(args.output / 'run.json', record)
     run = None
     try:
         if args.log_wandb:
             import wandb
             run = wandb.init(entity=config['wandb_entity'], project=config['wandb_project'],
-                             job_type=record['scope'], group=f'step3-{runtime["slurm_job_id"]}',
-                             name=f'step3-{runtime["slurm_job_id"]}-{args.precision}',
+                             job_type=record['scope'], group=f'{stage}-{runtime["slurm_job_id"]}',
+                             name=f'{stage}-{runtime["slurm_job_id"]}-{args.precision}',
                              config={**config, 'precision': args.precision,
                                      'per_class': per_class, 'validation_manifest_sha256': record['validation_manifest_sha256']},
-                             tags=['step3', 'compatibility', args.precision],
+                             tags=[stage, 'compatibility' if per_class else scope, args.precision],
                              settings=wandb.Settings(disable_git=True, disable_code=True))
             run.use_artifact(config['data_artifact'])
             record.update(wandb_run_id=run.id, wandb_url=run.url)
@@ -209,7 +220,7 @@ def evaluate(args):
                                 'gpu': runtime['gpu']['name'], 'code_sha256': record['code_sha256']})
             run.log({'predictions': wandb.Table(columns=['path', 'true_label', 'prediction', 'raw_response'],
                      data=[[r[k] for k in ('path', 'true_label', 'prediction', 'raw_response')] for r in results])})
-            artifact = wandb.Artifact(f'step3-{runtime["slurm_job_id"]}-{args.precision}', type='runtime-evidence')
+            artifact = wandb.Artifact(f'{stage}-{runtime["slurm_job_id"]}-{args.precision}', type='runtime-evidence')
             artifact.add_dir(str(args.output))
             run.log_artifact(artifact).wait()
             run.finish()
@@ -222,7 +233,7 @@ def evaluate(args):
         if run is not None:
             run.summary['status'] = 'failed'
             run.summary['error'] = record['error']
-            artifact = wandb.Artifact(f'step3-{runtime["slurm_job_id"]}-{args.precision}-failed', type='runtime-evidence')
+            artifact = wandb.Artifact(f'{stage}-{runtime["slurm_job_id"]}-{args.precision}-failed', type='runtime-evidence')
             artifact.add_dir(str(args.output))
             run.log_artifact(artifact).wait()
             run.finish(exit_code=1)
