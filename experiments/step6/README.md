@@ -2,7 +2,9 @@
 
 Status: **GPU execution pending**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. A two-hour/32 GiB request is queued as job **13932242**; the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
 
-Seven new benchmark tests pass locally. The complete local suite reports 26 passing tests and one import error: the current macOS Python lacks Pillow, so the six existing data-preparation tests cannot run. The complete 32-test suite and all GPU checks must run in the existing pinned cluster environment. No packages or model weights have been changed.
+CPU preflight job **13932248** completed on `ins084` (`short`, overridden from the launcher's `edu1` default). Publisher **13932262** is queued with dependency `afterok:13932242` and will verify/upload the completed GPU evidence automatically. See the [submission record](scheduling/submitted-jobs.json). These recorded scheduler states do not establish completion.
+
+**CPU preflight passed:** all 32 tests, all 12 saved model/processor file hashes, and the eight-image batching audit. Job `13932248` completed `0:0` in 3 minutes 15 seconds on `ins084`; [evidence](preflight/13932248/) includes logs, accounting, and local verification against Step 5 metadata. The local macOS test attempt lacked Pillow; the existing cluster environment resolved that limitation without installing packages. GPU inference and performance measurements remain pending.
 
 ## What this step does and why
 

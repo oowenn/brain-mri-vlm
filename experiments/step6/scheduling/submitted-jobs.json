@@ -1,0 +1,33 @@
+{
+  "status": "submitted; completion not yet verified",
+  "date": "2026-11-16",
+  "timezone": "America/New_York",
+  "gpu_job": {
+    "id": 13932242,
+    "last_observed_state": "PENDING",
+    "reason": "Priority",
+    "requested_gpu": "A6000:1",
+    "requested_cpus": 4,
+    "requested_memory_gib": 32,
+    "time_limit": "02:00:00",
+    "last_observed_start_estimate": "2026-11-16T14:06:28",
+    "estimate_is_not_a_guarantee": true
+  },
+  "cpu_preflight_job": {
+    "id": 13932248,
+    "last_observed_state": "COMPLETED",
+    "node": "ins084",
+    "partition": "short",
+    "note": "Tests, 12 checkpoint file hashes, and eight-image batching audit passed; no GPU timing in this job",
+    "exit_code": "0:0",
+    "elapsed": "00:03:15",
+    "unit_tests_passed": 32
+  },
+  "evidence_publisher_job": {
+    "id": 13932262,
+    "last_observed_state": "PENDING",
+    "reason": "Dependency",
+    "dependency": "afterok:13932242"
+  },
+  "verification_boundary": "CPU preflight completion verified after reconnecting; GPU and publisher were still queued. Scheduler estimates are not guarantees."
+}

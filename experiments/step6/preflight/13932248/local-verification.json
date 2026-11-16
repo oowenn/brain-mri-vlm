@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "recorded_utc": "2026-11-16T18:09:16.456508+00:00",
+  "execution_commit": "393ff0b86101d78f585aae258630895165b6c2d9",
+  "unit_tests_passed": 32,
+  "checkpoint_inventory_matches_step5": true,
+  "checkpoint_files_verified_on_cluster": 12,
+  "input_metadata_matches_step5": 8,
+  "gpu_inference_or_timing_verified": false,
+  "files_sha256": {
+    "base-commit.txt": "405fa016d6e79e2d081e3eae57ebda3bd435aac9cad3b18e6822de22aa55d6ed",
+    "checkpoint-verification.json": "d4303655500fb5b09e041738c0186745a90bcc6e09f81ada3ca059b37e7960f0",
+    "console.log": "591a847a70dd43251fbd0003ceb7832117281a050017e5291769b2d7c3f9da0f",
+    "input-audit.json": "7279e1c4e9fab8906aa9db1a388b321ccb893a7bd81ebf3b4badb545f7f6d8d6",
+    "launch.sbatch": "79168fadd8ccf7e5cac1004a21b5b2d392ce9262dfd71d5ec7872bce0f217cdb",
+    "pip-check.txt": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "slurm-accounting.tsv": "116f2a791d1c1c4b44688436b654974dd7a45ddde5f6f1d15b9503e5c6f1213c",
+    "slurm-output.log": "591a847a70dd43251fbd0003ceb7832117281a050017e5291769b2d7c3f9da0f",
+    "tests.txt": "42578b579933cdc814a911b8239dea72da217e80bf7d7e2ca2506adc05501a8d"
+  }
+}

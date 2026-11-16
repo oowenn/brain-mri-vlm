@@ -1,0 +1,4 @@
+JobIDRaw|JobName|Partition|State|ExitCode|Elapsed|Start|End|NodeList|AllocCPUS|ReqMem|AllocTRES|MaxRSS
+13932248|smolmri-step6-preflight|short|COMPLETED|0:0|00:03:15|2026-11-16T12:46:06|2026-11-16T12:49:21|ins084|4|8G|billing=4,cpu=4,mem=8G,node=1|
+13932248.batch|batch||COMPLETED|0:0|00:03:15|2026-11-16T12:46:06|2026-11-16T12:49:21|ins084|4||cpu=4,mem=8G,node=1|667500K
+13932248.extern|extern||COMPLETED|0:0|00:03:15|2026-11-16T12:46:06|2026-11-16T12:49:21|ins084|4||billing=4,cpu=4,mem=8G,node=1|

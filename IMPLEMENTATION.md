@@ -6,11 +6,11 @@ Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7f
 
 ## Current position
 
-**Step 5 is complete. Step 6 is queued as GPU job **13932242** with a two-hour/32 GiB reservation.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
+**Step 5 is complete. Step 6 GPU job 13932242 has been submitted with a two-hour/32 GiB reservation; completion is not yet verified.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 6 with the same evidence, W&B, repository, and teammate-documentation requirements. Step 6 code and seven dependency-free benchmark tests are ready; GPU validation and measurements remain pending. The local full suite lacks Pillow and will run in the existing cluster environment; no package changes are required there.
+The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 6 with the same evidence, W&B, repository, and teammate-documentation requirements. All 32 tests, the checkpoint file hashes, and the eight-image processor batching audit passed in CPU preflight job `13932248`. GPU inference and measurements remain pending; no cluster package changes were required.
 
 ## Roadmap status
 
@@ -105,7 +105,7 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 - Added isolated FP16 workers for input auditing, the bounded batch sweep, full-validation quality, and synchronized end-to-end timings.
 - Fixed candidates **1/2/4/8/16/32**, two sweep trials, and a selection rule: smallest batch within 5% of the best eligible throughput, with peak allocated memory at most 80% of the GPU total.
 - The final baseline uses **three trials, each with 10 warm-ups and 50 measurements**. The selected batch is frozen before full-validation quality and final measurements. Every sample retains timings, paths, raw answers, generated tokens, and memory peaks.
-- Seven new unit tests pass locally. The full suite is pending on the existing cluster environment; local Python lacks Pillow. No GPU performance or batch-size result is claimed yet.
+- All 32 tests passed in cluster CPU preflight `13932248`, together with 12 model/processor file hashes and the eight-image batching audit. No GPU performance or batch-size result is claimed yet.
 - See the [Step 6 README](experiments/step6/README.md) for timing boundaries, file explanations, exact paths, and submission/publishing instructions.
 
 ## Implementation map
@@ -124,7 +124,7 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 | Model backup | [`scripts/publish_step5.py`](scripts/publish_step5.py), [`cluster/publish_step5.sbatch`](cluster/publish_step5.sbatch) | Verify remote tracking and download-check every uploaded adapter, optimizer state, processor, and merged model file. |
 | Baseline benchmark | [`scripts/benchmark.py`](scripts/benchmark.py), [`scripts/benchmark_utils.py`](scripts/benchmark_utils.py), [`scripts/run_step6.py`](scripts/run_step6.py), [`configs/step6.json`](configs/step6.json), [`cluster/step6.sbatch`](cluster/step6.sbatch) | Audit batching, sweep candidates, freeze the baseline, and retain raw repeated timings and quality. GPU execution pending. |
 | Baseline evidence verification | [`scripts/verify_step6.py`](scripts/verify_step6.py), [`scripts/publish_step6.py`](scripts/publish_step6.py), [`cluster/publish_step6.sbatch`](cluster/publish_step6.sbatch) | Independently recompute measurements, check W&B metrics and artifact downloads, and publish the evidence bundle. |
-| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven new benchmark tests pass locally, with all 32 pending cluster execution. |
+| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven new benchmark tests bring the full suite to 32, all passed in cluster CPU preflight `13932248`. |
 | Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
 | Living progress record | [`IMPLEMENTATION.md`](IMPLEMENTATION.md), [`AGENTS.md`](AGENTS.md) | Maintain the current implementation status and carry the update instruction into later repository sessions. |
 
@@ -155,7 +155,8 @@ Build a checkpoint-aware benchmark around **`checkpoints/step5/13927137/merged-f
 - [x] Implement the merged-checkpoint loader, bounded sweep, quality gate, synchronized timers, independent verifier, and W&B publisher.
 - [x] Fix workload seeds, selection rule, timing boundaries, and 10-warm-up/50-measurement/three-trial baseline protocol before execution.
 - [x] Pass seven new dependency-free tests; document file purposes and teammate commands.
-- [ ] Run all 32 tests, verify source data/checkpoint hashes, and compare the new loader with Step 5 on the cluster.
+- [x] Pass all 32 tests, verify all saved checkpoint file hashes, and audit eight-image processor batching on the cluster.
+- [ ] Recheck all 7,200 source images and compare GPU batch-one outputs with Step 5 inside the benchmark allocation.
 - [ ] Complete the A6000 sweep and freeze one batch size, retaining any out-of-memory attempts.
 - [ ] Pass full 579-image validation and collect all 150 measured baseline batches.
 - [ ] Independently verify timing/quality, completed scheduler jobs, W&B metrics, and downloaded artifact bytes.
@@ -378,3 +379,5 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-16 | Submitted Step 6 GPU benchmark. | Execution commit `9c79baa`; Slurm job `13932216`. VPN/SSH access restored. Full tests, input audit, sweep, quality, and repeated timings are pending allocation; no completion or performance claim yet. |
 | 2026-11-16 | Resized the unstarted Step 6 reservation. | Job `13932216` canceled before execution: six-hour/64 GiB reservation estimated a next-day start. Slurm dry-run estimated a same-day start with two hours/32 GiB; one hour gave no further improvement. Model and benchmark protocol unchanged; scheduling evidence retained. |
 | 2026-11-16 | Queued the smaller Step 6 job and added CPU preflight. | GPU job `13932242`; optional `cluster/preflight_step6.sbatch` checks tests, checkpoint hashes, and processor batching while waiting. GPU execution and performance remain pending. |
+| 2026-11-16 | Queued automatic Step 6 evidence publication. | GPU job `13932242`; CPU preflight `13932248` started on `ins084`; publisher `13932262` depends on `afterok:13932242`. The publisher collects scheduler logs and verifies source/W&B artifacts. VPN/SSH disconnected before further results were collected; submitted jobs continue independently. See [submission record](experiments/step6/scheduling/submitted-jobs.json). |
+| 2026-11-16 | Step 6 CPU preflight passed. | Job `13932248`, `ins084`, `0:0`, 3m15s, execution commit `393ff0b`: all 32 tests, all 12 saved model/processor file hashes, and eight-image batching audit. Local checks reproduce input metadata and launcher provenance. GPU job `13932242` and dependent publisher `13932262` remain queued. |
