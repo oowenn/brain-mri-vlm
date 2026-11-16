@@ -1,0 +1,46 @@
+{
+  "base_commit": "492ab709cdf48d8416f6087050860b6254b8b5e8",
+  "code_sha256": {
+    "configs/data_policy.json": "977b8df25f38a8a98c752fc5f6d07092c919a29627914b10e7163cf1db826c94",
+    "configs/step4.json": "49d3dd62e56a8da19486b12c6c67a384eb727ce9e02758fc89aaf4813e1f04dc",
+    "scripts/evaluate.py": "5de13d08ee8190d565395e0c0ab6afc9c54ab98ed3c992d625d328b085531f9a",
+    "scripts/verify_data.py": "732e5699baeabdab5267cab291df814464b31ce720e31781241e16655c170c2a"
+  },
+  "config": {
+    "attention": "sdpa",
+    "batch_size": 1,
+    "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+    "do_sample": false,
+    "gpu": "NVIDIA RTX A6000",
+    "labels": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "max_new_tokens": 16,
+    "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "num_beams": 1,
+    "parser": "exact-label-optional-period-v2",
+    "per_class": 0,
+    "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+    "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+    "seed": 42,
+    "stage": "step4",
+    "wandb_entity": "coms6998-team32-fall2026",
+    "wandb_project": "brain-mri-vlm"
+  },
+  "finished_utc": "2026-11-16T03:07:22.366422+00:00",
+  "limitation": "Full validation quality only; no final-test inference, training, or performance benchmark.",
+  "per_class": 0,
+  "precision": "fp16",
+  "quantized_module_count": 0,
+  "sample_size": 579,
+  "scope": "zero-shot-validation",
+  "stage": "step4",
+  "started_utc": "2026-11-16T03:02:38.417518+00:00",
+  "status": "passed",
+  "validation_manifest_sha256": "4a8be8c87af0dd0a5b99a3727675908cba908c085c20dba8c2c8df4caffd0ab9",
+  "wandb_run_id": "cpawhwk5",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/cpawhwk5"
+}

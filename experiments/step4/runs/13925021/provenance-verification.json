@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "implementation_commit": "492ab709cdf48d8416f6087050860b6254b8b5e8",
+  "source_files_match_commit": {
+    "cluster/publish_step4.sbatch": "ec4e64a4bbbe2addab55393ff8c33d62fb1ada0a276be9c07575bb5bf1d766c3",
+    "cluster/step4.sbatch": "f9ec0f6a21973320011b68f5c7eefaabf2235bb7729b9f3887056390188a96e5",
+    "configs/data.json": "c7f62824a409a1f9b84616b053cd3777f82a377c5a6461b04694b15b2feb42b9",
+    "configs/data_policy.json": "977b8df25f38a8a98c752fc5f6d07092c919a29627914b10e7163cf1db826c94",
+    "configs/step3.json": "21ed7920290f028270e6ef0cbd1691ae0f11ca850995800c713bc4f99e05cbfa",
+    "configs/step4.json": "49d3dd62e56a8da19486b12c6c67a384eb727ce9e02758fc89aaf4813e1f04dc",
+    "requirements-cluster.txt": "56fe8d81a34f048e233a9c668199980d5a42866095124d7518a07e3690d59ecb",
+    "scripts/check_environment.py": "4201d4827c103f5a0cc64838694e9c09fa346e0c3673668fddde88011056adae",
+    "scripts/evaluate.py": "5de13d08ee8190d565395e0c0ab6afc9c54ab98ed3c992d625d328b085531f9a",
+    "scripts/finalize_data.py": "193c897672956476220040b31c448ec4afd31dc4f5424962392ab48a62e2889d",
+    "scripts/prepare_data.py": "d7fd94c19d0d9ecc05bcda0221916a31d24346aa68b23753dee1f17a9c4ad290",
+    "scripts/publish_step3.py": "9941ff3b133f215860953d79f5e33dfd06c927ea469556dc55a8d2c3b0832780",
+    "scripts/publish_step4.py": "5a5b3389752f2bea467c901600c14dc8ade2cc9ef30c5822132cd447e46f80cd",
+    "scripts/verify_data.py": "732e5699baeabdab5267cab291df814464b31ce720e31781241e16655c170c2a",
+    "scripts/verify_step4.py": "fd77d861ac9cc77c94657e129e7b49594782df5b65660e26874ce95c316e4bed",
+    "tests/test_evaluate.py": "b68feb0eafa403eabb72f71194a3e4f2d40275309f5d3e8da819fc36a2c5acf8",
+    "tests/test_finalize_data.py": "9a02cb0a77fb49335d93af4b8c9c8f4d0edb192c197806289d442c42e5e28311",
+    "tests/test_prepare_data.py": "ad59ffda2b3f53a80bdcbe1925fff748bb690f0cd0d358cca0d4c7e79f5b78d4",
+    "tests/test_step4.py": "78e0e713f3a261e9270d6b26004065a96e1c5c89352353f064b3be7a7ad46240"
+  },
+  "independent_local_verification_matches_cluster": true,
+  "step3_fp16_overlap": [
+    {
+      "path": "Training/glioma/Tr-gl_896.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/glioma/Tr-gl_1239.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/meningioma/Tr-aug-me_56.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/meningioma/Tr-me_277.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/notumor/Tr-no_169.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/notumor/Tr-no_14.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_1129.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_773.jpg",
+      "matching_fields": true,
+      "differing_fields": []
+    }
+  ],
+  "step3_fp16_overlap_all_match": true
+}

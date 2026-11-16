@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 3 is complete.** The frozen data, RTX A6000 runtime, shared evaluator, and FP16/INT8/INT4 MRI inference were verified on Insomnia with W&B tracking. See the [Step 3 README and saved run evidence](experiments/step3/README.md). Full zero-shot validation is Step 4 and has not been run yet.
+Status: **Step 4 is complete.** Pretrained FP16 SmolVLM evaluated all 579 frozen validation images on Insomnia: **41.45% accuracy, 0.2662 macro-F1, and 0 invalid responses**. It predicted only glioma and notumor; meningioma and pituitary recall were zero. The [Step 4 README](experiments/step4/README.md) explains the results, every evidence file, and reproduction commands. See [IMPLEMENTATION.md](IMPLEMENTATION.md) for the current roadmap, remaining work, and teammate environment/directory setup. Step 5, LoRA training and merging, has not started.
 
 ## Study
 
@@ -12,9 +12,9 @@ Use one fixed NVIDIA GPU type and one batch size chosen on the baseline. Measure
 
 ## Reproduction status
 
-The verified Step 3 environment is pinned in [requirements-cluster.txt](requirements-cluster.txt); model revision, GPU type, prompt, and evaluation settings are pinned in [configs/step3.json](configs/step3.json). The [run evidence](experiments/step3/runs/13924504/) records the actual environment, executed code hashes, predictions, and W&B links. These are runtime smoke checks on eight validation images, not benchmark or full validation results. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
+The verified environment is pinned in [requirements-cluster.txt](requirements-cluster.txt). [Step 3 configuration](configs/step3.json) selects the eight-image compatibility sample; [Step 4 configuration](configs/step4.json) keeps the same model revision, GPU, prompt, parser, and generation protocol while selecting all validation images. The [Step 3 evidence](experiments/step3/runs/13924504/) and [Step 4 evidence](experiments/step4/runs/13925021/) record the actual environment, executed source, predictions, verification, and W&B links. Step 4 measures validation quality; neither step is a performance benchmark. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
 
-Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact Step 3 run evidence and logs are tracked under `experiments/step3/` and the model runs are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
+Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/` and `experiments/step4/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
 
 ## Experiment notes
 

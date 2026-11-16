@@ -1,0 +1,27 @@
+{
+  "wandb_run_id": "sbgxu7p7",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/sbgxu7p7",
+  "artifact_name": "step4-checkpoint-13925021:v0",
+  "artifact_digest": "74dfbd1877d3efc93db0bcef00be8edf",
+  "inference_verification": {
+    "status": "passed",
+    "state": "finished",
+    "url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/cpawhwk5",
+    "metrics_match": true,
+    "per_class_recalls_match": true,
+    "artifact_name": "step4-13925021-fp16:v0",
+    "artifact_digest": "5987b3e39e7cd0da130b4440661b1ab2",
+    "downloaded_files_sha256": {
+      "environment.json": "2abbb1cb66f19c445729c68f54fd9a4201fc1a2fdb1d0d3a3ca16de546928a26",
+      "model-config.json": "02bd472c2219d86a2a2a88bee3194d276618ad323b46f2493ad46da35bb7cec8",
+      "generation-config.json": "b155ca1bf09b098c4277806f473268867678145feab747f129116dd40ea2c864",
+      "selected-images.json": "880389184cbfbd7ee2f7d912cdbd23ad28897e7d4a7fd67443397303ab9c5b7d",
+      "model-runtime.json": "620c94a279849c6ac9d394bc9821edff6bf4c9cd1f95fdc86f9b4a2b17f38a72",
+      "image-processor.json": "6cb6e36d6fcb88ca1502c4a26750715dc3e7dedddc9a8f17b27d8d167d1457e7",
+      "run.json": "69e918aac0b9fcbf185fbc4d9a474c5145ef36a8c479a8465e973b6f32a57f21",
+      "predictions.jsonl": "26a82bf814ab29174bd260acbdb93a7ae080d4a7fe37eff8f582ba1b716bf462",
+      "metrics.json": "5795a895edd0a13e3e9764bde01ff15c61fdb4233bd47fdac92bcafc62425362",
+      "rendered-prompt.txt": "88975c9235d9553b6fb93bbcf510c0b2a756dfe0d39ef71a2a300c8d60e0efdf"
+    }
+  }
+}

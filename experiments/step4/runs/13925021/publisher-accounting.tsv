@@ -1,0 +1,4 @@
+JobIDRaw|JobName|Partition|State|ExitCode|Elapsed|Start|End|NodeList|AllocCPUS|ReqMem|AllocTRES|MaxRSS
+13925075|smolmri-step4-evidence|short|COMPLETED|0:0|00:01:11|2026-11-15T22:08:56|2026-11-15T22:10:07|ins093|2|2G|billing=2,cpu=2,mem=2G,node=1|
+13925075.batch|batch||COMPLETED|0:0|00:01:11|2026-11-15T22:08:56|2026-11-15T22:10:07|ins093|2||cpu=2,mem=2G,node=1|107780K
+13925075.extern|extern||COMPLETED|0:0|00:01:11|2026-11-15T22:08:56|2026-11-15T22:10:07|ins093|2||billing=2,cpu=2,mem=2G,node=1|

@@ -1,0 +1,116 @@
+{
+  "status": "complete",
+  "date_local": "2026-11-15",
+  "timezone": "America/New_York",
+  "scope": "Step 4 full pretrained FP16 zero-shot validation only",
+  "implementation_commit": "492ab709cdf48d8416f6087050860b6254b8b5e8",
+  "gpu_job_id": "13925021",
+  "gpu_job_state": "COMPLETED",
+  "gpu_exit_code": "0:0",
+  "gpu_elapsed": "00:11:00",
+  "publisher_job_id": "13925075",
+  "wandb_run_id": "cpawhwk5",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/cpawhwk5",
+  "metrics": {
+    "accuracy": 0.41450777202072536,
+    "confusion_matrix": {
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          167,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          113,
+          0,
+          44,
+          0,
+          0
+        ],
+        [
+          48,
+          0,
+          73,
+          0,
+          0
+        ],
+        [
+          77,
+          0,
+          43,
+          0,
+          0
+        ]
+      ],
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ]
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "macro_f1": 0.26622028113611385,
+    "n": 579,
+    "per_class": {
+      "glioma": {
+        "f1": 0.5699658703071673,
+        "precision": 0.4123456790123457,
+        "recall": 0.9226519337016574,
+        "support": 181
+      },
+      "meningioma": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 157
+      },
+      "notumor": {
+        "f1": 0.49491525423728816,
+        "precision": 0.41954022988505746,
+        "recall": 0.6033057851239669,
+        "support": 121
+      },
+      "pituitary": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 120
+      }
+    }
+  },
+  "checks": {
+    "unit_tests_passed": 19,
+    "source_images_verified": 7200,
+    "unique_validation_images": 579,
+    "independent_metrics_match": true,
+    "source_snapshots_match_commit": 19,
+    "step3_fp16_overlap_identical": 8,
+    "test_set_inference": false,
+    "wandb_finished": true,
+    "wandb_metrics_match": true,
+    "wandb_downloaded_files_match": 10
+  },
+  "interpretation": "Only glioma (405 images) and notumor (174 images) were predicted; meningioma and pituitary recall are zero.",
+  "limitations": [
+    "No training or performance benchmark in this step.",
+    "Unknown patient identities prevent a fully patient-disjoint guarantee.",
+    "Final test set has no model predictions from this step."
+  ],
+  "publisher_job_state": "COMPLETED",
+  "publisher_exit_code": "0:0",
+  "publisher_elapsed": "00:01:11",
+  "evidence_wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/sbgxu7p7",
+  "checkpoint_artifact": "step4-checkpoint-13925021:v0",
+  "checkpoint_artifact_digest": "74dfbd1877d3efc93db0bcef00be8edf"
+}

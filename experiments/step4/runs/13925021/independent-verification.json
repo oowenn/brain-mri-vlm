@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "unique_validation_images": 579,
+  "expected_supports": {
+    "glioma": 181,
+    "meningioma": 157,
+    "notumor": 121,
+    "pituitary": 120
+  },
+  "metrics": {
+    "n": 579,
+    "accuracy": 0.41450777202072536,
+    "macro_f1": 0.26622028113611385,
+    "per_class": {
+      "glioma": {
+        "precision": 0.4123456790123457,
+        "recall": 0.9226519337016574,
+        "f1": 0.5699658703071673,
+        "support": 181
+      },
+      "meningioma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 157
+      },
+      "notumor": {
+        "precision": 0.41954022988505746,
+        "recall": 0.6033057851239669,
+        "f1": 0.49491525423728805,
+        "support": 121
+      },
+      "pituitary": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 120
+      }
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "confusion_matrix": {
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          167,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          113,
+          0,
+          44,
+          0,
+          0
+        ],
+        [
+          48,
+          0,
+          73,
+          0,
+          0
+        ],
+        [
+          77,
+          0,
+          43,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "predictions_sha256": "26a82bf814ab29174bd260acbdb93a7ae080d4a7fe37eff8f582ba1b716bf462",
+  "selected_images_sha256": "880389184cbfbd7ee2f7d912cdbd23ad28897e7d4a7fd67443397303ab9c5b7d",
+  "raw_response_counts": {
+    "Glioma.": 405,
+    "Notumor.": 163,
+    "notumor.": 11
+  },
+  "predicted_label_counts": {
+    "glioma": 405,
+    "notumor": 174
+  },
+  "scoring_method": "Independent Counter-based calculation; invalid outputs retained as errors",
+  "test_set_inference": false
+}

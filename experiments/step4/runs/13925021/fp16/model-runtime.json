@@ -1,0 +1,9 @@
+{
+  "model_class": "Idefics3ForConditionalGeneration",
+  "parameter_devices": [
+    "cuda:0"
+  ],
+  "quantization_config": null,
+  "quantized_module_count": 0,
+  "quantized_modules": {}
+}

@@ -1,0 +1,13 @@
+{
+  "dataset": "masoudnickparvar/brain-tumor-mri-dataset",
+  "version": 2,
+  "labels": ["glioma", "meningioma", "notumor", "pituitary"],
+  "phash_size": 8,
+  "phash_highfreq_factor": 4,
+  "max_hamming_distance": 4,
+  "similarity_size": 128,
+  "min_correlation": 0.98,
+  "validation_fraction": 0.15,
+  "seed": 42,
+  "expected_source_sha256": "b5780fad11617bc3d70e32f31723ae598a6d1881a81ad9133c4ca1376bfa5d25"
+}
