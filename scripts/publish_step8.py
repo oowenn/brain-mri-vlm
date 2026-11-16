@@ -59,7 +59,7 @@ def main():
         bundle=wandb.Artifact(f'step8-checkpoint-{root.name}',type='runtime-checkpoint')
         bundle.add_dir(str(root),name=f'runs/{root.name}')
         run.log_artifact(bundle).wait()
-        run.summary.update(dict(status='verified',unit_tests_passed=int(count.group(1)),**expected))
+        run.summary.update(dict(expected,status='verified',unit_tests_passed=int(count.group(1))))
         receipt=dict(wandb_run_id=run.id,wandb_url=run.url,artifact_name=bundle.name,artifact_digest=bundle.digest,
                      benchmark_run_url=record['wandb_url'])
     (root/'evidence-upload.json').write_text(json.dumps(receipt,indent=2)+'\n')
