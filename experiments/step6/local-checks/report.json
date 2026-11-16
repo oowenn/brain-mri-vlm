@@ -2,19 +2,19 @@
   "status": "local-checks-only; GPU execution pending",
   "python": "3.13.14",
   "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
-  "recorded_utc": "2026-11-16T17:29:43.993428+00:00",
+  "recorded_utc": "2026-11-16T17:41:17.289063+00:00",
   "new_benchmark_tests_passed": 7,
   "full_suite": "26 tests passed; test_prepare_data could not import because Pillow is absent; expected full suite has 32 tests",
   "gpu_or_timing_execution": false,
-  "cluster_blocker": "SSH connection timed out; waiting for Columbia VPN connectivity",
+  "cluster_blocker": "VPN restored; fresh SSH authentication pending",
   "source_sha256": {
     "scripts/benchmark.py": "afe8ac992c226f1d9bc705323368829ea9ef86449b69f3dbc9f550baf7e04afe",
     "scripts/benchmark_utils.py": "b6a794edd06ce6905fe574b75414d63e398e62d67e479e4b1c7af7733efd3034",
     "scripts/run_step6.py": "1ccbe3f7557bd159462d2cc40d4e67692bc1c57d96842f9304d6082176e74475",
-    "scripts/verify_step6.py": "cfe4438b56c6106490656279ff878d08fc987a225d49e2916278a18e3f1cf334",
+    "scripts/verify_step6.py": "d95d6c7dcc0cc684a007f74c0df876a06e7a8c6ef9d2a611097f15a062d2ed8b",
     "scripts/publish_step6.py": "9bbf2ae3a4d9537beaecf231d5935a747a349caf2259bc8a1ca41f62afcabc58",
     "configs/step6.json": "a0070a81ccc2e9bc430e69f633324c3ea4e162e7cd317cf28ecda4acab40d678",
-    "tests/test_benchmark.py": "8519f11a18ebc0ab253069bf5bde546ec23d6a97519ad92a9307d50a244e04b5",
+    "tests/test_benchmark.py": "8586dd50ee58ec426df20c803a4f983fe3613cb501e735c6815d4599642b81ab",
     "cluster/step6.sbatch": "1936521806bbd9988826fd373fd38ebb57cab13733d3471a4a2fa95c228106be",
     "cluster/publish_step6.sbatch": "8918b13f365d6aa65793234698f1fbdbee795300da9a704da993bcc334a5a3c7"
   }

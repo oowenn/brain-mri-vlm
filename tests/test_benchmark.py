@@ -91,6 +91,15 @@ class BenchmarkTests(unittest.TestCase):
             save(records[:-1])
             with self.assertRaises(ValueError):
                 verify_timings(root,cfg,rows,'sweep')
+            # Nanosecond measurements exercise different floating-point summation orders.
+            varied=copy.deepcopy(records)
+            for i,r in enumerate(varied):
+                r['elapsed_ns']=123456789+i*9876543
+            stats=summarize(varied)
+            (root/'summary.json').write_text(json.dumps(stats))
+            (root/'run.json').write_text(json.dumps(dict(batch_size=2,total_memory_bytes=1000,summary=stats)))
+            save(varied)
+            verify_timings(root,cfg,rows,'sweep')
 
     def test_fixed_checkpoint_and_inference_protocol(self):
         root=Path(__file__).parents[1]

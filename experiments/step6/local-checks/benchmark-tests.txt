@@ -7,6 +7,6 @@ test_selection_respects_oom_memory_and_throughput_plateau (test_benchmark.Benchm
 test_timing_excludes_warmup_and_uses_ratio_of_totals (test_benchmark.BenchmarkTests.test_timing_excludes_warmup_and_uses_ratio_of_totals) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.006s
+Ran 7 tests in 0.007s
 
 OK

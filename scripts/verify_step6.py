@@ -3,7 +3,6 @@
 import argparse
 from collections import Counter
 import json
-import math
 from pathlib import Path
 import random
 import re
@@ -17,6 +16,15 @@ from verify_step4 import assert_matches, verify_predictions
 
 def read(path):
     return json.loads(path.read_text())
+
+
+def assert_summary(actual, expected):
+    assert_matches({k:v for k,v in actual.items() if k!='trials'},
+                   {k:v for k,v in expected.items() if k!='trials'})
+    if len(actual['trials'])!=len(expected['trials']):
+        raise ValueError('Trial summary coverage differs')
+    for a, e in zip(actual['trials'], expected['trials']):
+        assert_matches(a, e, 'trial')
 
 
 def verify_timings(folder, cfg, rows, mode):
@@ -66,8 +74,8 @@ def verify_timings(folder, cfg, rows, mode):
                      peak_allocated_bytes=max(r['peak_allocated_bytes'] for r in measured),
                      peak_reserved_bytes=max(r['peak_reserved_bytes'] for r in measured),trials=trial_stats,
                      trial_mean_batch_ms_std=statistics.stdev(t['mean_batch_ms'] for t in trial_stats) if len(trial_stats)>1 else 0.0)
-    assert_matches(read(folder/'summary.json'),independent)
-    assert_matches(result['summary'],independent)
+    for saved in (read(folder/'summary.json'), result['summary']):
+        assert_summary(saved, independent)
     return independent
 
 
@@ -149,7 +157,7 @@ def verify_run(root, prepared):
         raise ValueError('Full-validation quality gate failed')
     assert_matches(record['quality_metrics'],metrics)
     baseline=verify_timings(root/'baseline',cfg,rows,'baseline')
-    assert_matches(record['baseline_summary'],baseline)
+    assert_summary(record['baseline_summary'],baseline)
     return dict(status='passed',selected_batch_size=selected,checkpoint_files_verified=len(expected),
                 sweep=checked,baseline=baseline,quality_metrics=metrics,validation_images=579,
                 exact_batch_one_reference_matches=8,test_set_inference=False)
