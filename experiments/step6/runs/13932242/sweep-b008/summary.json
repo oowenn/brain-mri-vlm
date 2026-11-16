@@ -1,0 +1,29 @@
+{
+  "batch_size": 8,
+  "images": 160,
+  "mean_amortized_image_ms": 345.4439041375,
+  "mean_batch_ms": 2763.5512331,
+  "measurements": 20,
+  "p50_amortized_image_ms": 344.730451625,
+  "p50_batch_ms": 2757.843613,
+  "p95_amortized_image_ms": 352.14512185625,
+  "p95_batch_ms": 2817.16097485,
+  "peak_allocated_bytes": 4914962432,
+  "peak_reserved_bytes": 5911871488,
+  "throughput_images_s": 2.8948260137830117,
+  "trial_mean_batch_ms_std": 5.654385032612601,
+  "trials": [
+    {
+      "mean_batch_ms": 2759.5529791,
+      "samples": 10,
+      "throughput_images_s": 2.899020261828464,
+      "trial": 0
+    },
+    {
+      "mean_batch_ms": 2767.5494871,
+      "samples": 10,
+      "throughput_images_s": 2.8906438845228624,
+      "trial": 1
+    }
+  ]
+}

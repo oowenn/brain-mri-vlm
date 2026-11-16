@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "run_state": "finished",
+  "config_and_metrics_match": true,
+  "artifact_name": "step6-13932242-baseline:v0",
+  "artifact_digest": "087a55e0902ef4ab843374bd3e405993",
+  "downloaded_files_verified": 153
+}

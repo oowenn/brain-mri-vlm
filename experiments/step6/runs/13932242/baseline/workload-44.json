@@ -1,0 +1,770 @@
+[
+  {
+    "group_id": "8af6cfdd9a25a2b3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_504.jpg",
+    "sha256": "5538b7b91e27211d550c0baff9ca24f9d0a5912403314d6cee2d217c640754b7"
+  },
+  {
+    "group_id": "f0091611e4e6df44",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_274.jpg",
+    "sha256": "1d6a6ced3db1997b2ab25ee8858868975ab022d9187a146ddb3f76329d32384b"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_14.jpg",
+    "sha256": "76d577713f1cf4414f780058f2079f7e6446aba86e89a86d7dd36401ca79a727"
+  },
+  {
+    "group_id": "b2eaf4f21aefc28e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_773.jpg",
+    "sha256": "849a42ce51625d0783ae7e31494101364239d600da8f964c7c2f33cd99e8057c"
+  },
+  {
+    "group_id": "a0f698b5a46ede9f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_718.jpg",
+    "sha256": "fa6158cbce0f7bea1facf6dd8074327ffd8975f1e5d698c1ae6972885505e6fd"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_355.jpg",
+    "sha256": "3c83b5f4ecfafb75d7e2cabaaf04662db7e8de0b6cc4b5b1c6670d1aa012ada7"
+  },
+  {
+    "group_id": "0c87ebe7ef2f245a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_938.jpg",
+    "sha256": "4aa6ed6c6badda46f69ad31fa48b99534fd40a155bb0025229ec3671d1481a8c"
+  },
+  {
+    "group_id": "0c0ea86c49f20420",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_898.jpg",
+    "sha256": "9bbcedfc360ed1757ce99b24df77dbd10dd2720c5b04e592b2c0e2d113829e50"
+  },
+  {
+    "group_id": "feed10fca1caf0eb",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_756.jpg",
+    "sha256": "c5198b1d3709d567f807a76d236a55a1e9073f6ea37b8edb26c45f5894d7dcff"
+  },
+  {
+    "group_id": "f02e1dd02ec2db3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1079.jpg",
+    "sha256": "95a98907bf363a65182925038668cdaeb760e61713ea32c2b8c65457326d5316"
+  },
+  {
+    "group_id": "8481f733fce2414b",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1028.jpg",
+    "sha256": "896aeba4c38ae004a7cd7c127a70931dd19d33cc7f42f10c7f2b75b463e9e791"
+  },
+  {
+    "group_id": "ee14327ee7912415",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1003.jpg",
+    "sha256": "c8dcce3bcef1c7f20a760c7c45ecd1fd2b3d63db6a68dfc1ce3a778055f2fbf6"
+  },
+  {
+    "group_id": "7c41e517618250a9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1243.jpg",
+    "sha256": "849d55bbe3f1dc7dd1b0c65a051152b493dee5784225c0ddf164dda00ede02dc"
+  },
+  {
+    "group_id": "0d9d6236f2a4ddda",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_295.jpg",
+    "sha256": "bd6c9850d7d8ec674924d509ea07f807cef964706e17191ca820fc4aba1c99e3"
+  },
+  {
+    "group_id": "ade2110f9dc2ad18",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_593.jpg",
+    "sha256": "42c0923d95ea398b1e00bc74e55fc93c23b42d8a10d623b66150bfbe4c9fbee1"
+  },
+  {
+    "group_id": "482e47260c90cdaa",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_611.jpg",
+    "sha256": "89743222c471d2a9d693cdc67e96d8ca5685b0489df4547f7a4866e87da4e408"
+  },
+  {
+    "group_id": "4bb3b22af0107626",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1362.jpg",
+    "sha256": "52b07683ffaa004d90a8eb701d33a3b6925385a8a7f163a2a2c3beef3cfbc97f"
+  },
+  {
+    "group_id": "629965a81c17cc8d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_7.jpg",
+    "sha256": "0ae59c938f03327a1048e94f17ded2498a6d2e5413038bb40247220a9b24dc7d"
+  },
+  {
+    "group_id": "45489051e75fee0e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_763.jpg",
+    "sha256": "c6b37dbcc8c59a18f68c4ecde7f081eb0caa8cae6edb6d438e11170f0736bf01"
+  },
+  {
+    "group_id": "405c68f773c79768",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_665.jpg",
+    "sha256": "92a4ab952d824b44ba9f395a906b785238279b096a0f74e2ae2b5e0026adc635"
+  },
+  {
+    "group_id": "c5b575210896852a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_465.jpg",
+    "sha256": "fef5e504b65317ce5fa04a8c71602eff87096a726c9f2b43ac226afbb65caae1"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_415.jpg",
+    "sha256": "7e5e242af266f8307726c66e48fc50d6d2d5090963a3fd9901971fe44fd462de"
+  },
+  {
+    "group_id": "950608c5b4b26f6e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_608.jpg",
+    "sha256": "19566883ea0fadcc0544956d52fef0eaf9d56cedbcbbad2e6f4b5fa4a8998c7c"
+  },
+  {
+    "group_id": "b40b67cb6ea7ff0e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1371.jpg",
+    "sha256": "fed0dbb8a45355a437b239f4e1a3e6b480b4f91601c6529eb5da1dc6b1e3976c"
+  },
+  {
+    "group_id": "03da51599a715835",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_168.jpg",
+    "sha256": "8f50cffd4b7b1e4a2f497dd529c824a7915200babe5a8dc39093f3e4dc87b0e6"
+  },
+  {
+    "group_id": "7bbc1775e7ae7b7e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_507.jpg",
+    "sha256": "dd959cd7ceb0fe232a0e9911d65e07b8f5076b4d7d5a4759842180460ee37d5a"
+  },
+  {
+    "group_id": "499160a351e5cf55",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_648.jpg",
+    "sha256": "cc6c2795310094ea9e9bc4a259b6c4ab7e56fd03303b7f3426849f9b573d05a8"
+  },
+  {
+    "group_id": "fda6f0d09540562c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_664.jpg",
+    "sha256": "4cd2207a82a255664bc6cc96855daa94da4cb8affd6e919e3ef51f196e5e5df7"
+  },
+  {
+    "group_id": "84f270510b34c59d",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_288.jpg",
+    "sha256": "c3b3d0cac8b16892db83d9cacf965b5d601531942a43d53fc8016b4c94c81b29"
+  },
+  {
+    "group_id": "7194ff1f17864e14",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1065.jpg",
+    "sha256": "dd5ad1d601bdb1a3b3cd567e069fb58c2cf0d631a79fb710e9baa4909a356ebc"
+  },
+  {
+    "group_id": "8cd6d0b5f6d3cf00",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_553.jpg",
+    "sha256": "d0520b80772f2d18bc26de82d80bee9c6bf1513d518e6e5feb008fe44db4a65c"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1094.jpg",
+    "sha256": "0e83f73c27a75d6063ff2ce1d0608e483eb67c67a2245240f0d0b462ebc4265a"
+  },
+  {
+    "group_id": "8cd68f57b54da3e9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1063.jpg",
+    "sha256": "3fd896730cbd7d870998082bf093ebf94ff9234ba704410c63d8fb3385692486"
+  },
+  {
+    "group_id": "45150cb86f05072d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_738.jpg",
+    "sha256": "9d8ea2574de2641627c50bed19ff5f80e655b4fa2fd5fbec5978dba791a23886"
+  },
+  {
+    "group_id": "c8def1e32bf98536",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_531.jpg",
+    "sha256": "0972f881fe5364a42f7df59998e80bb8d2b2e9f4dd93009ee23c3ba254c3746f"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1332.jpg",
+    "sha256": "f78384bc60ccf5f792f6d97ee8b4c9d30bcb0a69aa884e58c98fbebc5dc0cf29"
+  },
+  {
+    "group_id": "2135a1f604abdcb8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_968.jpg",
+    "sha256": "cdcae162e13d06dc2b6a5a936cfccf17a2d4ef83a599e5e3501356be6783f897"
+  },
+  {
+    "group_id": "4a7f666fb614b47d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_731.jpg",
+    "sha256": "05302f1769113dcaf7e079654c98cdb81ae628ee6980073cfdf6d15324d9a0ea"
+  },
+  {
+    "group_id": "f76e4ce943edd9bb",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_208.jpg",
+    "sha256": "509501865fbbd1634e82013e9b06bd397874787e481c89a5b0dcd28d3a44916e"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_110.jpg",
+    "sha256": "79e5e65d8fe4327a500b0c0cdfb88f63d2de66f860fc80c5de26273abc7d96d7"
+  },
+  {
+    "group_id": "443b0236474caac0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_976.jpg",
+    "sha256": "956d506b144f905cbcdad8bb860a5612352bc8c05232499513c21d3e4792a4bd"
+  },
+  {
+    "group_id": "380a9fedd8b3f419",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1235.jpg",
+    "sha256": "45bb714cdc91a739ae2757a2614c1b07638215283ee339ea6674d17910fd07d1"
+  },
+  {
+    "group_id": "835c87842ed45d89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_303.jpg",
+    "sha256": "6b5118bc2c05b7d260c614a5b1f8e15edd4cf7ecf687ebd1b30049df1c3c10b7"
+  },
+  {
+    "group_id": "07ced53a5440b1dd",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_972.jpg",
+    "sha256": "f2ab017925e3b90670a98cbc192c8a4432c5669a04f5017a5a5f6f0f05a4a85e"
+  },
+  {
+    "group_id": "c850e30b4544f605",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_808.jpg",
+    "sha256": "b05ad2ea27d8fd7526fe036b76cb19a681ddf56b757a4519a814c3336d68d14c"
+  },
+  {
+    "group_id": "edeb3bdcdcda187b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_879.jpg",
+    "sha256": "32e220c761d9d8c32c77543a7690b8bc904870d56f6af42cfbbaa32a9b7556ad"
+  },
+  {
+    "group_id": "2af50d24cd88b4c8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_567.jpg",
+    "sha256": "44a22876360230c9ff465532477b3a9e0dd4ce922856a26ca833de265a82f11e"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_374.jpg",
+    "sha256": "50fa21cec7f9a1ac4d80f95f810d9890563f2e5b91160d4d83e945add7298660"
+  },
+  {
+    "group_id": "db4a9dd3371e438f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1039.jpg",
+    "sha256": "cc0250d1cc59fb33e3ef9fe3aa6f4d46a0b4a96c0dc4bf62b84ac9add9a682a9"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_111.jpg",
+    "sha256": "726a66f71a0db2329ba4d1b8ce1c29277add761502709d46dabbb9f32ff0fd72"
+  },
+  {
+    "group_id": "a484807a633bae00",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1345.jpg",
+    "sha256": "0f89964adfa577ffc23f9417dc020f6d4954be54f0e2a4ad2cdef22657ba250f"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1348.jpg",
+    "sha256": "677ad07d344037fc8c15eb5eee7dee8b6fd3c82750c3a6f053488c836c1a887e"
+  },
+  {
+    "group_id": "c54f9fd16cefdcc8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1201.jpg",
+    "sha256": "5dcec96ca17981a95541c7b59c80176b4955f634fa23bd43457f04672480285c"
+  },
+  {
+    "group_id": "918de5f52f679f26",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_245.jpg",
+    "sha256": "5c32bc4af148302670ffb8a5aa58fc239cea60fbbfc08ba34a65230a0de6f6f4"
+  },
+  {
+    "group_id": "e1332d11b5d656d8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_355.jpg",
+    "sha256": "55253bf7b87e4937dd30007c7419dd079a94470c89dcb6f183c50435b6687a3c"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1196.jpg",
+    "sha256": "ac081dc77c62c1902feb757aa652c2af19c67d31ec646fd3f2a50249729f570c"
+  },
+  {
+    "group_id": "dc1146ffa34e6127",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1308.jpg",
+    "sha256": "5b7a3cbae3883d2f4933920cdca94c21e518ad8f961dec14a05dcdfc980a1518"
+  },
+  {
+    "group_id": "3944f6903e8c7408",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_220.jpg",
+    "sha256": "da04318c83603393abef1cfbb47dbee3b10686798af17aebd0c3f91b1a488b42"
+  },
+  {
+    "group_id": "835c87842ed45d89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1212.jpg",
+    "sha256": "c8fb9c6460ef410858fa717c1ab5f5d4828e51d3af2d59cc2982b1d5e14b840b"
+  },
+  {
+    "group_id": "25f59c33695238be",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_707.jpg",
+    "sha256": "16ff9fb169a6a472535da28292346f219d4ea96ea4330e292a558329bf4f245c"
+  },
+  {
+    "group_id": "b4c3b4fb46b618cd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_7.jpg",
+    "sha256": "3b814d7fbcb5e403f54a60edbf7d069e63a6ff76d310d83dffd65b7187ddf763"
+  },
+  {
+    "group_id": "5d97deae65282199",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_89.jpg",
+    "sha256": "0f673459b5dba7f9dab9a6a32309e2c89ddf4bb9b799d3350f56c33e8cc8b2d3"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_326.jpg",
+    "sha256": "834db082aecf03f2310a9599b16642f5f3a4d76da639d92bd083305cad59111e"
+  },
+  {
+    "group_id": "4f6ffc0a91fb9e8f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_555.jpg",
+    "sha256": "dec07729b572e234c1e842ad5fd5fc377be8b33cac553f1b7edd65c7a9ecbb7b"
+  },
+  {
+    "group_id": "e51b2611044f9bac",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_312.jpg",
+    "sha256": "f07d5a9e4c17ba97b25383a5774b27c9a52a6addcdfa7c6d3bb3e78f6cbb6f81"
+  },
+  {
+    "group_id": "26c2f3a95a0e370c",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_87.jpg",
+    "sha256": "0ae021e221cf0803074d8359da04af9e76e9879fc056d6205ee35caa2826557c"
+  },
+  {
+    "group_id": "feb5f3bcef460171",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_28.jpg",
+    "sha256": "b577189346bc4cc74942150e5875bead25153aa474db97d1882ebf72244de3ec"
+  },
+  {
+    "group_id": "db2a198e53213662",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_624.jpg",
+    "sha256": "726145f565792e5a11493b9685ead964b689dec6a81d3fdc61dd7aaae6a2999e"
+  },
+  {
+    "group_id": "fe962ec1d120c5fc",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_878.jpg",
+    "sha256": "6423207439a4043ccb32cc51e2142c0000254cf789be24a5eaeecbfb5a95e71a"
+  },
+  {
+    "group_id": "890c1e8e7d5f5d38",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_65.jpg",
+    "sha256": "f476fb7645b451016ebf3b60c92cbc48529c48beb0fe7a19b7c5ad577714c41f"
+  },
+  {
+    "group_id": "a9b72b56102a6f68",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_857.jpg",
+    "sha256": "bda484a632a2f6a5e8083fe8954759e1176bac99ca707af27f87dfbddf56feba"
+  },
+  {
+    "group_id": "937cc4d160ec1364",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_692.jpg",
+    "sha256": "fc092ed78ea1933ce3ea2e6b61d202ee8d65ccddc769160cde5f0e3e61eef32b"
+  },
+  {
+    "group_id": "ba83faa6767bbb15",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_463.jpg",
+    "sha256": "a5ca10c85461cc7a98eb087eb614a0064585e72a412d38bf7fc3c140b4ac6c55"
+  },
+  {
+    "group_id": "35b8dd331c5f0493",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_75.jpg",
+    "sha256": "5cf0a9333dc348e7e3dbb0e782684baa469232173ade3240d30551077121d0e1"
+  },
+  {
+    "group_id": "3727819a5a43c373",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_997.jpg",
+    "sha256": "11710fc637162c21b6e62968d417c852ec8daa3c4cb42a403b775db39b44e3f0"
+  },
+  {
+    "group_id": "488805d942600ad7",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_122.jpg",
+    "sha256": "e8b051083198eb9e96432fcb89e2c8b574dc7298e4e390e60e9e1b54d0ff4b63"
+  },
+  {
+    "group_id": "4e5652485a684cfb",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_846.jpg",
+    "sha256": "6d4ca73d883aeedbb66b18e8a3a9244a2bc777abae38eb45def1cac49be2e53f"
+  },
+  {
+    "group_id": "661dbfbc5fd8621a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_388.jpg",
+    "sha256": "4632235f0b739980b35b1afb70a946ce6be8aebe284add9cfd8048973baf152e"
+  },
+  {
+    "group_id": "8ff0442b0b5f95b5",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_959.jpg",
+    "sha256": "a8155f8b8f640f8464b58a380026d01471800d15e76cbfd9678848d669c7e3a7"
+  },
+  {
+    "group_id": "4b071d6ab2d9adcf",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1075.jpg",
+    "sha256": "64da1e2ed0df51e4ec91d439e8fef6bd923ed3992a78ad72b0cc073bb6dd1184"
+  },
+  {
+    "group_id": "f160820e6739e7f8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_503.jpg",
+    "sha256": "b64dc2d55d37c2bb6b27d38b2b42a15d65c9e1e13b85a5a319202b9abe5b3bb9"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_466.jpg",
+    "sha256": "a6a747bb5f6af02f154c793f8a2955176e42ab692aa6c410648cb41204fcd371"
+  },
+  {
+    "group_id": "8776d9b4d104d9b6",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_744.jpg",
+    "sha256": "d2415a0edbf2b07965c430d3aaf4a2e149f3afeec3480d521d800a757b69d447"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_906.jpg",
+    "sha256": "9652169786420306650613dd51653cdcfd5af138be3e811fa8041c55a57f1873"
+  },
+  {
+    "group_id": "3d3fd14245420c39",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_381.jpg",
+    "sha256": "d90903f2d478f7ff8c05e17918dd1628d422f9622454446bf4728f65d54d5e3d"
+  },
+  {
+    "group_id": "02b8f68a31ab0329",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_73.jpg",
+    "sha256": "8f6527cb3fcade0ab52b3630bd918b0ee9096888321c1565d4334090055ab46f"
+  },
+  {
+    "group_id": "2e169eec28919626",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1111.jpg",
+    "sha256": "b509413a0acc8c116cabf3ba89af7be6e0b1ce1edcc9c73e24791d32204f5432"
+  },
+  {
+    "group_id": "c27b8c322e92c91b",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_457.jpg",
+    "sha256": "3cf9bbb6ce5295cad9e903a3b404d87e6347cf8b0917b84c53c7c8cf092d5893"
+  },
+  {
+    "group_id": "18bcbd41b92228bd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_442.jpg",
+    "sha256": "a4c5bb886c3cfa9c19100e963c3df3db233a809e2705b39892b0a13b59b01a04"
+  },
+  {
+    "group_id": "823f8f17bacaf980",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_694.jpg",
+    "sha256": "d91ae0e0d1f99015ce544e9428ed73985c5aaa9fa4a189039c114b41e83ae67b"
+  },
+  {
+    "group_id": "19b074038fd41e1a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_432.jpg",
+    "sha256": "14ac2596baca8b83eadd347035b83d8e49507353477c1b5db527a036178876d1"
+  },
+  {
+    "group_id": "ea80d943d6e612a4",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1328.jpg",
+    "sha256": "a31a892f2589e15d5841388859b06416c1f5465e74fdcb35369e3df6cdacf220"
+  },
+  {
+    "group_id": "aef69704bc8cc41b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1149.jpg",
+    "sha256": "8dfab7ca1bc3729df9e500424fa51d9e44d527d2179ec10f56d6c3c8d5c6c34f"
+  },
+  {
+    "group_id": "f71e58eb9208b0ed",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1148.jpg",
+    "sha256": "e29b026c8867e92ece7815c50da7ea4d0a1e8bb3e94c5d0c2175d9554abca7b7"
+  },
+  {
+    "group_id": "828f5756a62d8997",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_768.jpg",
+    "sha256": "ac8f48d2acbfe09e5173341ec37ac01ad6790d1bb5c91df6c5a7577f3a43a718"
+  },
+  {
+    "group_id": "d8bfb0e12e84cd4f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_94.jpg",
+    "sha256": "c4945a0ff7c60610c3e86df7d6f29dfd32bdc7315244f80b124adbe01687497c"
+  },
+  {
+    "group_id": "94bfe430c8814698",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_400.jpg",
+    "sha256": "e5053db6cb8383c58f2cd3717a6d92417b7b2d70acaa121a4e3b8fb79375f79c"
+  },
+  {
+    "group_id": "176960e59072ac87",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_201.jpg",
+    "sha256": "05730c1b2603d901d540a8f923fa3db4ebaf6513e21fd385ae4a8aee0539682c"
+  },
+  {
+    "group_id": "90021b9c6ccb2e4d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_111.jpg",
+    "sha256": "fd6702ed37c23010dffb84bf90ba1d524825736ed1359430632dbda493c0ab84"
+  },
+  {
+    "group_id": "5ff10372a9289fdb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_518.jpg",
+    "sha256": "eb5e147c031d5cc6c777dce8c84088647632a92c8c7afec47e2f0dfd738a4a58"
+  },
+  {
+    "group_id": "d3edb8ad674662ff",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_267.jpg",
+    "sha256": "594616f87b2fadbffe0e154bbc408a8f3d32767029d5785438b6a961a2efa19a"
+  },
+  {
+    "group_id": "938dcce7a3d9b825",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_747.jpg",
+    "sha256": "488a8888e86721f95b384ba911d76fd92a2afec9e59510110e55b6c8dccf3169"
+  },
+  {
+    "group_id": "a8764e346a73d217",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_702.jpg",
+    "sha256": "1d489fd63322dff8146dfb442c512362d2d42d5f4e44b90414202ac0abe5f97e"
+  },
+  {
+    "group_id": "1090b657d569504c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_595.jpg",
+    "sha256": "6eeeb7b81b6cfaf43fe7052656ddb7dcd930af84923187f18ffd19b33750a019"
+  },
+  {
+    "group_id": "85086e0ae1b99320",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_903.jpg",
+    "sha256": "5e9f018066eea899fce2090a09df1dc8106307d4644b172c3acee9b553a6d463"
+  },
+  {
+    "group_id": "96693ceb27f2b80d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_813.jpg",
+    "sha256": "d4a14fd648e9bbc3bd50369e835f1cd372ce29d02d43de2a769031a7fef8ef6f"
+  },
+  {
+    "group_id": "f9fc33dfefd34927",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_629.jpg",
+    "sha256": "a3caba23e63b0858347347deeefb13f241a34116ee8ff19ff099d1f0c04fcabf"
+  },
+  {
+    "group_id": "4689614486ba693c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_2.jpg",
+    "sha256": "f0de08e0db0b9700ae689d0e9328b2ba856d0194f15c58fbe80f666edafd6f42"
+  },
+  {
+    "group_id": "750e737cf3e76b49",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1239.jpg",
+    "sha256": "08dd3bdd267d7cd7bb1aaf2f22515de1522831fb975640e58fcdc37bcef49608"
+  },
+  {
+    "group_id": "2f09adf91622be6d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_933.jpg",
+    "sha256": "f3d9a4b8a5e1f5cba8b79aa21ec1a6d4ec5a6ad100bdf3206e7fb90a6a9f4cc6"
+  },
+  {
+    "group_id": "1dd444665f2f37da",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_47.jpg",
+    "sha256": "29640e5630fc34bacfcabe9e4669020c44be5f2223d93432b4b89df1077126bd"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_565.jpg",
+    "sha256": "84cdcb9b556da05793446791a0e594fbecea807483d8462558278cdc51dc2d64"
+  },
+  {
+    "group_id": "42bf7a07a7d03032",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_690.jpg",
+    "sha256": "b4373b755d579a63136a2fd550cd6071b6617a9ba8ceb7058d4bec6bd9990bb5"
+  },
+  {
+    "group_id": "6840d9d066e016cf",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_830.jpg",
+    "sha256": "de33127accb6c32fea21d9f3c9d440dd58e6a0ce2da277d38f19c52772165b81"
+  },
+  {
+    "group_id": "3b59e09554d52624",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1213.jpg",
+    "sha256": "c46017f0fe39ce4146480f5c7b1cb6beca04b6ca042594726f12416fd2fdcab9"
+  },
+  {
+    "group_id": "5d37b537bda62ae2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_462.jpg",
+    "sha256": "1c46e75ea767287555fe60713098012ddf168ab90459c2206353dbf302396c40"
+  },
+  {
+    "group_id": "76f0398f207c6043",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1140.jpg",
+    "sha256": "dde07981a2f82c22f7a50a68cf6ea11b5713c0155974e9623a87e582695a20ca"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_281.jpg",
+    "sha256": "4a81ab9771c9a66034c4a5c657354dde68d7bcfb7e166baf7e578c5619a6fa0f"
+  },
+  {
+    "group_id": "e34dde8ba0fde6d7",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1242.jpg",
+    "sha256": "f0f59157eff868aa8dc74d5a6b5d384421c8587b5f15d90ca8414f4650276436"
+  },
+  {
+    "group_id": "6a78c63d901407b2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_782.jpg",
+    "sha256": "85ca4d09151dda122821454a53414443fee2811001c3a740fb9baa3e83c68fa4"
+  },
+  {
+    "group_id": "a276f5ef3509832f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_84.jpg",
+    "sha256": "6ae7fa1a208c898b51bbbea8688ffa4d194b44fb89055ecdf4bd4a196e2b30f6"
+  },
+  {
+    "group_id": "078f81fc176780dc",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1025.jpg",
+    "sha256": "709b92f6da6aca8a5af8d5a7efb55d68bf595fb783b1d0559d558e04d1cd6bdf"
+  },
+  {
+    "group_id": "973f817e97ef4635",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_131.jpg",
+    "sha256": "fb4f36cec8b0123a1579e9e02160a16a20e2c63b10241c496059f3b31148f359"
+  },
+  {
+    "group_id": "563a64935b63d159",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1353.jpg",
+    "sha256": "3a94f090c2f5e925afe5d137eacb8ea77b32dce334f7856415afbd3be28e2cde"
+  },
+  {
+    "group_id": "d42a588c333ced7e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1198.jpg",
+    "sha256": "1bbca8899bd626ee541317612316e21f2a3d55117aa715a3044c382bb960c41d"
+  },
+  {
+    "group_id": "0cae7b263a494ff7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_24.jpg",
+    "sha256": "a507cd4b83f9e9bfaeaf2fd52ec78be0ea7555ef9425aaddb72c51cfe5fda35d"
+  },
+  {
+    "group_id": "57bf37cbbb1f15c1",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_944.jpg",
+    "sha256": "7c253da5718d4579027b2a16b0fbb52bdaea592c53b85fafbf0940733daec2b9"
+  },
+  {
+    "group_id": "0c1c00646902396a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_727.jpg",
+    "sha256": "3f2d830164f6444c68d9758fc281a416a30456a361fa56c1a90970d79c8354f0"
+  }
+]

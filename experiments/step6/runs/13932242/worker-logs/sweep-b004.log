@@ -1,0 +1,9 @@
+sweep B=4 trial=0 warmup 1/10: 1641.43 ms
+sweep B=4 trial=0 warmup 10/10: 1393.03 ms
+sweep B=4 trial=0 measured 1/10: 1405.93 ms
+sweep B=4 trial=0 measured 10/10: 1404.10 ms
+sweep B=4 trial=1 warmup 1/10: 1404.97 ms
+sweep B=4 trial=1 warmup 10/10: 1400.80 ms
+sweep B=4 trial=1 measured 1/10: 1406.62 ms
+sweep B=4 trial=1 measured 10/10: 1421.38 ms
+PASS: sweep batch 4

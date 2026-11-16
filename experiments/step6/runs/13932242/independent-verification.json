@@ -1,0 +1,297 @@
+{
+  "status": "passed",
+  "selected_batch_size": 4,
+  "checkpoint_files_verified": 12,
+  "sweep": {
+    "16": {
+      "batch_size": 16,
+      "measurements": 20,
+      "images": 320,
+      "mean_batch_ms": 5437.7264384499995,
+      "p50_batch_ms": 5437.9405335,
+      "p95_batch_ms": 5541.57567025,
+      "mean_amortized_image_ms": 339.85790240312497,
+      "p50_amortized_image_ms": 339.87128334375,
+      "p95_amortized_image_ms": 346.348479390625,
+      "throughput_images_s": 2.942406202501193,
+      "peak_allocated_bytes": 8783916032,
+      "peak_reserved_bytes": 10760486912,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 5424.2854535,
+          "throughput_images_s": 2.949697271126478
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 5451.167423399999,
+          "throughput_images_s": 2.9351510891625647
+        }
+      ],
+      "trial_mean_batch_ms_std": 19.008423207942375
+    },
+    "2": {
+      "batch_size": 2,
+      "measurements": 20,
+      "images": 40,
+      "mean_batch_ms": 752.25382705,
+      "p50_batch_ms": 750.586087,
+      "p95_batch_ms": 774.4320676499999,
+      "mean_amortized_image_ms": 376.126913525,
+      "p50_amortized_image_ms": 375.2930435,
+      "p95_amortized_image_ms": 387.21603382499995,
+      "throughput_images_s": 2.658677068939745,
+      "peak_allocated_bytes": 2018490368,
+      "peak_reserved_bytes": 2283798528,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 754.803361,
+          "throughput_images_s": 2.649696733398621
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 749.7042931,
+          "throughput_images_s": 2.667718483683844
+        }
+      ],
+      "trial_mean_batch_ms_std": 3.6055854898206645
+    },
+    "8": {
+      "batch_size": 8,
+      "measurements": 20,
+      "images": 160,
+      "mean_batch_ms": 2763.5512331,
+      "p50_batch_ms": 2757.843613,
+      "p95_batch_ms": 2817.1609748499995,
+      "mean_amortized_image_ms": 345.4439041375,
+      "p50_amortized_image_ms": 344.730451625,
+      "p95_amortized_image_ms": 352.14512185624994,
+      "throughput_images_s": 2.8948260137830117,
+      "peak_allocated_bytes": 4914962432,
+      "peak_reserved_bytes": 5911871488,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 2759.5529791,
+          "throughput_images_s": 2.899020261828464
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 2767.5494871,
+          "throughput_images_s": 2.8906438845228624
+        }
+      ],
+      "trial_mean_batch_ms_std": 5.654385032612601
+    },
+    "32": {
+      "batch_size": 32,
+      "measurements": 20,
+      "images": 640,
+      "mean_batch_ms": 10806.00801685,
+      "p50_batch_ms": 10774.3939,
+      "p95_batch_ms": 11049.214263,
+      "mean_amortized_image_ms": 337.6877505265625,
+      "p50_amortized_image_ms": 336.699809375,
+      "p95_amortized_image_ms": 345.28794571875,
+      "throughput_images_s": 2.961315589448188,
+      "peak_allocated_bytes": 16521821696,
+      "peak_reserved_bytes": 20459814912,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 10895.5904812,
+          "throughput_images_s": 2.936967946364632
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 10716.4255525,
+          "throughput_images_s": 2.986070293982943
+        }
+      ],
+      "trial_mean_batch_ms_std": 126.6887360345743
+    },
+    "4": {
+      "batch_size": 4,
+      "measurements": 20,
+      "images": 80,
+      "mean_batch_ms": 1418.1552939500002,
+      "p50_batch_ms": 1412.913559,
+      "p95_batch_ms": 1447.0474829999998,
+      "mean_amortized_image_ms": 354.53882348750005,
+      "p50_amortized_image_ms": 353.22838975,
+      "p95_amortized_image_ms": 361.76187074999996,
+      "throughput_images_s": 2.8205655735055406,
+      "peak_allocated_bytes": 2980485632,
+      "peak_reserved_bytes": 3487563776,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 1418.5330465999998,
+          "throughput_images_s": 2.8198144622625247
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 1417.7775413,
+          "throughput_images_s": 2.821317085000717
+        }
+      ],
+      "trial_mean_batch_ms_std": 0.5342229208522835
+    },
+    "1": {
+      "batch_size": 1,
+      "measurements": 20,
+      "images": 20,
+      "mean_batch_ms": 398.0092475,
+      "p50_batch_ms": 398.77461600000004,
+      "p95_batch_ms": 431.28374315,
+      "mean_amortized_image_ms": 398.0092475,
+      "p50_amortized_image_ms": 398.77461600000004,
+      "p95_amortized_image_ms": 431.28374315,
+      "throughput_images_s": 2.5125044362191606,
+      "peak_allocated_bytes": 1531726336,
+      "peak_reserved_bytes": 1732247552,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 10,
+          "mean_batch_ms": 395.4592518,
+          "throughput_images_s": 2.5287055377977126
+        },
+        {
+          "trial": 1,
+          "samples": 10,
+          "mean_batch_ms": 400.55924319999997,
+          "throughput_images_s": 2.4965096099422626
+        }
+      ],
+      "trial_mean_batch_ms_std": 3.6062385029330493
+    }
+  },
+  "baseline": {
+    "batch_size": 4,
+    "measurements": 150,
+    "images": 600,
+    "mean_batch_ms": 1428.3672133666669,
+    "p50_batch_ms": 1430.2700960000002,
+    "p95_batch_ms": 1473.17139875,
+    "mean_amortized_image_ms": 357.0918033416667,
+    "p50_amortized_image_ms": 357.56752400000005,
+    "p95_amortized_image_ms": 368.2928496875,
+    "throughput_images_s": 2.800400319027196,
+    "peak_allocated_bytes": 2980485632,
+    "peak_reserved_bytes": 3487563776,
+    "trials": [
+      {
+        "trial": 0,
+        "samples": 50,
+        "mean_batch_ms": 1438.9489733199998,
+        "throughput_images_s": 2.77980670208968
+      },
+      {
+        "trial": 1,
+        "samples": 50,
+        "mean_batch_ms": 1417.5954632799999,
+        "throughput_images_s": 2.821679459064359
+      },
+      {
+        "trial": 2,
+        "samples": 50,
+        "mean_batch_ms": 1428.5572035,
+        "throughput_images_s": 2.8000278814176305
+      }
+    ],
+    "trial_mean_batch_ms_std": 10.67802275447883
+  },
+  "quality_metrics": {
+    "accuracy": 0.853195164075993,
+    "confusion_matrix": {
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          155,
+          20,
+          0,
+          6,
+          0
+        ],
+        [
+          19,
+          120,
+          3,
+          15,
+          0
+        ],
+        [
+          3,
+          2,
+          116,
+          0,
+          0
+        ],
+        [
+          2,
+          7,
+          8,
+          103,
+          0
+        ]
+      ],
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ]
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "macro_f1": 0.8562927506627541,
+    "n": 579,
+    "per_class": {
+      "glioma": {
+        "f1": 0.8611111111111112,
+        "precision": 0.8659217877094972,
+        "recall": 0.856353591160221,
+        "support": 181
+      },
+      "meningioma": {
+        "f1": 0.7843137254901961,
+        "precision": 0.8053691275167785,
+        "recall": 0.7643312101910829,
+        "support": 157
+      },
+      "notumor": {
+        "f1": 0.9354838709677419,
+        "precision": 0.9133858267716536,
+        "recall": 0.9586776859504132,
+        "support": 121
+      },
+      "pituitary": {
+        "f1": 0.8442622950819673,
+        "precision": 0.8306451612903226,
+        "recall": 0.8583333333333333,
+        "support": 120
+      }
+    }
+  },
+  "validation_images": 579,
+  "exact_batch_one_reference_matches": 8,
+  "test_set_inference": false
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=smolmri-step6-preflight
 #SBATCH --account=edu
-#SBATCH --partition=edu1
+#SBATCH --partition=short
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4

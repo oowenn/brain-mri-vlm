@@ -1,0 +1,7 @@
+{
+  "allowed_drop": 0.02,
+  "invalid_count": 0,
+  "measured_macro_f1": 0.8562927506627541,
+  "reference_macro_f1": 0.8620186316077625,
+  "status": "passed"
+}

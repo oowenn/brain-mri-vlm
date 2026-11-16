@@ -1,0 +1,626 @@
+[
+  {
+    "batch_size": 16,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:25:37.879370+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:21:58.184449+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 16,
+      "images": 320,
+      "mean_amortized_image_ms": 339.857902403125,
+      "mean_batch_ms": 5437.72643845,
+      "measurements": 20,
+      "p50_amortized_image_ms": 339.87128334375,
+      "p50_batch_ms": 5437.9405335,
+      "p95_amortized_image_ms": 346.348479390625,
+      "p95_batch_ms": 5541.57567025,
+      "peak_allocated_bytes": 8783916032,
+      "peak_reserved_bytes": 10760486912,
+      "throughput_images_s": 2.942406202501193,
+      "trial_mean_batch_ms_std": 19.008423207942375,
+      "trials": [
+        {
+          "mean_batch_ms": 5424.285453500001,
+          "samples": 10,
+          "throughput_images_s": 2.949697271126478,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 5451.1674234,
+          "samples": 10,
+          "throughput_images_s": 2.9351510891625647,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  },
+  {
+    "batch_size": 2,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:26:14.044363+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:25:42.745473+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 2,
+      "images": 40,
+      "mean_amortized_image_ms": 376.126913525,
+      "mean_batch_ms": 752.25382705,
+      "measurements": 20,
+      "p50_amortized_image_ms": 375.2930435,
+      "p50_batch_ms": 750.586087,
+      "p95_amortized_image_ms": 387.21603382500007,
+      "p95_batch_ms": 774.4320676500001,
+      "peak_allocated_bytes": 2018490368,
+      "peak_reserved_bytes": 2283798528,
+      "throughput_images_s": 2.658677068939745,
+      "trial_mean_batch_ms_std": 3.6055854898206645,
+      "trials": [
+        {
+          "mean_batch_ms": 754.803361,
+          "samples": 10,
+          "throughput_images_s": 2.649696733398621,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 749.7042931,
+          "samples": 10,
+          "throughput_images_s": 2.667718483683844,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  },
+  {
+    "batch_size": 8,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:28:09.797182+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:26:18.033708+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 8,
+      "images": 160,
+      "mean_amortized_image_ms": 345.4439041375,
+      "mean_batch_ms": 2763.5512331,
+      "measurements": 20,
+      "p50_amortized_image_ms": 344.730451625,
+      "p50_batch_ms": 2757.843613,
+      "p95_amortized_image_ms": 352.14512185625,
+      "p95_batch_ms": 2817.16097485,
+      "peak_allocated_bytes": 4914962432,
+      "peak_reserved_bytes": 5911871488,
+      "throughput_images_s": 2.8948260137830117,
+      "trial_mean_batch_ms_std": 5.654385032612601,
+      "trials": [
+        {
+          "mean_batch_ms": 2759.5529791,
+          "samples": 10,
+          "throughput_images_s": 2.899020261828464,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 2767.5494871,
+          "samples": 10,
+          "throughput_images_s": 2.8906438845228624,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  },
+  {
+    "batch_size": 32,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:35:27.263341+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:28:13.754420+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 32,
+      "images": 640,
+      "mean_amortized_image_ms": 337.6877505265625,
+      "mean_batch_ms": 10806.00801685,
+      "measurements": 20,
+      "p50_amortized_image_ms": 336.699809375,
+      "p50_batch_ms": 10774.3939,
+      "p95_amortized_image_ms": 345.28794571875,
+      "p95_batch_ms": 11049.214263,
+      "peak_allocated_bytes": 16521821696,
+      "peak_reserved_bytes": 20459814912,
+      "throughput_images_s": 2.961315589448188,
+      "trial_mean_batch_ms_std": 126.6887360345743,
+      "trials": [
+        {
+          "mean_batch_ms": 10895.5904812,
+          "samples": 10,
+          "throughput_images_s": 2.936967946364632,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 10716.4255525,
+          "samples": 10,
+          "throughput_images_s": 2.986070293982943,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  },
+  {
+    "batch_size": 4,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:36:29.098447+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:35:31.250918+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 4,
+      "images": 80,
+      "mean_amortized_image_ms": 354.5388234875,
+      "mean_batch_ms": 1418.15529395,
+      "measurements": 20,
+      "p50_amortized_image_ms": 353.22838975,
+      "p50_batch_ms": 1412.913559,
+      "p95_amortized_image_ms": 361.76187074999996,
+      "p95_batch_ms": 1447.0474829999998,
+      "peak_allocated_bytes": 2980485632,
+      "peak_reserved_bytes": 3487563776,
+      "throughput_images_s": 2.8205655735055406,
+      "trial_mean_batch_ms_std": 0.5342229208524444,
+      "trials": [
+        {
+          "mean_batch_ms": 1418.5330466,
+          "samples": 10,
+          "throughput_images_s": 2.8198144622625247,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 1417.7775413,
+          "samples": 10,
+          "throughput_images_s": 2.821317085000717,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  },
+  {
+    "batch_size": 1,
+    "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "config": {
+      "attention": "sdpa",
+      "benchmark": {
+        "baseline_measured_batches": 50,
+        "baseline_seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidate_batch_sizes": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "candidate_order_seed": 2026,
+        "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+        "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+        "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+        "quality_failure": "abort and investigate; do not silently select a different batch",
+        "quality_max_invalid_count": 0,
+        "quality_max_macro_f1_drop": 0.02,
+        "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+        "selection_memory_fraction": 0.8,
+        "selection_throughput_tolerance": 0.05,
+        "sweep_measured_batches": 10,
+        "sweep_seeds": [
+          42,
+          43
+        ],
+        "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+        "warmup_batches": 10,
+        "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+        "workload_per_class": 32
+      },
+      "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+      "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+      "checkpoint_subdirectory": "merged-fp16",
+      "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+      "do_sample": false,
+      "gpu": "NVIDIA RTX A6000",
+      "labels": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "max_new_tokens": 16,
+      "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+      "num_beams": 1,
+      "padding_side": "left",
+      "parser": "exact-label-optional-period-v2",
+      "per_class": 0,
+      "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+      "reference_batch_size": 1,
+      "reference_run": "experiments/step5/runs/13927137",
+      "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+      "seed": 42,
+      "stage": "step6",
+      "wandb_entity": "coms6998-team32-fall2026",
+      "wandb_project": "brain-mri-vlm"
+    },
+    "finished_utc": "2026-11-16T18:36:50.136049+00:00",
+    "mode": "sweep",
+    "process_exit_code": 0,
+    "started_utc": "2026-11-16T18:36:33.029720+00:00",
+    "status": "passed",
+    "summary": {
+      "batch_size": 1,
+      "images": 20,
+      "mean_amortized_image_ms": 398.0092475,
+      "mean_batch_ms": 398.0092475,
+      "measurements": 20,
+      "p50_amortized_image_ms": 398.77461600000004,
+      "p50_batch_ms": 398.77461600000004,
+      "p95_amortized_image_ms": 431.28374315,
+      "p95_batch_ms": 431.28374315,
+      "peak_allocated_bytes": 1531726336,
+      "peak_reserved_bytes": 1732247552,
+      "throughput_images_s": 2.5125044362191606,
+      "trial_mean_batch_ms_std": 3.6062385029330897,
+      "trials": [
+        {
+          "mean_batch_ms": 395.4592518,
+          "samples": 10,
+          "throughput_images_s": 2.5287055377977126,
+          "trial": 0
+        },
+        {
+          "mean_batch_ms": 400.5592432,
+          "samples": 10,
+          "throughput_images_s": 2.4965096099422626,
+          "trial": 1
+        }
+      ]
+    },
+    "test_set_inference": false,
+    "total_memory_bytes": 50897289216
+  }
+]

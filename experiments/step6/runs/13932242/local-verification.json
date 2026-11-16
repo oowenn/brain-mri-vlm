@@ -1,0 +1,338 @@
+{
+  "status": "passed",
+  "python": "3.13.14",
+  "execution_commit": "1697704b4e12910322f61b5259c9483184cafad2",
+  "source_files_verified": 32,
+  "source_sha256": {
+    "cluster/publish_step6.sbatch": "84a73e005598e48adf2bf7f533cf26013d327f2b597388b49db9febe300139fe",
+    "cluster/step6.sbatch": "1728c03ad2c1431655368c4af53aa19b6e393162845302488e39d77ec88404c9",
+    "configs/data.json": "c7f62824a409a1f9b84616b053cd3777f82a377c5a6461b04694b15b2feb42b9",
+    "configs/data_policy.json": "977b8df25f38a8a98c752fc5f6d07092c919a29627914b10e7163cf1db826c94",
+    "configs/step3.json": "21ed7920290f028270e6ef0cbd1691ae0f11ca850995800c713bc4f99e05cbfa",
+    "configs/step4.json": "49d3dd62e56a8da19486b12c6c67a384eb727ce9e02758fc89aaf4813e1f04dc",
+    "configs/step5.json": "5d253d4698b0525eec82b35660ee3b42df594ed5b344ced0aa98bf9eac78318f",
+    "configs/step6.json": "a0070a81ccc2e9bc430e69f633324c3ea4e162e7cd317cf28ecda4acab40d678",
+    "requirements-cluster.txt": "56fe8d81a34f048e233a9c668199980d5a42866095124d7518a07e3690d59ecb",
+    "scripts/benchmark.py": "afe8ac992c226f1d9bc705323368829ea9ef86449b69f3dbc9f550baf7e04afe",
+    "scripts/benchmark_utils.py": "b6a794edd06ce6905fe574b75414d63e398e62d67e479e4b1c7af7733efd3034",
+    "scripts/check_environment.py": "4201d4827c103f5a0cc64838694e9c09fa346e0c3673668fddde88011056adae",
+    "scripts/evaluate.py": "83c31203bbadde173fa7060c532029124db35336c570a01661e09e1f61bd9728",
+    "scripts/finalize_data.py": "193c897672956476220040b31c448ec4afd31dc4f5424962392ab48a62e2889d",
+    "scripts/lora_utils.py": "1c7a1b5c29f63f75d685118732ff5527b7f276cdbdf3a47b7a59c8a1ba3e52c5",
+    "scripts/prepare_data.py": "d7fd94c19d0d9ecc05bcda0221916a31d24346aa68b23753dee1f17a9c4ad290",
+    "scripts/publish_step3.py": "9941ff3b133f215860953d79f5e33dfd06c927ea469556dc55a8d2c3b0832780",
+    "scripts/publish_step4.py": "5a5b3389752f2bea467c901600c14dc8ade2cc9ef30c5822132cd447e46f80cd",
+    "scripts/publish_step5.py": "3a895d30b4c90cd2513ab2c41debe1df0bd83207f39484eb499b0814b4676d2c",
+    "scripts/publish_step6.py": "9bbf2ae3a4d9537beaecf231d5935a747a349caf2259bc8a1ca41f62afcabc58",
+    "scripts/run_step6.py": "1ccbe3f7557bd159462d2cc40d4e67692bc1c57d96842f9304d6082176e74475",
+    "scripts/train_lora.py": "3155e6e0f0ed985ea0dba7c6dd21c852d1ffd5f4b11b892f0e1a5824785c1ac3",
+    "scripts/verify_data.py": "732e5699baeabdab5267cab291df814464b31ce720e31781241e16655c170c2a",
+    "scripts/verify_step4.py": "fd77d861ac9cc77c94657e129e7b49594782df5b65660e26874ce95c316e4bed",
+    "scripts/verify_step5.py": "c8e7d40acc68eefa199d22231503378846aee29401b87688f5f4a267adea80f1",
+    "scripts/verify_step6.py": "d95d6c7dcc0cc684a007f74c0df876a06e7a8c6ef9d2a611097f15a062d2ed8b",
+    "tests/test_benchmark.py": "8586dd50ee58ec426df20c803a4f983fe3613cb501e735c6815d4599642b81ab",
+    "tests/test_evaluate.py": "b68feb0eafa403eabb72f71194a3e4f2d40275309f5d3e8da819fc36a2c5acf8",
+    "tests/test_finalize_data.py": "9a02cb0a77fb49335d93af4b8c9c8f4d0edb192c197806289d442c42e5e28311",
+    "tests/test_lora.py": "813cc012958cabcb23ade5dc8b993df7a4a4cd4ab146ab2116b2f72d5c313c19",
+    "tests/test_prepare_data.py": "ad59ffda2b3f53a80bdcbe1925fff748bb690f0cd0d358cca0d4c7e79f5b78d4",
+    "tests/test_step4.py": "78e0e713f3a261e9270d6b26004065a96e1c5c89352353f064b3be7a7ad46240"
+  },
+  "runtime_artifact_files_verified": 152,
+  "result": {
+    "status": "passed",
+    "selected_batch_size": 4,
+    "checkpoint_files_verified": 12,
+    "sweep": {
+      "16": {
+        "batch_size": 16,
+        "measurements": 20,
+        "images": 320,
+        "mean_batch_ms": 5437.7264384499995,
+        "p50_batch_ms": 5437.9405335,
+        "p95_batch_ms": 5541.57567025,
+        "mean_amortized_image_ms": 339.85790240312497,
+        "p50_amortized_image_ms": 339.87128334375,
+        "p95_amortized_image_ms": 346.348479390625,
+        "throughput_images_s": 2.942406202501193,
+        "peak_allocated_bytes": 8783916032,
+        "peak_reserved_bytes": 10760486912,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 5424.2854535,
+            "throughput_images_s": 2.949697271126478
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 5451.167423399999,
+            "throughput_images_s": 2.9351510891625647
+          }
+        ],
+        "trial_mean_batch_ms_std": 19.008423207942375
+      },
+      "2": {
+        "batch_size": 2,
+        "measurements": 20,
+        "images": 40,
+        "mean_batch_ms": 752.25382705,
+        "p50_batch_ms": 750.586087,
+        "p95_batch_ms": 774.4320676499999,
+        "mean_amortized_image_ms": 376.126913525,
+        "p50_amortized_image_ms": 375.2930435,
+        "p95_amortized_image_ms": 387.21603382499995,
+        "throughput_images_s": 2.658677068939745,
+        "peak_allocated_bytes": 2018490368,
+        "peak_reserved_bytes": 2283798528,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 754.803361,
+            "throughput_images_s": 2.649696733398621
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 749.7042931,
+            "throughput_images_s": 2.667718483683844
+          }
+        ],
+        "trial_mean_batch_ms_std": 3.6055854898206645
+      },
+      "8": {
+        "batch_size": 8,
+        "measurements": 20,
+        "images": 160,
+        "mean_batch_ms": 2763.5512331,
+        "p50_batch_ms": 2757.843613,
+        "p95_batch_ms": 2817.1609748499995,
+        "mean_amortized_image_ms": 345.4439041375,
+        "p50_amortized_image_ms": 344.730451625,
+        "p95_amortized_image_ms": 352.14512185624994,
+        "throughput_images_s": 2.8948260137830117,
+        "peak_allocated_bytes": 4914962432,
+        "peak_reserved_bytes": 5911871488,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 2759.5529791,
+            "throughput_images_s": 2.899020261828464
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 2767.5494871,
+            "throughput_images_s": 2.8906438845228624
+          }
+        ],
+        "trial_mean_batch_ms_std": 5.654385032612601
+      },
+      "32": {
+        "batch_size": 32,
+        "measurements": 20,
+        "images": 640,
+        "mean_batch_ms": 10806.00801685,
+        "p50_batch_ms": 10774.3939,
+        "p95_batch_ms": 11049.214263,
+        "mean_amortized_image_ms": 337.6877505265625,
+        "p50_amortized_image_ms": 336.699809375,
+        "p95_amortized_image_ms": 345.28794571875,
+        "throughput_images_s": 2.961315589448188,
+        "peak_allocated_bytes": 16521821696,
+        "peak_reserved_bytes": 20459814912,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 10895.5904812,
+            "throughput_images_s": 2.936967946364632
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 10716.4255525,
+            "throughput_images_s": 2.986070293982943
+          }
+        ],
+        "trial_mean_batch_ms_std": 126.6887360345743
+      },
+      "4": {
+        "batch_size": 4,
+        "measurements": 20,
+        "images": 80,
+        "mean_batch_ms": 1418.15529395,
+        "p50_batch_ms": 1412.913559,
+        "p95_batch_ms": 1447.0474829999998,
+        "mean_amortized_image_ms": 354.5388234875,
+        "p50_amortized_image_ms": 353.22838975,
+        "p95_amortized_image_ms": 361.76187074999996,
+        "throughput_images_s": 2.8205655735055406,
+        "peak_allocated_bytes": 2980485632,
+        "peak_reserved_bytes": 3487563776,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 1418.5330465999998,
+            "throughput_images_s": 2.8198144622625247
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 1417.7775413,
+            "throughput_images_s": 2.821317085000717
+          }
+        ],
+        "trial_mean_batch_ms_std": 0.5342229208522835
+      },
+      "1": {
+        "batch_size": 1,
+        "measurements": 20,
+        "images": 20,
+        "mean_batch_ms": 398.0092475,
+        "p50_batch_ms": 398.77461600000004,
+        "p95_batch_ms": 431.28374315,
+        "mean_amortized_image_ms": 398.0092475,
+        "p50_amortized_image_ms": 398.77461600000004,
+        "p95_amortized_image_ms": 431.28374315,
+        "throughput_images_s": 2.5125044362191606,
+        "peak_allocated_bytes": 1531726336,
+        "peak_reserved_bytes": 1732247552,
+        "trials": [
+          {
+            "trial": 0,
+            "samples": 10,
+            "mean_batch_ms": 395.4592518,
+            "throughput_images_s": 2.5287055377977126
+          },
+          {
+            "trial": 1,
+            "samples": 10,
+            "mean_batch_ms": 400.55924319999997,
+            "throughput_images_s": 2.4965096099422626
+          }
+        ],
+        "trial_mean_batch_ms_std": 3.6062385029330493
+      }
+    },
+    "baseline": {
+      "batch_size": 4,
+      "measurements": 150,
+      "images": 600,
+      "mean_batch_ms": 1428.3672133666666,
+      "p50_batch_ms": 1430.2700960000002,
+      "p95_batch_ms": 1473.17139875,
+      "mean_amortized_image_ms": 357.09180334166666,
+      "p50_amortized_image_ms": 357.56752400000005,
+      "p95_amortized_image_ms": 368.2928496875,
+      "throughput_images_s": 2.800400319027196,
+      "peak_allocated_bytes": 2980485632,
+      "peak_reserved_bytes": 3487563776,
+      "trials": [
+        {
+          "trial": 0,
+          "samples": 50,
+          "mean_batch_ms": 1438.9489733199998,
+          "throughput_images_s": 2.77980670208968
+        },
+        {
+          "trial": 1,
+          "samples": 50,
+          "mean_batch_ms": 1417.5954632799999,
+          "throughput_images_s": 2.821679459064359
+        },
+        {
+          "trial": 2,
+          "samples": 50,
+          "mean_batch_ms": 1428.5572035,
+          "throughput_images_s": 2.8000278814176305
+        }
+      ],
+      "trial_mean_batch_ms_std": 10.67802275447883
+    },
+    "quality_metrics": {
+      "accuracy": 0.853195164075993,
+      "confusion_matrix": {
+        "columns": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary",
+          "INVALID"
+        ],
+        "counts": [
+          [
+            155,
+            20,
+            0,
+            6,
+            0
+          ],
+          [
+            19,
+            120,
+            3,
+            15,
+            0
+          ],
+          [
+            3,
+            2,
+            116,
+            0,
+            0
+          ],
+          [
+            2,
+            7,
+            8,
+            103,
+            0
+          ]
+        ],
+        "rows": [
+          "glioma",
+          "meningioma",
+          "notumor",
+          "pituitary"
+        ]
+      },
+      "invalid_count": 0,
+      "invalid_rate": 0.0,
+      "macro_f1": 0.8562927506627541,
+      "n": 579,
+      "per_class": {
+        "glioma": {
+          "f1": 0.8611111111111112,
+          "precision": 0.8659217877094972,
+          "recall": 0.856353591160221,
+          "support": 181
+        },
+        "meningioma": {
+          "f1": 0.7843137254901961,
+          "precision": 0.8053691275167785,
+          "recall": 0.7643312101910829,
+          "support": 157
+        },
+        "notumor": {
+          "f1": 0.9354838709677419,
+          "precision": 0.9133858267716536,
+          "recall": 0.9586776859504132,
+          "support": 121
+        },
+        "pituitary": {
+          "f1": 0.8442622950819673,
+          "precision": 0.8306451612903226,
+          "recall": 0.8583333333333333,
+          "support": 120
+        }
+      }
+    },
+    "validation_images": 579,
+    "exact_batch_one_reference_matches": 8,
+    "test_set_inference": false
+  }
+}

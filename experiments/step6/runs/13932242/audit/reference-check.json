@@ -1,0 +1,507 @@
+{
+  "batched": [
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/glioma/Tr-gl_896.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "glioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/glioma/Tr-gl_1239.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "glioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/meningioma/Tr-aug-me_56.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "meningioma",
+      "raw_response": "meningioma",
+      "true_label": "meningioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/meningioma/Tr-me_277.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "meningioma",
+      "raw_response": "meningioma",
+      "true_label": "meningioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        441,
+        382,
+        270,
+        49279
+      ],
+      "image_size": [
+        225,
+        225
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/notumor/Tr-no_169.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "notumor",
+      "raw_response": "notumor",
+      "true_label": "notumor"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        442,
+        442
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/notumor/Tr-no_14.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "notumor"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        29961,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/pituitary/Tr-pi_1129.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "pituitary",
+      "raw_response": "pituitary",
+      "true_label": "pituitary"
+    },
+    {
+      "batch_pixel_values_shape": [
+        8,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        29961,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/pituitary/Tr-pi_773.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "pituitary",
+      "raw_response": "pituitary",
+      "true_label": "pituitary"
+    }
+  ],
+  "batched_probe_label_matches": 8,
+  "exact_batch_one_matches": 8,
+  "singles": [
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/glioma/Tr-gl_896.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "glioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/glioma/Tr-gl_1239.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "glioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/meningioma/Tr-aug-me_56.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "meningioma",
+      "raw_response": "meningioma",
+      "true_label": "meningioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/meningioma/Tr-me_277.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "meningioma",
+      "raw_response": "meningioma",
+      "true_label": "meningioma"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        441,
+        382,
+        270,
+        49279
+      ],
+      "image_size": [
+        225,
+        225
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/notumor/Tr-no_169.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "notumor",
+      "raw_response": "notumor",
+      "true_label": "notumor"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "image_size": [
+        442,
+        442
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/notumor/Tr-no_14.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "glioma",
+      "raw_response": "glioma",
+      "true_label": "notumor"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        29961,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/pituitary/Tr-pi_1129.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "pituitary",
+      "raw_response": "pituitary",
+      "true_label": "pituitary"
+    },
+    {
+      "batch_pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "generated_token_ids": [
+        29961,
+        49279
+      ],
+      "image_size": [
+        512,
+        512
+      ],
+      "input_tokens": 1181,
+      "padded_input_tokens": 1181,
+      "path": "Training/pituitary/Tr-pi_773.jpg",
+      "pixel_values_shape": [
+        1,
+        17,
+        3,
+        512,
+        512
+      ],
+      "prediction": "pituitary",
+      "raw_response": "pituitary",
+      "true_label": "pituitary"
+    }
+  ],
+  "status": "passed"
+}

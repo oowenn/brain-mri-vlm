@@ -1,0 +1,24 @@
+{
+  "batch_size": 4,
+  "command": [
+    "/insomnia001/depts/edu/users/ct3013/envs/smolmri/bin/python",
+    "-u",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/scripts/benchmark.py",
+    "--mode",
+    "baseline",
+    "--batch-size",
+    "4",
+    "--config",
+    "configs/step6.json",
+    "--checkpoint",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+    "--source",
+    "/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2",
+    "--prepared",
+    "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/data/prepared-v3-conservative-patients",
+    "--output",
+    "experiments/step6/runs/13932242/baseline"
+  ],
+  "folder": "baseline",
+  "mode": "baseline"
+}

@@ -1,10 +1,10 @@
 {
-  "status": "GPU benchmark running; completion not yet verified",
+  "status": "all submitted execution jobs completed and verified",
   "date": "2026-11-16",
   "timezone": "America/New_York",
   "gpu_job": {
     "id": 13932242,
-    "last_observed_state": "RUNNING",
+    "last_observed_state": "COMPLETED",
     "reason": null,
     "requested_gpu": "A6000:1",
     "requested_cpus": 4,
@@ -14,7 +14,9 @@
     "memory_adjustment": "Reduced pending reservation from 32 to 16 GiB using scontrol update JobId=13932242 MinMemoryNode=16384; existing job and queue age retained",
     "node": "ins094",
     "start_time": "2026-11-16T13:19:34",
-    "allocated_cpus": 4
+    "allocated_cpus": 4,
+    "exit_code": "0:0",
+    "elapsed": "00:25:12"
   },
   "cpu_preflight_job": {
     "id": 13932248,
@@ -28,9 +30,16 @@
   },
   "evidence_publisher_job": {
     "id": 13932262,
-    "last_observed_state": "PENDING",
-    "reason": "Dependency",
-    "dependency": "afterok:13932242"
+    "last_observed_state": "COMPLETED",
+    "reason": null,
+    "dependency": "afterok:13932242",
+    "requested_memory_gib": 4,
+    "requested_cpus": 1,
+    "memory_adjustment": "Reduced pending reservation to 4 GiB using scontrol; this job downloads compact evidence only",
+    "exit_code": "0:0",
+    "elapsed": "00:00:53",
+    "node": "ins021",
+    "allocated_cpus": 2
   },
-  "verification_boundary": "CPU preflight completion verified after reconnecting; GPU and publisher were still queued. Scheduler estimates are not guarantees."
+  "verification_boundary": "All job completions, source/runtime evidence, and W&B runtime artifact downloads are verified. Initial scheduler estimates were not guarantees."
 }

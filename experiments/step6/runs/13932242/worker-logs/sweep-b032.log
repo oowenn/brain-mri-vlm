@@ -1,0 +1,9 @@
+sweep B=32 trial=0 warmup 1/10: 11197.18 ms
+sweep B=32 trial=0 warmup 10/10: 11251.45 ms
+sweep B=32 trial=0 measured 1/10: 10796.31 ms
+sweep B=32 trial=0 measured 10/10: 10769.32 ms
+sweep B=32 trial=1 warmup 1/10: 10549.38 ms
+sweep B=32 trial=1 warmup 10/10: 10725.18 ms
+sweep B=32 trial=1 measured 1/10: 10919.51 ms
+sweep B=32 trial=1 measured 10/10: 10725.50 ms
+PASS: sweep batch 32

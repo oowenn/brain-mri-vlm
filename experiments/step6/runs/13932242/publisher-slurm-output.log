@@ -1,0 +1,38 @@
+wandb: \ 1 of 153 files downloaded...wandb: | 14 of 153 files downloaded...wandb: / 110 of 153 files downloaded...wandb:   153 of 153 files downloaded.  
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261116_134522-z3njw1g9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step6-13932242-evidence
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/z3njw1g9
+wandb: Adding directory to artifact (/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step6/runs/13932242)... Done. 0.2s
+wandb: updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run summary:
+wandb:                accuracy 0.8532
+wandb:           invalid_count 0
+wandb:                macro_f1 0.85629
+wandb: mean_amortized_image_ms 357.0918
+wandb:           mean_batch_ms 1428.36721
+wandb:            p50_batch_ms 1430.2701
+wandb:            p95_batch_ms 1473.1714
+wandb:    peak_allocated_bytes 2980485632
+wandb:     peak_reserved_bytes 3487563776
+wandb:           recall/glioma 0.85635
+wandb:                      +7 ...
+wandb: 
+wandb: 🚀 View run step6-13932242-evidence at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/z3njw1g9
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 0 media file(s), 151 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261116_134522-z3njw1g9/logs
+{
+  "wandb_run_id": "z3njw1g9",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/z3njw1g9",
+  "artifact_name": "step6-checkpoint-13932242:v0",
+  "artifact_digest": "24a8576b007ba2f38a3026c5fe54ea94",
+  "benchmark_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/apjpl38l"
+}
+PASS: Step 6 W&B results, downloaded evidence, and complete checkpoint verified

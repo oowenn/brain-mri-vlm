@@ -1,0 +1,399 @@
+{
+  "status": "verified-complete",
+  "stage": "step6",
+  "execution_commit": "1697704b4e12910322f61b5259c9483184cafad2",
+  "gpu_job": {
+    "JobIDRaw": "13932242",
+    "JobName": "smolmri-step6",
+    "Partition": "short",
+    "State": "COMPLETED",
+    "ExitCode": "0:0",
+    "Elapsed": "00:25:12",
+    "Start": "2026-11-16T13:19:34",
+    "End": "2026-11-16T13:44:46",
+    "NodeList": "ins094",
+    "AllocCPUS": "4",
+    "ReqMem": "16G",
+    "AllocTRES": "billing=4,cpu=4,gres/gpu:a6000=1,gres/gpu=1,mem=16G,node=1",
+    "MaxRSS": ""
+  },
+  "publisher_job": {
+    "JobIDRaw": "13932262",
+    "JobName": "smolmri-step6-evidence",
+    "Partition": "short",
+    "State": "COMPLETED",
+    "ExitCode": "0:0",
+    "Elapsed": "00:00:53",
+    "Start": "2026-11-16T13:44:49",
+    "End": "2026-11-16T13:45:42",
+    "NodeList": "ins021",
+    "AllocCPUS": "2",
+    "ReqMem": "4G",
+    "AllocTRES": "billing=2,cpu=2,mem=4G,node=1",
+    "MaxRSS": ""
+  },
+  "selected_batch_size": 4,
+  "model_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+  "model_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+  "baseline": {
+    "batch_size": 4,
+    "images": 600,
+    "mean_amortized_image_ms": 357.09180334166666,
+    "mean_batch_ms": 1428.3672133666666,
+    "measurements": 150,
+    "p50_amortized_image_ms": 357.56752400000005,
+    "p50_batch_ms": 1430.2700960000002,
+    "p95_amortized_image_ms": 368.29284968749994,
+    "p95_batch_ms": 1473.1713987499998,
+    "peak_allocated_bytes": 2980485632,
+    "peak_reserved_bytes": 3487563776,
+    "throughput_images_s": 2.800400319027196,
+    "trial_mean_batch_ms_std": 10.678022754478944,
+    "trials": [
+      {
+        "mean_batch_ms": 1438.94897332,
+        "samples": 50,
+        "throughput_images_s": 2.77980670208968,
+        "trial": 0
+      },
+      {
+        "mean_batch_ms": 1417.5954632799999,
+        "samples": 50,
+        "throughput_images_s": 2.821679459064359,
+        "trial": 1
+      },
+      {
+        "mean_batch_ms": 1428.5572035,
+        "samples": 50,
+        "throughput_images_s": 2.8000278814176305,
+        "trial": 2
+      }
+    ]
+  },
+  "quality": {
+    "accuracy": 0.853195164075993,
+    "confusion_matrix": {
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          155,
+          20,
+          0,
+          6,
+          0
+        ],
+        [
+          19,
+          120,
+          3,
+          15,
+          0
+        ],
+        [
+          3,
+          2,
+          116,
+          0,
+          0
+        ],
+        [
+          2,
+          7,
+          8,
+          103,
+          0
+        ]
+      ],
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ]
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "macro_f1": 0.8562927506627541,
+    "n": 579,
+    "per_class": {
+      "glioma": {
+        "f1": 0.8611111111111112,
+        "precision": 0.8659217877094972,
+        "recall": 0.856353591160221,
+        "support": 181
+      },
+      "meningioma": {
+        "f1": 0.7843137254901961,
+        "precision": 0.8053691275167785,
+        "recall": 0.7643312101910829,
+        "support": 157
+      },
+      "notumor": {
+        "f1": 0.9354838709677419,
+        "precision": 0.9133858267716536,
+        "recall": 0.9586776859504132,
+        "support": 121
+      },
+      "pituitary": {
+        "f1": 0.8442622950819673,
+        "precision": 0.8306451612903226,
+        "recall": 0.8583333333333333,
+        "support": 120
+      }
+    }
+  },
+  "quality_reference": {
+    "step5_macro_f1": 0.8620186316077625,
+    "absolute_macro_f1_drop": 0.005725880945008366,
+    "changed_predictions": [
+      {
+        "path": "Training/glioma/Tr-gl_116.jpg",
+        "truth": "glioma",
+        "step5_batch1": "glioma",
+        "step6_batch4": "meningioma"
+      },
+      {
+        "path": "Training/glioma/Tr-gl_363.jpg",
+        "truth": "glioma",
+        "step5_batch1": "glioma",
+        "step6_batch4": "meningioma"
+      },
+      {
+        "path": "Training/glioma/Tr-gl_649.jpg",
+        "truth": "glioma",
+        "step5_batch1": "glioma",
+        "step6_batch4": "meningioma"
+      },
+      {
+        "path": "Training/glioma/Tr-gl_846.jpg",
+        "truth": "glioma",
+        "step5_batch1": "glioma",
+        "step6_batch4": "meningioma"
+      }
+    ]
+  },
+  "sweep": [
+    {
+      "batch_size": 1,
+      "status": "passed",
+      "summary": {
+        "batch_size": 1,
+        "images": 20,
+        "mean_amortized_image_ms": 398.0092475,
+        "mean_batch_ms": 398.0092475,
+        "measurements": 20,
+        "p50_amortized_image_ms": 398.77461600000004,
+        "p50_batch_ms": 398.77461600000004,
+        "p95_amortized_image_ms": 431.28374315,
+        "p95_batch_ms": 431.28374315,
+        "peak_allocated_bytes": 1531726336,
+        "peak_reserved_bytes": 1732247552,
+        "throughput_images_s": 2.5125044362191606,
+        "trial_mean_batch_ms_std": 3.6062385029330897,
+        "trials": [
+          {
+            "mean_batch_ms": 395.4592518,
+            "samples": 10,
+            "throughput_images_s": 2.5287055377977126,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 400.5592432,
+            "samples": 10,
+            "throughput_images_s": 2.4965096099422626,
+            "trial": 1
+          }
+        ]
+      }
+    },
+    {
+      "batch_size": 2,
+      "status": "passed",
+      "summary": {
+        "batch_size": 2,
+        "images": 40,
+        "mean_amortized_image_ms": 376.126913525,
+        "mean_batch_ms": 752.25382705,
+        "measurements": 20,
+        "p50_amortized_image_ms": 375.2930435,
+        "p50_batch_ms": 750.586087,
+        "p95_amortized_image_ms": 387.21603382500007,
+        "p95_batch_ms": 774.4320676500001,
+        "peak_allocated_bytes": 2018490368,
+        "peak_reserved_bytes": 2283798528,
+        "throughput_images_s": 2.658677068939745,
+        "trial_mean_batch_ms_std": 3.6055854898206645,
+        "trials": [
+          {
+            "mean_batch_ms": 754.803361,
+            "samples": 10,
+            "throughput_images_s": 2.649696733398621,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 749.7042931,
+            "samples": 10,
+            "throughput_images_s": 2.667718483683844,
+            "trial": 1
+          }
+        ]
+      }
+    },
+    {
+      "batch_size": 4,
+      "status": "passed",
+      "summary": {
+        "batch_size": 4,
+        "images": 80,
+        "mean_amortized_image_ms": 354.5388234875,
+        "mean_batch_ms": 1418.15529395,
+        "measurements": 20,
+        "p50_amortized_image_ms": 353.22838975,
+        "p50_batch_ms": 1412.913559,
+        "p95_amortized_image_ms": 361.76187074999996,
+        "p95_batch_ms": 1447.0474829999998,
+        "peak_allocated_bytes": 2980485632,
+        "peak_reserved_bytes": 3487563776,
+        "throughput_images_s": 2.8205655735055406,
+        "trial_mean_batch_ms_std": 0.5342229208524444,
+        "trials": [
+          {
+            "mean_batch_ms": 1418.5330466,
+            "samples": 10,
+            "throughput_images_s": 2.8198144622625247,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 1417.7775413,
+            "samples": 10,
+            "throughput_images_s": 2.821317085000717,
+            "trial": 1
+          }
+        ]
+      }
+    },
+    {
+      "batch_size": 8,
+      "status": "passed",
+      "summary": {
+        "batch_size": 8,
+        "images": 160,
+        "mean_amortized_image_ms": 345.4439041375,
+        "mean_batch_ms": 2763.5512331,
+        "measurements": 20,
+        "p50_amortized_image_ms": 344.730451625,
+        "p50_batch_ms": 2757.843613,
+        "p95_amortized_image_ms": 352.14512185625,
+        "p95_batch_ms": 2817.16097485,
+        "peak_allocated_bytes": 4914962432,
+        "peak_reserved_bytes": 5911871488,
+        "throughput_images_s": 2.8948260137830117,
+        "trial_mean_batch_ms_std": 5.654385032612601,
+        "trials": [
+          {
+            "mean_batch_ms": 2759.5529791,
+            "samples": 10,
+            "throughput_images_s": 2.899020261828464,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 2767.5494871,
+            "samples": 10,
+            "throughput_images_s": 2.8906438845228624,
+            "trial": 1
+          }
+        ]
+      }
+    },
+    {
+      "batch_size": 16,
+      "status": "passed",
+      "summary": {
+        "batch_size": 16,
+        "images": 320,
+        "mean_amortized_image_ms": 339.857902403125,
+        "mean_batch_ms": 5437.72643845,
+        "measurements": 20,
+        "p50_amortized_image_ms": 339.87128334375,
+        "p50_batch_ms": 5437.9405335,
+        "p95_amortized_image_ms": 346.348479390625,
+        "p95_batch_ms": 5541.57567025,
+        "peak_allocated_bytes": 8783916032,
+        "peak_reserved_bytes": 10760486912,
+        "throughput_images_s": 2.942406202501193,
+        "trial_mean_batch_ms_std": 19.008423207942375,
+        "trials": [
+          {
+            "mean_batch_ms": 5424.285453500001,
+            "samples": 10,
+            "throughput_images_s": 2.949697271126478,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 5451.1674234,
+            "samples": 10,
+            "throughput_images_s": 2.9351510891625647,
+            "trial": 1
+          }
+        ]
+      }
+    },
+    {
+      "batch_size": 32,
+      "status": "passed",
+      "summary": {
+        "batch_size": 32,
+        "images": 640,
+        "mean_amortized_image_ms": 337.6877505265625,
+        "mean_batch_ms": 10806.00801685,
+        "measurements": 20,
+        "p50_amortized_image_ms": 336.699809375,
+        "p50_batch_ms": 10774.3939,
+        "p95_amortized_image_ms": 345.28794571875,
+        "p95_batch_ms": 11049.214263,
+        "peak_allocated_bytes": 16521821696,
+        "peak_reserved_bytes": 20459814912,
+        "throughput_images_s": 2.961315589448188,
+        "trial_mean_batch_ms_std": 126.6887360345743,
+        "trials": [
+          {
+            "mean_batch_ms": 10895.5904812,
+            "samples": 10,
+            "throughput_images_s": 2.936967946364632,
+            "trial": 0
+          },
+          {
+            "mean_batch_ms": 10716.4255525,
+            "samples": 10,
+            "throughput_images_s": 2.986070293982943,
+            "trial": 1
+          }
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "unit_tests_passed": 32,
+    "source_images_verified": 7200,
+    "checkpoint_files_verified": 12,
+    "execution_source_files_verified": 32,
+    "downloaded_runtime_artifact_files_verified": 153,
+    "gpu_and_publisher_exit_codes": "0:0"
+  },
+  "wandb": {
+    "benchmark_run": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/apjpl38l",
+    "publisher_run": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/z3njw1g9",
+    "runtime_artifact": "step6-13932242-baseline:v0",
+    "runtime_artifact_digest": "087a55e0902ef4ab843374bd3e405993",
+    "checkpoint_artifact": "step6-checkpoint-13932242:v0",
+    "checkpoint_artifact_digest": "24a8576b007ba2f38a3026c5fe54ea94"
+  },
+  "test_set_inference": false,
+  "next_step": "Step 7: profile five inference stages and propose 2-3 evidence-based optimizations"
+}

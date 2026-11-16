@@ -2,26 +2,28 @@
 
 Last updated: **2026-11-16 (America/New_York)**
 
-Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7fa`](https://github.com/oowenn/brain-mri-vlm/commit/873598e3a0f1fe8cecb3b2da5bda5962f63de7fa) (Step 5 execution source; final result documentation is a subsequent commit).
+Latest verified implementation commit: [1697704b4e12910322f61b5259c9483184cafad2](https://github.com/oowenn/brain-mri-vlm/commit/1697704b4e12910322f61b5259c9483184cafad2) (Step 6 execution source; final result documentation and launcher resource defaults are subsequent changes).
 
 ## Current position
 
-**Step 5 is complete. Step 6 GPU job 13932242 is running on ins094 with 4 CPUs, 16 GiB RAM, and one A6000; completion is not yet verified.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
+**Step 6 is complete. Step 7 profiling is next.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
+
+Batching changed four predictions from the Step 5 batch-one result (498 correct, macro-F1 0.862019). The absolute macro-F1 drop of 0.005726 passes the fixed 0.02 allowance and is preserved in the evidence. All 32 tests, source/checkpoint hashes, source snapshots, independent timing/quality checks, and W&B runtime-artifact downloads passed. No profiling, optimization speedup claim, or final-test inference has been performed.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 6 with the same evidence, W&B, repository, and teammate-documentation requirements. All 32 tests, the checkpoint file hashes, and the eight-image processor batching audit passed in CPU preflight job `13932248`. GPU inference and measurements remain pending; no cluster package changes were required.
+The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation deferred for now. Step 6 is complete with the same evidence, W&B, repository, and teammate-documentation requirements. The next work is stage profiling and evidence-based selection of techniques; implementing them remains a later step.
 
 ## Roadmap status
 
 | Step | Work | Status | Completion evidence or required output |
 | --- | --- | --- | --- |
-| 1 | Define the experiment and comparison rules | Defined | Primary model, four labels, quality/performance metrics, matched GPU/batch rules, and 0.02 absolute macro-F1 allowance are documented. The eventual benchmark batch size is still to be selected in Step 6. |
+| 1 | Define the experiment and comparison rules | Defined | Primary model, four labels, quality/performance metrics, matched GPU/batch rules, and 0.02 absolute macro-F1 allowance are documented. Step 6 selected and froze batch size 4. |
 | 2 | Audit data and freeze splits | Complete | Conservative manifests, source and output hashes, recovered patient constraints, and documented identity limitations. |
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
-| 6 | Select batch size and measure the FP16 baseline | Running: job 13932242 | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
+| 6 | Select batch size and measure the FP16 baseline | Complete | Six-size sweep; frozen batch 4; three trials / 150 measurements; 2.8004 images/s; 2.776 GiB peak allocated; full validation and downloaded W&B evidence verified. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
@@ -100,13 +102,17 @@ Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [su
 
 Evidence: [Step 5 README and restore command](experiments/step5/README.md), [summary](experiments/step5/summary.json), [run files](experiments/step5/runs/13927137/), [W&B training run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx), and [W&B evidence run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s).
 
-### Step 6: baseline implementation (not yet measured)
+### Step 6: selected batch and measured FP16 baseline
 
-- Added isolated FP16 workers for input auditing, the bounded batch sweep, full-validation quality, and synchronized end-to-end timings.
-- Fixed candidates **1/2/4/8/16/32**, two sweep trials, and a selection rule: smallest batch within 5% of the best eligible throughput, with peak allocated memory at most 80% of the GPU total.
-- The final baseline uses **three trials, each with 10 warm-ups and 50 measurements**. The selected batch is frozen before full-validation quality and final measurements. Every sample retains timings, paths, raw answers, generated tokens, and memory peaks.
-- All 32 tests passed in cluster CPU preflight `13932248`, together with 12 model/processor file hashes and the eight-image batching audit. No GPU performance or batch-size result is claimed yet.
-- See the [Step 6 README](experiments/step6/README.md) for timing boundaries, file explanations, exact paths, and submission/publishing instructions.
+- Swept **1/2/4/8/16/32** on one A6000 with two trials per candidate; every candidate completed without OOM. Batch 4 was the smallest within 5% of the best eligible throughput: 2.820566 versus 2.961316 images/s at batch 32. It narrowly clears the 2.813250 cutoff; this is a bounded single-allocation selection, not a universal optimum.
+- Froze batch 4 before full validation and final timing. Ran **three trials, each with 10 warm-ups and 50 measured batches**: 150 measured batches, 600 image executions, 305 distinct timing images.
+- Final batch latency: **mean 1428.367 ms, p50 1430.270 ms, p95 1473.171 ms**. Throughput **2.800400 images/s**; peak allocated/reserved GPU memory **2.776 / 3.248 GiB**. Trial-mean standard deviation **10.678 ms**. Amortized image cost **357.092 ms** is not per-request latency.
+- Full batch-4 validation: **494/579 correct; accuracy 0.853195; macro-F1 0.856293; invalid 0/579**. Four glioma predictions changed to meningioma relative to Step 5 batch one; the macro-F1 drop **0.005726** passed the 0.02 gate. Future matched variants compare to the batch-4 baseline.
+- All **32 tests**, **7,200 image hashes**, **12 model/processor file hashes**, **32 execution-source snapshots**, and eight exact batch-one reference outputs passed. Independent local/cluster checks reproduced every sweep, selection, final timing result, and validation metric.
+- GPU **13932242**, ins094, **4 CPUs / 16 GiB / one A6000**, completed **0:0 in 25m12s**. Publisher **13932262**, ins021, **2 allocated CPUs / 4 GiB**, completed **0:0 in 53s**. The reduced host-memory reservation enabled the GPU allocation; original scheduling records and launcher snapshots remain preserved.
+- W&B benchmark **apjpl38l** is finished with matching metrics/config. All **153 runtime-artifact files** were downloaded and hash-verified. Evidence run **z3njw1g9** published **step6-checkpoint-13932242:v0**; subsequent publisher receipt/logs/accounting are preserved in GitHub.
+
+Evidence: [Step 6 README](experiments/step6/README.md), [summary](experiments/step6/summary.json), [frozen baseline](experiments/step6/runs/13932242/frozen-baseline.json), [raw timings](experiments/step6/runs/13932242/baseline/timings.jsonl), and [verification](experiments/step6/runs/13932242/local-verification.json).
 
 ## Implementation map
 
@@ -122,7 +128,7 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 | Full-validation verification | [`scripts/verify_step4.py`](scripts/verify_step4.py), [`scripts/publish_step4.py`](scripts/publish_step4.py), [`cluster/publish_step4.sbatch`](cluster/publish_step4.sbatch) | Independently verify coverage, raw answers, metrics, scheduler success, and downloaded W&B evidence before publishing the Step 4 checkpoint. |
 | LoRA training and checkpoint verification | [`scripts/train_lora.py`](scripts/train_lora.py), [`scripts/lora_utils.py`](scripts/lora_utils.py), [`configs/step5.json`](configs/step5.json), [`scripts/verify_step5.py`](scripts/verify_step5.py), [`cluster/step5.sbatch`](cluster/step5.sbatch) | Response-only training, per-epoch validation, checkpoint selection, saved/reloaded FP16 merge, and independent checks. |
 | Model backup | [`scripts/publish_step5.py`](scripts/publish_step5.py), [`cluster/publish_step5.sbatch`](cluster/publish_step5.sbatch) | Verify remote tracking and download-check every uploaded adapter, optimizer state, processor, and merged model file. |
-| Baseline benchmark | [`scripts/benchmark.py`](scripts/benchmark.py), [`scripts/benchmark_utils.py`](scripts/benchmark_utils.py), [`scripts/run_step6.py`](scripts/run_step6.py), [`configs/step6.json`](configs/step6.json), [`cluster/step6.sbatch`](cluster/step6.sbatch) | Audit batching, sweep candidates, freeze the baseline, and retain raw repeated timings and quality. GPU execution pending. |
+| Baseline benchmark | [`scripts/benchmark.py`](scripts/benchmark.py), [`scripts/benchmark_utils.py`](scripts/benchmark_utils.py), [`scripts/run_step6.py`](scripts/run_step6.py), [`configs/step6.json`](configs/step6.json), [`cluster/step6.sbatch`](cluster/step6.sbatch) | Audit batching, sweep candidates, freeze the baseline, and retain raw repeated timings and quality. Verified six-size sweep and batch-4 baseline. |
 | Baseline evidence verification | [`scripts/verify_step6.py`](scripts/verify_step6.py), [`scripts/publish_step6.py`](scripts/publish_step6.py), [`cluster/publish_step6.sbatch`](cluster/publish_step6.sbatch) | Independently recompute measurements, check W&B metrics and artifact downloads, and publish the evidence bundle. |
 | Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven new benchmark tests bring the full suite to 32, all passed in cluster CPU preflight `13932248`. |
 | Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
@@ -148,30 +154,33 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 - [x] Downloaded and verified every model artifact file; saved exact restore instructions.
 - [x] Added Step 5 results, file explanations, source/environment/scheduler evidence, and this updated handoff.
 
-## Immediate next work: Step 6
+## Step 6 completion checklist
 
-Build a checkpoint-aware benchmark around **`checkpoints/step5/13927137/merged-fp16/`**, restored from `step5-13927137-checkpoints:v0`. The standalone evaluator CLI still defaults to the pretrained Hugging Face model and must not be mistaken for this trained baseline.
+- [x] Fix checkpoint, workloads, selection/quality gates, and timing boundaries before execution.
+- [x] Pass all 32 tests, verify 7,200 source images and 12 model files, and reproduce eight Step 5 GPU outputs.
+- [x] Complete all six A6000 sweep candidates and freeze batch 4 before final quality/timing.
+- [x] Evaluate every validation image and preserve the four changed predictions.
+- [x] Complete all 150 measured baseline batches and independently reproduce workloads, memory, latency, and throughput.
+- [x] Verify completed GPU/publisher jobs, W&B metrics/configuration, and 153 downloaded runtime-artifact files.
+- [x] Preserve code snapshots, raw timing/prediction records, logs, receipts, checksums, per-file explanations, and teammate setup.
 
-- [x] Implement the merged-checkpoint loader, bounded sweep, quality gate, synchronized timers, independent verifier, and W&B publisher.
-- [x] Fix workload seeds, selection rule, timing boundaries, and 10-warm-up/50-measurement/three-trial baseline protocol before execution.
-- [x] Pass seven new dependency-free tests; document file purposes and teammate commands.
-- [x] Pass all 32 tests, verify all saved checkpoint file hashes, and audit eight-image processor batching on the cluster.
-- [x] Recheck all 7,200 source images and reproduce all eight GPU batch-one outputs from Step 5 inside job 13932242.
-- [ ] Complete the A6000 sweep and freeze one batch size, retaining any out-of-memory attempts.
-- [ ] Pass full 579-image validation and collect all 150 measured baseline batches.
-- [ ] Independently verify timing/quality, completed scheduler jobs, W&B metrics, and downloaded artifact bytes.
-- [ ] Save actual results, source provenance, logs, checksums, and final documentation to GitHub before Step 7.
+## Immediate next work: Step 7
 
-## Remaining work during and after Step 6
+- [ ] Use the saved merged checkpoint, frozen batch 4, RTX A6000, and four CPU threads.
+- [ ] Profile preprocessing, host-to-device transfer, vision encoding, prefill, and decode.
+- [ ] Save representative traces/stage statistics and explain the dominant cost; keep profiling overhead separate from benchmark timings.
+- [ ] Propose two or three techniques tied to measured bottlenecks, with expected tradeoffs and quality checks.
+- [ ] Save the Step 7 README, W&B evidence, and tracker update before implementing optimizations.
+
+## Remaining work after Step 6
 
 | Step | What to implement or run | Why / completion gate |
 | --- | --- | --- |
-| 6 | Execute and verify the implemented timing harness, sweep, frozen baseline, and quality gate. | Establishes a fair measured reference. Define request/batch/amortized latency, use correct CUDA synchronization, and apply the proposal's warm-up and repeat protocol. |
-| 7 | Instrument preprocessing, host-to-device transfer, vision encoding, prefill, and decode; collect representative traces and utilization evidence. | Explain the dominant cost and propose two or three changes tied to that evidence. Collect benchmark timings separately from profiler overhead. |
-| 8 | If included in the next team scope, implement the selected changes one at a time on the same merged checkpoint. | Makes the effects attributable to specific changes. Early pretrained INT8/INT4 compatibility does not validate later merged-model quantization or an optimization claim. |
-| 9 | Repeat matched measurements and validation-quality evaluation for each implemented variant; re-profile when needed. | Test both improvements and regressions, retaining failed variants. Apply the 0.02 absolute macro-F1 allowance to the appropriate baseline. |
-| 10 | Freeze chosen settings and evaluate the unchanged test set, including the planned quality-reference rows. | Obtain the final held-out comparison without tuning against test outcomes. |
-| 11 | Assemble the report, presentation, reproduction guide, and demonstration around the measured results. | Explain why changes helped or failed, and connect claims to saved evidence. |
+| 7 | Profile the five stages on the frozen batch-4 baseline; save traces and propose two or three techniques. | Explain the measured bottleneck; do not infer it from overall timing alone. |
+| 8 | If included in the next team scope, implement selected changes one at a time. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
+| 9 | Repeat matched timings and full validation for each variant; re-profile as needed. | Compare to the Step 6 batch-4 FP16 quality/performance baseline, retaining regressions and failed variants. |
+| 10 | Freeze final settings and evaluate the unchanged test set. | Obtain held-out results without tuning against test outcomes. |
+| 11 | Assemble the report, presentation, reproduction guide, and demonstration. | Connect each claim to saved measurements and explain successes and failures. |
 
 Parallel proposal work still outstanding: fine-tune **ResNet-18** on the same splits for one accuracy-reference row. A larger SmolVLM2-2.2B comparison is optional and conditional on the proposal's midpoint criterion; a Gradio demo is optional. None of these has been implemented in this checkout.
 
@@ -192,13 +201,13 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | NVIDIA driver | `575.57.08` | Reference driver; another server needs a driver compatible with the CUDA build below. |
 | PyTorch / torchvision | `2.9.1+cu126` / `0.24.1+cu126` | CUDA 12.6 wheels, pinned in the requirements file. `nvidia-smi` showing CUDA 12.9 describes driver capability, not the PyTorch build. |
 | Transformers / Accelerate | `4.57.1` / `1.10.1` | Model loading, processing, generation, and device placement. |
-| PEFT / bitsandbytes | `0.17.1` / `0.48.2` | PEFT is installed for future LoRA work; bitsandbytes was exercised in Step 3 INT8/INT4 checks. |
+| PEFT / bitsandbytes | `0.17.1` / `0.48.2` | PEFT was used in Step 5 LoRA training; bitsandbytes was exercised in Step 3 INT8/INT4 checks. |
 | W&B | `0.31.0` | Records runs and artifacts under the shared team project. |
 | Interactive allocation | Account `edu`, partition `short`, 1 A6000, 4 CPUs, 16 GiB RAM, 2 hours | Sean's setup allocation. Teammates must use resources permitted by their own account. |
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
 | Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
-| Step 6 batch request | 1 A6000, 4 CPUs, 16 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); job 13932242 overrides the launcher's 32 GiB default to 16 GiB so it can fit nodes with free GPUs but limited unreserved host RAM; actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
+| Step 6 batch request | 1 A6000, 4 CPUs, 16 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); job 13932242 actually used 4 CPUs / 16 GiB. Current defaults match that successful reservation. CPU publisher requests 1 CPU / 4 GiB / 45 minutes; the recorded publisher received 2 CPUs. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -325,7 +334,7 @@ mkdir -p logs
 sbatch cluster/step3.sbatch
 ```
 
-The batch script activates the environment and cache paths itself. It records package checks, the current unit-test suite (25 tests at Step 5), GPU execution, verification of all 7,200 source images, and FP16/INT8/INT4 inference on the same eight validation images. Outputs go into a new `experiments/step3/runs/<job-id>/` directory and W&B. Check completion and exit status, then follow the [Step 3 evidence handoff](experiments/step3/README.md#reproduce-on-insomnia) to collect scheduler records and verify/upload the bundle. The eight-image check establishes runtime readiness. To reproduce full validation after setup, use `sbatch cluster/step4.sbatch` and follow the [Step 4 evidence instructions](experiments/step4/README.md).
+The batch script activates the environment and cache paths itself. It records package checks, the current unit-test suite (32 tests at Step 6), GPU execution, verification of all 7,200 source images, and FP16/INT8/INT4 inference on the same eight validation images. Outputs go into a new `experiments/step3/runs/<job-id>/` directory and W&B. Check completion and exit status, then follow the [Step 3 evidence handoff](experiments/step3/README.md#reproduce-on-insomnia) to collect scheduler records and verify/upload the bundle. The eight-image check establishes runtime readiness. To reproduce full validation after setup, use `sbatch cluster/step4.sbatch` and follow the [Step 4 evidence instructions](experiments/step4/README.md).
 
 **Portability boundary:** the current batch scripts use Insomnia's module/account/partition settings, and `scripts/evaluate.py` explicitly requires a Slurm allocation and the GPU named in `configs/step3.json` (RTX A6000). Another Slurm server needs a site-specific batch wrapper with its own resource names and Conda initialization. A different GPU requires a separately recorded configuration and hardware label; its timing results cannot be treated as the matched A6000 comparison. A server without Slurm needs an explicit evaluator change to support its execution environment before this workflow can run there; do not invent `SLURM_JOB_ID` to bypass the guard. These adaptations have not been implemented or verified yet.
 
@@ -347,7 +356,7 @@ Activation and shell exports are session state; files under `MRI_WORK` are persi
 
 - The tested environment is pinned, but a clean-room reinstall has not been independently repeated.
 - The dataset's accepted image constraints and recovered patient IDs do not establish full patient independence. Keep the existing annotation limitations explicit.
-- Step 5 has a verified trained and merged checkpoint. There are no measured optimization speedups, no benchmark batch-size selection, and no final-test model results yet. One training seed/run does not establish run-to-run variability.
+- Step 6 establishes a measured batch-4 baseline, not an optimization speedup. No final-test model results exist yet. The three timing trials share one allocation; the training used one seed/run. These do not establish variation across training seeds, nodes, or days.
 - The [teammate setup section](#teammate-setup-environment-and-directories) records the actual cluster paths, environment pins, cache variables, reproduction commands, and portability limitations.
 - Recorded resource choice: account `edu`, partition `short`, RTX A6000. Recheck live job/allocation state before new work; a completed job ID is not a reusable allocation.
 - Use Slurm for model work and extended processing. Batch jobs survive SSH disconnects but still have their own time limits. Cluster scratch storage is not backed up; preserve important evidence outside it.
@@ -384,3 +393,4 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-16 | Reduced the pending Step 6 host-memory request. | `scontrol update JobId=13932242 MinMemoryNode=16384` retains the original job/queue age and all benchmark settings. Some A6000 nodes have free GPUs but less than 32 GiB unreserved host RAM; reservation is now 16 GiB and 4 CPUs. Scheduling evidence retained; no inference result yet. |
 | 2026-11-16 | Step 6 GPU execution started. | Job `13932242` started on `ins094` at 13:19:34 EST with 4 CPUs/16 GiB after the memory reduction. Execution source is commit `1697704`; benchmark protocol unchanged. Full GPU results still pending. |
 | 2026-11-16 | Step 6 GPU preflight passed; sweep started. | All 32 tests, 7,200 source-image hashes, FP16 CUDA execution, and eight exact Step 5 batch-one outputs passed. W&B baseline run `apjpl38l`; first sweep candidate is batch 16. Final selection, quality, and timing results still pending. |
+| 2026-11-16 | Step 6 completed and independently verified. | Execution commit 1697704; GPU 13932242 (25m12s), publisher 13932262 (53s), both 0:0. Batch 4: 2.8004 images/s, 1428.367 ms mean / 1473.171 ms p95, 2.776 GiB allocated; accuracy 85.32%, F1 0.856293. W&B apjpl38l/z3njw1g9; 153 downloaded runtime files and 32 source snapshots verified. Next: Step 7 profiling. |
