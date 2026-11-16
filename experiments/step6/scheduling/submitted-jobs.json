@@ -1,17 +1,20 @@
 {
-  "status": "submitted; completion not yet verified",
+  "status": "GPU benchmark running; completion not yet verified",
   "date": "2026-11-16",
   "timezone": "America/New_York",
   "gpu_job": {
     "id": 13932242,
-    "last_observed_state": "PENDING",
-    "reason": "Priority",
+    "last_observed_state": "RUNNING",
+    "reason": null,
     "requested_gpu": "A6000:1",
     "requested_cpus": 4,
-    "requested_memory_gib": 32,
+    "requested_memory_gib": 16,
     "time_limit": "02:00:00",
-    "last_observed_start_estimate": "2026-11-16T14:06:28",
-    "estimate_is_not_a_guarantee": true
+    "estimate_is_not_a_guarantee": true,
+    "memory_adjustment": "Reduced pending reservation from 32 to 16 GiB using scontrol update JobId=13932242 MinMemoryNode=16384; existing job and queue age retained",
+    "node": "ins094",
+    "start_time": "2026-11-16T13:19:34",
+    "allocated_cpus": 4
   },
   "cpu_preflight_job": {
     "id": 13932248,

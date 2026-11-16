@@ -1,10 +1,12 @@
 # Step 6: fixed-batch FP16 performance baseline
 
-Status: **GPU execution pending**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. A two-hour/32 GiB request is queued as job **13932242**; the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
+Status: **GPU job 13932242 is running on ins094**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. Job **13932242** started at 13:19:34 EST with two hours and a subsequently reduced **16 GiB** host-memory reservation (4 CPUs); the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
 
 CPU preflight job **13932248** completed on `ins084` (`short`, overridden from the launcher's `edu1` default). Publisher **13932262** is queued with dependency `afterok:13932242` and will verify/upload the completed GPU evidence automatically. See the [submission record](scheduling/submitted-jobs.json). These recorded scheduler states do not establish completion.
 
-**CPU preflight passed:** all 32 tests, all 12 saved model/processor file hashes, and the eight-image batching audit. Job `13932248` completed `0:0` in 3 minutes 15 seconds on `ins084`; [evidence](preflight/13932248/) includes logs, accounting, and local verification against Step 5 metadata. The local macOS test attempt lacked Pillow; the existing cluster environment resolved that limitation without installing packages. GPU inference and performance measurements remain pending.
+**CPU preflight passed:** all 32 tests, all 12 saved model/processor file hashes, and the eight-image batching audit. Job `13932248` completed `0:0` in 3 minutes 15 seconds on `ins084`; [evidence](preflight/13932248/) includes logs, accounting, and local verification against Step 5 metadata. The local macOS test attempt lacked Pillow; the existing cluster environment resolved that limitation without installing packages. GPU inference and performance measurements are now running.
+
+GPU preflight also passed all 32 tests, all 7,200 source-image hashes, CUDA execution, and eight exact Step 5 batch-one outputs. The sweep is running in [W&B run apjpl38l](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/apjpl38l). Final selection, quality, and performance remain unverified.
 
 ## What this step does and why
 
@@ -82,7 +84,7 @@ export MRI_CONDA_ENV="$MRI_WORK/envs/smolmri"
 export MRI_MERGED_MODEL="$MRI_WORK/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16"
 export WANDB_BASE_URL="https://api.forge.coreweave.com"
 mkdir -p logs
-sbatch cluster/step6.sbatch
+sbatch --mem=16G cluster/step6.sbatch
 ```
 
 A different server must adapt its Slurm account/partition/GPU names and Conda initialization, while retaining the model, data, processor, prompt, and measurement settings. This portability setup has not been executed on another teammate's server.

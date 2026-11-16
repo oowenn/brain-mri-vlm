@@ -6,7 +6,7 @@ Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7f
 
 ## Current position
 
-**Step 5 is complete. Step 6 GPU job 13932242 has been submitted with a two-hour/32 GiB reservation; completion is not yet verified.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
+**Step 5 is complete. Step 6 GPU job 13932242 is running on ins094 with 4 CPUs, 16 GiB RAM, and one A6000; completion is not yet verified.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
@@ -21,7 +21,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
-| 6 | Select batch size and measure the FP16 baseline | Queued: job 13932242 | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
+| 6 | Select batch size and measure the FP16 baseline | Running: job 13932242 | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
@@ -156,7 +156,7 @@ Build a checkpoint-aware benchmark around **`checkpoints/step5/13927137/merged-f
 - [x] Fix workload seeds, selection rule, timing boundaries, and 10-warm-up/50-measurement/three-trial baseline protocol before execution.
 - [x] Pass seven new dependency-free tests; document file purposes and teammate commands.
 - [x] Pass all 32 tests, verify all saved checkpoint file hashes, and audit eight-image processor batching on the cluster.
-- [ ] Recheck all 7,200 source images and compare GPU batch-one outputs with Step 5 inside the benchmark allocation.
+- [x] Recheck all 7,200 source images and reproduce all eight GPU batch-one outputs from Step 5 inside job 13932242.
 - [ ] Complete the A6000 sweep and freeze one batch size, retaining any out-of-memory attempts.
 - [ ] Pass full 579-image validation and collect all 150 measured baseline batches.
 - [ ] Independently verify timing/quality, completed scheduler jobs, W&B metrics, and downloaded artifact bytes.
@@ -198,7 +198,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
 | Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
-| Step 6 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
+| Step 6 batch request | 1 A6000, 4 CPUs, 16 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); job 13932242 overrides the launcher's 32 GiB default to 16 GiB so it can fit nodes with free GPUs but limited unreserved host RAM; actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -381,3 +381,6 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-16 | Queued the smaller Step 6 job and added CPU preflight. | GPU job `13932242`; optional `cluster/preflight_step6.sbatch` checks tests, checkpoint hashes, and processor batching while waiting. GPU execution and performance remain pending. |
 | 2026-11-16 | Queued automatic Step 6 evidence publication. | GPU job `13932242`; CPU preflight `13932248` started on `ins084`; publisher `13932262` depends on `afterok:13932242`. The publisher collects scheduler logs and verifies source/W&B artifacts. VPN/SSH disconnected before further results were collected; submitted jobs continue independently. See [submission record](experiments/step6/scheduling/submitted-jobs.json). |
 | 2026-11-16 | Step 6 CPU preflight passed. | Job `13932248`, `ins084`, `0:0`, 3m15s, execution commit `393ff0b`: all 32 tests, all 12 saved model/processor file hashes, and eight-image batching audit. Local checks reproduce input metadata and launcher provenance. GPU job `13932242` and dependent publisher `13932262` remain queued. |
+| 2026-11-16 | Reduced the pending Step 6 host-memory request. | `scontrol update JobId=13932242 MinMemoryNode=16384` retains the original job/queue age and all benchmark settings. Some A6000 nodes have free GPUs but less than 32 GiB unreserved host RAM; reservation is now 16 GiB and 4 CPUs. Scheduling evidence retained; no inference result yet. |
+| 2026-11-16 | Step 6 GPU execution started. | Job `13932242` started on `ins094` at 13:19:34 EST with 4 CPUs/16 GiB after the memory reduction. Execution source is commit `1697704`; benchmark protocol unchanged. Full GPU results still pending. |
+| 2026-11-16 | Step 6 GPU preflight passed; sweep started. | All 32 tests, 7,200 source-image hashes, FP16 CUDA execution, and eight exact Step 5 batch-one outputs passed. W&B baseline run `apjpl38l`; first sweep candidate is batch 16. Final selection, quality, and timing results still pending. |
