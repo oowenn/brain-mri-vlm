@@ -1,0 +1,12 @@
+test_balanced_reproducible_stream_and_wrapping (test_benchmark.BenchmarkTests.test_balanced_reproducible_stream_and_wrapping) ... ok
+test_eos_trimming_removes_only_post_completion_padding (test_benchmark.BenchmarkTests.test_eos_trimming_removes_only_post_completion_padding) ... ok
+test_fixed_checkpoint_and_inference_protocol (test_benchmark.BenchmarkTests.test_fixed_checkpoint_and_inference_protocol) ... ok
+test_independent_timing_verifier_rejects_tampered_times_and_workloads (test_benchmark.BenchmarkTests.test_independent_timing_verifier_rejects_tampered_times_and_workloads) ... ok
+test_percentile_interpolation_and_single_sample (test_benchmark.BenchmarkTests.test_percentile_interpolation_and_single_sample) ... ok
+test_selection_respects_oom_memory_and_throughput_plateau (test_benchmark.BenchmarkTests.test_selection_respects_oom_memory_and_throughput_plateau) ... ok
+test_timing_excludes_warmup_and_uses_ratio_of_totals (test_benchmark.BenchmarkTests.test_timing_excludes_warmup_and_uses_ratio_of_totals) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.006s
+
+OK

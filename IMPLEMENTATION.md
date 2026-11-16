@@ -6,11 +6,11 @@ Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7f
 
 ## Current position
 
-**Step 5 is complete. Step 6 baseline benchmarking is next and has not started.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
+**Step 5 is complete. Step 6 is implemented and awaiting cluster execution.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
 
-This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), and [Step 5 README](experiments/step5/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
+This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 5 with the same evidence, W&B, repository, and teammate-documentation requirements. Step 6 benchmarking remains subsequent work.
+The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 6 with the same evidence, W&B, repository, and teammate-documentation requirements. Step 6 code and seven dependency-free benchmark tests are ready; GPU validation and measurements remain pending. The local full suite lacks Pillow and will run in the existing cluster environment; no package changes are required there.
 
 ## Roadmap status
 
@@ -21,7 +21,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
-| 6 | Select batch size and measure the FP16 baseline | Not started | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
+| 6 | Select batch size and measure the FP16 baseline | Implemented; GPU execution pending | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
@@ -100,6 +100,14 @@ Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [su
 
 Evidence: [Step 5 README and restore command](experiments/step5/README.md), [summary](experiments/step5/summary.json), [run files](experiments/step5/runs/13927137/), [W&B training run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx), and [W&B evidence run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s).
 
+### Step 6: baseline implementation (not yet measured)
+
+- Added isolated FP16 workers for input auditing, the bounded batch sweep, full-validation quality, and synchronized end-to-end timings.
+- Fixed candidates **1/2/4/8/16/32**, two sweep trials, and a selection rule: smallest batch within 5% of the best eligible throughput, with peak allocated memory at most 80% of the GPU total.
+- The final baseline uses **three trials, each with 10 warm-ups and 50 measurements**. The selected batch is frozen before full-validation quality and final measurements. Every sample retains timings, paths, raw answers, generated tokens, and memory peaks.
+- Seven new unit tests pass locally. The full suite is pending on the existing cluster environment; local Python lacks Pillow. No GPU performance or batch-size result is claimed yet.
+- See the [Step 6 README](experiments/step6/README.md) for timing boundaries, file explanations, exact paths, and submission/publishing instructions.
+
 ## Implementation map
 
 | Component | Files | Current purpose |
@@ -114,7 +122,9 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 | Full-validation verification | [`scripts/verify_step4.py`](scripts/verify_step4.py), [`scripts/publish_step4.py`](scripts/publish_step4.py), [`cluster/publish_step4.sbatch`](cluster/publish_step4.sbatch) | Independently verify coverage, raw answers, metrics, scheduler success, and downloaded W&B evidence before publishing the Step 4 checkpoint. |
 | LoRA training and checkpoint verification | [`scripts/train_lora.py`](scripts/train_lora.py), [`scripts/lora_utils.py`](scripts/lora_utils.py), [`configs/step5.json`](configs/step5.json), [`scripts/verify_step5.py`](scripts/verify_step5.py), [`cluster/step5.sbatch`](cluster/step5.sbatch) | Response-only training, per-epoch validation, checkpoint selection, saved/reloaded FP16 merge, and independent checks. |
 | Model backup | [`scripts/publish_step5.py`](scripts/publish_step5.py), [`cluster/publish_step5.sbatch`](cluster/publish_step5.sbatch) | Verify remote tracking and download-check every uploaded adapter, optimizer state, processor, and merged model file. |
-| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed (25 total). |
+| Baseline benchmark | [`scripts/benchmark.py`](scripts/benchmark.py), [`scripts/benchmark_utils.py`](scripts/benchmark_utils.py), [`scripts/run_step6.py`](scripts/run_step6.py), [`configs/step6.json`](configs/step6.json), [`cluster/step6.sbatch`](cluster/step6.sbatch) | Audit batching, sweep candidates, freeze the baseline, and retain raw repeated timings and quality. GPU execution pending. |
+| Baseline evidence verification | [`scripts/verify_step6.py`](scripts/verify_step6.py), [`scripts/publish_step6.py`](scripts/publish_step6.py), [`cluster/publish_step6.sbatch`](cluster/publish_step6.sbatch) | Independently recompute measurements, check W&B metrics and artifact downloads, and publish the evidence bundle. |
+| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven new benchmark tests pass locally, with all 32 pending cluster execution. |
 | Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
 | Living progress record | [`IMPLEMENTATION.md`](IMPLEMENTATION.md), [`AGENTS.md`](AGENTS.md) | Maintain the current implementation status and carry the update instruction into later repository sessions. |
 
@@ -142,17 +152,20 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 
 Build a checkpoint-aware benchmark around **`checkpoints/step5/13927137/merged-fp16/`**, restored from `step5-13927137-checkpoints:v0`. The standalone evaluator CLI still defaults to the pretrained Hugging Face model and must not be mistaken for this trained baseline.
 
-- [ ] Add an explicit merged-checkpoint loader and verify its outputs against the saved Step 5 reference.
-- [ ] Sweep batch sizes on the same RTX A6000 and select the fixed baseline batch size, recording any out-of-memory results.
-- [ ] Apply the proposal's warm-up, synchronized measurement, and repeated-trial protocol; define request, batch, and amortized latency clearly.
-- [ ] Record mean/p50/p95 latency, throughput, peak GPU memory, and complete validation quality, with raw timing evidence and W&B tracking.
-- [ ] Update the Step 6 README and implementation tracker before beginning Step 7 profiling.
+- [x] Implement the merged-checkpoint loader, bounded sweep, quality gate, synchronized timers, independent verifier, and W&B publisher.
+- [x] Fix workload seeds, selection rule, timing boundaries, and 10-warm-up/50-measurement/three-trial baseline protocol before execution.
+- [x] Pass seven new dependency-free tests; document file purposes and teammate commands.
+- [ ] Run all 32 tests, verify source data/checkpoint hashes, and compare the new loader with Step 5 on the cluster.
+- [ ] Complete the A6000 sweep and freeze one batch size, retaining any out-of-memory attempts.
+- [ ] Pass full 579-image validation and collect all 150 measured baseline batches.
+- [ ] Independently verify timing/quality, completed scheduler jobs, W&B metrics, and downloaded artifact bytes.
+- [ ] Save actual results, source provenance, logs, checksums, and final documentation to GitHub before Step 7.
 
-## Remaining work after Step 5
+## Remaining work during and after Step 6
 
 | Step | What to implement or run | Why / completion gate |
 | --- | --- | --- |
-| 6 | Build the timing harness, sweep batch sizes on the merged model, choose the baseline batch size, then measure repeated latency/throughput/memory and quality. | Establishes a fair measured reference. Define request/batch/amortized latency, use correct CUDA synchronization, and apply the proposal's warm-up and repeat protocol. |
+| 6 | Execute and verify the implemented timing harness, sweep, frozen baseline, and quality gate. | Establishes a fair measured reference. Define request/batch/amortized latency, use correct CUDA synchronization, and apply the proposal's warm-up and repeat protocol. |
 | 7 | Instrument preprocessing, host-to-device transfer, vision encoding, prefill, and decode; collect representative traces and utilization evidence. | Explain the dominant cost and propose two or three changes tied to that evidence. Collect benchmark timings separately from profiler overhead. |
 | 8 | If included in the next team scope, implement the selected changes one at a time on the same merged checkpoint. | Makes the effects attributable to specific changes. Early pretrained INT8/INT4 compatibility does not validate later merged-model quantization or an optimization claim. |
 | 9 | Repeat matched measurements and validation-quality evaluation for each implemented variant; re-profile when needed. | Test both improvements and regressions, retaining failed variants. Apply the 0.02 absolute macro-F1 allowance to the appropriate baseline. |
@@ -184,6 +197,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
 | Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
+| Step 6 batch request | 1 A6000, 4 CPUs, 64 GiB RAM, six-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -209,6 +223,7 @@ Sean's `MRI_WORK` is **`/insomnia001/depts/edu/users/ct3013`**. Paths beginning 
 | `brain-mri-vlm/experiments/step4/runs/<job-id>/` | Full validation predictions, metrics, independent verification, source snapshots, and scheduler/W&B evidence. | Created by the Step 4 batch job; publisher receipts collected afterward |
 | `brain-mri-vlm/experiments/step5/runs/<job-id>/` | LoRA training history, loss/gradient audits, epoch predictions, selection, merge checks, source snapshots, and publishing receipts. | Created by Step 5 jobs |
 | `brain-mri-vlm/checkpoints/step5/<job-id>/` | Epoch adapter weights, optimizer/RNG states, saved merge probe logits, and merged FP16 weights. Restored through the recorded W&B model artifact. | `MRI_CHECKPOINT_DIR` when publishing; kept outside Git |
+| `brain-mri-vlm/experiments/step6/runs/<job-id>/` | Input audit, batch sweep, frozen selection, full quality, raw timing trials, GPU telemetry, and verification/publishing evidence. | Created by Step 6 jobs; `MRI_MERGED_MODEL` overrides the saved Step 5 merged-model path |
 | `brain-mri-vlm/wandb/` | Local W&B working files; remote runs/artifacts provide the shared tracking record. | `WANDB_DIR` |
 
 The current source root is `/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2`. CSV image paths are relative to this source root, not to the directory containing the CSVs. A teammate's absolute source root can differ because it is recorded separately in `logs/source-root.txt`.
@@ -359,3 +374,4 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Started Step 5 implementation. | Fixed three epochs, rank-16 decoder LoRA, response-only loss, effective batch 16, validation checkpoint selection, and explicit FP16 merge tolerances before training. Commit `873598e`; GPU job `13927137` submitted. |
 | 2026-11-15 | Step 5 preflight passed; training started. | 25 tests; 7,200 source files; 8 unchanged base outputs; response-only loss and frozen-gradient checks. W&B `0povsppx`; 8,683,520 trainable parameters in 224 decoder LoRA modules. Full training result pending. |
 | 2026-11-16 | Step 5 completed and independently verified. | Execution commit `873598e`; GPU job `13927137`; publisher `13927707`; W&B `0povsppx`; model `step5-13927137-checkpoints:v0`. Epoch 3 selected; merged accuracy 86.01%, macro-F1 0.8620; merge and artifact downloads verified. Next: Step 6 baseline benchmarking. |
+| 2026-11-16 | Implemented Step 6; cluster execution pending. | Seven new benchmark tests pass locally. Fixed the sweep, selection rule, quality gate, timing boundaries, and repeated baseline protocol. Full tests, GPU measurements, and W&B evidence verification remain pending; see [Step 6](experiments/step6/README.md). |

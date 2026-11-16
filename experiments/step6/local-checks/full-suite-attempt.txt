@@ -1,0 +1,47 @@
+test_balanced_reproducible_stream_and_wrapping (test_benchmark.BenchmarkTests.test_balanced_reproducible_stream_and_wrapping) ... ok
+test_eos_trimming_removes_only_post_completion_padding (test_benchmark.BenchmarkTests.test_eos_trimming_removes_only_post_completion_padding) ... ok
+test_fixed_checkpoint_and_inference_protocol (test_benchmark.BenchmarkTests.test_fixed_checkpoint_and_inference_protocol) ... ok
+test_independent_timing_verifier_rejects_tampered_times_and_workloads (test_benchmark.BenchmarkTests.test_independent_timing_verifier_rejects_tampered_times_and_workloads) ... ok
+test_percentile_interpolation_and_single_sample (test_benchmark.BenchmarkTests.test_percentile_interpolation_and_single_sample) ... ok
+test_selection_respects_oom_memory_and_throughput_plateau (test_benchmark.BenchmarkTests.test_selection_respects_oom_memory_and_throughput_plateau) ... ok
+test_timing_excludes_warmup_and_uses_ratio_of_totals (test_benchmark.BenchmarkTests.test_timing_excludes_warmup_and_uses_ratio_of_totals) ... ok
+test_invalid_is_a_false_negative_and_not_dropped (test_evaluate.EvaluationTests.test_invalid_is_a_false_negative_and_not_dropped) ... ok
+test_previous_eight_image_example (test_evaluate.EvaluationTests.test_previous_eight_image_example) ... ok
+test_punctuation_fix_does_not_guess_from_explanations (test_evaluate.EvaluationTests.test_punctuation_fix_does_not_guess_from_explanations) ... ok
+test_sample_is_balanced_reproducible_and_input_order_independent (test_evaluate.EvaluationTests.test_sample_is_balanced_reproducible_and_input_order_independent) ... ok
+test_patient_test_constraint_annotation_quarantine_and_unknown_identity (test_finalize_data.FinalizationTests.test_patient_test_constraint_annotation_quarantine_and_unknown_identity) ... ok
+test_pinned_inputs_immutable_outputs_and_reproducibility (test_finalize_data.FinalizationTests.test_pinned_inputs_immutable_outputs_and_reproducibility) ... ok
+test_reject_incomplete_or_unsafe_mapping (test_finalize_data.FinalizationTests.test_reject_incomplete_or_unsafe_mapping) ... ok
+test_same_patient_stays_together_and_mixed_labels_are_quarantined (test_finalize_data.FinalizationTests.test_same_patient_stays_together_and_mixed_labels_are_quarantined) ... ok
+test_every_training_image_once_with_tail_kept (test_lora.LoraTests.test_every_training_image_once_with_tail_kept) ... ok
+test_inference_protocol_and_frozen_scope (test_lora.LoraTests.test_inference_protocol_and_frozen_scope) ... ok
+test_masks_prompt_and_padding_but_keeps_target_and_eos (test_lora.LoraTests.test_masks_prompt_and_padding_but_keeps_target_and_eos) ... ok
+test_merge_gates_reject_numeric_or_generation_regressions (test_lora.LoraTests.test_merge_gates_reject_numeric_or_generation_regressions) ... ok
+test_rejects_missing_prompt_or_target (test_lora.LoraTests.test_rejects_missing_prompt_or_target) ... ok
+test_selection_uses_f1_then_loss_then_earliest_epoch (test_lora.LoraTests.test_selection_uses_f1_then_loss_then_earliest_epoch) ... ok
+test_prepare_data (unittest.loader._FailedTest.test_prepare_data) ... ERROR
+test_altered_metrics_rejected (test_step4.Step4Tests.test_altered_metrics_rejected) ... ok
+test_config_preserves_prior_inference_protocol (test_step4.Step4Tests.test_config_preserves_prior_inference_protocol) ... ok
+test_independent_metrics_keep_invalid_response (test_step4.Step4Tests.test_independent_metrics_keep_invalid_response) ... ok
+test_missing_duplicate_or_wrong_split_rejected (test_step4.Step4Tests.test_missing_duplicate_or_wrong_split_rejected) ... ok
+test_raw_answer_truth_or_manifest_tampering_rejected (test_step4.Step4Tests.test_raw_answer_truth_or_manifest_tampering_rejected) ... ok
+
+======================================================================
+ERROR: test_prepare_data (unittest.loader._FailedTest.test_prepare_data)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_prepare_data
+Traceback (most recent call last):
+  File "/Users/seantan/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Users/seantan/.local/share/uv/python/cpython-3.13.14-macos-aarch64-none/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/seantan/Documents/Codex/2026-11-15/do-x20/outputs/brain-mri-vlm/tests/test_prepare_data.py", line 12, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.020s
+
+FAILED (errors=1)
