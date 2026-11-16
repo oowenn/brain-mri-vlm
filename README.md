@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 4 is complete.** Pretrained FP16 SmolVLM evaluated all 579 frozen validation images on Insomnia: **41.45% accuracy, 0.2662 macro-F1, and 0 invalid responses**. It predicted only glioma and notumor; meningioma and pituitary recall were zero. The [Step 4 README](experiments/step4/README.md) explains the results, every evidence file, and reproduction commands. See [IMPLEMENTATION.md](IMPLEMENTATION.md) for the current roadmap, remaining work, and teammate environment/directory setup. Step 5 LoRA training and merge verification is now running as job `13927137`; see the [Step 5 protocol and live status](experiments/step5/README.md). Its full result is not yet verified.
+Status: **Step 5 is complete.** One LoRA training run produced a verified merged FP16 model: **86.01% validation accuracy, 0.8620 macro-F1, and 0 invalid responses** on all 579 frozen validation images. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. The [Step 5 README](experiments/step5/README.md) contains epoch results, raw evidence, merge checks, and the verified model restore command. [IMPLEMENTATION.md](IMPLEMENTATION.md) records the current roadmap and teammate environment/directory setup. **Step 6 benchmarking is next; performance and final-test results have not been measured.**
 
 ## Study
 
@@ -12,12 +12,14 @@ Use one fixed NVIDIA GPU type and one batch size chosen on the baseline. Measure
 
 ## Reproduction status
 
-The verified environment is pinned in [requirements-cluster.txt](requirements-cluster.txt). [Step 3 configuration](configs/step3.json) selects the eight-image compatibility sample; [Step 4 configuration](configs/step4.json) keeps the same model revision, GPU, prompt, parser, and generation protocol while selecting all validation images. The [Step 3 evidence](experiments/step3/runs/13924504/) and [Step 4 evidence](experiments/step4/runs/13925021/) record the actual environment, executed source, predictions, verification, and W&B links. Step 4 measures validation quality; neither step is a performance benchmark. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
+The verified environment is pinned in [requirements-cluster.txt](requirements-cluster.txt). [Step 3 configuration](configs/step3.json) selects the eight-image compatibility sample; [Step 4 configuration](configs/step4.json) keeps the same model revision, GPU, prompt, parser, and generation protocol while selecting all validation images. The [Step 3 evidence](experiments/step3/runs/13924504/) and [Step 4 evidence](experiments/step4/runs/13925021/) record the actual environment, executed source, predictions, verification, and W&B links. The [Step 5 configuration](configs/step5.json) fixes the LoRA/selection/merge protocol; its [evidence](experiments/step5/runs/13927137/) also includes training losses, every epoch's predictions, merge checks, and downloadable checkpoint identities. Steps 4 and 5 measure validation quality; none of these steps is a performance benchmark. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
 
-Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/` and `experiments/step4/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
+Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/`, `experiments/step4/`, and `experiments/step5/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
 
 ## Experiment notes
 
+- [Step 5 training and merged checkpoint](experiments/step5/README.md): full epoch results, merge verification, W&B model restoration, file explanations, and reproduction.
+- [Step 4 zero-shot validation](experiments/step4/README.md): the complete pretrained quality reference and independent evidence.
 - [Step 3 runtime and evaluator](experiments/step3/README.md): completed checks, file-by-file explanations, reproduction commands, W&B runs, and limitations.
 - [Conservative data checkpoint](experiments/data_finalization.md): finalized counts, approved annotation policy, reproducibility checks and remaining identity limitations.
 - [Similarity-threshold calibration](experiments/similarity_calibration.md): patient-held-out data-quality experiment, results and decision to retain the current thresholds. Full code and generated artifacts are linked in W&B.

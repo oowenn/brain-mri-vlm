@@ -1,0 +1,66 @@
+{
+  "selected_epoch": 3,
+  "images": 579,
+  "identical_input_metadata_records": 579,
+  "changed_labels": 3,
+  "unchanged_labels": 576,
+  "changes": [
+    {
+      "path": "Training/glioma/Tr-gl_363.jpg",
+      "true_label": "glioma",
+      "adapter_prediction": "meningioma",
+      "merged_prediction": "glioma",
+      "adapter_raw_response": "meningioma",
+      "merged_raw_response": "glioma",
+      "adapter_generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "merged_generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ]
+    },
+    {
+      "path": "Training/glioma/Tr-gl_649.jpg",
+      "true_label": "glioma",
+      "adapter_prediction": "meningioma",
+      "merged_prediction": "glioma",
+      "adapter_raw_response": "meningioma",
+      "merged_raw_response": "glioma",
+      "adapter_generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "merged_generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ]
+    },
+    {
+      "path": "Training/meningioma/Tr-me_933.jpg",
+      "true_label": "meningioma",
+      "adapter_prediction": "glioma",
+      "merged_prediction": "meningioma",
+      "adapter_raw_response": "glioma",
+      "merged_raw_response": "meningioma",
+      "adapter_generated_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "merged_generated_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ]
+    }
+  ]
+}

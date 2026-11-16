@@ -1,0 +1,2 @@
+<|im_start|>User:<image>Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.<end_of_utterance>
+Assistant:

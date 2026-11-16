@@ -1,14 +1,14 @@
 # Implementation status and handoff
 
-Last updated: **2026-11-15 (America/New_York)**
+Last updated: **2026-11-16 (America/New_York)**
 
-Latest verified implementation commit: [`492ab709cdf48d8416f6087050860b6254b8b5e8`](https://github.com/oowenn/brain-mri-vlm/commit/492ab709cdf48d8416f6087050860b6254b8b5e8) (Step 4 execution source; result documentation is a subsequent commit).
+Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7fa`](https://github.com/oowenn/brain-mri-vlm/commit/873598e3a0f1fe8cecb3b2da5bda5962f63de7fa) (Step 5 execution source; final result documentation is a subsequent commit).
 
 ## Current position
 
-**Step 4 is complete. Step 5 training job 13927137 is running on ins093; the full trained/merged result is not yet verified.** The project has frozen data, a verified GPU environment, an audited evaluator, and a full pretrained FP16 validation result: **240/579 correct (41.45% accuracy), macro-F1 0.2662, and 0 invalid responses**. It does not yet have a fine-tuned model or performance/profile results.
+**Step 5 is complete. Step 6 baseline benchmarking is next and has not started.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
 
-This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md) and [Step 4 README](experiments/step4/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
+This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), and [Step 5 README](experiments/step5/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
 The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 5 with the same evidence, W&B, repository, and teammate-documentation requirements. Step 6 benchmarking remains subsequent work.
 
@@ -20,7 +20,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 2 | Audit data and freeze splits | Complete | Conservative manifests, source and output hashes, recovered patient constraints, and documented identity limitations. |
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
-| 5 | Fine-tune once with LoRA and merge into FP16 | In progress | Reproducible training, selected adapter checkpoint, merged FP16 weights, and merge-equivalence checks. |
+| 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
 | 6 | Select batch size and measure the FP16 baseline | Not started | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
@@ -87,6 +87,19 @@ The publisher independently verified all three finished W&B runs and matched the
 
 Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [summary](experiments/step4/summary.json), [raw predictions](experiments/step4/runs/13925021/fp16/predictions.jsonl), [independent verification](experiments/step4/runs/13925021/independent-verification.json), [W&B inference run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/cpawhwk5), and [W&B checkpoint run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/sbgxu7p7).
 
+### Step 5: LoRA training and saved FP16 checkpoint
+
+- Completed one fixed three-epoch run over all **3,279 training images per epoch**, with **615 optimizer updates**. Rank-16/alpha-32 LoRA trained **8,683,520 parameters** in 224 language-decoder modules; base, vision, and connector weights remained frozen.
+- Verified the response-only label mask, native/manual loss agreement, LoRA-only gradients, and all eight unchanged pretraining reference answers. All **25 tests** and **7,200 source-image checks** passed.
+- Evaluated all **579 validation images after every epoch**, with loss and quality logged to W&B. Selected **epoch 3** using highest macro-F1, then lowest validation loss, then earliest epoch; the rule was fixed before training.
+- Reloaded the selected saved adapter, merged in FP32, cast to FP16, saved, and reloaded the standalone checkpoint. All 8 probe token sequences match; maximum/mean absolute logit differences are **0.12109375/0.01579220**. Full-validation label agreement is **99.4819%**, with macro-F1 difference **0.00445901**. All predeclared merge tolerances passed.
+- Final merged validation result: **498/579 correct; accuracy 0.8601036269; macro-F1 0.8620186316; invalid responses 0/579**. These are validation-selection results, not final held-out test results.
+- Independent checks reproduced training coverage/order, all validation metrics, selection, and saved merge-logit differences. All **25 execution-source snapshots** match commit `873598e`.
+- GPU job **13927137** on `ins093` completed `0:0` in **01:50:40**. CPU publishing job **13927707** completed `0:0` in **00:01:54**. Slurm allocated 6 CPUs for the GPU job (4 requested) and 2 for publishing (1 requested); training used 4 CPU threads. Allocation duration is not an inference benchmark.
+- Verified the finished training run and downloaded evidence, then backed up and downloaded all **52 checkpoint files (1,350,270,604 bytes)** with matching SHA-256 hashes. Model artifact: `step5-13927137-checkpoints:v0`. Evidence artifact: `step5-checkpoint-13927137:v0`.
+
+Evidence: [Step 5 README and restore command](experiments/step5/README.md), [summary](experiments/step5/summary.json), [run files](experiments/step5/runs/13927137/), [W&B training run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx), and [W&B evidence run](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s).
+
 ## Implementation map
 
 | Component | Files | Current purpose |
@@ -99,8 +112,10 @@ Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [su
 | Batch execution | [`cluster/step3.sbatch`](cluster/step3.sbatch), [`cluster/step4.sbatch`](cluster/step4.sbatch) | Reproduce compatibility checks or full FP16 validation inside a GPU allocation. |
 | W&B evidence verification | [`scripts/publish_step3.py`](scripts/publish_step3.py), [`cluster/publish_step3.sbatch`](cluster/publish_step3.sbatch) | Check remote run completion/metrics and archive the complete checkpoint using a CPU allocation. |
 | Full-validation verification | [`scripts/verify_step4.py`](scripts/verify_step4.py), [`scripts/publish_step4.py`](scripts/publish_step4.py), [`cluster/publish_step4.sbatch`](cluster/publish_step4.sbatch) | Independently verify coverage, raw answers, metrics, scheduler success, and downloaded W&B evidence before publishing the Step 4 checkpoint. |
-| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, and five Step 4 verification tests passed (19 total). |
-| Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
+| LoRA training and checkpoint verification | [`scripts/train_lora.py`](scripts/train_lora.py), [`scripts/lora_utils.py`](scripts/lora_utils.py), [`configs/step5.json`](configs/step5.json), [`scripts/verify_step5.py`](scripts/verify_step5.py), [`cluster/step5.sbatch`](cluster/step5.sbatch) | Response-only training, per-epoch validation, checkpoint selection, saved/reloaded FP16 merge, and independent checks. |
+| Model backup | [`scripts/publish_step5.py`](scripts/publish_step5.py), [`cluster/publish_step5.sbatch`](cluster/publish_step5.sbatch) | Verify remote tracking and download-check every uploaded adapter, optimizer state, processor, and merged model file. |
+| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed (25 total). |
+| Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
 | Living progress record | [`IMPLEMENTATION.md`](IMPLEMENTATION.md), [`AGENTS.md`](AGENTS.md) | Maintain the current implementation status and carry the update instruction into later repository sessions. |
 
 ## Step 4 completion checklist
@@ -113,25 +128,30 @@ Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [su
 - [x] Verified finished W&B runs, matched remote metrics, compared downloaded inference artifact bytes, and saved scheduler/source/environment evidence.
 - [x] Documented results and every evidence-file category in the Step 4 README; preserved compact runs and logs in the repository.
 
-## Immediate next work: Step 5
+## Step 5 completion checklist
 
-The goal is **one reproducible LoRA training workflow and a verified merged FP16 checkpoint**. The Step 4 pretrained model remains the zero-shot reference; later optimization comparisons use the merged fine-tuned model.
+- [x] Fixed LoRA settings, seeds, inference protocol, selection rules, and merge tolerances before training.
+- [x] Verified response-only loss and LoRA-only gradients; preserved every frozen training image.
+- [x] Completed all three epochs with W&B tracking, losses, checkpoints, and complete validation predictions.
+- [x] Selected epoch 3 using validation only and preserved all candidate checkpoints.
+- [x] Saved/reloaded the merged FP16 model and passed numerical, generation, full-validation, and weight-format checks.
+- [x] Downloaded and verified every model artifact file; saved exact restore instructions.
+- [x] Added Step 5 results, file explanations, source/environment/scheduler evidence, and this updated handoff.
 
-- [x] Define the LoRA target modules, training configuration, seed, and validation/checkpoint-selection rule before training. Preserve the frozen 3,279-image training split and 579-image validation split.
-- [x] Implement training input/label construction and verify that loss is applied to the intended target tokens. Keep validation generation aligned with the accepted inference protocol; record any deliberate change.
-- [ ] Run training on the allocated GPU with W&B tracking, retaining configuration, losses, validation metrics, failures, and checkpoint identities.
-- [ ] Select the adapter checkpoint using validation only; save it as a reproducible artifact.
-- [ ] Merge the adapter into FP16 and check adapter-loaded versus merged behavior with an explicit numerical/generation comparison and recorded tolerances.
-- [ ] Evaluate and preserve the selected checkpoint's validation quality. Do not infer improvement from successful training alone or use the test set for selection.
-- [ ] Add the Step 5 README, evidence, artifact links, and actual outcome to this tracker before advancing to baseline timing.
+## Immediate next work: Step 6
 
-Completion gate: a reproducible trained adapter, selected with validation evidence, and a verified merged FP16 model. Implementation commit `873598e`; GPU job `13927137` is running. All 25 tests, all 7,200 source checks, eight unchanged reference outputs, canonical label masks, loss reconstruction, and LoRA-only gradients passed. Full validation, checkpoint selection, and merge verification are pending.
+Build a checkpoint-aware benchmark around **`checkpoints/step5/13927137/merged-fp16/`**, restored from `step5-13927137-checkpoints:v0`. The standalone evaluator CLI still defaults to the pretrained Hugging Face model and must not be mistaken for this trained baseline.
 
-## Remaining work after Step 4
+- [ ] Add an explicit merged-checkpoint loader and verify its outputs against the saved Step 5 reference.
+- [ ] Sweep batch sizes on the same RTX A6000 and select the fixed baseline batch size, recording any out-of-memory results.
+- [ ] Apply the proposal's warm-up, synchronized measurement, and repeated-trial protocol; define request, batch, and amortized latency clearly.
+- [ ] Record mean/p50/p95 latency, throughput, peak GPU memory, and complete validation quality, with raw timing evidence and W&B tracking.
+- [ ] Update the Step 6 README and implementation tracker before beginning Step 7 profiling.
+
+## Remaining work after Step 5
 
 | Step | What to implement or run | Why / completion gate |
 | --- | --- | --- |
-| 5 | Implement one LoRA training workflow on 3,279 training images; track validation, select a checkpoint, merge into FP16, and check merged versus adapter-loaded behavior. | Produces task-adapted weights that remain fixed during later optimization comparisons. Save training settings, checkpoint identities, loss/quality records, and merge checks. |
 | 6 | Build the timing harness, sweep batch sizes on the merged model, choose the baseline batch size, then measure repeated latency/throughput/memory and quality. | Establishes a fair measured reference. Define request/batch/amortized latency, use correct CUDA synchronization, and apply the proposal's warm-up and repeat protocol. |
 | 7 | Instrument preprocessing, host-to-device transfer, vision encoding, prefill, and decode; collect representative traces and utilization evidence. | Explain the dominant cost and propose two or three changes tied to that evidence. Collect benchmark timings separately from profiler overhead. |
 | 8 | If included in the next team scope, implement the selected changes one at a time on the same merged checkpoint. | Makes the effects attributable to specific changes. Early pretrained INT8/INT4 compatibility does not validate later merged-model quantization or an optimization claim. |
@@ -147,7 +167,7 @@ Each teammate creates their own environment and downloads the same pinned inputs
 
 ### Verified reference environment
 
-These values come from the [recorded Step 3 environment](experiments/step3/runs/13924504/fp16/environment.json) and the cluster layout checked on November 15. The complete Python package list is [`requirements-cluster.txt`](requirements-cluster.txt).
+These values come from the [recorded Step 3 environment](experiments/step3/runs/13924504/fp16/environment.json) and the [Step 5 runtime record](experiments/step5/runs/13927137/environment.json); the cluster layout is unchanged apart from the documented checkpoint/artifact-cache paths. The complete Python package list is [`requirements-cluster.txt`](requirements-cluster.txt).
 
 | Component | Verified value | Purpose / teammate action |
 | --- | --- | --- |
@@ -163,7 +183,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Interactive allocation | Account `edu`, partition `short`, 1 A6000, 4 CPUs, 16 GiB RAM, 2 hours | Sean's setup allocation. Teammates must use resources permitted by their own account. |
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
-| Step 5 batch allocation | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch). A separate CPU publisher requests 1 CPU, 8 GiB RAM, and 45 minutes to upload/download checkpoint artifacts. |
+| Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -289,7 +309,7 @@ mkdir -p logs
 sbatch cluster/step3.sbatch
 ```
 
-The batch script activates the environment and cache paths itself. It records package checks, the current unit-test suite (19 tests at Step 4), GPU execution, verification of all 7,200 source images, and FP16/INT8/INT4 inference on the same eight validation images. Outputs go into a new `experiments/step3/runs/<job-id>/` directory and W&B. Check completion and exit status, then follow the [Step 3 evidence handoff](experiments/step3/README.md#reproduce-on-insomnia) to collect scheduler records and verify/upload the bundle. The eight-image check establishes runtime readiness. To reproduce full validation after setup, use `sbatch cluster/step4.sbatch` and follow the [Step 4 evidence instructions](experiments/step4/README.md).
+The batch script activates the environment and cache paths itself. It records package checks, the current unit-test suite (25 tests at Step 5), GPU execution, verification of all 7,200 source images, and FP16/INT8/INT4 inference on the same eight validation images. Outputs go into a new `experiments/step3/runs/<job-id>/` directory and W&B. Check completion and exit status, then follow the [Step 3 evidence handoff](experiments/step3/README.md#reproduce-on-insomnia) to collect scheduler records and verify/upload the bundle. The eight-image check establishes runtime readiness. To reproduce full validation after setup, use `sbatch cluster/step4.sbatch` and follow the [Step 4 evidence instructions](experiments/step4/README.md).
 
 **Portability boundary:** the current batch scripts use Insomnia's module/account/partition settings, and `scripts/evaluate.py` explicitly requires a Slurm allocation and the GPU named in `configs/step3.json` (RTX A6000). Another Slurm server needs a site-specific batch wrapper with its own resource names and Conda initialization. A different GPU requires a separately recorded configuration and hardware label; its timing results cannot be treated as the matched A6000 comparison. A server without Slurm needs an explicit evaluator change to support its execution environment before this workflow can run there; do not invent `SLURM_JOB_ID` to bypass the guard. These adaptations have not been implemented or verified yet.
 
@@ -311,7 +331,7 @@ Activation and shell exports are session state; files under `MRI_WORK` are persi
 
 - The tested environment is pinned, but a clean-room reinstall has not been independently repeated.
 - The dataset's accepted image constraints and recovered patient IDs do not establish full patient independence. Keep the existing annotation limitations explicit.
-- There are no measured optimization speedups, no benchmark batch-size selection, no LoRA checkpoint/merge validation, and no final-test model results yet.
+- Step 5 has a verified trained and merged checkpoint. There are no measured optimization speedups, no benchmark batch-size selection, and no final-test model results yet. One training seed/run does not establish run-to-run variability.
 - The [teammate setup section](#teammate-setup-environment-and-directories) records the actual cluster paths, environment pins, cache variables, reproduction commands, and portability limitations.
 - Recorded resource choice: account `edu`, partition `short`, RTX A6000. Recheck live job/allocation state before new work; a completed job ID is not a reusable allocation.
 - Use Slurm for model work and extended processing. Batch jobs survive SSH disconnects but still have their own time limits. Cluster scratch storage is not backed up; preserve important evidence outside it.
@@ -338,3 +358,4 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Step 4 completed and independently verified. | Execution commit `492ab70`; GPU job `13925021`; evidence job `13925075`; W&B inference `cpawhwk5`; checkpoint `step4-checkpoint-13925021:v0`. Accuracy 41.45%, macro-F1 0.2662, invalid rate 0. Next: Step 5 LoRA training and merge verification. |
 | 2026-11-15 | Started Step 5 implementation. | Fixed three epochs, rank-16 decoder LoRA, response-only loss, effective batch 16, validation checkpoint selection, and explicit FP16 merge tolerances before training. Commit `873598e`; GPU job `13927137` submitted. |
 | 2026-11-15 | Step 5 preflight passed; training started. | 25 tests; 7,200 source files; 8 unchanged base outputs; response-only loss and frozen-gradient checks. W&B `0povsppx`; 8,683,520 trainable parameters in 224 decoder LoRA modules. Full training result pending. |
+| 2026-11-16 | Step 5 completed and independently verified. | Execution commit `873598e`; GPU job `13927137`; publisher `13927707`; W&B `0povsppx`; model `step5-13927137-checkpoints:v0`. Epoch 3 selected; merged accuracy 86.01%, macro-F1 0.8620; merge and artifact downloads verified. Next: Step 6 baseline benchmarking. |

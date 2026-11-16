@@ -1,0 +1,342 @@
+{
+  "status": "passed",
+  "training_images_per_epoch": 3279,
+  "epochs": 3,
+  "optimizer_updates": 615,
+  "validation_images": 579,
+  "validation_runs": {
+    "epoch-001": {
+      "metrics": {
+        "accuracy": 0.8082901554404145,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              123,
+              44,
+              0,
+              14,
+              0
+            ],
+            [
+              6,
+              131,
+              4,
+              16,
+              0
+            ],
+            [
+              0,
+              5,
+              115,
+              1,
+              0
+            ],
+            [
+              0,
+              13,
+              8,
+              99,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8153847926267281,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.7935483870967742,
+            "precision": 0.9534883720930233,
+            "recall": 0.6795580110497238,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7485714285714286,
+            "precision": 0.6787564766839378,
+            "recall": 0.8343949044585988,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9274193548387096,
+            "precision": 0.905511811023622,
+            "recall": 0.9504132231404959,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.792,
+            "precision": 0.7615384615384615,
+            "recall": 0.825,
+            "support": 120
+          }
+        }
+      },
+      "loss": 0.14958435103965623,
+      "predictions_sha256": "61c087a5639dad869ca2026a56255f05bc8b9b2ee2f2f815cae9478aee29b6a6"
+    },
+    "epoch-002": {
+      "metrics": {
+        "accuracy": 0.8324697754749568,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              170,
+              10,
+              0,
+              1,
+              0
+            ],
+            [
+              37,
+              107,
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              2,
+              116,
+              0,
+              0
+            ],
+            [
+              11,
+              12,
+              8,
+              89,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8333503699732034,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.845771144278607,
+            "precision": 0.7692307692307693,
+            "recall": 0.9392265193370166,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7430555555555556,
+            "precision": 0.816793893129771,
+            "recall": 0.6815286624203821,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9354838709677419,
+            "precision": 0.9133858267716536,
+            "recall": 0.9586776859504132,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.8090909090909091,
+            "precision": 0.89,
+            "recall": 0.7416666666666667,
+            "support": 120
+          }
+        }
+      },
+      "loss": 0.1317989741345145,
+      "predictions_sha256": "202bc6857d2caa3f437abf868eac41d2c0e13aa067bbb1448d2ee5fbc0f4d364"
+    },
+    "epoch-003": {
+      "metrics": {
+        "accuracy": 0.8549222797927462,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              157,
+              18,
+              0,
+              6,
+              0
+            ],
+            [
+              20,
+              119,
+              3,
+              15,
+              0
+            ],
+            [
+              3,
+              2,
+              116,
+              0,
+              0
+            ],
+            [
+              2,
+              7,
+              8,
+              103,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8575596220022945,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.8650137741046832,
+            "precision": 0.8626373626373627,
+            "recall": 0.8674033149171271,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7854785478547854,
+            "precision": 0.815068493150685,
+            "recall": 0.7579617834394905,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9354838709677419,
+            "precision": 0.9133858267716536,
+            "recall": 0.9586776859504132,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.8442622950819673,
+            "precision": 0.8306451612903226,
+            "recall": 0.8583333333333333,
+            "support": 120
+          }
+        }
+      },
+      "loss": 0.10785202167640713,
+      "predictions_sha256": "df4d1070d8aa33123712b1a563f1ab004e64e7e75a60b8b258e52e37b851a899"
+    },
+    "merged-fp16": {
+      "metrics": {
+        "accuracy": 0.8601036269430051,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              159,
+              16,
+              0,
+              6,
+              0
+            ],
+            [
+              19,
+              120,
+              3,
+              15,
+              0
+            ],
+            [
+              3,
+              2,
+              116,
+              0,
+              0
+            ],
+            [
+              2,
+              7,
+              8,
+              103,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8620186316077625,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.8736263736263736,
+            "precision": 0.8688524590163934,
+            "recall": 0.8784530386740331,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7947019867549668,
+            "precision": 0.8275862068965517,
+            "recall": 0.7643312101910829,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9354838709677419,
+            "precision": 0.9133858267716536,
+            "recall": 0.9586776859504132,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.8442622950819673,
+            "precision": 0.8306451612903226,
+            "recall": 0.8583333333333333,
+            "support": 120
+          }
+        }
+      },
+      "loss": 0.1078627267283557,
+      "predictions_sha256": "cb6df487ae652fc880a4bbb107de2644d1b9e61deb99d081f2e283fc72d28a90"
+    }
+  },
+  "selected_epoch": 3,
+  "merge_verified": true,
+  "checkpoint_files_verified": true,
+  "checkpoint_file_count": 52,
+  "test_set_inference": false
+}

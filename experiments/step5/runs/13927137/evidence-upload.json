@@ -1,0 +1,16 @@
+{
+  "wandb_run_id": "qi5s4b7s",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s",
+  "artifact_name": "step5-checkpoint-13927137:v0",
+  "artifact_digest": "204b73717fe48b7b865011153ec34818",
+  "model_artifact": {
+    "artifact_name": "step5-13927137-checkpoints:v0",
+    "artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+    "files_verified": 52,
+    "bytes_verified": 1350270604,
+    "selected_adapter": "epoch-003/adapter",
+    "merged_model": "merged-fp16",
+    "restore_command": "wandb artifact get coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0 --root checkpoints/step5/13927137"
+  },
+  "training_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx"
+}

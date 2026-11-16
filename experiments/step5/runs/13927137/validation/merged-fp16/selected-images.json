@@ -1,0 +1,3476 @@
+[
+  {
+    "group_id": "40206e5058b08378",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1009.jpg",
+    "sha256": "ff0d52dc161d0c27cfdf15b01f5ed17022df5797e04af474f06c2048cd69d966"
+  },
+  {
+    "group_id": "a7eeca5dc1a93f62",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1027.jpg",
+    "sha256": "116a8096eaffd839cc9443d55b0fe140cce3067a7e7cda3ed6188b3d54fc57fd"
+  },
+  {
+    "group_id": "db4a9dd3371e438f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1039.jpg",
+    "sha256": "cc0250d1cc59fb33e3ef9fe3aa6f4d46a0b4a96c0dc4bf62b84ac9add9a682a9"
+  },
+  {
+    "group_id": "9f022f5cc52ab439",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1043.jpg",
+    "sha256": "8750e005f5a056f19720c759d295494bc763f368078702de20e93561d116e0e1"
+  },
+  {
+    "group_id": "6a1a664adc2358fd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_105.jpg",
+    "sha256": "d5faa245547eceaff832fca9a4ae4e4f6da24ad61441b60d5d5792ed4630a84d"
+  },
+  {
+    "group_id": "6cb67d8b18af9631",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1052.jpg",
+    "sha256": "75cc15aa6d260b97b7cb2a9e23c6acc015aac1a49e6bc5d5b6fdbebc8c90552c"
+  },
+  {
+    "group_id": "b9b5804b085b1c4e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1058.jpg",
+    "sha256": "bea567b2fe260ee9fc3450806b2a433eb875849181a47be97f6fd85fbcd163af"
+  },
+  {
+    "group_id": "8cd68f57b54da3e9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1063.jpg",
+    "sha256": "3fd896730cbd7d870998082bf093ebf94ff9234ba704410c63d8fb3385692486"
+  },
+  {
+    "group_id": "ea05d8388159bb61",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1074.jpg",
+    "sha256": "2524396d0e1fcae86aff8a446459cac71fabe7d21e3625f958f0da8f1c350309"
+  },
+  {
+    "group_id": "acaa57d225210509",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1079.jpg",
+    "sha256": "5ab39a7d0b5e205d6f707a1d26d1bd252c57800454d74095b6e05f814fcbff5d"
+  },
+  {
+    "group_id": "014e3a35da3b7ca6",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_11.jpg",
+    "sha256": "b5a5d9dbf19e23cd334fdbbe7e155fbad5bd07a66b76900164a03c0e737ad3e1"
+  },
+  {
+    "group_id": "39bc762441e0622f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1102.jpg",
+    "sha256": "fc89077441b52924cbfefcc639fb095644ea996bef6ebde2e84e81cd8be51852"
+  },
+  {
+    "group_id": "acd8316af5fbcdf4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1125.jpg",
+    "sha256": "5ccac8c5e3d461309b4c238a2cf18c9e1e4c7dcab3ed24b5214520cfa4a5bc96"
+  },
+  {
+    "group_id": "ed2027713d4f3588",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1126.jpg",
+    "sha256": "7808f8d7f88dee9f3b15644f9d6df444c4b4d04ec20b38047c2e58391e44c639"
+  },
+  {
+    "group_id": "0d5a54fd00ecfe24",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1127.jpg",
+    "sha256": "6aa036c11ea20da70ad4ab57e01dd02e46ed135e655f4c49a570d4860b053e41"
+  },
+  {
+    "group_id": "7c41e517618250a9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1134.jpg",
+    "sha256": "be74880096019c95bc76dde9e61c49944ab72c77c25f46db1ae92c9437516b23"
+  },
+  {
+    "group_id": "0f417b171fd66187",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1136.jpg",
+    "sha256": "173d8a41a664af5e4999736730e4268342487f6a61d06d66a6444d1678a93afa"
+  },
+  {
+    "group_id": "76f0398f207c6043",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1140.jpg",
+    "sha256": "dde07981a2f82c22f7a50a68cf6ea11b5713c0155974e9623a87e582695a20ca"
+  },
+  {
+    "group_id": "aef69704bc8cc41b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1149.jpg",
+    "sha256": "8dfab7ca1bc3729df9e500424fa51d9e44d527d2179ec10f56d6c3c8d5c6c34f"
+  },
+  {
+    "group_id": "33e2f02f2cc9a92b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1156.jpg",
+    "sha256": "f4608cb23bf7da81c0e4919232f843272a04a4e3ec1e33f2fc9b97a2671ab647"
+  },
+  {
+    "group_id": "e3ab0f8304eb1bff",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_116.jpg",
+    "sha256": "fe7e339c2f38d581f61783f84a63f453f8fb0c1e4c7af8b3938d8562e6a1901c"
+  },
+  {
+    "group_id": "cefde8fbfcf298bd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1185.jpg",
+    "sha256": "97f0d4bbf9681212e89a0f5a83b76f77980aa2211c2b9c8d71e1e397fd4638ba"
+  },
+  {
+    "group_id": "58210e2aa6f3fed8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1186.jpg",
+    "sha256": "fee3fe419b55629a307313df786566870672bd716ce91cedae576f8cb135098f"
+  },
+  {
+    "group_id": "b36e8fccde569742",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1194.jpg",
+    "sha256": "82444390a96f3292242823338c52b9310ee7c5eed55185f9e8456d2f383b14c6"
+  },
+  {
+    "group_id": "d42a588c333ced7e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1198.jpg",
+    "sha256": "1bbca8899bd626ee541317612316e21f2a3d55117aa715a3044c382bb960c41d"
+  },
+  {
+    "group_id": "c54f9fd16cefdcc8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1201.jpg",
+    "sha256": "5dcec96ca17981a95541c7b59c80176b4955f634fa23bd43457f04672480285c"
+  },
+  {
+    "group_id": "a8832ff454d5614a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1219.jpg",
+    "sha256": "f1579211cdba6486bae9afb4a6643221742f8a2fc3efedf6f5c202ac6d194195"
+  },
+  {
+    "group_id": "6af2ec4047d33fb3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1233.jpg",
+    "sha256": "70e0d05ddcc25c5d083269466bb05f598d248f1052e310a1c4398a850e36fffd"
+  },
+  {
+    "group_id": "750e737cf3e76b49",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1239.jpg",
+    "sha256": "08dd3bdd267d7cd7bb1aaf2f22515de1522831fb975640e58fcdc37bcef49608"
+  },
+  {
+    "group_id": "7c41e517618250a9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1243.jpg",
+    "sha256": "849d55bbe3f1dc7dd1b0c65a051152b493dee5784225c0ddf164dda00ede02dc"
+  },
+  {
+    "group_id": "15a887f0485eec6d",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1245.jpg",
+    "sha256": "84706e9ed0c156bb9c26792dcc3db73aae2950942eab52fd59fc3937fb82dd7c"
+  },
+  {
+    "group_id": "5b49795bef6cef9e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1253.jpg",
+    "sha256": "2cf16eac8330eee8a821c999a7c22d133edff2b6761a99e6c1425060368f086c"
+  },
+  {
+    "group_id": "02acab1a623f5bca",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1263.jpg",
+    "sha256": "d3a1c0c8018db03ae8040595cfdf59a2e79e2297870e478029ebc014c36a833d"
+  },
+  {
+    "group_id": "de0317ccaf0075fa",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1272.jpg",
+    "sha256": "062c036dee812782a059f3d61742e5dfa332e113aef02556715e97c9b54f4a9a"
+  },
+  {
+    "group_id": "eb09ffd56a52c95a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1279.jpg",
+    "sha256": "b60ccb3630cd623f5f8644cc345dc6883e58029bc96b2d629eea7ac2f7940fe8"
+  },
+  {
+    "group_id": "7134f81dcdaba570",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1284.jpg",
+    "sha256": "b01c39342f02566329c7bf4cfba8be3c9c7c5f4f91ffbc6153aca6e6b3fe27e1"
+  },
+  {
+    "group_id": "889f8bd5d61b1420",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1286.jpg",
+    "sha256": "ec9998f5cfb7df9292de957f06c3c606f218f434ff5f7afb9c0362ee251febca"
+  },
+  {
+    "group_id": "45467fcbeb56e259",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1301.jpg",
+    "sha256": "c66b31448a50c1bc2027ee381df8209a3967c73661e76095142c2b7aa25bf8fa"
+  },
+  {
+    "group_id": "29477a65cc6a8e24",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1304.jpg",
+    "sha256": "1128518e563d150395ec2f48b607b2d62df1b1c24eac00076ab43243c0e46f6b"
+  },
+  {
+    "group_id": "601c4c5679f2fb77",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1306.jpg",
+    "sha256": "7d4f77e845293599bac6d85406b81fe2033a06a46624bdf6ecc83354d4f3a0dd"
+  },
+  {
+    "group_id": "dc1146ffa34e6127",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1308.jpg",
+    "sha256": "5b7a3cbae3883d2f4933920cdca94c21e518ad8f961dec14a05dcdfc980a1518"
+  },
+  {
+    "group_id": "a431b29f79a74246",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1313.jpg",
+    "sha256": "23ce79c21b2560f36c2c5d571c55371211a4fb185cbf1ace627eb62927e54abd"
+  },
+  {
+    "group_id": "af031c9b695de988",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_133.jpg",
+    "sha256": "d6d9089266cc3cbc859358c7311a5f524696693399e8f5810598e9c476fe337c"
+  },
+  {
+    "group_id": "ca2223de5902b8b4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1330.jpg",
+    "sha256": "514ea41d3e9ec529604a8ab1d18d8d31e5564bc4e58476f1701f79be142ab543"
+  },
+  {
+    "group_id": "ad9484f5cee09310",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_135.jpg",
+    "sha256": "885038352a0fb1fd67bcd001232edeb176bf3337ff9c2809fb92d4669d87c6c1"
+  },
+  {
+    "group_id": "4bb3b22af0107626",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1362.jpg",
+    "sha256": "52b07683ffaa004d90a8eb701d33a3b6925385a8a7f163a2a2c3beef3cfbc97f"
+  },
+  {
+    "group_id": "4a344a46dcdc6230",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1375.jpg",
+    "sha256": "73c97f9773c9ae88ccde9d9005e6e2c3140383d7dcf4f332c67c35d6c11e61b8"
+  },
+  {
+    "group_id": "d1ef175e5e209c61",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1376.jpg",
+    "sha256": "b834120e18dcd2faffc6a2b045801161a8a6bc1c985fdbddf7618e252ccb5602"
+  },
+  {
+    "group_id": "3b9a275cda7df9ad",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1384.jpg",
+    "sha256": "2d0766f8fd5f1cb2479c398c331d09ac0b8ebcaec8a4ae6a321463bf66f20ca8"
+  },
+  {
+    "group_id": "cab0a62d48bacc52",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1388.jpg",
+    "sha256": "696c4af2f133b6bebd8ca61910e8e526681e3cef3c4259763dcddd6ddb68e90e"
+  },
+  {
+    "group_id": "312f3ff7cf90859f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1395.jpg",
+    "sha256": "b97685439fbd5014ebccc801363dca508205aa3242f2c5e8f2e41724916d7013"
+  },
+  {
+    "group_id": "1f06f4ba768b35ea",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_1399.jpg",
+    "sha256": "2874168bbc29cf0ba790d3fdbbc27c5c7a38b9682af47dc97e87186028c4ed80"
+  },
+  {
+    "group_id": "3d243febae8cd696",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_14.jpg",
+    "sha256": "f9439266502e976c6bf0da5fb6d84ec3d88b266c1ce823f166b1929c578a9f73"
+  },
+  {
+    "group_id": "deb3372066e1e39b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_146.jpg",
+    "sha256": "6c3bacbfab25c58337b110d89ec3a1fe1a85b59becb638b8788766ee9eda9326"
+  },
+  {
+    "group_id": "ba22853fa13573a3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_147.jpg",
+    "sha256": "34a108b3f5e37d553a927ff08d55a6dd705a96ea10c0b0fc277675706d0a9519"
+  },
+  {
+    "group_id": "9ebad5ff64f47f3e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_155.jpg",
+    "sha256": "74bc45f1e1e08c9ecc7c4604918d4ffad8431d59bdd930edd7fcb279e73997ff"
+  },
+  {
+    "group_id": "03180647fe203a4b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_158.jpg",
+    "sha256": "a607ce2f9e06b77e7674fd064d1cfd1649f99c02d97715027b875923c6e6376d"
+  },
+  {
+    "group_id": "03da51599a715835",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_168.jpg",
+    "sha256": "8f50cffd4b7b1e4a2f497dd529c824a7915200babe5a8dc39093f3e4dc87b0e6"
+  },
+  {
+    "group_id": "256f28b1ef5013e0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_177.jpg",
+    "sha256": "948a7cf1ebd51f71b4c9abd44c499e6f1e2a74757c8a18a2c498cbcb5d0b8687"
+  },
+  {
+    "group_id": "698d527c053fb234",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_178.jpg",
+    "sha256": "8e70e6f612e60bd501e2624c447d05a0583bc474aea53bf6d7859db983c98874"
+  },
+  {
+    "group_id": "2649e2636354dbde",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_187.jpg",
+    "sha256": "f824f2fba70fc2dc5e70808a6e89ae9cf728a7ab3c2a824a6c778ac536fed783"
+  },
+  {
+    "group_id": "976c767aee82cf62",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_190.jpg",
+    "sha256": "655d0d7de0a8f2775be9c959619aef947d178e07739e6bda45d2cf8ef22d39a1"
+  },
+  {
+    "group_id": "d5750b564bf3569f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_195.jpg",
+    "sha256": "0398b2d2c1909034bec55482ce1b4049458e4a1d6bc552eab97294a5549030a6"
+  },
+  {
+    "group_id": "d011223d95a01ec9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_197.jpg",
+    "sha256": "4afab5c129d0763a852a2a692f08ae921ce0d1f56c1b0810e3f64553b49c711e"
+  },
+  {
+    "group_id": "64a98f912e707c09",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_201.jpg",
+    "sha256": "3f6ee6cfe1fcb884cfefac6c7e02ea653abc6d1687eadad3fbc757fa7b40d5fb"
+  },
+  {
+    "group_id": "b6949cb7fa24bdb4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_204.jpg",
+    "sha256": "c33db1413ff24739eac7fc705b90b65952a3829238e480b96270575739b1806f"
+  },
+  {
+    "group_id": "07352fa3074a1c75",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_209.jpg",
+    "sha256": "b90ecd085a0a477da778131df57531a11063757a33996830c62ddc605a00ec2f"
+  },
+  {
+    "group_id": "56a73674b3e89f4b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_221.jpg",
+    "sha256": "8bf21259fed8856c34f226a3c53a18366ee3527c8edf0aa8aea5da9bc3db8cc7"
+  },
+  {
+    "group_id": "530fd5833d7fd56f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_222.jpg",
+    "sha256": "77a6eb33bce57cf0b57fde3f2efdb0fc91e15aaaa6e5286c130ec8cd80d6b2a3"
+  },
+  {
+    "group_id": "bc80528d79fb96ba",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_230.jpg",
+    "sha256": "5d0cdf397648a4db3fb5dd82dd41701bf994c5e1f22972dfa7069f033bd53c58"
+  },
+  {
+    "group_id": "9525e9c6d9a65ee9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_245.jpg",
+    "sha256": "082d43f501d2196fac405be781013360fc4033e4fe342427ea82259bfef3de3c"
+  },
+  {
+    "group_id": "535fd3270b6da6cc",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_25.jpg",
+    "sha256": "f74633b806c7b1ea21c0760dd955e3ae5e6a58fdeb72ad0d14723bbaa45c2f08"
+  },
+  {
+    "group_id": "d3edb8ad674662ff",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_267.jpg",
+    "sha256": "594616f87b2fadbffe0e154bbc408a8f3d32767029d5785438b6a961a2efa19a"
+  },
+  {
+    "group_id": "d9a3f71c6434e222",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_275.jpg",
+    "sha256": "a27c0bf4dae25c926d0ed5aae645fe7ceb93a3c33d058d97db182ac50f1f44b1"
+  },
+  {
+    "group_id": "84f270510b34c59d",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_288.jpg",
+    "sha256": "c3b3d0cac8b16892db83d9cacf965b5d601531942a43d53fc8016b4c94c81b29"
+  },
+  {
+    "group_id": "af031c9b695de988",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_307.jpg",
+    "sha256": "5e1feb19eb0b8a892669129944731891f76417802e86aef7600c5455b77e7302"
+  },
+  {
+    "group_id": "87999b3f353b4249",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_309.jpg",
+    "sha256": "9fa9ed2dd4a84b7f44c3ba4d0d92f2f06af7744d835bd59fd064a0d312b08d29"
+  },
+  {
+    "group_id": "e51b2611044f9bac",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_312.jpg",
+    "sha256": "f07d5a9e4c17ba97b25383a5774b27c9a52a6addcdfa7c6d3bb3e78f6cbb6f81"
+  },
+  {
+    "group_id": "4feacbe8a25e725b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_316.jpg",
+    "sha256": "3e007478f6f85a9b96ce4947f7619452035901cede73c7f2a52b543ad764a609"
+  },
+  {
+    "group_id": "d476a2d07097f7a2",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_330.jpg",
+    "sha256": "b4fae5c17f9adf0a9bf2613ddbb8cb048d1e33387bff59c5cd4ec1b64feada49"
+  },
+  {
+    "group_id": "106ebd00124c357a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_338.jpg",
+    "sha256": "5b2e0e519c455318143f5ef7dace7287eed2ba0d5e434d99999fcb79b3b8b8be"
+  },
+  {
+    "group_id": "c97b72ad1ae3891e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_339.jpg",
+    "sha256": "752b187fe84156c44d2db5b59c5d20313fbc84fd9ac529072480b3555d70b55b"
+  },
+  {
+    "group_id": "2cddffe3bbd7d977",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_363.jpg",
+    "sha256": "97aa95074633165251aad0add42c8c7138919cc5c45b918828f16e3fd5856458"
+  },
+  {
+    "group_id": "3d3fd14245420c39",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_381.jpg",
+    "sha256": "d90903f2d478f7ff8c05e17918dd1628d422f9622454446bf4728f65d54d5e3d"
+  },
+  {
+    "group_id": "d0f391af69bda375",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_391.jpg",
+    "sha256": "2884437a7c66127c27d8621b4f715b3bcc5ee708a4c9b262b91776ce3a26bc50"
+  },
+  {
+    "group_id": "0cb4379de9b6d56e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_397.jpg",
+    "sha256": "e0f41ba8781792d5929faa044f05bb00f744a1a457030c7ed39bd1c882d6efa9"
+  },
+  {
+    "group_id": "94bfe430c8814698",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_400.jpg",
+    "sha256": "e5053db6cb8383c58f2cd3717a6d92417b7b2d70acaa121a4e3b8fb79375f79c"
+  },
+  {
+    "group_id": "9347b36a3198a38f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_411.jpg",
+    "sha256": "ad4875edbea142bbc8f58b3ec23a7e59e94b8bb883878d554b0e3a7162de7cb0"
+  },
+  {
+    "group_id": "d2767f3a74ec004f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_416.jpg",
+    "sha256": "e44e455d0ccbc9af6feaae5e0f44d2f45cb480a5174d66a13f491464fdd3b3d8"
+  },
+  {
+    "group_id": "ee3fb762d939d43b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_419.jpg",
+    "sha256": "a7cede9f7fc9eb3716b461e693adfecbb908236f4fa12c5337bcf6a3c67641f1"
+  },
+  {
+    "group_id": "a3ad8381eff0203e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_440.jpg",
+    "sha256": "ca56731b824e3ae5c14731237b2094214e79f43f1f0fda5f4e2021b5227e5cc9"
+  },
+  {
+    "group_id": "18bcbd41b92228bd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_442.jpg",
+    "sha256": "a4c5bb886c3cfa9c19100e963c3df3db233a809e2705b39892b0a13b59b01a04"
+  },
+  {
+    "group_id": "85f85fb03c18c3a7",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_445.jpg",
+    "sha256": "d363cc3273f2205dbc4fb6a75e107f74d6d192a8070db8733aed47b6b72fb035"
+  },
+  {
+    "group_id": "b965fd087a06bb35",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_455.jpg",
+    "sha256": "0aba7464082abbeca6677266ac8feed2c3c242dde6a833a6f456174a29330400"
+  },
+  {
+    "group_id": "eaa88651d1840ce8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_456.jpg",
+    "sha256": "08527c8ec2f1990f550ec9b2b91e4f8ca80f386cbab0511249461d47bd7277d0"
+  },
+  {
+    "group_id": "2ac5d6eee2b8965f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_461.jpg",
+    "sha256": "b07e49b8836e8203a7ab3331fcb1e32afabb32d01859455eae38c6bec6cf79a1"
+  },
+  {
+    "group_id": "ba83faa6767bbb15",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_463.jpg",
+    "sha256": "a5ca10c85461cc7a98eb087eb614a0064585e72a412d38bf7fc3c140b4ac6c55"
+  },
+  {
+    "group_id": "c5b575210896852a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_465.jpg",
+    "sha256": "fef5e504b65317ce5fa04a8c71602eff87096a726c9f2b43ac226afbb65caae1"
+  },
+  {
+    "group_id": "5e923da52f8f7fe6",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_47.jpg",
+    "sha256": "b537c73a8f1fc8ae67c4f5ecc18494c84c9a1ef7b8f9b2ea65dde9a219515055"
+  },
+  {
+    "group_id": "b10b20cf394ff86e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_472.jpg",
+    "sha256": "fc23dc76fddb19c6a30125526e0c94807291a94d142aeb8f1be461020105214d"
+  },
+  {
+    "group_id": "4974d4cea7205a95",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_474.jpg",
+    "sha256": "0c6246144e99f01a85d9bd26cae11ac1f419d2005e1d36ce758f144813402b8c"
+  },
+  {
+    "group_id": "3be6c536787b88f4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_485.jpg",
+    "sha256": "bc00f5fd2e837431ce5ea7f83f9de6e277caa9d1749280d0d58a7c1988b169ec"
+  },
+  {
+    "group_id": "948c4a75e7980ff5",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_486.jpg",
+    "sha256": "5ca71aa88abd89721f64e3107ebe5e047553ebf2bc3f06f0de1b7ec09c5f8602"
+  },
+  {
+    "group_id": "f160820e6739e7f8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_503.jpg",
+    "sha256": "b64dc2d55d37c2bb6b27d38b2b42a15d65c9e1e13b85a5a319202b9abe5b3bb9"
+  },
+  {
+    "group_id": "8af6cfdd9a25a2b3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_504.jpg",
+    "sha256": "5538b7b91e27211d550c0baff9ca24f9d0a5912403314d6cee2d217c640754b7"
+  },
+  {
+    "group_id": "4d58bf86776b2843",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_517.jpg",
+    "sha256": "9095cee93716b9f1190e47ec076bb6edb28ae1e0dabac0408577a810ea782fe1"
+  },
+  {
+    "group_id": "433d24a1236c5e58",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_519.jpg",
+    "sha256": "3e1eae7932e29e7730c5aaf88beae2ff3e59bb833dd82276290ba6d20d0a69d4"
+  },
+  {
+    "group_id": "142b42d5ed89b129",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_523.jpg",
+    "sha256": "9759ae9225e116c6bf731d7ae31f26e2f2965887463393f48ffcb333b8132d75"
+  },
+  {
+    "group_id": "95727bb18a709d43",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_533.jpg",
+    "sha256": "7ffad3fdaaa80e72f1970a225756180b14146a0e53d0cf6a8c308f562501e737"
+  },
+  {
+    "group_id": "e873e7d8af1159e6",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_534.jpg",
+    "sha256": "4a595f937a3283899151addfd7b471801ca796c1f34ba14ecc184e3904a3adfe"
+  },
+  {
+    "group_id": "6316b598e2fa4447",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_544.jpg",
+    "sha256": "fc11fe5044b645565504c699edc72dca5bde8cd3ec3982bb1232515635c23b7b"
+  },
+  {
+    "group_id": "904de554e7d9395a",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_562.jpg",
+    "sha256": "9fd087f86829b63b251e868568a13e466757b4dd5a274b9d99fa3e959fd7dace"
+  },
+  {
+    "group_id": "96b2fe847b922459",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_570.jpg",
+    "sha256": "d57dc7df84f814c0398afaac8db90def0ab370fc2a3bf68f566edfbf489c271c"
+  },
+  {
+    "group_id": "932df7f04f4d4ef0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_577.jpg",
+    "sha256": "4d2a2d9427381511a843f3dc588be9802cb68c3d31b808637025502a8b41e895"
+  },
+  {
+    "group_id": "256f28b1ef5013e0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_59.jpg",
+    "sha256": "901ed39e067e4bcc3f209e7f8cc65212630f2c1da1f8df25e8104ea89f7c9dd2"
+  },
+  {
+    "group_id": "447902ae30157632",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_592.jpg",
+    "sha256": "59d694deefc0beb5d26d52f8f37b8c3147a25408105ea5e2dda06b3fb85563b4"
+  },
+  {
+    "group_id": "822bf6213b328e15",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_595.jpg",
+    "sha256": "ea5b3c38211e7421846de399f6906d190f5f4de5b70db494ef6ec2242c7ef5b9"
+  },
+  {
+    "group_id": "a9d68b2d77d55142",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_597.jpg",
+    "sha256": "0f3737dc50b98d9b39b43d8a222bfde2b42cdef595bbc80dca817b450f2a5ca8"
+  },
+  {
+    "group_id": "4ee46671ad00f80c",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_602.jpg",
+    "sha256": "b877880b7702ead56ba91b4e9cd966c5bd9ee16bc8866d6a5746da6f36dbb785"
+  },
+  {
+    "group_id": "256f28b1ef5013e0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_608.jpg",
+    "sha256": "75438b39f5ee71b6f97cf122029c9220d0fcf8130adaeb65cb0f2516e24a506c"
+  },
+  {
+    "group_id": "a04b6a784202a927",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_61.jpg",
+    "sha256": "fbe4bb2ab066e73a0ce5c8c95434db76f9647c757cfad2a03a7b5535801a788c"
+  },
+  {
+    "group_id": "cb34d72b448a246e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_628.jpg",
+    "sha256": "3a5ee71b5d21befecbba842ecc8140fbc9d592d8fe8654d4ce533789d564ed32"
+  },
+  {
+    "group_id": "dec0bdb60043357e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_637.jpg",
+    "sha256": "f757f8405e888f996bd3d8d91c9cf4c5effa5959955fd9008fd3bed9ad7d48f2"
+  },
+  {
+    "group_id": "45d0fca742128d1c",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_64.jpg",
+    "sha256": "b01b7f5db0877acc80e380aacf63cb62e5ed4db59330faba2bb79b7e8e02fd55"
+  },
+  {
+    "group_id": "b1f75712b7619b68",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_649.jpg",
+    "sha256": "df21cb0a59c9411c6912153db34749736a53cc8be4a4f1c375ce022d04496be0"
+  },
+  {
+    "group_id": "3d658bc208abc1ae",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_65.jpg",
+    "sha256": "aace60e9ff85e29d0cd635d8d0ccb2bbdcfa5eab6297d50ad86572ffe8bdcd28"
+  },
+  {
+    "group_id": "5aff83f6f979ca9e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_651.jpg",
+    "sha256": "d7b9be3df4ca517b86a24fd680bb3924cb75e950f751d47aeb0012b2eba83cc0"
+  },
+  {
+    "group_id": "5d83a33a870a2976",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_659.jpg",
+    "sha256": "e87eef05057533397a823556a9d712dcbeed8ba51ce04a33a4d9a976b24168cf"
+  },
+  {
+    "group_id": "bb481592b36f4683",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_671.jpg",
+    "sha256": "315437438f77b6175a5fa4fe9970de698be258c0788ea68b6a6fea4d4df4f67f"
+  },
+  {
+    "group_id": "5ad2de535b87ef87",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_685.jpg",
+    "sha256": "86b49602c31c6e9e4a91805e2c17f80352afee001644e3de702a8e4da3dbb67d"
+  },
+  {
+    "group_id": "42bf7a07a7d03032",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_690.jpg",
+    "sha256": "b4373b755d579a63136a2fd550cd6071b6617a9ba8ceb7058d4bec6bd9990bb5"
+  },
+  {
+    "group_id": "b4c3b4fb46b618cd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_7.jpg",
+    "sha256": "3b814d7fbcb5e403f54a60edbf7d069e63a6ff76d310d83dffd65b7187ddf763"
+  },
+  {
+    "group_id": "ed6947d3cfe3f0dd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_707.jpg",
+    "sha256": "92af07887439957669f921b30366873c639e543e7c565db2b53abce15ae23a4a"
+  },
+  {
+    "group_id": "a0f698b5a46ede9f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_718.jpg",
+    "sha256": "fa6158cbce0f7bea1facf6dd8074327ffd8975f1e5d698c1ae6972885505e6fd"
+  },
+  {
+    "group_id": "3832f7d892e7244f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_722.jpg",
+    "sha256": "374d068b66103a3013217de61f444db11afe1cfb14171331b81305ad0faff36d"
+  },
+  {
+    "group_id": "a0d7852fe8ee34fd",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_727.jpg",
+    "sha256": "e8567c00e5884fb7dc20ed423ad6e870ac09983aca27deb1086555633e2b9714"
+  },
+  {
+    "group_id": "5b1a5bf56f59efee",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_737.jpg",
+    "sha256": "30c602eeeb1545408af0c111086890b7098a94a6629f7d15f8115bba3482de4f"
+  },
+  {
+    "group_id": "ab2a3a89053d06ac",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_754.jpg",
+    "sha256": "ca53d6b5a862ed6bb62b114729a09d1070750b8a2f436f787ea06819908f7a2f"
+  },
+  {
+    "group_id": "feed10fca1caf0eb",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_756.jpg",
+    "sha256": "c5198b1d3709d567f807a76d236a55a1e9073f6ea37b8edb26c45f5894d7dcff"
+  },
+  {
+    "group_id": "5d308ee39bb62b3b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_766.jpg",
+    "sha256": "aec130cbaa7c60d52c4e637f85fcaac235e6e4de23f40b73432b97f8dd27f779"
+  },
+  {
+    "group_id": "4a15cdc4b8da55a4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_77.jpg",
+    "sha256": "d26867b4e830c55e1681fe841ff16431d82dc737c18b7f6e0329b0780f1a8ec0"
+  },
+  {
+    "group_id": "121c0c3917504022",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_770.jpg",
+    "sha256": "94e7ed59eec5274b772618e79a1e6de61c4b2fab601a1d505f7daf4d8fd98dd8"
+  },
+  {
+    "group_id": "0a9ac20b432f9147",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_777.jpg",
+    "sha256": "94d17d5ce771146fd499abd4527da69aff3b055e5efd552e72acd29e6dcf6a0b"
+  },
+  {
+    "group_id": "b230a95b86136886",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_779.jpg",
+    "sha256": "c83683226e108bab357f14ca8f4aa65fd65c43190cbd608a5a35e3f3fdadd8de"
+  },
+  {
+    "group_id": "d9a6abf33b05f5bf",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_793.jpg",
+    "sha256": "3f22601c95aa22110a62c16e598261d202ca81c2439755f9f2a6c15781c754ba"
+  },
+  {
+    "group_id": "c850e30b4544f605",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_808.jpg",
+    "sha256": "b05ad2ea27d8fd7526fe036b76cb19a681ddf56b757a4519a814c3336d68d14c"
+  },
+  {
+    "group_id": "18b1de9a28125bde",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_809.jpg",
+    "sha256": "640e175810b5d2d09c57ec9f51eb25cb1b7a53cab96bd43183bfec2269cd2b47"
+  },
+  {
+    "group_id": "256f28b1ef5013e0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_819.jpg",
+    "sha256": "eb43b38c7f6454dbd95cc4d5caec34ad9c89afa13ec2ce962443b46a85a5a820"
+  },
+  {
+    "group_id": "1d0186da22a541b6",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_821.jpg",
+    "sha256": "089d8e0fcf712322b09407e7d7166086d56a1181539a8116406bb98b5ba26efc"
+  },
+  {
+    "group_id": "97518f9024c7d52f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_831.jpg",
+    "sha256": "eaf42edd86723065b3fe680e9e90e8ffcc83f8aef5191469dd75b9678091faf7"
+  },
+  {
+    "group_id": "a276f5ef3509832f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_84.jpg",
+    "sha256": "6ae7fa1a208c898b51bbbea8688ffa4d194b44fb89055ecdf4bd4a196e2b30f6"
+  },
+  {
+    "group_id": "4e5652485a684cfb",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_846.jpg",
+    "sha256": "6d4ca73d883aeedbb66b18e8a3a9244a2bc777abae38eb45def1cac49be2e53f"
+  },
+  {
+    "group_id": "658c82a6af1f23b4",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_847.jpg",
+    "sha256": "832bb6fe0d17fd97049a3e052b459125e239d6288447e83290facfb844531187"
+  },
+  {
+    "group_id": "978a995c965fed22",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_849.jpg",
+    "sha256": "287308f497e39bd3d645c7ce31fdea81c1a66336e1048d5334cd2d68164b21ea"
+  },
+  {
+    "group_id": "be0d8ca243436e1f",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_85.jpg",
+    "sha256": "fa4444c54f440a6e74ef0e70e9ddeb8eb0c5c920efeade8f0de2f0e88b706a3e"
+  },
+  {
+    "group_id": "47f64c121c686557",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_851.jpg",
+    "sha256": "6cf38674878dcaced0179552f1cc6a7f5a817534e8045fa5af27a828bacb0b83"
+  },
+  {
+    "group_id": "e5d303c0060bda4d",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_854.jpg",
+    "sha256": "441e593fa3ae54ef5fa17e788b1e36a80839c815740825cc7620f37ef86d1a37"
+  },
+  {
+    "group_id": "0ade3f2259d02cf5",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_863.jpg",
+    "sha256": "1d47c700cd1b49d3e0f8ca8e119bc9429b33dcabef96cc012dfe343a41a8e859"
+  },
+  {
+    "group_id": "f9105d3c73418b7b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_865.jpg",
+    "sha256": "842f6ca1c1f2a3a74ee6ab3ae3fda99245aabc2aaa764b4481dd9343162f1f20"
+  },
+  {
+    "group_id": "e23bc1be3af321d5",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_869.jpg",
+    "sha256": "3d9618b232c695e3023ff62ae1230ba287fd2fe3dea69453a43cb6a658193ff0"
+  },
+  {
+    "group_id": "d27758473cf19fe7",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_870.jpg",
+    "sha256": "f291633e2c43f4ee589e0eb3fadb42a9758a8a3ff4ef54a08897601eb3145227"
+  },
+  {
+    "group_id": "fcee092586d5a46b",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_873.jpg",
+    "sha256": "3172659b68ceef5a762bc5f6b97f8d584d529d95e4193e837248f2cd34c6435f"
+  },
+  {
+    "group_id": "fe962ec1d120c5fc",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_878.jpg",
+    "sha256": "6423207439a4043ccb32cc51e2142c0000254cf789be24a5eaeecbfb5a95e71a"
+  },
+  {
+    "group_id": "b5ffcdf8b7167ced",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_896.jpg",
+    "sha256": "38ca0b0926e30444a230c6963e8acb6b489507b9903b43d0ef5e3e23694f5612"
+  },
+  {
+    "group_id": "67c835414b431b19",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_897.jpg",
+    "sha256": "2898c339bcafd5b91d93b0da78af5951ff360e010e64b7f98b96ca5f1f7e9506"
+  },
+  {
+    "group_id": "ab9fc6a2b96f1cf9",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_900.jpg",
+    "sha256": "65fc5676e495ffb5eec241cbf85a75bc5952a6e4a7a1073fabfaa3b0d0470bed"
+  },
+  {
+    "group_id": "85086e0ae1b99320",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_903.jpg",
+    "sha256": "5e9f018066eea899fce2090a09df1dc8106307d4644b172c3acee9b553a6d463"
+  },
+  {
+    "group_id": "bef08eec88a07297",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_924.jpg",
+    "sha256": "1d127bfe899af629fa92e41459c602e7b2cdbe7e8fa13d2b3459adef4880e8fb"
+  },
+  {
+    "group_id": "3535724f494f5f5e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_925.jpg",
+    "sha256": "c746b5ec5c4b565d061407c188714f6c160e403849ea4d642fcb81f1119b44a1"
+  },
+  {
+    "group_id": "a1ebff5b892ee7d6",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_945.jpg",
+    "sha256": "8f3e05adbe2b23299deccdcc522295b34f9b27cfe51bdb5b500ea2fc6da5438d"
+  },
+  {
+    "group_id": "315316e36e81136c",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_952.jpg",
+    "sha256": "4d2aef2c6a6c428ab3a48c439fb64a3dbb5031490d22209ca7ff0f79f7e55a14"
+  },
+  {
+    "group_id": "4eaaeedbe79fa0f3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_956.jpg",
+    "sha256": "19adbda514220979a50ad99dde80d92caf4c36048f5013e9f61bf16750466c68"
+  },
+  {
+    "group_id": "fa399438a20f80e1",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_96.jpg",
+    "sha256": "6a6123190bead8fe55e131dd3eca432ac00b6d4c0b958704efcae9c1deadafde"
+  },
+  {
+    "group_id": "1c09ba1537c7bce0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_966.jpg",
+    "sha256": "16c7fe6051b5106b6b15618980505b2bfac09f3b6e6b4ff4dd0f8b3646e16aee"
+  },
+  {
+    "group_id": "2135a1f604abdcb8",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_968.jpg",
+    "sha256": "cdcae162e13d06dc2b6a5a936cfccf17a2d4ef83a599e5e3501356be6783f897"
+  },
+  {
+    "group_id": "4d9d77c902008cee",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_969.jpg",
+    "sha256": "bb782b8598de2e0ff2997d0b49ea258d97e88899f61dcf111176f6b677e9a1f0"
+  },
+  {
+    "group_id": "87dee057211761c3",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_974.jpg",
+    "sha256": "87166c67802faea9de701fc4b139c224d77a230eda104ec8e6690fb2415a5a85"
+  },
+  {
+    "group_id": "443b0236474caac0",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_976.jpg",
+    "sha256": "956d506b144f905cbcdad8bb860a5612352bc8c05232499513c21d3e4792a4bd"
+  },
+  {
+    "group_id": "fac7ce58bb082b78",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_981.jpg",
+    "sha256": "7cb479ac3290e8b903cd1d3a91dcfdda3269446b7c996591b0f5784bf520bba4"
+  },
+  {
+    "group_id": "16b76345dd255b8e",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_984.jpg",
+    "sha256": "8bf3f5b8a9dbc61f0244a794db389d7d14e028e06d0e9cf97c74131a2c973c0e"
+  },
+  {
+    "group_id": "7966d5bf1dfd5d74",
+    "label": "glioma",
+    "path": "Training/glioma/Tr-gl_998.jpg",
+    "sha256": "53d1ea1067f2de417b9d1b3e968ccd67216660306878b9c90ac82d48e679731d"
+  },
+  {
+    "group_id": "757487b7aef55116",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_12.jpg",
+    "sha256": "0615336a3a790d004a69464533500c3f751ae1896227fc94050ae92055e123e7"
+  },
+  {
+    "group_id": "0cae7b263a494ff7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_24.jpg",
+    "sha256": "a507cd4b83f9e9bfaeaf2fd52ec78be0ea7555ef9425aaddb72c51cfe5fda35d"
+  },
+  {
+    "group_id": "d3566d484263c727",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_25.jpg",
+    "sha256": "33a007635d12454623593e931ab4a71d875c7f815f718042336658d8c7f6c58e"
+  },
+  {
+    "group_id": "9686a665f61c7d23",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_39.jpg",
+    "sha256": "26233e453ea02e7dc9f10bed16e48502ee9ff31c58e32e02105cc43543e0fa5f"
+  },
+  {
+    "group_id": "6073a38bfd08fe04",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_47.jpg",
+    "sha256": "0b2482a789d5b39a36d7790e0a600397415287f2e6d8050d4b58a29e5b84d5f4"
+  },
+  {
+    "group_id": "9488001fd4db146e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_55.jpg",
+    "sha256": "c111e81603947f8485e08cc77640ab97fdd18674bc81bee226c477406dbda78d"
+  },
+  {
+    "group_id": "b130ac6f2f268ea4",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_56.jpg",
+    "sha256": "1da9be7814f93669ef4a9613a7df5b40e6c55b27d8cda6875eaa7601821e12a5"
+  },
+  {
+    "group_id": "11289c6b9fb3e174",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_61.jpg",
+    "sha256": "285d3ab2b866d89c534bf7d9ff011266d9fbbdbca23d1d7c8dda62a466e91bb2"
+  },
+  {
+    "group_id": "629965a81c17cc8d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_7.jpg",
+    "sha256": "0ae59c938f03327a1048e94f17ded2498a6d2e5413038bb40247220a9b24dc7d"
+  },
+  {
+    "group_id": "35b8dd331c5f0493",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_75.jpg",
+    "sha256": "5cf0a9333dc348e7e3dbb0e782684baa469232173ade3240d30551077121d0e1"
+  },
+  {
+    "group_id": "661d55ba2f5c31d5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_81.jpg",
+    "sha256": "317b94e7d9ad7788c8fff5a6db0f1f9188da588c5511caea6c2fb94c725c3aef"
+  },
+  {
+    "group_id": "26c2f3a95a0e370c",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_87.jpg",
+    "sha256": "0ae021e221cf0803074d8359da04af9e76e9879fc056d6205ee35caa2826557c"
+  },
+  {
+    "group_id": "5d97deae65282199",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_89.jpg",
+    "sha256": "0f673459b5dba7f9dab9a6a32309e2c89ddf4bb9b799d3350f56c33e8cc8b2d3"
+  },
+  {
+    "group_id": "918de5f52f679f26",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_91.jpg",
+    "sha256": "5c32bc4af148302670ffb8a5aa58fc239cea60fbbfc08ba34a65230a0de6f6f4"
+  },
+  {
+    "group_id": "0d407ffea0b3aa6e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_94.jpg",
+    "sha256": "b8a72a6ed1229b7b33dc11c8641ebf15e55e9db20fd933e6372234013b8707b8"
+  },
+  {
+    "group_id": "5f3ed1210176492d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-aug-me_96.jpg",
+    "sha256": "0e611156f0581371a53bdf68f60e17132a31b9d7e651f774f66fa5a772dc75d4"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1002.jpg",
+    "sha256": "bbba75f879197828cb45d31a22535a5cbb158279fd1c72854f47ce485945cb6a"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1007.jpg",
+    "sha256": "e5a710a3d8a915ff01d88d12ca9b823f99a2b8fb7d4fc9d0fce83075af6763a0"
+  },
+  {
+    "group_id": "813425a8b81afb3f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1022.jpg",
+    "sha256": "2cf3e6483649fee9ca52b17126833d9af483748d77fbc00a30306c436ef7e57c"
+  },
+  {
+    "group_id": "897525e862d2fac2",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1023.jpg",
+    "sha256": "8095b6db7da097f6358d1982ab320a75f85903629f4be721528c290b14d2d295"
+  },
+  {
+    "group_id": "078f81fc176780dc",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1025.jpg",
+    "sha256": "709b92f6da6aca8a5af8d5a7efb55d68bf595fb783b1d0559d558e04d1cd6bdf"
+  },
+  {
+    "group_id": "8936cbd80c27aa10",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1032.jpg",
+    "sha256": "b935ceda3efda21b190162c79c7c447ffd76626dc57e4e5433265eedb70d6c0e"
+  },
+  {
+    "group_id": "938dcce7a3d9b825",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1034.jpg",
+    "sha256": "f55d3ff4051884490d6706a546adf897e5a8292031768aeb22a1c35d6ec28401"
+  },
+  {
+    "group_id": "1d99efe1ce5a6500",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1043.jpg",
+    "sha256": "6bf34c4afcc8a3ba24d693418f7406a83d44e3bad7674c8f096084ce5307ca78"
+  },
+  {
+    "group_id": "7194ff1f17864e14",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1065.jpg",
+    "sha256": "dd5ad1d601bdb1a3b3cd567e069fb58c2cf0d631a79fb710e9baa4909a356ebc"
+  },
+  {
+    "group_id": "abf80b8a701fe0fb",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1068.jpg",
+    "sha256": "6d9fb8240f0d35b16a5c82dac3308d13dcfe6c19e060b40bec0e513ee8281985"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1077.jpg",
+    "sha256": "c4a25b274d286f6e57907083a061d5056c629fcb46bbd027091d4e6b396cd97f"
+  },
+  {
+    "group_id": "f02e1dd02ec2db3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1079.jpg",
+    "sha256": "95a98907bf363a65182925038668cdaeb760e61713ea32c2b8c65457326d5316"
+  },
+  {
+    "group_id": "48b0fce776a4a031",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1088.jpg",
+    "sha256": "0a843c743e4ce3014cf52787b8e143ef1568b662568ae8251740a381b713084f"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1090.jpg",
+    "sha256": "09e1ce2c903e3fdc1b11be4bce0e219654b908c0d1439a2f6d62891608c4c58c"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1094.jpg",
+    "sha256": "451f339dbf4d33864e0dd8940f533bbeddda6492cf60bb15615342bd467cc721"
+  },
+  {
+    "group_id": "a4bfd6f370cf4561",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1100.jpg",
+    "sha256": "89bcf7f5c756aef2c42cf5a7a2e3bf7f0284b48b0c9ceb76543a6b990b93f8bf"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1105.jpg",
+    "sha256": "6164089941ea497137647fa51082b4d8ea3cc2f7a12566d9c3efa34d5ddb95a1"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_111.jpg",
+    "sha256": "726a66f71a0db2329ba4d1b8ce1c29277add761502709d46dabbb9f32ff0fd72"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1111.jpg",
+    "sha256": "14bc3a50174e535cbd343f1e1fb9c2880b8dd8314553b8ec320601259c7ef365"
+  },
+  {
+    "group_id": "2221ecd0415c2dcc",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1113.jpg",
+    "sha256": "e9ab10556d677a57a21de09dc7bb77af9fe045817ef85ab467d745ad6a5a97fa"
+  },
+  {
+    "group_id": "e49e73474a55da53",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1131.jpg",
+    "sha256": "a4f0ba51bebfa8934de543e1fab0a21ac537f6948f5b3be04c2282bfb32ea825"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1145.jpg",
+    "sha256": "01e3ae35ad8a57942001111cd45a2d9e03adc1b7b0def3e2e974544dc3443ba2"
+  },
+  {
+    "group_id": "f71e58eb9208b0ed",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1148.jpg",
+    "sha256": "e29b026c8867e92ece7815c50da7ea4d0a1e8bb3e94c5d0c2175d9554abca7b7"
+  },
+  {
+    "group_id": "e47d34534b12619a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1151.jpg",
+    "sha256": "15165653e2f74753d79658c952547981e2dd1652149d077da44bedf1ebbafc4d"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1165.jpg",
+    "sha256": "0b93531d3de9e20fa6bdb68b151fed641bceb05e84d12987dbbaf03fea6d6337"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1172.jpg",
+    "sha256": "062b24144862cbad5348c5ba7afe57498134617b568ca061bdbe1b77805f1a28"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_120.jpg",
+    "sha256": "0967a79829d28ae415f9fae4350e8c69ff076c92b53929233562c80f2b346db0"
+  },
+  {
+    "group_id": "2e30f0a8218231f6",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1200.jpg",
+    "sha256": "7e80f63a4dcd3ddecdd85159c7e49946b2b697990494c35d1b01880877ae1876"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1206.jpg",
+    "sha256": "dee8d2ed75a4edc6315dcdeba7f327ecb080dd9bb914f86b28db2c52f891d90f"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_121.jpg",
+    "sha256": "656c43c4574fbc773aaf4d3a967b651ab6f79b984b90c0142d727ab27935d8a6"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1220.jpg",
+    "sha256": "7b77b7b9d5c576202a52bfa93ec6fdbd0135b2a9bec444351668aabaf3f281b4"
+  },
+  {
+    "group_id": "1d73eb68bcae632b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1221.jpg",
+    "sha256": "e122687798387850576538112b6917ab46f71cab259d4b3bdbeb87f8d2163f9e"
+  },
+  {
+    "group_id": "380a9fedd8b3f419",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1235.jpg",
+    "sha256": "45bb714cdc91a739ae2757a2614c1b07638215283ee339ea6674d17910fd07d1"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1251.jpg",
+    "sha256": "2cbd798454b606861b3e8bb58950be34866e68978d6fdc4253380ff703626855"
+  },
+  {
+    "group_id": "1884004f61587588",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1266.jpg",
+    "sha256": "5645d1fc065c1af595184e5031bfd97cdff05204f3d43d88058e9913ff4c2c09"
+  },
+  {
+    "group_id": "24a27eca54e92d8c",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1267.jpg",
+    "sha256": "f4336203bb527cc1d889f680fee99a208331cfa83b1fc0d5debbd2d1785e20b9"
+  },
+  {
+    "group_id": "9d9b5a460afc7ca2",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_1271.jpg",
+    "sha256": "0f5fba422dc5c627f62e136cd939f418a240e6439f55b095454c2f466e1c1f87"
+  },
+  {
+    "group_id": "82e4e891c2eaeb21",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_130.jpg",
+    "sha256": "75b9ed238e190bb3cbf41ce364e04cd6598e0e5b1c83a45dd051954d8c35359d"
+  },
+  {
+    "group_id": "95ed81230d36909d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_138.jpg",
+    "sha256": "b53ed9da4d37c9ff4b8e125f4367b962695063a08f19385b1995a91a2ff5b187"
+  },
+  {
+    "group_id": "d9384617b38d9a29",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_160.jpg",
+    "sha256": "59df70102bef4614184ca2ae1ac830dcee5883a8c0c1fba1ed260e10e2952e71"
+  },
+  {
+    "group_id": "2edd1097f7178028",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_168.jpg",
+    "sha256": "c51e645b50c4ef0fefe1421a8f718fc5193793397a7141ac27a8993ee8812067"
+  },
+  {
+    "group_id": "1ce1cb3ed3f97ac7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_187.jpg",
+    "sha256": "ffaf15d5ad589179c09a3debcd86f195cfe53b7ae88f888d1c9a224b96068983"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_195.jpg",
+    "sha256": "feaa4232463eb10f953924cba96966b1bb9fc82509b64bbb661f75475ebec186"
+  },
+  {
+    "group_id": "176960e59072ac87",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_201.jpg",
+    "sha256": "05730c1b2603d901d540a8f923fa3db4ebaf6513e21fd385ae4a8aee0539682c"
+  },
+  {
+    "group_id": "edbeb54b569a4c09",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_206.jpg",
+    "sha256": "36617ab48add83e19735fbdf059661a267925ea5ce3876927239c6909716aa07"
+  },
+  {
+    "group_id": "2f09adf91622be6d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_217.jpg",
+    "sha256": "68173cf0a5a424623190c36663795407478b387ea17c5a0d55dd271d10ea8985"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_219.jpg",
+    "sha256": "451f339dbf4d33864e0dd8940f533bbeddda6492cf60bb15615342bd467cc721"
+  },
+  {
+    "group_id": "3944f6903e8c7408",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_220.jpg",
+    "sha256": "da04318c83603393abef1cfbb47dbee3b10686798af17aebd0c3f91b1a488b42"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_24.jpg",
+    "sha256": "9aa83dff4a422878908b096eb9ea6840541ba5521f97060aab775de0fe694f9f"
+  },
+  {
+    "group_id": "fde8db490061e18e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_241.jpg",
+    "sha256": "53c1a87149210350bc11c4dec4112d04d50a7630e74062bfe33299a606167565"
+  },
+  {
+    "group_id": "918de5f52f679f26",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_245.jpg",
+    "sha256": "5c32bc4af148302670ffb8a5aa58fc239cea60fbbfc08ba34a65230a0de6f6f4"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_247.jpg",
+    "sha256": "5bf7c090164df93e1f112eed9e748746867283dcc5918e03f56922dbd10b8f3d"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_262.jpg",
+    "sha256": "ebd98af7354606bc7111fb8bbc09543bdf27bc0e05bf938a549c008d2085d763"
+  },
+  {
+    "group_id": "f0091611e4e6df44",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_274.jpg",
+    "sha256": "1d6a6ced3db1997b2ab25ee8858868975ab022d9187a146ddb3f76329d32384b"
+  },
+  {
+    "group_id": "09c9cf3696425ed1",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_277.jpg",
+    "sha256": "5d5d7561b6baba19452eea4590699d3c1404f49b026cc9b0cfb12c21a6e52071"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_281.jpg",
+    "sha256": "4a81ab9771c9a66034c4a5c657354dde68d7bcfb7e166baf7e578c5619a6fa0f"
+  },
+  {
+    "group_id": "eacd6fb83e907c92",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_284.jpg",
+    "sha256": "ad7a68b24ec23cd0e5769e33f63c20b3cccf189531899cc074a01c9de84c7f65"
+  },
+  {
+    "group_id": "6290d1307c3793f7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_294.jpg",
+    "sha256": "e2eb13ce6a481e672122c895f9418f0426d9016530674b50c67b097033a75ae9"
+  },
+  {
+    "group_id": "0d9d6236f2a4ddda",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_295.jpg",
+    "sha256": "bd6c9850d7d8ec674924d509ea07f807cef964706e17191ca820fc4aba1c99e3"
+  },
+  {
+    "group_id": "a5a8c0812c316953",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_300.jpg",
+    "sha256": "d3cee82b6173239b290bb1e795fdff042647af6dd6b42aacac62cd725a7305e2"
+  },
+  {
+    "group_id": "ec7880df8116387f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_326.jpg",
+    "sha256": "1ddc07b40dd80b396ce695e57eaf6c1fb2f77ada6b89cb41593ed172ce143386"
+  },
+  {
+    "group_id": "73593e9f5705804e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_327.jpg",
+    "sha256": "a8e224da1be5e54d34c7aedcb2a9932724960c5c12cc60c4cfcec8837573dceb"
+  },
+  {
+    "group_id": "ab5b1e0e8671b91e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_347.jpg",
+    "sha256": "c282b470613a1af9407200431a6f36d0ab1685c047d3c5afdd6e97e448cd1d49"
+  },
+  {
+    "group_id": "55ae2e065c11235f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_352.jpg",
+    "sha256": "6ebc3f56bb9294781666c09a68801341951792429d2cc0ebd479bc371a6332ef"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_355.jpg",
+    "sha256": "3c83b5f4ecfafb75d7e2cabaaf04662db7e8de0b6cc4b5b1c6670d1aa012ada7"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_361.jpg",
+    "sha256": "e2da667ddee25bb3f2701b8a270b06a4c01c3398350e8d9133f1d7cb42712b27"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_372.jpg",
+    "sha256": "82ec8758774083bbbd92e5bf66e88ca04187a48ecc91a5b9f826640648da6d5f"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_384.jpg",
+    "sha256": "9469f3922b9aba7e9f41eb4c9426ffe76d2af35692325eed8ff10eb1f82c60ef"
+  },
+  {
+    "group_id": "661dbfbc5fd8621a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_388.jpg",
+    "sha256": "4632235f0b739980b35b1afb70a946ce6be8aebe284add9cfd8048973baf152e"
+  },
+  {
+    "group_id": "fa15bc02bc38bdc7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_389.jpg",
+    "sha256": "ad7f8515f2c78c211f01dffcad25f50fcb5979c4e34d4d772e1b0656a67d61a3"
+  },
+  {
+    "group_id": "505d02174c6ea5bc",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_396.jpg",
+    "sha256": "8d2ea2baff3f9ffce0f4b774ab6b523c4833c06ced446485119aec4916a9652e"
+  },
+  {
+    "group_id": "c2ff470fc626c4b2",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_40.jpg",
+    "sha256": "905a727cd9023461278f49aea64e39987014ab2520a75c262d79239875528cb4"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_415.jpg",
+    "sha256": "7e5e242af266f8307726c66e48fc50d6d2d5090963a3fd9901971fe44fd462de"
+  },
+  {
+    "group_id": "9cdec0939e58a87f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_419.jpg",
+    "sha256": "35c0a701abb6578a77312b9d5a5bc84d438283f52f3fc435e3995753541171ce"
+  },
+  {
+    "group_id": "938dcce7a3d9b825",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_423.jpg",
+    "sha256": "bc8b26c6d0fde2bf13efd69f6fda7ac1a104c4eea4925ebb171ae732e0cc5b41"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_429.jpg",
+    "sha256": "8c1a5737466330c20f01adaa7979d51c52634dba850e0e7bd5bae4b2a9eb4b7e"
+  },
+  {
+    "group_id": "cacee042afb02881",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_43.jpg",
+    "sha256": "c3362744c0994ebd0642a9355466c22916434e2c3924f282f4ae6068630b7ee7"
+  },
+  {
+    "group_id": "2f09adf91622be6d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_438.jpg",
+    "sha256": "0f6dd05728f38f57d71fae48a5e1d1320c76a2ec3c813d75cd39e92c3d334767"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_466.jpg",
+    "sha256": "a6a747bb5f6af02f154c793f8a2955176e42ab692aa6c410648cb41204fcd371"
+  },
+  {
+    "group_id": "dec92ea801ce68a7",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_482.jpg",
+    "sha256": "8a58fce28d57c212232783221157ebbb36039d6ddb8de607add5d52e990c2abc"
+  },
+  {
+    "group_id": "0a041be21762636a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_492.jpg",
+    "sha256": "67d5ea06379513aa119368053fd81c336310361cc476eec56235e510a2bcc377"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_498.jpg",
+    "sha256": "dfac12b378aa06e3b1c263312a6d0b4bd8ca0cef382a86a894d5edc158185952"
+  },
+  {
+    "group_id": "7bbc1775e7ae7b7e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_507.jpg",
+    "sha256": "dd959cd7ceb0fe232a0e9911d65e07b8f5076b4d7d5a4759842180460ee37d5a"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_536.jpg",
+    "sha256": "4f3fec6c53f4448ccf8a0e35089053fa98cb8c58079dea70fe67d1ca3e474cfe"
+  },
+  {
+    "group_id": "fd100cc961bc2304",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_547.jpg",
+    "sha256": "7a150a1c581ccef225181a00f0b01518438bbcb6aee85c925746f2af3d8d0f63"
+  },
+  {
+    "group_id": "a615a28dee50169f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_559.jpg",
+    "sha256": "0aed87ab9e7da701cbe170e3aece1b8432c8b17b960e54d3a05176233551d954"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_566.jpg",
+    "sha256": "1f926b86a7758019153d254e10af471c5c70ae45e5a2a429cd23fef1bcf5156e"
+  },
+  {
+    "group_id": "b23588fcfba4cc0c",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_575.jpg",
+    "sha256": "b205809df611ae3f90666bdec215f9b1ff3e3afb64f751d990a851e7334c5ed2"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_587.jpg",
+    "sha256": "2e74a6409460cdf442669ed18704346d3e53cffc3960131fe90c2594f7b785b8"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_605.jpg",
+    "sha256": "7d39b4c082d70d2c1188015ee17b39ff21b4792c811a971cb08406c500fcc279"
+  },
+  {
+    "group_id": "d4d6176ca09c7cfe",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_606.jpg",
+    "sha256": "e53deea92aa71ef68d1ea7c7de654b8d39fed961abb1a4f0cf961a67431ea2e4"
+  },
+  {
+    "group_id": "ffce4c1f42ef0631",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_610.jpg",
+    "sha256": "597d0c6711879663f4edf75b8594e3cc9c471b4e3aff2824cbbffc3ceb0b87e9"
+  },
+  {
+    "group_id": "c4fd2c12dfffbf37",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_614.jpg",
+    "sha256": "75d0cfc7352f8a2f4d4a93fb92712e97e372655ea1513c47e0bb3d54d1c65dd5"
+  },
+  {
+    "group_id": "384dbfbd98239891",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_617.jpg",
+    "sha256": "b891dc32f03a2b15eed07c6dbdcff17bfb0f63a0bca6329b0c0273f482c01412"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_631.jpg",
+    "sha256": "1a37e4a415c3d56fdf0106ede96962c86ae14e94aa3e51e65bd09c00d4e53c1c"
+  },
+  {
+    "group_id": "890c1e8e7d5f5d38",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_65.jpg",
+    "sha256": "f476fb7645b451016ebf3b60c92cbc48529c48beb0fe7a19b7c5ad577714c41f"
+  },
+  {
+    "group_id": "1c8bd260ef680609",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_652.jpg",
+    "sha256": "f294a08f918075a02200b81540a9e6c4ca83a7c0a37bc8ce0b48ffa4ea8435ad"
+  },
+  {
+    "group_id": "f887ce19407bcc7e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_663.jpg",
+    "sha256": "1c522f19cc6c58993b7ee2c8664dacedb1f6a5f8031f9342f0b8f4409b8f1b70"
+  },
+  {
+    "group_id": "28e7decee505b7e3",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_664.jpg",
+    "sha256": "715cde86dd846c59b35cc6ac8af2ba782e88c8c7c4819ea28ba30679f67d9cfa"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_665.jpg",
+    "sha256": "ad1b1c66b5a812fd00a091ff98966351824c49222910e91148fdee2ce35f8b1b"
+  },
+  {
+    "group_id": "823f8f17bacaf980",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_694.jpg",
+    "sha256": "d91ae0e0d1f99015ce544e9428ed73985c5aaa9fa4a189039c114b41e83ae67b"
+  },
+  {
+    "group_id": "a4ced92d1f5cd109",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_707.jpg",
+    "sha256": "d5a3a20bf04be963c87d0cf1be90dbf9f5fd80de13408793d6175fd18cbb09fa"
+  },
+  {
+    "group_id": "01d64c5cd23aa296",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_72.jpg",
+    "sha256": "fc773d1444dd3b05bda35e50d85820fb9670362939cc635ca924384bd60827e1"
+  },
+  {
+    "group_id": "6b8ca498c19cee6b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_724.jpg",
+    "sha256": "2ed31f3415e9cae859bf94ee0f6758eaa94d32a148e1353d6fae108527de61cf"
+  },
+  {
+    "group_id": "02b8f68a31ab0329",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_73.jpg",
+    "sha256": "8f6527cb3fcade0ab52b3630bd918b0ee9096888321c1565d4334090055ab46f"
+  },
+  {
+    "group_id": "4a7f666fb614b47d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_731.jpg",
+    "sha256": "05302f1769113dcaf7e079654c98cdb81ae628ee6980073cfdf6d15324d9a0ea"
+  },
+  {
+    "group_id": "45150cb86f05072d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_738.jpg",
+    "sha256": "9d8ea2574de2641627c50bed19ff5f80e655b4fa2fd5fbec5978dba791a23886"
+  },
+  {
+    "group_id": "938dcce7a3d9b825",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_747.jpg",
+    "sha256": "488a8888e86721f95b384ba911d76fd92a2afec9e59510110e55b6c8dccf3169"
+  },
+  {
+    "group_id": "0a13e6bb13f4e2ba",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_761.jpg",
+    "sha256": "2d22290c1623e6be1773f6b22d7d1bfd659cfb8fac53ad227c4e26ec09356a49"
+  },
+  {
+    "group_id": "2f09adf91622be6d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_764.jpg",
+    "sha256": "a8a5c8da2047ed2cdd0c97963311752e131124417ab3ae5b2ffe1f00a361febe"
+  },
+  {
+    "group_id": "ae8d50f2b3e8adc8",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_769.jpg",
+    "sha256": "4dbfe46d26ece25aca46d4e29ae20acffd3c7741a6d8dc4c3a51d539c25cc9b0"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_777.jpg",
+    "sha256": "92ec70d0238cc0615ce2ba79fce534c44022e5f1ecc5ea5708628b25e0a22fab"
+  },
+  {
+    "group_id": "52f6ba1b16e579e6",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_793.jpg",
+    "sha256": "31fe2fd6835e25ef2b1700187001432ce685c684b5233619be97866742b777cd"
+  },
+  {
+    "group_id": "61f599aa071c77c1",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_794.jpg",
+    "sha256": "040a415afd40cde551ea35ff4fad705011f381f0700de2479ed124c6392dc505"
+  },
+  {
+    "group_id": "5c555ab33c10588f",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_795.jpg",
+    "sha256": "5ef4168c208d28d5d4c366ebda0143c9fc965f2d71ecd232318b59d743d64fc4"
+  },
+  {
+    "group_id": "e39acbcab4a73de2",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_8.jpg",
+    "sha256": "8326a437c20c825f335c96ffb6144fe5df19ffec032b2160bd8adc7bea12938f"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_800.jpg",
+    "sha256": "baad3c6a0718717b2a1e710ce02b3a3d42b3d893de0e456a4ab7564d6bc14ed8"
+  },
+  {
+    "group_id": "8cdfc5d3b9bd65e9",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_811.jpg",
+    "sha256": "8f00d41c82c3103bd11acbc0a85a1c823fa9147de85247211d857f8182d69bdd"
+  },
+  {
+    "group_id": "96693ceb27f2b80d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_813.jpg",
+    "sha256": "d4a14fd648e9bbc3bd50369e835f1cd372ce29d02d43de2a769031a7fef8ef6f"
+  },
+  {
+    "group_id": "d7d700c0b376b592",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_815.jpg",
+    "sha256": "23bbc9ca539f5111123740b742e485c6970ac47b8b5742e222a9d55b9402d5ef"
+  },
+  {
+    "group_id": "17869df1c5f8e8c5",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_819.jpg",
+    "sha256": "3da29cf84b4d03c40b0277d8a1674f78a932d923ba33d43551c38595a22880ba"
+  },
+  {
+    "group_id": "51141b53cdd38919",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_821.jpg",
+    "sha256": "b6d7ef78e9ce636f4450f873fa24f23433683309f152b90c54f9380a64c46a6b"
+  },
+  {
+    "group_id": "0d407ffea0b3aa6e",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_824.jpg",
+    "sha256": "b8a72a6ed1229b7b33dc11c8641ebf15e55e9db20fd933e6372234013b8707b8"
+  },
+  {
+    "group_id": "653956b6588e5ba4",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_829.jpg",
+    "sha256": "b1704479620ead140befdd90d960e883383e9f494ad6a74a067b2022c8db0f0c"
+  },
+  {
+    "group_id": "6840d9d066e016cf",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_830.jpg",
+    "sha256": "de33127accb6c32fea21d9f3c9d440dd58e6a0ce2da277d38f19c52772165b81"
+  },
+  {
+    "group_id": "4d111b88d6a0970b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_838.jpg",
+    "sha256": "32324abd581102ec05f9ad699c5a4fc38e664d82ab6dd3e2fc93ddce75918a36"
+  },
+  {
+    "group_id": "7b0e4114f26ccced",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_84.jpg",
+    "sha256": "212c2e0e5246ceb53293b9500627afb59214995371dcfacf82d5b99219bfb347"
+  },
+  {
+    "group_id": "81186ec6276863ac",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_849.jpg",
+    "sha256": "d3be7076c0faeb393c3bc918541bca770a63eb537c2d161081753c8c4b280f11"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_851.jpg",
+    "sha256": "0849cf44dc2e4157db7e3e4e9d94aad8826d10858e13865a0b35b0230919a7ed"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_861.jpg",
+    "sha256": "3bec478c11f932472e0b167afea4424907a940b4231f8968d65806daa07cf6d2"
+  },
+  {
+    "group_id": "edeb3bdcdcda187b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_879.jpg",
+    "sha256": "32e220c761d9d8c32c77543a7690b8bc904870d56f6af42cfbbaa32a9b7556ad"
+  },
+  {
+    "group_id": "1cd1446fa16e2e41",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_887.jpg",
+    "sha256": "b3893ffd054431dc15aeaabfca849371033f2d3ff2e14bc523fdf3e7db31241c"
+  },
+  {
+    "group_id": "5d97deae65282199",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_889.jpg",
+    "sha256": "0f673459b5dba7f9dab9a6a32309e2c89ddf4bb9b799d3350f56c33e8cc8b2d3"
+  },
+  {
+    "group_id": "ef9e2e9beb4a8238",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_90.jpg",
+    "sha256": "47ab266e76d46a540e160b1f44dbcfe1ce7ec9f6b573c2a678b13e07f9b1f4e2"
+  },
+  {
+    "group_id": "13e85e06c3d00db9",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_922.jpg",
+    "sha256": "522e9b78f6e0d4ef7b261fe71da95981111f3f1be0ad5a0b19c7f9adba27dc4d"
+  },
+  {
+    "group_id": "2f09adf91622be6d",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_933.jpg",
+    "sha256": "f3d9a4b8a5e1f5cba8b79aa21ec1a6d4ec5a6ad100bdf3206e7fb90a6a9f4cc6"
+  },
+  {
+    "group_id": "ccff53a4c558f194",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_955.jpg",
+    "sha256": "5e462a3d28966dfeca9b7a9a28e47e2131eed89e2f7cec4b7cee1c7ebb68a114"
+  },
+  {
+    "group_id": "eb3bb7ca16c5251c",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_967.jpg",
+    "sha256": "5ce9eedd4f9f70c4195c70783f3e23ae03c6481e7e7e6fe6ba9a15d2c4c0d2f9"
+  },
+  {
+    "group_id": "88e64d7297c78960",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_976.jpg",
+    "sha256": "1158db9f1479a89bdcfc60e5e3ca6854ca9849c9ccd5ca16198910ecbe5dc508"
+  },
+  {
+    "group_id": "bb28ac9d8fe8cc3b",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_986.jpg",
+    "sha256": "5cbe0fabc9bfbab0317874156fa57bd6797c49871f6fd601be5abef1899b4377"
+  },
+  {
+    "group_id": "97de0e04da26cc2a",
+    "label": "meningioma",
+    "path": "Training/meningioma/Tr-me_995.jpg",
+    "sha256": "e060cc6d2598883149005708851865495ae39de6ba2140724a03e36da6d12573"
+  },
+  {
+    "group_id": "c899f1221f817b4d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_102.jpg",
+    "sha256": "6b2b365eff7c670b90a03b2d243f191dccf506d9c37ae055aa35d303aba17847"
+  },
+  {
+    "group_id": "8481f733fce2414b",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1028.jpg",
+    "sha256": "896aeba4c38ae004a7cd7c127a70931dd19d33cc7f42f10c7f2b75b463e9e791"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1055.jpg",
+    "sha256": "2fc5160ae28cfb53b4d21a2cb098eed4f06f4e4ae122aad91da19e54eb54712d"
+  },
+  {
+    "group_id": "82c3037bc34c7fdf",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1059.jpg",
+    "sha256": "8e69d582e948d4bdf753ad925311df27bab28db64ba2ee766d5e595cf95cd329"
+  },
+  {
+    "group_id": "2f7d0cb4c7c739fe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1088.jpg",
+    "sha256": "ad25a4fea67a5b521955499381869e0474db6f543b1cd8daf7866c7c4b5c8c58"
+  },
+  {
+    "group_id": "1e3eb9d2e3bcc0e7",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1092.jpg",
+    "sha256": "8757fa3737d286d19c215eb10ba770a1e838c16343482d699ce4cc1a4aec21c1"
+  },
+  {
+    "group_id": "90021b9c6ccb2e4d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_111.jpg",
+    "sha256": "fd6702ed37c23010dffb84bf90ba1d524825736ed1359430632dbda493c0ab84"
+  },
+  {
+    "group_id": "2e169eec28919626",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1111.jpg",
+    "sha256": "b509413a0acc8c116cabf3ba89af7be6e0b1ce1edcc9c73e24791d32204f5432"
+  },
+  {
+    "group_id": "63a220618829c38f",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1114.jpg",
+    "sha256": "6fa8eb9bb2ed899a8d0a5c0d0e679ffe93eb0e7d518219b43a8b2f5434852d37"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1140.jpg",
+    "sha256": "ca5a51914cad005d72af57fa6c9142fc9d650ca06ba23f3e839991c3fa4c8b36"
+  },
+  {
+    "group_id": "8776d9b4d104d9b6",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1156.jpg",
+    "sha256": "4d6d8345c31adf3d7df67e8cc18941af505c24d39c1dd1f3e7ad37b3fee2801a"
+  },
+  {
+    "group_id": "718ef9cb76cc3a63",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1189.jpg",
+    "sha256": "734b5ba695008974e9d1dffa5a2f3b10b3a7d0fcdc753370ef21649118977303"
+  },
+  {
+    "group_id": "2f7d0cb4c7c739fe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1198.jpg",
+    "sha256": "fc9c7306a9e37fe355611025df9ece34a0671b2854323ec6b95c91f9dc0c308f"
+  },
+  {
+    "group_id": "4af6252335184416",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_12.jpg",
+    "sha256": "4999b1319219afd5b9cea87c5003d3a2a1e37981e4d113e4f319c1ad0243bb40"
+  },
+  {
+    "group_id": "835c87842ed45d89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1212.jpg",
+    "sha256": "c8fb9c6460ef410858fa717c1ab5f5d4828e51d3af2d59cc2982b1d5e14b840b"
+  },
+  {
+    "group_id": "3b59e09554d52624",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1213.jpg",
+    "sha256": "c46017f0fe39ce4146480f5c7b1cb6beca04b6ca042594726f12416fd2fdcab9"
+  },
+  {
+    "group_id": "e0802e6e9348fd3e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1216.jpg",
+    "sha256": "f05429fe15a2eba44cae6bfe2c3924d23e187cf34608ed8bf20a2547fb87b333"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1227.jpg",
+    "sha256": "eae386f0d473f0eafa88901fb52af30c5652b1f1fb4652fb7b5650ddcc390e4b"
+  },
+  {
+    "group_id": "e34dde8ba0fde6d7",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1242.jpg",
+    "sha256": "f0f59157eff868aa8dc74d5a6b5d384421c8587b5f15d90ca8414f4650276436"
+  },
+  {
+    "group_id": "0c6bc9b54330c918",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1258.jpg",
+    "sha256": "bca46d27cc9a486f55a197c8c55e98a205f977151fa337b08646d6c393f1e6ec"
+  },
+  {
+    "group_id": "b5bc84072ac4f420",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1262.jpg",
+    "sha256": "c30681f8b28b6cc26f12177aeefe29d3e45a1ba0275a3e0bba0d55ce61321490"
+  },
+  {
+    "group_id": "7e86617f9e91a774",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_128.jpg",
+    "sha256": "470cf49146ca3bb3c89ae1d085833bf3da87ca5e09d33669c35dc8b87e7a9332"
+  },
+  {
+    "group_id": "973f817e97ef4635",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_131.jpg",
+    "sha256": "fb4f36cec8b0123a1579e9e02160a16a20e2c63b10241c496059f3b31148f359"
+  },
+  {
+    "group_id": "b5bc84072ac4f420",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1323.jpg",
+    "sha256": "998e1573bff074902cce6e790ebdf6e115477a3d574f05cac0006db26ddc795d"
+  },
+  {
+    "group_id": "b5bc84072ac4f420",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1326.jpg",
+    "sha256": "c5482c04ad0af03abc08de261901fdaa6811a99ca11a270e8dc89c550e3ccdfa"
+  },
+  {
+    "group_id": "a484807a633bae00",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1345.jpg",
+    "sha256": "0f89964adfa577ffc23f9417dc020f6d4954be54f0e2a4ad2cdef22657ba250f"
+  },
+  {
+    "group_id": "41cdaada3bfd241b",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1352.jpg",
+    "sha256": "2d199bb9ce07fd48853b7514e64c237ab44cdbd2cf38b3973e001ae6d5852519"
+  },
+  {
+    "group_id": "17e6694253027206",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_1363.jpg",
+    "sha256": "61c63bf48f3af36c30ecd78f09f038ae86717b0ec2d435209bc830c1cce69ab9"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_14.jpg",
+    "sha256": "76d577713f1cf4414f780058f2079f7e6446aba86e89a86d7dd36401ca79a727"
+  },
+  {
+    "group_id": "3727819a5a43c373",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_140.jpg",
+    "sha256": "78272b533cd2cd32360f342e22676958d73e3f7f1b70a3ee4c004b0977c85e2f"
+  },
+  {
+    "group_id": "520d2597b69cdb20",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_163.jpg",
+    "sha256": "0b879d1073173ba37b4de21ad82442aab2d764115b5400946424d7c645cf37e0"
+  },
+  {
+    "group_id": "1ed99490ee7a0c83",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_169.jpg",
+    "sha256": "ac995ed4a41ff23f2c8646d83ea024d4e95e14e61fa38ea4edcbc21bea9c3eae"
+  },
+  {
+    "group_id": "30b011e927895013",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_174.jpg",
+    "sha256": "d9f0d5ef8784abb3ac7cadb3e31a9b1ef4879de8edb20a637d66c49f6c8eb60f"
+  },
+  {
+    "group_id": "e0802e6e9348fd3e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_178.jpg",
+    "sha256": "d7c5a293e3a869733e2f0ed4ec4e1afe1426444e61303c17e07141b7c5932f21"
+  },
+  {
+    "group_id": "53dce8708b74437e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_181.jpg",
+    "sha256": "cf1bb3ce9b1bce42b22abb07e05990252e6676b210a8e759a728ba0f890c8449"
+  },
+  {
+    "group_id": "2f7d0cb4c7c739fe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_195.jpg",
+    "sha256": "9519716335d92af19b045426a223124da676fdab837698ebd2aa0026c647620d"
+  },
+  {
+    "group_id": "f76e4ce943edd9bb",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_208.jpg",
+    "sha256": "509501865fbbd1634e82013e9b06bd397874787e481c89a5b0dcd28d3a44916e"
+  },
+  {
+    "group_id": "20014bea2859bbe3",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_209.jpg",
+    "sha256": "19e8748780ca3019a4dbf5e876c2ee31bcfa17d44967ee7ba23211865e271720"
+  },
+  {
+    "group_id": "ed5a094012e813cf",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_248.jpg",
+    "sha256": "e3b10e3d4c19e968114817f0cfe382103c689762a89d773de02e1fde8e133d69"
+  },
+  {
+    "group_id": "3f3f5ca354ceeba1",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_256.jpg",
+    "sha256": "743457a3776a3e16f567e63bfda50f51e5a4f2eeef0f5f7bd8904c0d90387cdb"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_260.jpg",
+    "sha256": "1afeb2b05c3047a0aadd48adbbdb4cfc4b9a973e441f3513d7798a82c5bc47c3"
+  },
+  {
+    "group_id": "e0802e6e9348fd3e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_268.jpg",
+    "sha256": "1f070cd9f11e9408ef8f7df770e5f98db3c905f5e7d407100684758b7e323758"
+  },
+  {
+    "group_id": "b95e124f643b4828",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_274.jpg",
+    "sha256": "ef8e5dac4b7b06771a1bcb6a7611fda993600cb15d10847f0378109e4d9c6d40"
+  },
+  {
+    "group_id": "feb5f3bcef460171",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_28.jpg",
+    "sha256": "b577189346bc4cc74942150e5875bead25153aa474db97d1882ebf72244de3ec"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_296.jpg",
+    "sha256": "2d07d5dc31a6f83f8119f83bb45d75666c3b905eafab47609e407daf9951fd4a"
+  },
+  {
+    "group_id": "835c87842ed45d89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_303.jpg",
+    "sha256": "6b5118bc2c05b7d260c614a5b1f8e15edd4cf7ecf687ebd1b30049df1c3c10b7"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_326.jpg",
+    "sha256": "834db082aecf03f2310a9599b16642f5f3a4d76da639d92bd083305cad59111e"
+  },
+  {
+    "group_id": "ae21fca25399d7a8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_336.jpg",
+    "sha256": "94309411fb2cbd21f34fcceb3d458e987f0b38207b282efa7a190fd2aaefecd7"
+  },
+  {
+    "group_id": "1ed99490ee7a0c83",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_351.jpg",
+    "sha256": "dd22398acb3c70e63a2cb63bebedc242177d84866a703622ff572dc1de831711"
+  },
+  {
+    "group_id": "ea117fb04d12f8f0",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_353.jpg",
+    "sha256": "1e497ddc88e70fb61070941f96497f06778d4919c2ef53075861d6d6013c5856"
+  },
+  {
+    "group_id": "1072e98fe3550e1d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_354.jpg",
+    "sha256": "07e6abf4d51558064e38530dc57423f8a0ec8abf105cd0d1eae58a66aae3246f"
+  },
+  {
+    "group_id": "e1332d11b5d656d8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_355.jpg",
+    "sha256": "55253bf7b87e4937dd30007c7419dd079a94470c89dcb6f183c50435b6687a3c"
+  },
+  {
+    "group_id": "d960abdf6f051af7",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_4.jpg",
+    "sha256": "7c0124081a4ec0c5a2df2f72738fa5bb4ea5658f7d3454215225bab2d550030a"
+  },
+  {
+    "group_id": "b5bc84072ac4f420",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_411.jpg",
+    "sha256": "c5482c04ad0af03abc08de261901fdaa6811a99ca11a270e8dc89c550e3ccdfa"
+  },
+  {
+    "group_id": "1dd444665f2f37da",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_427.jpg",
+    "sha256": "cfb54c92b70a8fcad9e044176aa34896ad9accd8dcdbf75aaea06beda5bcf409"
+  },
+  {
+    "group_id": "19b074038fd41e1a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_432.jpg",
+    "sha256": "14ac2596baca8b83eadd347035b83d8e49507353477c1b5db527a036178876d1"
+  },
+  {
+    "group_id": "94d5bc41eef6d467",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_445.jpg",
+    "sha256": "989159596f076ad1884731aa32f6dd88f5f9acacdfbfc3531c07c9102ed56550"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_453.jpg",
+    "sha256": "1078c732eff6883e3db6c562b5b50dfb68ba9a74b6ea49ca9595e12fe53b54c4"
+  },
+  {
+    "group_id": "f10aeea33619a54d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_459.jpg",
+    "sha256": "aaee2db8eadec5cb7381b35d0ee81ec4347702748cad50db6bb91e695a2a85c8"
+  },
+  {
+    "group_id": "718ef9cb76cc3a63",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_466.jpg",
+    "sha256": "691bed662072caf352e875dd8e476b4a0cb425599d0c94b0a93d791c344f62f0"
+  },
+  {
+    "group_id": "1dd444665f2f37da",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_47.jpg",
+    "sha256": "29640e5630fc34bacfcabe9e4669020c44be5f2223d93432b4b89df1077126bd"
+  },
+  {
+    "group_id": "0031a0599e90cf26",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_479.jpg",
+    "sha256": "59c203cbd23ef00ca2948545877187447b1922c55f7d2ce28327cb1eaa63f99d"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_48.jpg",
+    "sha256": "76d577713f1cf4414f780058f2079f7e6446aba86e89a86d7dd36401ca79a727"
+  },
+  {
+    "group_id": "16f4483b9881983d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_482.jpg",
+    "sha256": "868d144dc615a0032a80283be8b2c5488fcfb30c2f186f2fbf74c84c606a050b"
+  },
+  {
+    "group_id": "ddc1bf381a30fa55",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_483.jpg",
+    "sha256": "4e040abc6e5b98c41c6d16a3e15e83865f8329a87264ae7557f68192d22d3f48"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_511.jpg",
+    "sha256": "a04f7a2254302402e81ad80a6a5ca1ef424df124b7e2ada86e53402f996c89cc"
+  },
+  {
+    "group_id": "79a0a287ee043de8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_520.jpg",
+    "sha256": "08c04f3659f54e170fe84f98a8ed10a235809251d6ba7c5372f08c90421ce51e"
+  },
+  {
+    "group_id": "b3a44a106a4fc0fc",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_523.jpg",
+    "sha256": "e02cfe85ef7294491fed9eecce00758829656f50d7b73ebef150ee2551770de6"
+  },
+  {
+    "group_id": "2f7d0cb4c7c739fe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_526.jpg",
+    "sha256": "d40d92532a039b9826ad4e94e3b6606944ba11b1fae6b257ae56dd9ccd026348"
+  },
+  {
+    "group_id": "c8def1e32bf98536",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_531.jpg",
+    "sha256": "0972f881fe5364a42f7df59998e80bb8d2b2e9f4dd93009ee23c3ba254c3746f"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_547.jpg",
+    "sha256": "d8642f2eb5e48b9def1b8ae3adfb53ffc462a1f98202ae944382aaa4ad12e0fd"
+  },
+  {
+    "group_id": "8cd6d0b5f6d3cf00",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_553.jpg",
+    "sha256": "d0520b80772f2d18bc26de82d80bee9c6bf1513d518e6e5feb008fe44db4a65c"
+  },
+  {
+    "group_id": "2af50d24cd88b4c8",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_567.jpg",
+    "sha256": "44a22876360230c9ff465532477b3a9e0dd4ce922856a26ca833de265a82f11e"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_588.jpg",
+    "sha256": "a820973ab9e444f92fdc4e5eb2e584a72d5da660675f1793469f229f40199538"
+  },
+  {
+    "group_id": "ade2110f9dc2ad18",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_593.jpg",
+    "sha256": "42c0923d95ea398b1e00bc74e55fc93c23b42d8a10d623b66150bfbe4c9fbee1"
+  },
+  {
+    "group_id": "ea117fb04d12f8f0",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_596.jpg",
+    "sha256": "ec0ec5fefeaa88f1ccee4e0b117c21e422a575a8b4f1e03a54a36ec2edeb4340"
+  },
+  {
+    "group_id": "6203c07baf83d3f5",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_6.jpg",
+    "sha256": "1511469e2b20a333ac550085faaa4235936b00e74722780e3537be54486f60de"
+  },
+  {
+    "group_id": "950608c5b4b26f6e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_608.jpg",
+    "sha256": "19566883ea0fadcc0544956d52fef0eaf9d56cedbcbbad2e6f4b5fa4a8998c7c"
+  },
+  {
+    "group_id": "2f7d0cb4c7c739fe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_623.jpg",
+    "sha256": "92c7e180580f5f9e7adeef2101de2df68532ae02f2d2c8d75782801f07d64bc6"
+  },
+  {
+    "group_id": "f9fc33dfefd34927",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_629.jpg",
+    "sha256": "a3caba23e63b0858347347deeefb13f241a34116ee8ff19ff099d1f0c04fcabf"
+  },
+  {
+    "group_id": "f9866329b82ccc81",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_630.jpg",
+    "sha256": "cc897565e991fd55c19b65310168a2b24bc37201e27634528d424e7b086edd70"
+  },
+  {
+    "group_id": "e0802e6e9348fd3e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_634.jpg",
+    "sha256": "71e009bf2b7388807dc1a7ea4543c59669e6e051b4f704c9fb7ad64e25ec2d4e"
+  },
+  {
+    "group_id": "499160a351e5cf55",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_648.jpg",
+    "sha256": "cc6c2795310094ea9e9bc4a259b6c4ab7e56fd03303b7f3426849f9b573d05a8"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_668.jpg",
+    "sha256": "090dac42b804f6ffe3719c23f945985189585b692901f195bac20bf5466ad98c"
+  },
+  {
+    "group_id": "9a06f85cd114f369",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_689.jpg",
+    "sha256": "9de46a6ed6c5c6ce5906890ff1d96ab5a544ec90d95c1712812889b72cc3593f"
+  },
+  {
+    "group_id": "85acca9b40a2ef5a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_698.jpg",
+    "sha256": "22bf0f1e359f334d7346fe81383649fd75079daf61d151614dfdf9d19c766be4"
+  },
+  {
+    "group_id": "a8764e346a73d217",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_702.jpg",
+    "sha256": "1d489fd63322dff8146dfb442c512362d2d42d5f4e44b90414202ac0abe5f97e"
+  },
+  {
+    "group_id": "608b4bf23df839d0",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_706.jpg",
+    "sha256": "092a6997f62fdbaa2bc49469a827ef799ebd70cc75d1b0bf8466c5054241905b"
+  },
+  {
+    "group_id": "09754e64cdd24a5f",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_711.jpg",
+    "sha256": "ae01d9f5e34679aab4488d7f0b6c41dcf9a3940e38aa706e5d980f988f7a3c37"
+  },
+  {
+    "group_id": "7e45f4ea0abebb7a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_712.jpg",
+    "sha256": "68ca8d9c25994dca16189d114f6bc1f88dfd3614b34c5a1414fc328c374daa7c"
+  },
+  {
+    "group_id": "186aecf90cf5da78",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_719.jpg",
+    "sha256": "ff1df5849a35548de3ed553bc8c927511045cce13c42a2159c62f546c52230c9"
+  },
+  {
+    "group_id": "8776d9b4d104d9b6",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_744.jpg",
+    "sha256": "d2415a0edbf2b07965c430d3aaf4a2e149f3afeec3480d521d800a757b69d447"
+  },
+  {
+    "group_id": "2580aff673131e89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_746.jpg",
+    "sha256": "215f21ab7cf00415d45f282feac924265d603efb54021a785f7bd4ebdeb32b4f"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_749.jpg",
+    "sha256": "ca5a51914cad005d72af57fa6c9142fc9d650ca06ba23f3e839991c3fa4c8b36"
+  },
+  {
+    "group_id": "a23b0ba028eabcfe",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_75.jpg",
+    "sha256": "827a59f5f885a721c26c0f19d401038ed2990270093f12c32cf4ed140345a40e"
+  },
+  {
+    "group_id": "57bf37cbbb1f15c1",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_756.jpg",
+    "sha256": "6e7061597f99837034140c4fa3ebe227cfbc5321d39b8f6c12e89e6894a8cd9c"
+  },
+  {
+    "group_id": "45489051e75fee0e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_763.jpg",
+    "sha256": "c6b37dbcc8c59a18f68c4ecde7f081eb0caa8cae6edb6d438e11170f0736bf01"
+  },
+  {
+    "group_id": "828f5756a62d8997",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_768.jpg",
+    "sha256": "ac8f48d2acbfe09e5173341ec37ac01ad6790d1bb5c91df6c5a7577f3a43a718"
+  },
+  {
+    "group_id": "dfe1206fab6ce372",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_776.jpg",
+    "sha256": "e3d870254afb4646ef9c8ed65add1e52e4614142600fdae3d7f9cfbf8caf05e2"
+  },
+  {
+    "group_id": "06caed6b5eac0af9",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_792.jpg",
+    "sha256": "12079534e32d05977f0bc45e10348492e4e3d84f8056631b725140af7795544d"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_795.jpg",
+    "sha256": "7a3b3888385d027b2be2fe13b89c7998edab72283cef267944fff8ca7f7a09b5"
+  },
+  {
+    "group_id": "8cd6d0b5f6d3cf00",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_809.jpg",
+    "sha256": "7eea0661786fe6467878af7385145e28c36462c18a4bf4388c99aebe85248792"
+  },
+  {
+    "group_id": "344bd329f090f31c",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_816.jpg",
+    "sha256": "f1aa73c33c56a13b8fe3b256ba2e6e3d2d84ddc6f3ed814d874bc88726ac1f9d"
+  },
+  {
+    "group_id": "835c87842ed45d89",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_818.jpg",
+    "sha256": "9c0af8a60f4c1f8db7b4635e8a9394221f54b5af4a862bb7d3b3029958ef7709"
+  },
+  {
+    "group_id": "1e3eb9d2e3bcc0e7",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_84.jpg",
+    "sha256": "fdd96cf03b0731b6850ae5ff76eccd951868d4d6a2b876ca531fa8ea7f22eab7"
+  },
+  {
+    "group_id": "612bc9e0d990b162",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_844.jpg",
+    "sha256": "92477bd71863c6bb92a759c01baf1da541f95a14748204a33319cd7fb5201ed2"
+  },
+  {
+    "group_id": "a9b72b56102a6f68",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_857.jpg",
+    "sha256": "bda484a632a2f6a5e8083fe8954759e1176bac99ca707af27f87dfbddf56feba"
+  },
+  {
+    "group_id": "33dce10d5c4ced2d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_881.jpg",
+    "sha256": "2e1bb67ed663d3411dd867c433498aecb0aa50b426f2933a6d7b6ce194a116ae"
+  },
+  {
+    "group_id": "56bb1f9bfa56cee2",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_884.jpg",
+    "sha256": "4215a056888ab3ce72818e5b604cad965a3ae6026ede59e5752ac55cbbceb389"
+  },
+  {
+    "group_id": "6203c07baf83d3f5",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_895.jpg",
+    "sha256": "c4cb47faeb488806b904313c4a21780d779cfbe01b12358b2e42b0267472b8d7"
+  },
+  {
+    "group_id": "499160a351e5cf55",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_901.jpg",
+    "sha256": "a5a11e528b6d4756c9a8b3180d40410efe1b27b2a5ad13ecce512fa3bf214330"
+  },
+  {
+    "group_id": "85acca9b40a2ef5a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_930.jpg",
+    "sha256": "9af05acd768793e89fc6776c3af838b0bf0747cfc3a3737e1cd3af44ea09c930"
+  },
+  {
+    "group_id": "e88398d7d5ab5176",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_931.jpg",
+    "sha256": "ca5a51914cad005d72af57fa6c9142fc9d650ca06ba23f3e839991c3fa4c8b36"
+  },
+  {
+    "group_id": "0c87ebe7ef2f245a",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_938.jpg",
+    "sha256": "4aa6ed6c6badda46f69ad31fa48b99534fd40a155bb0025229ec3671d1481a8c"
+  },
+  {
+    "group_id": "57bf37cbbb1f15c1",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_944.jpg",
+    "sha256": "7c253da5718d4579027b2a16b0fbb52bdaea592c53b85fafbf0940733daec2b9"
+  },
+  {
+    "group_id": "8ff0442b0b5f95b5",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_959.jpg",
+    "sha256": "a8155f8b8f640f8464b58a380026d01471800d15e76cbfd9678848d669c7e3a7"
+  },
+  {
+    "group_id": "e3311e8897a7b9f2",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_977.jpg",
+    "sha256": "b23fe6dad4ff5e7e0fe80d1d315399658298647951c5f5e148e8c0d6ff6e3b5e"
+  },
+  {
+    "group_id": "02e7ef7e5064d77c",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_978.jpg",
+    "sha256": "06e6f334b7e990bd685265cea5af2b11410235f4a3baad476c964249310330f3"
+  },
+  {
+    "group_id": "e0802e6e9348fd3e",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_980.jpg",
+    "sha256": "b2fd5ee388ee55d2379d51713bed67a7cca266291e8f3a8c6a1fbeef449f49e4"
+  },
+  {
+    "group_id": "6eb45514345cbc7d",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_989.jpg",
+    "sha256": "a820973ab9e444f92fdc4e5eb2e584a72d5da660675f1793469f229f40199538"
+  },
+  {
+    "group_id": "3727819a5a43c373",
+    "label": "notumor",
+    "path": "Training/notumor/Tr-no_997.jpg",
+    "sha256": "11710fc637162c21b6e62968d417c852ec8daa3c4cb42a403b775db39b44e3f0"
+  },
+  {
+    "group_id": "ee14327ee7912415",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1003.jpg",
+    "sha256": "c8dcce3bcef1c7f20a760c7c45ecd1fd2b3d63db6a68dfc1ce3a778055f2fbf6"
+  },
+  {
+    "group_id": "a8ae6bf559c7447f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1004.jpg",
+    "sha256": "a2cf5cc53e074a31781ab40fa1c6c3879be8a508d7551ffd053198c70f82f66c"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_102.jpg",
+    "sha256": "888ae8d9710ba7e7b12900ee9ab10ca1452ce99f7be22fdaa0f6e65b9838d1dd"
+  },
+  {
+    "group_id": "e046b4bd148bf936",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1034.jpg",
+    "sha256": "28a5f64b741d9a8a8921caf15668bef7da8525dcb4680697be2c63ab197471e7"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1056.jpg",
+    "sha256": "ea7d6b08b7112c10cb818c2ebb590ce9bb2cc5bb52f93bc37cc664cf881aefd8"
+  },
+  {
+    "group_id": "601846b099498bad",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1057.jpg",
+    "sha256": "872468d6915839d41a98d8b161c22128139cfb7dc4cb72c509885cc0d79c999d"
+  },
+  {
+    "group_id": "3842c917e745f85e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1060.jpg",
+    "sha256": "eefbca2e0cf43f1331b1b8155ed7f7293a3d3f02a7965fbe02954a832cc97c5b"
+  },
+  {
+    "group_id": "4b071d6ab2d9adcf",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1075.jpg",
+    "sha256": "64da1e2ed0df51e4ec91d439e8fef6bd923ed3992a78ad72b0cc073bb6dd1184"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1094.jpg",
+    "sha256": "0e83f73c27a75d6063ff2ce1d0608e483eb67c67a2245240f0d0b462ebc4265a"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_110.jpg",
+    "sha256": "79e5e65d8fe4327a500b0c0cdfb88f63d2de66f860fc80c5de26273abc7d96d7"
+  },
+  {
+    "group_id": "2e3c719af61a194c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1105.jpg",
+    "sha256": "6c885fc81b8102ff60a0b232c3725421d93032fda5116dd96d27d6b7daff5299"
+  },
+  {
+    "group_id": "4527ba9c78529e46",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1115.jpg",
+    "sha256": "4f81bf5bea728dd3780e779548921ac365edfdfe5729ce6f729f67290efe6676"
+  },
+  {
+    "group_id": "2b5f8f88fa949c54",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1116.jpg",
+    "sha256": "f08ac5f66d70af4a0c3f66181b7ef8ebfed0c9c597bf0cc164d0da5c97613e4d"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1118.jpg",
+    "sha256": "4ec4a8bb61f8eafd1be3ef1f140ba4a3ae7eaba72c137cd6555451dc3ac3614e"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1122.jpg",
+    "sha256": "ac081dc77c62c1902feb757aa652c2af19c67d31ec646fd3f2a50249729f570c"
+  },
+  {
+    "group_id": "01d3f1da39f7e757",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1124.jpg",
+    "sha256": "3a0726d0d352e0b2ff95be596a176b987eb5afa5fe369cb3c26f32c6c32ebcc4"
+  },
+  {
+    "group_id": "23eb8739343c62e9",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1125.jpg",
+    "sha256": "d4d574ce487be642016532453336ca6403b65971034e325fae945cf62db00f6c"
+  },
+  {
+    "group_id": "be88ce4f6a26c907",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1129.jpg",
+    "sha256": "cb34a1f2dbbe8fd0af471c14f440e1ea6ddcc05fef5ff5215b1e013858a98ea2"
+  },
+  {
+    "group_id": "7792d2039d422a4a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1157.jpg",
+    "sha256": "9ae6a3343b970e96387ae95f6ee4d97e918a0b5c179db22f4702e85516e03975"
+  },
+  {
+    "group_id": "fd72e44871d549d2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1165.jpg",
+    "sha256": "6cba0227284eda770556edcd432d889a63f2d06206a9cc2dcef0fc1924d312c1"
+  },
+  {
+    "group_id": "ad2fb1dc0016e57a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1183.jpg",
+    "sha256": "444bc9b4a0a897da27850c1643469a7d672e9688e5c8c628f0eac658c23dc7cb"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1187.jpg",
+    "sha256": "aff49c4e9fbe859bc0608338e96e8e4eab4743e7100c05f81b48e68a799d38d4"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1196.jpg",
+    "sha256": "ac081dc77c62c1902feb757aa652c2af19c67d31ec646fd3f2a50249729f570c"
+  },
+  {
+    "group_id": "7f39d6ef9c81b7d3",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1213.jpg",
+    "sha256": "cfea4c73b72d4405d9a78c084eab728b58d621876727407e9c3e8b447dd523a5"
+  },
+  {
+    "group_id": "488805d942600ad7",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_122.jpg",
+    "sha256": "e8b051083198eb9e96432fcb89e2c8b574dc7298e4e390e60e9e1b54d0ff4b63"
+  },
+  {
+    "group_id": "b15cd79f75f3eb93",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1220.jpg",
+    "sha256": "85d11b02e9fd30c5809c37b8ea79ec22516e69a6937769dad3313dcdf38332b5"
+  },
+  {
+    "group_id": "6cd72ffbc5419752",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1226.jpg",
+    "sha256": "dab849140b486429e3763e3381fef6c290718ba82870e80038264e19bbcb7b17"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1230.jpg",
+    "sha256": "6d6db7080f888869bb383d3012022bd0ed6fc01f8a2d45c4f083f60c07611523"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1256.jpg",
+    "sha256": "72c4d736543b2a020e0ae6392ca9885e3a1fbb6566aa5b8599087125add8790c"
+  },
+  {
+    "group_id": "33b3f68764088300",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1261.jpg",
+    "sha256": "d36b7f8e134c90b872660d0f6585a2be98443dd073b329b5aefd893d785e78e4"
+  },
+  {
+    "group_id": "51d6cd41b6175d6a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_128.jpg",
+    "sha256": "34f754e5c3defdcff383cd805d52508f88ea26fea150be3d4ca986a1222a4792"
+  },
+  {
+    "group_id": "2f10e3698ff90dfc",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1290.jpg",
+    "sha256": "84bff75699f713c58a751ac2e0b557568b15b78ce4307101c0520ad1c495a641"
+  },
+  {
+    "group_id": "e480d25a5656fea4",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1307.jpg",
+    "sha256": "5f9ce08383990a78a03bcdb239f221b090e4d3e586f9bd065d510c4d2aa4b61f"
+  },
+  {
+    "group_id": "ea80d943d6e612a4",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1328.jpg",
+    "sha256": "a31a892f2589e15d5841388859b06416c1f5465e74fdcb35369e3df6cdacf220"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1332.jpg",
+    "sha256": "f78384bc60ccf5f792f6d97ee8b4c9d30bcb0a69aa884e58c98fbebc5dc0cf29"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1348.jpg",
+    "sha256": "677ad07d344037fc8c15eb5eee7dee8b6fd3c82750c3a6f053488c836c1a887e"
+  },
+  {
+    "group_id": "563a64935b63d159",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1353.jpg",
+    "sha256": "3a94f090c2f5e925afe5d137eacb8ea77b32dce334f7856415afbd3be28e2cde"
+  },
+  {
+    "group_id": "b40b67cb6ea7ff0e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1371.jpg",
+    "sha256": "fed0dbb8a45355a437b239f4e1a3e6b480b4f91601c6529eb5da1dc6b1e3976c"
+  },
+  {
+    "group_id": "2f907508938aba92",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_1376.jpg",
+    "sha256": "844ac34753345dbef7de30703c493ef11dfb5b135f72f83896b5caa938161653"
+  },
+  {
+    "group_id": "35e1b845fcb4d13e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_165.jpg",
+    "sha256": "c4f788cb092c7e0fc5a4ee000f148bf1b855558b661caaab88d3e5a04cfe5fb7"
+  },
+  {
+    "group_id": "779004acaebeb9b7",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_181.jpg",
+    "sha256": "9038765a6a4121bab8b4e47357ef593b200fa67d35b10e3d4a7141bab595f706"
+  },
+  {
+    "group_id": "61a78038f6780f00",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_192.jpg",
+    "sha256": "d3e5ab970ae66bc783bb34689876126e241f46a30dfdbbaee6a9f3828e0fef01"
+  },
+  {
+    "group_id": "4689614486ba693c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_2.jpg",
+    "sha256": "f0de08e0db0b9700ae689d0e9328b2ba856d0194f15c58fbe80f666edafd6f42"
+  },
+  {
+    "group_id": "e2c446d0585a349c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_217.jpg",
+    "sha256": "8a8bf76f5ddc3f8100f8424cf1e3378736e2417d154e91bb48aec0998c495905"
+  },
+  {
+    "group_id": "06e202120a18c352",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_23.jpg",
+    "sha256": "c76a7e7d7af4a07ea166e6796ad5d7149ac7c0d241a98922d2332cf2ca0d3e8c"
+  },
+  {
+    "group_id": "d2f058f321b6bbdd",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_238.jpg",
+    "sha256": "30ef5b3c34e6092c286a59f7783e8fed317eb1b27835df8853508d8bba3c9f4f"
+  },
+  {
+    "group_id": "684fcc512ba4f362",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_250.jpg",
+    "sha256": "ffa9821fcc25c3f937cf0becd8be6dd011047bbcb9ead523719968e4496fb977"
+  },
+  {
+    "group_id": "db880f6aa4aeb582",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_255.jpg",
+    "sha256": "05df7724bd5cd4cbb2a5ae616a7571d11835487858764b7bb8793d5eac2eda53"
+  },
+  {
+    "group_id": "916c0c2a4190944e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_271.jpg",
+    "sha256": "d3adaa44b503579e9db8f11cce818ace22e97e788f7cae315c2bea5cd147a57c"
+  },
+  {
+    "group_id": "f7d22ae82cef20e9",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_317.jpg",
+    "sha256": "43da52f9e710014ebc7ed4fab024fd60c834c24cfe9977c4c7a63126639abff1"
+  },
+  {
+    "group_id": "88c41063bc339a63",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_354.jpg",
+    "sha256": "38dccab5cc42e98bc5b09af4a6bee5a453cacd2b9d5c1150e9626543595e291c"
+  },
+  {
+    "group_id": "07d6776767a79c84",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_358.jpg",
+    "sha256": "f979c2ffaff14bed490da1abc1da62e265cbc4fe7283ab32b76708963ac43bae"
+  },
+  {
+    "group_id": "48cd5c93078abed6",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_363.jpg",
+    "sha256": "4280d9e41e42de3c020ccb13aa8c046acae89c5c7a4521e70009b7802ea41efe"
+  },
+  {
+    "group_id": "97cddf8cdbac8654",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_366.jpg",
+    "sha256": "efa610b1f2367aca573bc4eebfcf29dcb589f8ce5f4cb5025afd13ad6361bf58"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_372.jpg",
+    "sha256": "a2144642197a1bc3b518f775a50406a704f36937d357c0384c3b9e000b859a3e"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_374.jpg",
+    "sha256": "50fa21cec7f9a1ac4d80f95f810d9890563f2e5b91160d4d83e945add7298660"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_384.jpg",
+    "sha256": "aff49c4e9fbe859bc0608338e96e8e4eab4743e7100c05f81b48e68a799d38d4"
+  },
+  {
+    "group_id": "a85766e4242f05b2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_41.jpg",
+    "sha256": "622be4935ec42946d989914cebcecab2d4abf9f271f88ab1d0ffb2b7b27356b0"
+  },
+  {
+    "group_id": "0c359468b5521bc5",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_419.jpg",
+    "sha256": "55ebb3cc959965389f826fdee7a275092ec392e2f706e2569b02aaaf1a429dec"
+  },
+  {
+    "group_id": "1147bdcbb70d3d5d",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_422.jpg",
+    "sha256": "bb3ab9784ed96aab6710aecc230d606becbd60a5a2e28f8deebe1922807c8414"
+  },
+  {
+    "group_id": "50d0727e4ed77a5d",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_424.jpg",
+    "sha256": "f7e9212f0be6b82943dc10864e037aacc0c58b0d4f320ecc7807a536e0d75dc5"
+  },
+  {
+    "group_id": "c27b8c322e92c91b",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_457.jpg",
+    "sha256": "3cf9bbb6ce5295cad9e903a3b404d87e6347cf8b0917b84c53c7c8cf092d5893"
+  },
+  {
+    "group_id": "5d37b537bda62ae2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_462.jpg",
+    "sha256": "1c46e75ea767287555fe60713098012ddf168ab90459c2206353dbf302396c40"
+  },
+  {
+    "group_id": "24b56fa44560c359",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_474.jpg",
+    "sha256": "864731e9effe4831697ba57857d7207238ba8144a1f3fffb2b8009c8cb758a39"
+  },
+  {
+    "group_id": "8bd01eeb910e8e1d",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_491.jpg",
+    "sha256": "f06ebc6ff91cc502a0d77c9909fc224e6ac4bc4e3b242d7c9c25c6fab895985d"
+  },
+  {
+    "group_id": "5ff10372a9289fdb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_518.jpg",
+    "sha256": "eb5e147c031d5cc6c777dce8c84088647632a92c8c7afec47e2f0dfd738a4a58"
+  },
+  {
+    "group_id": "1a8171b8f6db0e31",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_544.jpg",
+    "sha256": "021ee6d047629e09d4a1ca7edb1618046e0f61ce996a8dea861af2143761c1bd"
+  },
+  {
+    "group_id": "4f6ffc0a91fb9e8f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_555.jpg",
+    "sha256": "dec07729b572e234c1e842ad5fd5fc377be8b33cac553f1b7edd65c7a9ecbb7b"
+  },
+  {
+    "group_id": "ab00ee5e0723694d",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_557.jpg",
+    "sha256": "767407813537627d8e7caec87f849847cc6f1f6d148ad61d85f625728c47e1e4"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_565.jpg",
+    "sha256": "84cdcb9b556da05793446791a0e594fbecea807483d8462558278cdc51dc2d64"
+  },
+  {
+    "group_id": "0e2b9ae96ec23a17",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_570.jpg",
+    "sha256": "f293d7b720c78b0cb89aced12e741c1eb6825e9adc038b356d52354723814995"
+  },
+  {
+    "group_id": "13b62bceb5eea42c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_582.jpg",
+    "sha256": "496288b003f7863b7441767b1bc601c14f97639ae9821466a050e0f5caf87380"
+  },
+  {
+    "group_id": "2a681fb5193a2a8a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_583.jpg",
+    "sha256": "8917aca4efc5d2ccb439f75bb16e0e52aac2b80066f8c38fbbe4cc82b6d527ed"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_585.jpg",
+    "sha256": "303e83613fa2aed8932bf7ca1035153e807541b5b4ad6eeb89b22225d175ebc9"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_588.jpg",
+    "sha256": "9a94f147cc2efd10a2582c58935b06b9d60c88df70209376044424e61d52e02c"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_591.jpg",
+    "sha256": "5c8bde4f66583b4bf64f55e6c9b86d66a709371f66c824d3302ea05c7a51ed14"
+  },
+  {
+    "group_id": "1090b657d569504c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_595.jpg",
+    "sha256": "6eeeb7b81b6cfaf43fe7052656ddb7dcd930af84923187f18ffd19b33750a019"
+  },
+  {
+    "group_id": "55fd5d48568ccfd1",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_597.jpg",
+    "sha256": "af8a3f12745af74ce90b86f240982c8e525ee803219731bdbf93a3e56f166e5d"
+  },
+  {
+    "group_id": "61270e244e4878c0",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_60.jpg",
+    "sha256": "6d6b4d334c499e02200885cf5d113ddf61b4f84355283e0bcfce9db248e77766"
+  },
+  {
+    "group_id": "482e47260c90cdaa",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_611.jpg",
+    "sha256": "89743222c471d2a9d693cdc67e96d8ca5685b0489df4547f7a4866e87da4e408"
+  },
+  {
+    "group_id": "db2a198e53213662",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_624.jpg",
+    "sha256": "726145f565792e5a11493b9685ead964b689dec6a81d3fdc61dd7aaae6a2999e"
+  },
+  {
+    "group_id": "b165db0c20e26d5b",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_630.jpg",
+    "sha256": "bee39ba336fa1aecfb79a929d3d4e9b2eb56a134d16c17f467c508a9bd32ba08"
+  },
+  {
+    "group_id": "fda6f0d09540562c",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_664.jpg",
+    "sha256": "4cd2207a82a255664bc6cc96855daa94da4cb8affd6e919e3ef51f196e5e5df7"
+  },
+  {
+    "group_id": "405c68f773c79768",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_665.jpg",
+    "sha256": "92a4ab952d824b44ba9f395a906b785238279b096a0f74e2ae2b5e0026adc635"
+  },
+  {
+    "group_id": "b89d332b6d711dbc",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_672.jpg",
+    "sha256": "6df7823d2482095c088593459709b49edc1f91d162446bd72e4b83c8f8a0660d"
+  },
+  {
+    "group_id": "e9f410bf03e05d41",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_691.jpg",
+    "sha256": "7a3964761e1ce5edfdf6e169b8eb758ca57fa331c0c0290cb888081fb586705a"
+  },
+  {
+    "group_id": "937cc4d160ec1364",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_692.jpg",
+    "sha256": "fc092ed78ea1933ce3ea2e6b61d202ee8d65ccddc769160cde5f0e3e61eef32b"
+  },
+  {
+    "group_id": "7d938df003da5df1",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_694.jpg",
+    "sha256": "2612867e90b790affacfcd5588c07d84079de0e900d2730f80db3e82a02ed943"
+  },
+  {
+    "group_id": "25f59c33695238be",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_707.jpg",
+    "sha256": "16ff9fb169a6a472535da28292346f219d4ea96ea4330e292a558329bf4f245c"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_715.jpg",
+    "sha256": "fc848452cfe821fcf1d013530ae002c2f863447e453ffce056d61cea5d1d9d2b"
+  },
+  {
+    "group_id": "1b07c32cac3b1479",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_721.jpg",
+    "sha256": "25206702dcb710654fa62415a1d5dad3a8649ab529d52bd1fd5e51ecbdab9330"
+  },
+  {
+    "group_id": "0c1c00646902396a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_727.jpg",
+    "sha256": "3f2d830164f6444c68d9758fc281a416a30456a361fa56c1a90970d79c8354f0"
+  },
+  {
+    "group_id": "772faf4b1543edbc",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_737.jpg",
+    "sha256": "e9301bc1238dec58231b97fac2328dd35405b013c2993d1debfbe2950b2fc1b5"
+  },
+  {
+    "group_id": "43afde3cc745fa8e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_772.jpg",
+    "sha256": "eede8665398d4b1e6430af58b29399ef73d637b37515146575375c32c8e795c6"
+  },
+  {
+    "group_id": "b2eaf4f21aefc28e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_773.jpg",
+    "sha256": "849a42ce51625d0783ae7e31494101364239d600da8f964c7c2f33cd99e8057c"
+  },
+  {
+    "group_id": "4d4d3ce3596b722d",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_778.jpg",
+    "sha256": "32e8b16afe4dfe2de84703cd5d907f2af21817ab2300ef18b3f652be4f6e2fee"
+  },
+  {
+    "group_id": "6a78c63d901407b2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_782.jpg",
+    "sha256": "85ca4d09151dda122821454a53414443fee2811001c3a740fb9baa3e83c68fa4"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_79.jpg",
+    "sha256": "ae66ce1452794fc155029d727f963f52420072b22335b5543a28073770c07a57"
+  },
+  {
+    "group_id": "7e43c6d80974e34e",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_808.jpg",
+    "sha256": "4efe9e74cd516c6abc1ed00a53bd2fb5a7a36e5e9e4675cccfb5bdca80a07310"
+  },
+  {
+    "group_id": "1e882bd35086a03f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_834.jpg",
+    "sha256": "421e6eb4cfc9852ff32e999a06ce666eab3ab9d3b03639cc7cc69b0cc829388f"
+  },
+  {
+    "group_id": "0f2a712718d8969a",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_835.jpg",
+    "sha256": "22b0c494ccada3a509b48cf1213f75e0b3dcb1aa488d7131db8df8a03271c233"
+  },
+  {
+    "group_id": "52aa423c8543f3ea",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_841.jpg",
+    "sha256": "dbda71ebfe6fbf948408284b1c1199efce33fdd2173e4f36763a12382f19931f"
+  },
+  {
+    "group_id": "26ed5ff272d92ac6",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_849.jpg",
+    "sha256": "c9714030b4910b17070f5b2c81857b4c80c03099836361b0da174a09e31db18c"
+  },
+  {
+    "group_id": "0fba5421dbc28034",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_853.jpg",
+    "sha256": "b4bd72ae00a8a13da50534ebdde32366ab60b69b219515112356ac5a24b1bac1"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_863.jpg",
+    "sha256": "aff49c4e9fbe859bc0608338e96e8e4eab4743e7100c05f81b48e68a799d38d4"
+  },
+  {
+    "group_id": "05a3c0d2e36992a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_874.jpg",
+    "sha256": "59d781a5fc37a2aa21ae23a44c3f575e421ce3847b91dce8e40fde68f897f77d"
+  },
+  {
+    "group_id": "0c0ea86c49f20420",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_898.jpg",
+    "sha256": "9bbcedfc360ed1757ce99b24df77dbd10dd2720c5b04e592b2c0e2d113829e50"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_906.jpg",
+    "sha256": "9652169786420306650613dd51653cdcfd5af138be3e811fa8041c55a57f1873"
+  },
+  {
+    "group_id": "fdeb3252ef1a4401",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_912.jpg",
+    "sha256": "44c48b16dc63b13aa8eb3e46f2ac7daebb80a199b88e6ade3e7e05d2f35d4d9b"
+  },
+  {
+    "group_id": "5c6e5e1047c3d0d3",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_915.jpg",
+    "sha256": "4b37d7e0b48c309dd59c4fa57faa674f0ceeab1db9812263e06d9901efa7e34c"
+  },
+  {
+    "group_id": "00781c9d1b0d13a2",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_921.jpg",
+    "sha256": "1233966ce8e805be57ca632d63199d4e2ed3955082bc35393fb8a854fc92aec7"
+  },
+  {
+    "group_id": "d3be0bd92f185257",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_937.jpg",
+    "sha256": "4a5a54e0a5ca4178d549835f7065b3da2224e8bf43113ca842a83e7268a87dcd"
+  },
+  {
+    "group_id": "d8bfb0e12e84cd4f",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_94.jpg",
+    "sha256": "c4945a0ff7c60610c3e86df7d6f29dfd32bdc7315244f80b124adbe01687497c"
+  },
+  {
+    "group_id": "242bcd1bc2e8bacb",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_943.jpg",
+    "sha256": "ac081dc77c62c1902feb757aa652c2af19c67d31ec646fd3f2a50249729f570c"
+  },
+  {
+    "group_id": "88c20bf16aeb0ac9",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_944.jpg",
+    "sha256": "6ecaccfcfdcb904023ee4abfd70411e512a37377dc09643fff3a40850659708a"
+  },
+  {
+    "group_id": "90b263622edd9e35",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_96.jpg",
+    "sha256": "71274b17a57303fb1b4b8813f733c036705b4c07e6dcaba320659337d1abe74f"
+  },
+  {
+    "group_id": "45d1121604b7f279",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_968.jpg",
+    "sha256": "1de1b8b7a58742f393421eb55c203a9ecb990e11574bcda26ad3227fb75d3727"
+  },
+  {
+    "group_id": "07ced53a5440b1dd",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_972.jpg",
+    "sha256": "f2ab017925e3b90670a98cbc192c8a4432c5669a04f5017a5a5f6f0f05a4a85e"
+  },
+  {
+    "group_id": "0fd26a0bb26e8455",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_980.jpg",
+    "sha256": "312af7a0a68d36b2bcd412ea814213f0928aeef574dc2b2d7f1f75288f2e3bf2"
+  },
+  {
+    "group_id": "d4dd8da8108d66ee",
+    "label": "pituitary",
+    "path": "Training/pituitary/Tr-pi_983.jpg",
+    "sha256": "3804a20b65da56c2c75c3ac576c7bf93e80e0a80e0d9a179e4041764ac75fd58"
+  }
+]

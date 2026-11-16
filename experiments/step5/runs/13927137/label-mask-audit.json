@@ -1,0 +1,53 @@
+{
+  "completion_includes_end_of_utterance": true,
+  "examples": [
+    {
+      "path": "Training/glioma/Tr-gl_1.jpg",
+      "prefix_tokens": 1181,
+      "supervised_text": " glioma<end_of_utterance>",
+      "supervised_token_ids": [
+        45804,
+        4826,
+        49279
+      ],
+      "true_label": "glioma"
+    },
+    {
+      "path": "Training/meningioma/Tr-aug-me_1.jpg",
+      "prefix_tokens": 1181,
+      "supervised_text": " meningioma<end_of_utterance>",
+      "supervised_token_ids": [
+        21290,
+        89,
+        4826,
+        49279
+      ],
+      "true_label": "meningioma"
+    },
+    {
+      "path": "Training/notumor/Tr-no_100.jpg",
+      "prefix_tokens": 1181,
+      "supervised_text": " notumor<end_of_utterance>",
+      "supervised_token_ids": [
+        441,
+        382,
+        270,
+        49279
+      ],
+      "true_label": "notumor"
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_100.jpg",
+      "prefix_tokens": 1181,
+      "supervised_text": " pituitary<end_of_utterance>",
+      "supervised_token_ids": [
+        29961,
+        49279
+      ],
+      "true_label": "pituitary"
+    }
+  ],
+  "prompt_and_image_and_padding_labels": -100,
+  "status": "passed",
+  "untrained_reference_predictions_match": 8
+}

@@ -1,0 +1,52 @@
+wandb: \ 1 of 85 files downloaded...wandb: | 20 of 85 files downloaded...wandb: / 52 of 85 files downloaded...wandb:   85 of 85 files downloaded.  
+PASS: training W&B state, configuration, metrics, and downloaded evidence match
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261116_013648-qi5s4b7s
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step5-13927137-evidence
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s
+wandb: Adding directory to artifact (/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137)... Done. 6.1s
+wandb: Downloading large artifact 'step5-13927137-checkpoints:v0', 1287.72MB. 52 files...
+wandb: \ 1 of 52 files downloaded...wandb: | 42 of 52 files downloaded...wandb: / 46 of 52 files downloaded...wandb: - 49 of 52 files downloaded...wandb:   52 of 52 files downloaded.  
+Done. 00:00:02.8 (460.1MB/s)
+PASS: all uploaded model/checkpoint files downloaded and verified by SHA-256
+wandb: Adding directory to artifact (/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/experiments/step5/runs/13927137)... Done. 0.4s
+wandb: updating run metadata
+wandb: uploading summary, console lines 1-5
+wandb: 
+wandb: Run summary:
+wandb: checkpoint_files_verified 52
+wandb:                    epochs 3
+wandb:            merge_verified True
+wandb:           merged_accuracy 0.8601
+wandb:           merged_macro_f1 0.86202
+wandb:            selected_epoch 3
+wandb:                    status verified
+wandb: training_images_per_epoch 3279
+wandb:         unit_tests_passed 25
+wandb:         validation_images 579
+wandb: 
+wandb: 🚀 View run step5-13927137-evidence at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 0 media file(s), 148 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261116_013648-qi5s4b7s/logs
+{
+  "wandb_run_id": "qi5s4b7s",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s",
+  "artifact_name": "step5-checkpoint-13927137:v0",
+  "artifact_digest": "204b73717fe48b7b865011153ec34818",
+  "model_artifact": {
+    "artifact_name": "step5-13927137-checkpoints:v0",
+    "artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+    "files_verified": 52,
+    "bytes_verified": 1350270604,
+    "selected_adapter": "epoch-003/adapter",
+    "merged_model": "merged-fp16",
+    "restore_command": "wandb artifact get coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0 --root checkpoints/step5/13927137"
+  },
+  "training_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx"
+}
+PASS: Step 5 evidence and model artifacts published and verified

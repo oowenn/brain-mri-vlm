@@ -1,0 +1,443 @@
+{
+  "status": "complete",
+  "date_local": "2026-11-16",
+  "timezone": "America/New_York",
+  "scope": "Step 5: one LoRA training run, validation checkpoint selection, saved/reloaded FP16 merge, and verified artifact backup",
+  "implementation_commit": "873598e3a0f1fe8cecb3b2da5bda5962f63de7fa",
+  "gpu_job_id": "13927137",
+  "gpu_job_state": "COMPLETED",
+  "gpu_exit_code": "0:0",
+  "gpu_elapsed": "01:50:40",
+  "gpu_node": "ins093",
+  "publisher_job_id": "13927707",
+  "publisher_job_state": "COMPLETED",
+  "publisher_exit_code": "0:0",
+  "publisher_elapsed": "00:01:54",
+  "wandb_run_id": "0povsppx",
+  "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/0povsppx",
+  "evidence_wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/qi5s4b7s",
+  "training_images_per_epoch": 3279,
+  "epochs": [
+    {
+      "adapter_path": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/epoch-001/adapter",
+      "epoch": 1,
+      "global_step": 205,
+      "metrics": {
+        "accuracy": 0.8082901554404145,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              123,
+              44,
+              0,
+              14,
+              0
+            ],
+            [
+              6,
+              131,
+              4,
+              16,
+              0
+            ],
+            [
+              0,
+              5,
+              115,
+              1,
+              0
+            ],
+            [
+              0,
+              13,
+              8,
+              99,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8153847926267281,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.7935483870967742,
+            "precision": 0.9534883720930233,
+            "recall": 0.6795580110497238,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7485714285714286,
+            "precision": 0.6787564766839378,
+            "recall": 0.8343949044585988,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9274193548387096,
+            "precision": 0.905511811023622,
+            "recall": 0.9504132231404959,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.792,
+            "precision": 0.7615384615384615,
+            "recall": 0.825,
+            "support": 120
+          }
+        }
+      },
+      "training_images": 3279,
+      "training_loss": 0.6109417164530277,
+      "training_supervised_tokens": 10729,
+      "validation_loss": 0.14958435103965623
+    },
+    {
+      "adapter_path": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/epoch-002/adapter",
+      "epoch": 2,
+      "global_step": 410,
+      "metrics": {
+        "accuracy": 0.8324697754749568,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              170,
+              10,
+              0,
+              1,
+              0
+            ],
+            [
+              37,
+              107,
+              3,
+              10,
+              0
+            ],
+            [
+              3,
+              2,
+              116,
+              0,
+              0
+            ],
+            [
+              11,
+              12,
+              8,
+              89,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8333503699732034,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.845771144278607,
+            "precision": 0.7692307692307693,
+            "recall": 0.9392265193370166,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7430555555555556,
+            "precision": 0.816793893129771,
+            "recall": 0.6815286624203821,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9354838709677419,
+            "precision": 0.9133858267716536,
+            "recall": 0.9586776859504132,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.8090909090909091,
+            "precision": 0.89,
+            "recall": 0.7416666666666667,
+            "support": 120
+          }
+        }
+      },
+      "training_images": 3279,
+      "training_loss": 0.11351185813151005,
+      "training_supervised_tokens": 10729,
+      "validation_loss": 0.1317989741345145
+    },
+    {
+      "adapter_path": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/epoch-003/adapter",
+      "epoch": 3,
+      "global_step": 615,
+      "metrics": {
+        "accuracy": 0.8549222797927462,
+        "confusion_matrix": {
+          "columns": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary",
+            "INVALID"
+          ],
+          "counts": [
+            [
+              157,
+              18,
+              0,
+              6,
+              0
+            ],
+            [
+              20,
+              119,
+              3,
+              15,
+              0
+            ],
+            [
+              3,
+              2,
+              116,
+              0,
+              0
+            ],
+            [
+              2,
+              7,
+              8,
+              103,
+              0
+            ]
+          ],
+          "rows": [
+            "glioma",
+            "meningioma",
+            "notumor",
+            "pituitary"
+          ]
+        },
+        "invalid_count": 0,
+        "invalid_rate": 0.0,
+        "macro_f1": 0.8575596220022945,
+        "n": 579,
+        "per_class": {
+          "glioma": {
+            "f1": 0.8650137741046832,
+            "precision": 0.8626373626373627,
+            "recall": 0.8674033149171271,
+            "support": 181
+          },
+          "meningioma": {
+            "f1": 0.7854785478547854,
+            "precision": 0.815068493150685,
+            "recall": 0.7579617834394905,
+            "support": 157
+          },
+          "notumor": {
+            "f1": 0.9354838709677419,
+            "precision": 0.9133858267716536,
+            "recall": 0.9586776859504132,
+            "support": 121
+          },
+          "pituitary": {
+            "f1": 0.8442622950819673,
+            "precision": 0.8306451612903226,
+            "recall": 0.8583333333333333,
+            "support": 120
+          }
+        }
+      },
+      "training_images": 3279,
+      "training_loss": 0.07164198606260612,
+      "training_supervised_tokens": 10729,
+      "validation_loss": 0.10785202167640713
+    }
+  ],
+  "optimizer_updates": 615,
+  "selected_epoch": 3,
+  "merged_metrics": {
+    "accuracy": 0.8601036269430051,
+    "confusion_matrix": {
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          159,
+          16,
+          0,
+          6,
+          0
+        ],
+        [
+          19,
+          120,
+          3,
+          15,
+          0
+        ],
+        [
+          3,
+          2,
+          116,
+          0,
+          0
+        ],
+        [
+          2,
+          7,
+          8,
+          103,
+          0
+        ]
+      ],
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ]
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "macro_f1": 0.8620186316077625,
+    "n": 579,
+    "per_class": {
+      "glioma": {
+        "f1": 0.8736263736263736,
+        "precision": 0.8688524590163934,
+        "recall": 0.8784530386740331,
+        "support": 181
+      },
+      "meningioma": {
+        "f1": 0.7947019867549668,
+        "precision": 0.8275862068965517,
+        "recall": 0.7643312101910829,
+        "support": 157
+      },
+      "notumor": {
+        "f1": 0.9354838709677419,
+        "precision": 0.9133858267716536,
+        "recall": 0.9586776859504132,
+        "support": 121
+      },
+      "pituitary": {
+        "f1": 0.8442622950819673,
+        "precision": 0.8306451612903226,
+        "recall": 0.8583333333333333,
+        "support": 120
+      }
+    }
+  },
+  "merged_validation_loss": 0.1078627267283557,
+  "merge_verification": {
+    "absolute_macro_f1_difference": 0.004459009605467967,
+    "adapter_reloaded_probe_matches_selected": true,
+    "all_parameters_fp16": true,
+    "full_validation_label_agreement": 0.9948186528497409,
+    "max_absolute_logit_difference": 0.12109375,
+    "mean_absolute_logit_difference": 0.015792200341820717,
+    "merged_reloaded_from_disk": true,
+    "probe_count": 8,
+    "probe_paths": [
+      "Training/glioma/Tr-gl_896.jpg",
+      "Training/glioma/Tr-gl_1239.jpg",
+      "Training/meningioma/Tr-aug-me_56.jpg",
+      "Training/meningioma/Tr-me_277.jpg",
+      "Training/notumor/Tr-no_169.jpg",
+      "Training/notumor/Tr-no_14.jpg",
+      "Training/pituitary/Tr-pi_1129.jpg",
+      "Training/pituitary/Tr-pi_773.jpg"
+    ],
+    "probe_token_matches": 8,
+    "remaining_lora_modules": 0,
+    "selected_epoch": 3,
+    "status": "passed",
+    "thresholds": {
+      "max_absolute_logit_difference": 0.15,
+      "max_absolute_macro_f1_difference": 0.005,
+      "max_mean_absolute_logit_difference": 0.02,
+      "method": "cast selected adapter-loaded model to float32, safe merge, then cast all weights to float16",
+      "min_full_validation_label_agreement": 0.99,
+      "probe_per_class": 2,
+      "require_probe_tokens_identical": true,
+      "seed": 42
+    }
+  },
+  "baseline_step4": {
+    "accuracy": 0.41450777202072536,
+    "macro_f1": 0.26622028113611385
+  },
+  "absolute_improvement": {
+    "accuracy": 0.44559585492227977,
+    "macro_f1": 0.5957983504716486
+  },
+  "model_artifact": {
+    "artifact_name": "step5-13927137-checkpoints:v0",
+    "artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+    "files_verified": 52,
+    "bytes_verified": 1350270604,
+    "selected_adapter": "epoch-003/adapter",
+    "merged_model": "merged-fp16",
+    "restore_command": "wandb artifact get coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0 --root checkpoints/step5/13927137"
+  },
+  "checkpoint_artifact": "step5-checkpoint-13927137:v0",
+  "checkpoint_artifact_digest": "204b73717fe48b7b865011153ec34818",
+  "checks": {
+    "unit_tests_passed": 25,
+    "source_images_verified": 7200,
+    "source_snapshots_match_commit": 25,
+    "training_coverage_verified": true,
+    "independent_validation_metrics_match": true,
+    "checkpoint_files_verified": 52,
+    "checkpoint_bytes_verified": 1350270604,
+    "wandb_training_evidence_files_verified": 85,
+    "merge_verified": true,
+    "merge_prediction_changes": 3,
+    "merge_input_metadata_records_identical": 579,
+    "step3_fp16_preflight_records_identical": 8,
+    "test_set_inference": false
+  },
+  "limitations": [
+    "Validation selected the checkpoint; these are not final held-out test results.",
+    "Unknown patient identities prevent a fully patient-disjoint guarantee.",
+    "One fixed training run and seed; no estimate of run-to-run training variability or guarantee of bitwise-identical retraining.",
+    "No inference latency, throughput, peak-memory baseline, or optimization speedup measured in Step 5.",
+    "Environment restoration instructions are documented; a clean-room reinstall on a teammate server has not been verified."
+  ],
+  "gpu_cpus_per_task_requested": 4,
+  "gpu_cpus_allocated": 6,
+  "publisher_cpus_per_task_requested": 1,
+  "publisher_cpus_allocated": 2
+}

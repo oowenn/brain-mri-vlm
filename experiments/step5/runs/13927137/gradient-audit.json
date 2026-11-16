@@ -1,0 +1,6 @@
+{
+  "frozen_parameters_with_gradients": [],
+  "nonzero_trainable_gradients": 224,
+  "preclip_gradient_norm": 17.10661506652832,
+  "status": "passed"
+}
