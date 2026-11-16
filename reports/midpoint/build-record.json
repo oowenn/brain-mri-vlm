@@ -1,0 +1,23 @@
+{
+  "evidence_commit": "21ac283379a30af2fd72cd6d5167baa538423fe6",
+  "source_sha256": {
+    "experiments/step5/summary.json": "8662c2968f95736e036b2ffd4b06fa59e897622fd3ed107dffd3b1d8c551a559",
+    "experiments/step6/summary.json": "e68a727853ec9b79bd3e7b0e5061ddf4c985c6f47bbc8c21b19ed6a2367b81f7",
+    "experiments/step8/summary.json": "03c2bf10d248c2550a7745ba664018d64b10a71819f787d43536847e265648e1",
+    "experiments/step3/summary.json": "8aa3a87c41b627a6056cd70644b64c1b7d48da30f15cf14dad84b9b2541b405e",
+    "experiments/step4/summary.json": "578be4375274d88bae5de7bc97870d12903aec3ad28f332321634053676609be",
+    "experiments/step7/summary.json": "0ae84ba22f172fe132d54021b525a0b6091e9fb23b482c4ae7612b3d2de2c614",
+    "experiments/step8/runs/13935433/cpu-hardware.json": "e9cf1ed92db6bbba2f6ab1e1e86ef6e863fc41db43c9e03825d76f101caa8b92",
+    "experiments/step6/runs/13932242/sweep-b001/summary.json": "c6bf1da24f5d4eb473e3a3a7ed1276b161d0aa6e99ee367a8f3196f84c186e2c",
+    "experiments/step6/runs/13932242/sweep-b002/summary.json": "ad2e880ece8fc4968ac0425928f550949ab910ab006202d7bd0e9b9b4e861919",
+    "experiments/step6/runs/13932242/sweep-b004/summary.json": "cd725fc049ceb4f12ed1132fdc20722ee8e478b6f2525aa5a3c5a4c4c73f9399",
+    "experiments/step6/runs/13932242/sweep-b008/summary.json": "d911fc06008a4fa22f7bf60a9a0b8c38144f45be6c3dcdb97d7fb8b3bc793baf",
+    "experiments/step6/runs/13932242/sweep-b016/summary.json": "40ee55f7b85b4899f374e464f9556d89da0e727156003a6b3be081142ad6f804",
+    "experiments/step6/runs/13932242/sweep-b032/summary.json": "72fd2e23836061ca88e92099d079de5919acd9533531330d203b572682cbdd8b"
+  },
+  "generated_utc": "2026-11-16T21:10:43.713720+00:00",
+  "docx": "output/docx/brain-mri-vlm-midpoint-report.docx",
+  "docx_sha256": "6e483af5dfad1b67a9c6e0bc265203101425dbcc4e1d7495aca81358795dfa11",
+  "markdown_sha256": "bf8a8ab0061d8feb1a80b0e193399e066b20c090c85a00f6528f80e27deb8903",
+  "step8_job": "13935433"
+}

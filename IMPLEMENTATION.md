@@ -8,7 +8,7 @@ Verified Step 7 measurement source: [563898d](https://github.com/oowenn/brain-mr
 
 **Steps 1–7 are complete. The first Step 8 technique and its preliminary Step 9 comparison are verified.** Reducing the image-processor longest edge from 2048 to 1024 at fixed batch 4 achieved **2.9916x speedup** in one paired A6000 allocation: **1437.526 to 480.519 ms per batch**, **2.7826 to 8.3243 images/s**, and **2.776 to 1.504 GiB peak allocated memory**. Full-validation macro-F1 is **0.856293 versus 0.859061**, with zero invalid outputs; the fixed quality gate passed. All 46 tests, 180 baseline batch checks, 579 baseline validation comparisons, 120 instrumented comparisons, 46 execution-source snapshots and 201 downloaded W&B files passed. See [Step 8 results and file explanations](experiments/step8/README.md).
 
-GPU job **13935433** ran on ins094 (four CPUs, 8 GiB host RAM, A6000) and completed 0:0 in 15m58s. Publisher **13935434** completed 0:0 in 1m00s. Execution source is **c07cc8a**; W&B experiment **imqjpch9**, evidence **zwfrasg8**. The result is preliminary: one allocation and one trained checkpoint, with no final-test inference. Parallel preprocessing and quantization remain deferred. The requested Word/PDF midpoint report is being rendered and checked.
+GPU job **13935433** ran on ins094 (four CPUs, 8 GiB host RAM, A6000) and completed 0:0 in 15m58s. Publisher **13935434** completed 0:0 in 1m00s. Execution source is **c07cc8a**; W&B experiment **imqjpch9**, evidence **zwfrasg8**. The result is preliminary: one allocation and one trained checkpoint, with no final-test inference. Parallel preprocessing and quantization remain deferred. The requested nine-page midpoint report is complete in [Word](output/docx/brain-mri-vlm-midpoint-report.docx) and [PDF](output/pdf/brain-mri-vlm-midpoint-report.pdf). Its [source, build instructions and verification](reports/midpoint/README.md) document the fixed evidence snapshot, references and final page review. The course PowerPoint-template submission remains separate.
 
 The canonical Step 6 baseline stays **batch 4, RTX A6000, four CPU threads, 2.8004 images/s, 1428.367 ms mean batch latency, and 2.776 GiB peak allocated GPU memory**. Its full-validation macro-F1 is **0.856293**, with 494/579 correct and zero invalid outputs. Step 7's fresh control on another node measured **1830.319 ms / 2.185411 images/s**, 28.14% slower, with unchanged memory and exact reference outputs. This runtime variation is recorded, not treated as an optimization.
 
@@ -32,7 +32,7 @@ This living record follows the numbering in the [project roadmap](output/pdf/bra
 | 8 | Implement selected techniques | First technique complete; other techniques deferred | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Image-budget comparison complete; remaining comparisons pending | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
 | 10 | Freeze settings and evaluate the test set | Not started | Final results on the unchanged 1,600-image test set, without using test outcomes to tune settings. |
-| 11 | Explain results and deliver the project | Midpoint report requested; final deliverable pending | Reproduction instructions, report/presentation, bottleneck explanation, and demonstration. Existing notes and evidence provide a foundation. |
+| 11 | Explain results and deliver the project | Written midpoint report complete; presentation and final deliverable pending | Nine-page Word/PDF report with verified measurements, exact setup, primary references, run links, limitations and remaining work. No course submission performed. |
 
 ## Completed work
 
@@ -126,7 +126,7 @@ Evidence: [Step 6 README](experiments/step6/README.md), [summary](experiments/st
 - Preserved cancelled attempt 13933253 and the postprocessing failure from GPU 13933296 (13m36s, ins092). The correction counts CPU annotation windows and preserves every other trace-summary value. No GPU rerun was needed for recovery.
 - CPU recovery 13933535 completed 0:0 in 1m31s on ins003, using two allocated CPUs / 2 GiB in the permitted burst class, after a five-minute limit was set. All 42 tests, source snapshots, independent calculations, and 153 downloaded artifact files passed.
 - W&B profile [rvufjfp3](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/rvufjfp3), evidence [zm0m682b](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zm0m682b), artifact step7-checkpoint-13933296:v0.
-- Proposed three isolated techniques with a validation macro-F1 floor of 0.8362927507 and zero invalid outputs. Step 8 implementation, Step 9 re-measurement, and Step 10 final-test evaluation remain future work.
+- Proposed three isolated techniques with a validation macro-F1 floor of 0.8362927507 and zero invalid outputs. At Step 7 completion all were deferred; the image-budget technique has since been measured in Step 8. Other techniques and Step 10 final-test evaluation remain future work.
 
 Evidence: [Step 7 README](experiments/step7/README.md), [summary](experiments/step7/summary.json), [stage samples](experiments/step7/runs/13933296/stages/samples.jsonl), [traces](experiments/step7/runs/13933296/traces/), and [recovered verification](experiments/step7/runs/13933296/recovered-verification.json).
 
@@ -150,6 +150,7 @@ Evidence: [Step 7 README](experiments/step7/README.md), [summary](experiments/st
 | Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven benchmark tests brought Step 6 to 32; ten profiling/recovery tests bring the current suite to 42, all passed in CPU job 13933535. Four Step 8 tests bring the suite to 46, all passed in GPU job 13935433. |
 | Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
 | Living progress record | [`IMPLEMENTATION.md`](IMPLEMENTATION.md), [`AGENTS.md`](AGENTS.md) | Maintain the current implementation status and carry the update instruction into later repository sessions. |
+| Midpoint report | [Report files and rebuild instructions](reports/midpoint/README.md), [Word](output/docx/brain-mri-vlm-midpoint-report.docx), [PDF](output/pdf/brain-mri-vlm-midpoint-report.pdf) | Explain all completed runs and the first optimization using fixed evidence snapshot 21ac283. Includes editable source, numerical build provenance, primary references, and final document checks. |
 
 ## Step 4 completion checklist
 
@@ -196,7 +197,7 @@ Evidence: [Step 7 README](experiments/step7/README.md), [summary](experiments/st
 | 8 | The image-budget technique is implemented and measured. Parallel CPU preprocessing and quantization remain deferred. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
 | 9 | Repeat the 1024 comparison on another allocation, then measure/validate remaining techniques and combinations when authorized. | Compare to the Step 6 batch-4 FP16 quality/performance baseline, retaining regressions and failed variants. |
 | 10 | Freeze final settings and evaluate the unchanged test set. | Obtain held-out results without tuning against test outcomes. |
-| 11 | Assemble the report, presentation, reproduction guide, and demonstration. | Connect each claim to saved measurements and explain successes and failures. |
+| 11 | Adapt the completed written midpoint report to the course PowerPoint template; later update the final report/presentation after remaining experiments. | Preserve links from claims to saved measurements. The current Word/PDF report is complete, but no slide deck or course submission has been made. |
 
 Parallel proposal work still outstanding: fine-tune **ResNet-18** on the same splits for one accuracy-reference row. A larger SmolVLM2-2.2B comparison is optional and conditional on the proposal's midpoint criterion; a Gradio demo is optional. None of these has been implemented in this checkout.
 
@@ -448,3 +449,7 @@ Job 13935433 completed all six unprofiled timing workers and both full-validatio
 ### 2026-11-16: First optimization verified
 
 The scoped image-budget experiment and its preliminary Step 9 comparison are complete. GPU 13935433 and publisher 13935434 both completed 0:0. W&B imqjpch9/zwfrasg8, execution c07cc8a; 201 downloaded runtime files verified. The 1024 variant is 2.9916x faster with 45.80% less peak allocated GPU memory and passes the quality gate (macro-F1 0.859061, zero invalid). There are 22 changed labels: 11 errors corrected, nine new errors and two different wrong labels. All baseline outputs match Step 6. Raw timings, predictions, stage spans, CPU/GPU details, scheduling history, source snapshots, receipts and per-file explanations are in experiments/step8/. The user-requested report is now being completed from the verified evidence; no additional optimization or test inference is running.
+
+### 2026-11-16: Written midpoint report completed
+
+Created the [Word](output/docx/brain-mri-vlm-midpoint-report.docx) and matching [PDF](output/pdf/brain-mri-vlm-midpoint-report.pdf), using evidence snapshot **21ac283379a30af2fd72cd6d5167baa538423fe6**. The nine-page report covers the team, goal, setup, completed runs, baseline, profiling, matched first optimization, limitations, future work and primary references. All nine pages were visually reviewed; every Word text run is present in the PDF after whitespace normalization, all 28 link targets agree, all 13 numerical-source hashes and 224 Step 8 evidence checksums passed. [Report README](reports/midpoint/README.md) explains the template, builder, generated source, build record and verification file. Document generation used a separate bundled environment and changed no cluster packages. Other techniques, final-test inference, the course PowerPoint-template adaptation and submission remain outstanding.
