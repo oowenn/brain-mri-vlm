@@ -1,6 +1,6 @@
 # Step 6: fixed-batch FP16 performance baseline
 
-Status: **GPU execution pending**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. A two-hour/32 GiB request is being submitted; the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
+Status: **GPU execution pending**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. A two-hour/32 GiB request is queued as job **13932242**; the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
 
 Seven new benchmark tests pass locally. The complete local suite reports 26 passing tests and one import error: the current macOS Python lacks Pillow, so the six existing data-preparation tests cannot run. The complete 32-test suite and all GPU checks must run in the existing pinned cluster environment. No packages or model weights have been changed.
 
@@ -50,7 +50,9 @@ Reference documentation: [PyTorch 2.9 CUDA synchronization and memory semantics]
 | `scripts/publish_step6.py` | Confirm completed scheduler/W&B status, compare remote metrics and downloaded artifact hashes, then publish the completed evidence bundle. |
 | `tests/test_benchmark.py` | Seven tests for workload balance/reproducibility, EOS handling, units/percentiles, warm-up exclusion, ratio-of-totals throughput, memory-aware selection, tampering detection, and frozen protocol. |
 | `cluster/step6.sbatch` | Request one A6000, 4 CPUs, 32 GiB host RAM, and up to two hours; run the full test suite and data checks, then benchmark and independently verify. Actual allocated resources come from Slurm accounting. |
+| `cluster/preflight_step6.sbatch` | Optional small CPU job on `edu1`: run the complete suite, verify saved model hashes, and audit batched processing while waiting for GPU allocation. It does not measure GPU performance. |
 | `cluster/publish_step6.sbatch` | Request 1 CPU, 8 GiB RAM, and 45 minutes for remote verification/publication after GPU release. |
+| `preflight/` | CPU preflight logs, executed launcher, commit, tests, checkpoint hashes, and input audit. GPU preflight repeats these checks in its own recorded runtime. |
 | `scheduling/` | Scheduler evidence for an initial reservation canceled before execution; this is not a benchmark run. |
 | `local-checks/` | Current macOS CPU-test logs, source hashes, environment identity, and the explicit boundary that no GPU/timing result has been measured. |
 

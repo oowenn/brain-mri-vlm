@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 5 is complete.** One LoRA training run produced a verified merged FP16 model: **86.01% validation accuracy, 0.8620 macro-F1, and 0 invalid responses** on all 579 frozen validation images. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. The [Step 5 README](experiments/step5/README.md) contains epoch results, raw evidence, merge checks, and the verified model restore command. [IMPLEMENTATION.md](IMPLEMENTATION.md) records the current roadmap and teammate environment/directory setup. **Step 6 benchmarking is awaiting a two-hour GPU reservation; performance and final-test results have not been measured.**
+Status: **Step 5 is complete.** One LoRA training run produced a verified merged FP16 model: **86.01% validation accuracy, 0.8620 macro-F1, and 0 invalid responses** on all 579 frozen validation images. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. The [Step 5 README](experiments/step5/README.md) contains epoch results, raw evidence, merge checks, and the verified model restore command. [IMPLEMENTATION.md](IMPLEMENTATION.md) records the current roadmap and teammate environment/directory setup. **Step 6 benchmarking is queued as Slurm job 13932242; performance and final-test results have not been measured.**
 
 ## Study
 
