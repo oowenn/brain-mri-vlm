@@ -51,7 +51,7 @@ def main():
     verification=dict(status='passed',run_state=remote.state,config_and_metrics_match=True,
                       artifact_name=artifact.name,artifact_digest=artifact.digest,downloaded_files_verified=len(hashes))
     (root/'wandb-verification.json').write_text(json.dumps(verification,indent=2)+'\n')
-    (root/'independent-verification.json').write_text(json.dumps(report,indent=2)+'\n')
+    (root/'independent-verification.json').write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
     with wandb.init(entity=cfg['wandb_entity'],project=cfg['wandb_project'],name=f'step7-{root.name}-evidence',
                     group=f'step7-{root.name}',job_type='step7-evidence',config=cfg,tags=['step7','evidence'],
                     settings=wandb.Settings(disable_git=True,disable_code=True)) as run:

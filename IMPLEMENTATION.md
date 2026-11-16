@@ -6,7 +6,7 @@ Latest verified implementation commit: [1697704b4e12910322f61b5259c9483184cafad2
 
 ## Current position
 
-**Step 6 is complete. Step 7 profiling is being rerun after correcting a GPU-telemetry UUID format mismatch.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
+**Step 6 is complete. Step 7 GPU measurements are complete; CPU-only evidence recovery is pending after a trace annotation-count check failed.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
 
 Batching changed four predictions from the Step 5 batch-one result (498 correct, macro-F1 0.862019). The absolute macro-F1 drop of 0.005726 passes the fixed 0.02 allowance and is preserved in the evidence. All 32 tests, source/checkpoint hashes, source snapshots, independent timing/quality checks, and W&B runtime-artifact downloads passed. Step 7 instrumentation is being prepared; no measured profiling result, optimization speedup claim, or final-test inference is available yet.
 
@@ -24,7 +24,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
 | 6 | Select batch size and measure the FP16 baseline | Complete | Six-size sweep; frozen batch 4; three trials / 150 measurements; 2.8004 images/s; 2.776 GiB peak allocated; full validation and downloaded W&B evidence verified. |
-| 7 | Profile the five inference stages | Rerun pending; telemetry correction tested | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
+| 7 | Profile the five inference stages | Measurements complete; CPU verification recovery pending | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
 | 10 | Freeze settings and evaluate the test set | Not started | Final results on the unchanged 1,600-image test set, without using test outcomes to tune settings. |
@@ -400,3 +400,7 @@ This record is maintained as part of project work; it is not a background monito
 Added a frozen batch-4 control, synchronized stage diagnostics, asynchronous CPU/CUDA traces, exact-output/accounting verification, and W&B publishing. GPU job 13933253 started on ins090; publisher 13933254 depends on its success. Execution source is e38b35718eede86b89df4f3d2c5ad0b16010dd95. The existing environment and checkpoint are reused; no packages or model optimizations are changed. Step 7 requests one A6000, four CPUs, 16 GiB RAM, and 45 minutes. Run files will be under `$MRI_WORK/brain-mri-vlm/experiments/step7/runs/<job-id>/`. See [Step 7 protocol](experiments/step7/README.md).
 
 Step 7 attempt 13933253 was cancelled before stage profiling because nvidia-smi rejected the unprefixed UUID returned by PyTorch. The GPU- prefix is now normalized and checked before sampling; a regression test covers both formats. This attempt is diagnostic evidence, not a completed benchmark. Its dependent publisher 13933254 was cancelled too.
+
+Replacement GPU job 13933296 is running on ins092 from commit 563898d6e2dcac9525c9b4d306fe29c7caaf19b7. W&B run: wvqg8vuq. Dependent evidence job: 13933297. Completion and results remain pending.
+
+GPU job 13933296 finished all control/stage/trace workers but exited 1 during final verification: PyTorch exports both CPU and mirrored GPU annotations, and the original checker counted four batch ranges instead of two. Original logs/traces and failed status are preserved. The corrected checker selects CPU user_annotation ranges; local recovery passed all 180 control and 99 instrumented output comparisons. CPU-only recovery will publish the intact measurements, with no new inference. Preprocessing is 74.17% of diagnostic time.

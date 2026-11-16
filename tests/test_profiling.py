@@ -6,7 +6,9 @@ import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 from profiling_utils import stage_times,summarize_stages,trace_summary,union_duration,nvidia_uuid
-from verify_step7 import output_equal
+from verify_step7 import output_equal,verify_run
+from unittest.mock import patch
+import tempfile
 
 
 class ProfilingTests(unittest.TestCase):
@@ -37,18 +39,20 @@ class ProfilingTests(unittest.TestCase):
 
     def test_trace_clips_activity_to_batches(self):
         trace=dict(traceEvents=[
-            dict(name='mri/batch',ph='X',ts=10,dur=10),
+            dict(name='mri/batch',cat='user_annotation',ph='X',ts=10,dur=10),
             dict(name='kernel-a',cat='kernel',ph='X',ts=5,dur=10),
             dict(name='kernel-b',cat='kernel',ph='X',ts=13,dur=4),
-            dict(name='copy',cat='gpu_memcpy',ph='X',ts=18,dur=10)])
+            dict(name='copy',cat='gpu_memcpy',ph='X',ts=18,dur=10),
+            dict(name='mri/batch',cat='gpu_user_annotation',ph='X',ts=12,dur=5)])
         out=trace_summary(trace)
+        self.assertEqual(out['batch_windows'],1)
         self.assertEqual(out['gpu_kernel_busy_us'],7)
         self.assertEqual(out['gpu_activity_busy_us'],9)
         self.assertEqual(out['gpu_activity_fraction'],.9)
 
     def test_trace_requires_cuda_and_batch_annotations(self):
         for events in ([],[dict(cat='kernel',name='x',ph='X',ts=0,dur=1)],
-                       [dict(name='mri/batch',ph='X',ts=0,dur=1)]):
+                       [dict(name='mri/batch',cat='user_annotation',ph='X',ts=0,dur=1)]):
             with self.assertRaises(ValueError):
                 trace_summary(dict(traceEvents=events))
 
@@ -73,6 +77,13 @@ class ProfilingTests(unittest.TestCase):
         b=copy.deepcopy(a);b['paths']=['y']
         with self.assertRaises(ValueError):
             output_equal(a,b)
+
+    def test_recovery_rejects_unrelated_failed_runs(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/'run.json').write_text(json.dumps(dict(status='failed',config={},error='CUDA out of memory',test_set_inference=False)))
+            with patch('verify_step7.validate_manifests'),self.assertRaises(ValueError):
+                verify_run(root,root,recover_trace_annotations=True)
 
     def test_profile_keeps_frozen_batch_and_three_trials(self):
         root=Path(__file__).parents[1]

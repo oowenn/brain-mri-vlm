@@ -46,7 +46,7 @@ def union_duration(intervals):
 def trace_summary(trace):
     events=trace['traceEvents']
     windows=[(e['ts'],e['ts']+e['dur']) for e in events
-             if e.get('name')=='mri/batch' and e.get('ph')=='X']
+             if e.get('name')=='mri/batch' and e.get('ph')=='X' and e.get('cat')=='user_annotation']
     kernels=[e for e in events if e.get('cat')=='kernel' and e.get('ph')=='X']
     copies=[e for e in events if e.get('cat') in ('gpu_memcpy','gpu_memset') and e.get('ph')=='X']
     if not windows or not kernels:
