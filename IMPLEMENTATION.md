@@ -6,11 +6,11 @@ Latest verified implementation commit: [`492ab709cdf48d8416f6087050860b6254b8b5e
 
 ## Current position
 
-**Step 4 is complete. Step 5 has not started.** The project has frozen data, a verified GPU environment, an audited evaluator, and a full pretrained FP16 validation result: **240/579 correct (41.45% accuracy), macro-F1 0.2662, and 0 invalid responses**. It does not yet have a fine-tuned model or performance/profile results.
+**Step 4 is complete. Step 5 is being implemented; no completed training result is claimed yet.** The project has frozen data, a verified GPU environment, an audited evaluator, and a full pretrained FP16 validation result: **240/579 correct (41.45% accuracy), macro-F1 0.2662, and 0 invalid responses**. It does not yet have a fine-tuned model or performance/profile results.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md) and [Step 4 README](experiments/step4/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The latest authorized execution scope was Step 4, which is now complete. Training and profiling remain subsequent roadmap work.
+The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation of those optimizations deferred for now. The full proposal roadmap is retained below, with that distinction explicit. The user has authorized Step 5 with the same evidence, W&B, repository, and teammate-documentation requirements. Step 6 benchmarking remains subsequent work.
 
 ## Roadmap status
 
@@ -20,7 +20,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 2 | Audit data and freeze splits | Complete | Conservative manifests, source and output hashes, recovered patient constraints, and documented identity limitations. |
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
-| 5 | Fine-tune once with LoRA and merge into FP16 | Next; not started | Reproducible training, selected adapter checkpoint, merged FP16 weights, and merge-equivalence checks. |
+| 5 | Fine-tune once with LoRA and merge into FP16 | In progress | Reproducible training, selected adapter checkpoint, merged FP16 weights, and merge-equivalence checks. |
 | 6 | Select batch size and measure the FP16 baseline | Not started | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
@@ -125,7 +125,7 @@ The goal is **one reproducible LoRA training workflow and a verified merged FP16
 - [ ] Evaluate and preserve the selected checkpoint's validation quality. Do not infer improvement from successful training alone or use the test set for selection.
 - [ ] Add the Step 5 README, evidence, artifact links, and actual outcome to this tracker before advancing to baseline timing.
 
-Completion gate: a reproducible trained adapter, selected with validation evidence, and a verified merged FP16 model. No Step 5 implementation or run has started yet.
+Completion gate: a reproducible trained adapter, selected with validation evidence, and a verified merged FP16 model. Step 5 implementation is in progress; the full training run is pending.
 
 ## Remaining work after Step 4
 
@@ -329,3 +329,4 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Added the teammate environment and directory handoff. | Verified the existing cluster layout and installed environment; documented per-user setup, fixed inputs, verification, and cross-server limitations. User clarified that setup documentation is required, rather than a binary environment/cache backup. No fresh reinstall or Step 4 run performed. |
 | 2026-11-15 | Started Step 4 implementation. | Added full-validation configuration, stage-aware run labels, Slurm entry points, and independent coverage/metric verification. Implementation commit `492ab70`; GPU job `13925021` submitted for full validation. |
 | 2026-11-15 | Step 4 completed and independently verified. | Execution commit `492ab70`; GPU job `13925021`; evidence job `13925075`; W&B inference `cpawhwk5`; checkpoint `step4-checkpoint-13925021:v0`. Accuracy 41.45%, macro-F1 0.2662, invalid rate 0. Next: Step 5 LoRA training and merge verification. |
+| 2026-11-15 | Started Step 5 implementation. | Fixed three epochs, rank-16 decoder LoRA, response-only loss, effective batch 16, validation checkpoint selection, and explicit FP16 merge tolerances before training. |

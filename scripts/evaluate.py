@@ -92,6 +92,48 @@ def runtime_snapshot(torch):
                     text=True).strip())
 
 
+def generate_predictions(model, processor, config, selected, source, output):
+    """Shared unchanged generation path for zero-shot and adapted validation."""
+    import torch
+    from PIL import Image, ImageOps
+
+    output.mkdir(parents=True, exist_ok=True)
+    model.eval()
+    messages = [{'role': 'user', 'content': [{'type': 'image'},
+                {'type': 'text', 'text': config['prompt']}]}]
+    prompt = processor.apply_chat_template(messages, add_generation_prompt=True)
+    (output / 'rendered-prompt.txt').write_text(prompt)
+    (output / 'generation-config.json').write_text(model.generation_config.to_json_string())
+    results = []
+    source = source.resolve()
+    with (output / 'predictions.jsonl').open('x') as stream:
+        for index, row in enumerate(selected, 1):
+            path = (source / row['path']).resolve()
+            if not path.is_relative_to(source):
+                raise ValueError('Source path escapes dataset root')
+            raw_image = path.read_bytes()
+            if sha(raw_image) != row['sha256']:
+                raise ValueError(f'Image checksum mismatch: {row["path"]}')
+            with Image.open(io.BytesIO(raw_image)) as original:
+                image = ImageOps.exif_transpose(original).convert('RGB')
+            inputs = processor(text=prompt, images=[image], return_tensors='pt').to('cuda')
+            inputs['pixel_values'] = inputs['pixel_values'].to(torch.float16)
+            with torch.inference_mode():
+                generated = model.generate(**inputs, max_new_tokens=config['max_new_tokens'],
+                                           do_sample=config['do_sample'], num_beams=config['num_beams'])
+            token_ids = generated[0, inputs['input_ids'].shape[1]:].tolist()
+            raw = processor.decode(token_ids, skip_special_tokens=True).strip()
+            result = dict(path=row['path'], true_label=row['label'], raw_response=raw,
+                          prediction=parse_prediction(raw), generated_token_ids=token_ids,
+                          image_size=list(image.size), input_tokens=inputs['input_ids'].shape[1],
+                          pixel_values_shape=list(inputs['pixel_values'].shape))
+            results.append(result)
+            stream.write(json.dumps(result) + '\n')
+            stream.flush()
+            print(f'{index}/{len(selected)} true={row["label"]} predicted={result["prediction"]} raw={raw!r}', flush=True)
+    return results
+
+
 def evaluate(args):
     import torch
     from PIL import Image, ImageOps
@@ -175,38 +217,7 @@ def evaluate(args):
             quantization_config=quantization.to_dict() if quantization is not None else None))
         (args.output / 'model-config.json').write_text(model.config.to_json_string())
         (args.output / 'image-processor.json').write_text(processor.image_processor.to_json_string())
-        messages = [{'role': 'user', 'content': [{'type': 'image'},
-                    {'type': 'text', 'text': config['prompt']}]}]
-        prompt = processor.apply_chat_template(messages, add_generation_prompt=True)
-        (args.output / 'rendered-prompt.txt').write_text(prompt)
-        (args.output / 'generation-config.json').write_text(model.generation_config.to_json_string())
-        results = []
-        source = args.source.resolve()
-        with (args.output / 'predictions.jsonl').open('x') as stream:
-            for index, row in enumerate(selected, 1):
-                path = (source / row['path']).resolve()
-                if not path.is_relative_to(source):
-                    raise ValueError('Source path escapes dataset root')
-                raw_image = path.read_bytes()
-                if sha(raw_image) != row['sha256']:
-                    raise ValueError(f'Image checksum mismatch: {row["path"]}')
-                with Image.open(io.BytesIO(raw_image)) as original:
-                    image = ImageOps.exif_transpose(original).convert('RGB')
-                inputs = processor(text=prompt, images=[image], return_tensors='pt').to('cuda')
-                inputs['pixel_values'] = inputs['pixel_values'].to(torch.float16)
-                with torch.inference_mode():
-                    generated = model.generate(**inputs, max_new_tokens=config['max_new_tokens'],
-                                               do_sample=config['do_sample'], num_beams=config['num_beams'])
-                token_ids = generated[0, inputs['input_ids'].shape[1]:].tolist()
-                raw = processor.decode(token_ids, skip_special_tokens=True).strip()
-                result = dict(path=row['path'], true_label=row['label'], raw_response=raw,
-                              prediction=parse_prediction(raw), generated_token_ids=token_ids,
-                              image_size=list(image.size), input_tokens=inputs['input_ids'].shape[1],
-                              pixel_values_shape=list(inputs['pixel_values'].shape))
-                results.append(result)
-                stream.write(json.dumps(result) + '\n')
-                stream.flush()
-                print(f'{index}/{len(selected)} true={row["label"]} predicted={result["prediction"]} raw={raw!r}', flush=True)
+        results = generate_predictions(model, processor, config, selected, args.source, args.output)
         metrics = score_predictions(results)
         write_json(args.output / 'metrics.json', metrics)
         record.update(status='passed', finished_utc=datetime.now(timezone.utc).isoformat(),
