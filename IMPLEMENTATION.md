@@ -6,7 +6,7 @@ Latest verified implementation commit: [`873598e3a0f1fe8cecb3b2da5bda5962f63de7f
 
 ## Current position
 
-**Step 5 is complete. Step 6 is implemented and awaiting cluster execution.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
+**Step 5 is complete. Step 6 is awaiting a revised two-hour/32 GiB GPU reservation.** One three-epoch LoRA run produced a validation-selected adapter and a verified, saved/reloaded FP16 model: **498/579 correct (86.01% accuracy), macro-F1 0.8620, and 0 invalid responses**. The pretrained Step 4 reference was 41.45% accuracy and 0.2662 macro-F1. All checkpoints are backed up and download-verified in W&B; compact runs, predictions, logs, and source snapshots are preserved in this repository.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
@@ -21,7 +21,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 3 | Verify GPU, model, and evaluator | Complete | All 7,200 source images verified; 14 tests passed; FP16, INT8, and INT4 completed the same eight-image validation sample; evidence saved in GitHub and W&B. |
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
-| 6 | Select batch size and measure the FP16 baseline | Implemented; GPU execution pending | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
+| 6 | Select batch size and measure the FP16 baseline | Cluster execution pending | Batch-size sweep, selected fixed batch size, repeated timing results, throughput, peak memory, and validation quality. |
 | 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
@@ -197,7 +197,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
 | Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
-| Step 6 batch request | 1 A6000, 4 CPUs, 64 GiB RAM, six-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
+| Step 6 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); actual allocation remains to be recorded. CPU publisher requests 1 CPU, 8 GiB RAM, 45 minutes. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -375,3 +375,5 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Step 5 preflight passed; training started. | 25 tests; 7,200 source files; 8 unchanged base outputs; response-only loss and frozen-gradient checks. W&B `0povsppx`; 8,683,520 trainable parameters in 224 decoder LoRA modules. Full training result pending. |
 | 2026-11-16 | Step 5 completed and independently verified. | Execution commit `873598e`; GPU job `13927137`; publisher `13927707`; W&B `0povsppx`; model `step5-13927137-checkpoints:v0`. Epoch 3 selected; merged accuracy 86.01%, macro-F1 0.8620; merge and artifact downloads verified. Next: Step 6 baseline benchmarking. |
 | 2026-11-16 | Implemented Step 6; cluster execution pending. | Seven new benchmark tests pass locally. Fixed the sweep, selection rule, quality gate, timing boundaries, and repeated baseline protocol. Full tests, GPU measurements, and W&B evidence verification remain pending; see [Step 6](experiments/step6/README.md). |
+| 2026-11-16 | Submitted Step 6 GPU benchmark. | Execution commit `9c79baa`; Slurm job `13932216`. VPN/SSH access restored. Full tests, input audit, sweep, quality, and repeated timings are pending allocation; no completion or performance claim yet. |
+| 2026-11-16 | Resized the unstarted Step 6 reservation. | Job `13932216` canceled before execution: six-hour/64 GiB reservation estimated a next-day start. Slurm dry-run estimated a same-day start with two hours/32 GiB; one hour gave no further improvement. Model and benchmark protocol unchanged; scheduling evidence retained. |

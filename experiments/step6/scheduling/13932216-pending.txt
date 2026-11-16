@@ -1,0 +1,32 @@
+Mon Nov 16 05:44:16 PM UTC 2026
+JobId=13932216 JobName=smolmri-step6
+   UserId=ct3013(563829) GroupId=user(500) MCS_label=N/A
+   Priority=4842 Nice=0 Account=edu QOS=free
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=06:00:00 TimeMin=N/A
+   SubmitTime=2026-11-16T12:41:49 EligibleTime=2026-11-16T12:41:49
+   AccrueTime=2026-11-16T12:41:49
+   StartTime=2026-11-17T13:15:00 EndTime=2026-11-17T19:15:00 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-16T12:44:06 Scheduler=Main
+   Partition=short AllocNode:Sid=2402-login-001:1211968
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList= SchedNodeList=ins094
+   NumNodes=1-1 NumCPUs=11 NumTasks=1 CPUs/Task=11 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=64G,node=1,billing=4,gres/gpu=1,gres/gpu:a6000=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=11 MinMemoryNode=64G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/cluster/step6.sbatch
+   WorkDir=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm
+   StdErr=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step6-13932216.out
+   StdIn=/dev/null
+   StdOut=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step6-13932216.out
+   TresPerNode=gres/gpu:A6000:1
+   TresPerTask=cpu=4
+   
+
+             JOBID PARTITION     NAME     USER ST          START_TIME  NODES SCHEDNODES           NODELIST(REASON)
+          13932216     short smolmri-   ct3013 PD 2026-11-17T13:15:00      1 ins094               (Priority)

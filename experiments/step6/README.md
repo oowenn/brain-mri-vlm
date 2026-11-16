@@ -1,6 +1,6 @@
 # Step 6: fixed-batch FP16 performance baseline
 
-Status: **implemented locally; cluster execution is pending**. Columbia VPN connectivity has been restored; a fresh authenticated SSH connection is still needed before submitting the GPU job. No batch size has been selected and no Step 6 performance result has been measured.
+Status: **GPU execution pending**. The initial six-hour/64 GiB reservation (13932216) was canceled before execution after Slurm estimated a next-day start. A two-hour/32 GiB request is being submitted; the inference and measurement protocol is unchanged. No batch size or final performance result is available yet.
 
 Seven new benchmark tests pass locally. The complete local suite reports 26 passing tests and one import error: the current macOS Python lacks Pillow, so the six existing data-preparation tests cannot run. The complete 32-test suite and all GPU checks must run in the existing pinned cluster environment. No packages or model weights have been changed.
 
@@ -49,8 +49,9 @@ Reference documentation: [PyTorch 2.9 CUDA synchronization and memory semantics]
 | `scripts/verify_step6.py` | Independently recompute timing arithmetic and quality, verify exact schedules and selection, and check model/runtime provenance. |
 | `scripts/publish_step6.py` | Confirm completed scheduler/W&B status, compare remote metrics and downloaded artifact hashes, then publish the completed evidence bundle. |
 | `tests/test_benchmark.py` | Seven tests for workload balance/reproducibility, EOS handling, units/percentiles, warm-up exclusion, ratio-of-totals throughput, memory-aware selection, tampering detection, and frozen protocol. |
-| `cluster/step6.sbatch` | Request one A6000, 4 CPUs, 64 GiB host RAM, and up to six hours; run the full test suite and data checks, then benchmark and independently verify. Actual allocated resources come from Slurm accounting. |
+| `cluster/step6.sbatch` | Request one A6000, 4 CPUs, 32 GiB host RAM, and up to two hours; run the full test suite and data checks, then benchmark and independently verify. Actual allocated resources come from Slurm accounting. |
 | `cluster/publish_step6.sbatch` | Request 1 CPU, 8 GiB RAM, and 45 minutes for remote verification/publication after GPU release. |
+| `scheduling/` | Scheduler evidence for an initial reservation canceled before execution; this is not a benchmark run. |
 | `local-checks/` | Current macOS CPU-test logs, source hashes, environment identity, and the explicit boundary that no GPU/timing result has been measured. |
 
 The existing Step 3–5 source and immutable run evidence are preserved.

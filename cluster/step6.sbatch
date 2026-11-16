@@ -6,8 +6,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=64G
-#SBATCH --time=06:00:00
+#SBATCH --mem=32G
+#SBATCH --time=02:00:00
 #SBATCH --output=logs/step6-%j.out
 set -euo pipefail
 : "${SLURM_JOB_ID:?Submit through sbatch on Insomnia}"
