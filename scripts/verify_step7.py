@@ -9,7 +9,7 @@ from pathlib import Path
 import statistics
 
 from benchmark_utils import scheduled_batch,workload
-from profiling_utils import PRIMARY,trace_summary
+from profiling_utils import PRIMARY,trace_summary,nvidia_uuid
 from verify_data import REPO,read_csv,sha,validate_manifests
 from verify_step4 import assert_matches
 from verify_step6 import verify_timings
@@ -127,7 +127,7 @@ def verify_run(root,prepared):
         for key in ('gpu_utilization_percent','memory_controller_utilization_percent','memory_used_MiB','power_W'):
             values=[float(r[key]) for r in gpu]
             stats[key]=dict(mean=statistics.mean(values),min=min(values),max=max(values))
-        if any(r['uuid']!=uuid for r in gpu):
+        if any(r['uuid']!=nvidia_uuid(uuid) for r in gpu):
             raise ValueError('Telemetry GPU differs')
         reports[mode]=dict(samples=len(gpu),scope='entire worker sampling period, including warmups and output writes',values=stats)
         runtime=read(folder/'model-runtime.json')

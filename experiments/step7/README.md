@@ -1,6 +1,6 @@
 # Step 7: profile the frozen FP16 baseline
 
-Status: implementation ready for cluster execution; measurements pending.
+Status: rerunning after fixing GPU UUID normalization; attempt 13933253 and publisher 13933254 were cancelled. Their records will remain as diagnostic evidence.
 
 Step 6 remains the canonical performance and full-validation reference. This step explains where its runtime goes and proposes two or three changes for Step 8. It does not implement those changes or evaluate the final test set.
 
@@ -45,3 +45,32 @@ sbatch --dependency=afterok:"$gpu_job" \
 ~~~
 
 The GPU job requests one A6000, four CPUs, 16 GiB RAM, and a 45-minute maximum. The CPU publisher requests one CPU and 4 GiB; Slurm may allocate extra CPUs for memory. These limits are not expected inference times. Step 8 remains deferred until these measurements support a concrete selection.
+
+## Run evidence layout
+
+The run directory will retain these files so teammates can inspect the result without access to Sean's server:
+
+| File or directory under runs/<job-id>/ | What it records and why |
+| --- | --- |
+| run.json, base-commit.txt | Job outcome, W&B run, execution commit, frozen reference hashes, and absence of test inference. |
+| source/, source-provenance.json | Exact scripts, configs, tests, launcher, and package pins checked against the execution commit. |
+| tests.txt, pip-check.txt, requirements-installed.txt, pip-freeze-original.txt, cuda-check.txt | Runtime dependency/test/GPU checks and installed versions. |
+| data-verification.json, checkpoint-verification.json | Frozen manifest/source bytes and merged model/processor hashes. |
+| active-worker.json, worker-logs/, console.log | Worker commands, model warnings, progress, failures, and overall execution output. |
+| control/run.json, summary.json, timings.jsonl | Uninstrumented repeated benchmark with raw per-batch answers/tokens and timing/memory evidence. |
+| control/workload-*.json, environment.json, model-runtime.json, rendered-prompt.txt, gpu-*.csv | Fixed sample identities, actual GPU/environment, model properties, exact prompt, and hardware snapshots. |
+| stages/samples.jsonl, summary.json | Raw spans, exclusive stage accounting, native generation-call audit, and aggregated diagnostic timings. |
+| stages/workload-*.json, environment.json, model-runtime.json | Stage-workload identities, thread/GPU settings, resident parameter storage and image-processor configuration. |
+| stages/installed-modeling-idefics3.py | Exact installed Transformers source that defines the nested vision/prefill measurement boundary; original license retained. |
+| stages/gpu-samples.csv, gpu-*.csv, rendered-prompt.txt, run.json | Sampled utilization/memory/power, before/after snapshots, prompt, and worker outcome. |
+| traces/ | Same sample/environment/model evidence as stages, with asynchronous launch annotations. Trace sample wall spans are CPU launch regions, not synchronized GPU stage times. |
+| traces/trace-*.json.gz | Complete losslessly compressed Chrome/Perfetto CPU/CUDA traces, two active batches per seed. |
+| traces/trace-*-summary.json | Kernel counts, whole-batch windows, overlapping GPU activity union, and top kernel durations. |
+| traces/operators-*.json, operators-*.txt | Operator counts, input shapes, CPU/device time, memory-event deltas, and a readable top-operator table. Memory-event deltas are not tensor lifetimes or peak allocator values. |
+| independent-verification.json, local-verification.json | Recomputed coverage, unchanged outputs, stage accounting, control drift/overhead, and trace GPU activity. |
+| artifact-files.json, wandb-verification.json, evidence-upload.json | Uploaded file hashes, downloaded-artifact verification, and final W&B evidence receipt. |
+| slurm-accounting.tsv, slurm-output.log, publisher-accounting.tsv, publisher-output.log, exit-status.tsv | Completed-job resources, exit codes, elapsed times, and publisher output; allocation duration is not inference latency. |
+
+The final W&B bundle precedes its own receipt and publisher-completion log; those final files are preserved in Git. Raw datasets, weights, installed environments, and credentials remain outside Git, with pinned sources and setup paths documented in IMPLEMENTATION.md.
+
+To inspect a trace, decompress its .json.gz copy and load the resulting JSON in a compatible Chrome-trace viewer such as Perfetto. CPU annotations identify preprocessing, transfer, nested image features, the first forward, and later cached forwards; use the GPU tracks to inspect actual kernel execution.

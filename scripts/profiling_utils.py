@@ -1,6 +1,10 @@
 """Pure accounting for exclusive stage times and profiler GPU activity."""
 import statistics
 
+def nvidia_uuid(value):
+    return value if value.startswith('GPU-') else 'GPU-'+value
+
+
 PRIMARY = ['preprocessing', 'transfer', 'vision', 'prefill', 'decode']
 
 

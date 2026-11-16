@@ -5,11 +5,16 @@ from pathlib import Path
 import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
-from profiling_utils import stage_times,summarize_stages,trace_summary,union_duration
+from profiling_utils import stage_times,summarize_stages,trace_summary,union_duration,nvidia_uuid
 from verify_step7 import output_equal
 
 
 class ProfilingTests(unittest.TestCase):
+    def test_nvidia_uuid_handles_torch_and_nvidia_formats(self):
+        value='15c6a3e6-9de0-3c44-211f-b43e257b5a5c'
+        self.assertEqual(nvidia_uuid(value),'GPU-'+value)
+        self.assertEqual(nvidia_uuid('GPU-'+value),'GPU-'+value)
+
     def test_nested_vision_is_removed_from_prefill(self):
         spans=[dict(name=k,wall_ns=v,device_ms=0) for k,v in
                [('preprocessing',10),('processor',8),('transfer',5),('vision',40),('first_forward',70),('decode',10),('postprocessing',2)]]

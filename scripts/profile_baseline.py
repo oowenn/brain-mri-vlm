@@ -17,7 +17,7 @@ import traceback
 from benchmark import load_images,cpu_inputs,telemetry
 from benchmark_utils import scheduled_batch,workload,trim_after_eos
 from evaluate import parse_prediction,runtime_snapshot,write_json
-from profiling_utils import stage_times,summarize_stages,trace_summary
+from profiling_utils import stage_times,summarize_stages,trace_summary,nvidia_uuid
 from verify_data import REPO,read_csv
 
 
@@ -167,7 +167,11 @@ def main():
         with (args.output/'gpu-samples.csv').open('w') as gpu_log:
             gpu_log.write('timestamp,uuid,gpu_utilization_percent,memory_controller_utilization_percent,memory_used_MiB,power_W\n')
             gpu_log.flush()
-            sampler=subprocess.Popen(['nvidia-smi','--id='+env['gpu_uuid'],
+            device=nvidia_uuid(env['gpu_uuid'])
+            observed=subprocess.check_output(['nvidia-smi','--id='+device,'--query-gpu=uuid','--format=csv,noheader'],text=True).strip()
+            if observed!=device:
+                raise ValueError('GPU sampler identity differs')
+            sampler=subprocess.Popen(['nvidia-smi','--id='+device,
                 '--query-gpu=timestamp,uuid,utilization.gpu,utilization.memory,memory.used,power.draw',
                 '--format=csv,noheader,nounits','--loop-ms='+str(cfg['gpu_sample_interval_ms'])],
                 stdout=gpu_log,stderr=subprocess.STDOUT)
@@ -223,6 +227,8 @@ def main():
                             call('profiler_warmup',0);prof.step()
                             for i in range(cfg['trace_batches_per_trial']):
                                 call('trace',i);prof.step()
+            if sampler.poll() is not None:
+                raise RuntimeError('GPU sampler exited before profiling finished')
             sampler.terminate();sampler.wait();sampler=None
         recorder.close()
         if args.mode=='stages':
