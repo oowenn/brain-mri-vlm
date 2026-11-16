@@ -24,6 +24,16 @@ The separate uninstrumented control measured **1830.319 ms mean, 1831.635 ms p50
 
 Model parameter storage is **0.945 GiB**, or **34.05%** of the control allocator peak. The remaining peak includes input tensors, activations, caches, buffers, and temporary workspaces. Weights do not dominate the measured peak, and the model fits comfortably on the allocated A6000.
 
+### Trace and memory evidence
+
+The three traces contain **15,328 / 16,028 / 15,328 CUDA kernel events** across two active batches per seed. The union of kernel/copy activity occupies **18.08% / 18.51% / 20.00%** of the CPU whole-batch windows; the weighted total is **18.83%**. This supports the CPU-side bottleneck: the GPU spends much of the batch waiting for input preparation. Prominent kernels include FP16 memory-efficient attention and Ampere FP16 matrix multiplication, confirming actual GPU execution. These names do not establish GPU arithmetic or bandwidth saturation.
+
+The stage worker's 559 samples average **18.70% GPU utilization** and **9.04% memory-controller utilization**, with **3,660 MiB** maximum device memory reported by nvidia-smi. Trace-worker samples average 13.83% GPU utilization across warmups, active traces, and trace serialization; those periods differ from the timed batch windows. Memory-controller utilization is not percentage of VRAM capacity.
+
+Every measured stage batch has padded pixel shape **[4, 17, 3, 512, 512]**, and its CPU input tensors total **356,591,424 bytes** before transfer/casting. Of the 120 measured image executions, 119 have 1,181 effective input tokens and one has 916. Generated labels require only **2–4 tokens including EOS**. These measured shapes explain why image preparation deserves priority over further shortening the already brief output.
+
+The matched 30 control batches average **1826.052 ms**, versus **1818.111 ms** for the synchronized diagnostics, a **-0.435% observed difference**. The negative difference is ordinary runtime/phase-order variation, not evidence that instrumentation accelerates the model. The full control is **28.14% slower** than Step 6 on the different node. Keep both results visible and run future before/after pairs in one allocation.
+
 ## Proposed Step 8 experiments: three techniques
 
 These are proposals only. No optimized model path or final-test inference has been run.
@@ -52,15 +62,17 @@ Stage timings include synchronization overhead. Traces use CPU annotations to id
 
 | File | Purpose |
 | --- | --- |
-| ../../configs/step7.json | Fixed reference, sample counts, seeds, and measurement boundaries. |
-| ../../scripts/run_step7.py | Runs isolated control/stage/trace workers and records W&B evidence. |
-| ../../scripts/profile_baseline.py | Measures native model stages and saves compressed Chrome traces and GPU samples. |
-| ../../scripts/profiling_utils.py | Exclusive timing and overlapping GPU interval accounting. |
-| ../../scripts/verify_step7.py | Recomputes results and rejects changed inputs, answers, cache behavior, or invalid traces. |
-| ../../scripts/publish_step7.py | Checks completed Slurm/W&B results and downloads artifact files for hash verification. |
-| ../../tests/test_profiling.py | Tests double-counting, interval clipping, invalid evidence, warmup exclusion, and answer changes. |
-| ../../cluster/step7.sbatch | GPU launcher; records source, packages, tests, hashes, and worker output. |
-| ../../cluster/publish_step7.sbatch | Dependent CPU job for finished-job accounting, source provenance, and W&B publishing. |
+| [step7.json](../../configs/step7.json) | Fixed reference, sample counts, seeds, and measurement boundaries. |
+| [run_step7.py](../../scripts/run_step7.py) | Runs isolated control/stage/trace workers and records W&B evidence. |
+| [profile_baseline.py](../../scripts/profile_baseline.py) | Measures native model stages and saves compressed Chrome traces and GPU samples. |
+| [recover_step7.py](../../scripts/recover_step7.py) | CPU-only recovery of this exact postprocessing failure; preserves failed originals, verifies outputs/traces, and publishes/download-checks evidence. |
+| [recover_step7.sbatch](../../cluster/recover_step7.sbatch) | Allocates CPU resources for the recorded recovery; ordinary new runs use the standard GPU/publisher pair. |
+| [profiling_utils.py](../../scripts/profiling_utils.py) | Exclusive timing and overlapping GPU interval accounting. |
+| [verify_step7.py](../../scripts/verify_step7.py) | Recomputes results and rejects changed inputs, answers, cache behavior, or invalid traces. |
+| [publish_step7.py](../../scripts/publish_step7.py) | Checks completed Slurm/W&B results and downloads artifact files for hash verification. |
+| [test_profiling.py](../../tests/test_profiling.py) | Tests double-counting, interval clipping, invalid evidence, warmup exclusion, and answer changes. |
+| [step7.sbatch](../../cluster/step7.sbatch) | GPU launcher; records source, packages, tests, hashes, and worker output. |
+| [publish_step7.sbatch](../../cluster/publish_step7.sbatch) | Dependent CPU job for finished-job accounting, source provenance, and W&B publishing. |
 
 ## Reproduce on Insomnia or a teammate's server
 
@@ -99,11 +111,12 @@ The run directory will retain these files so teammates can inspect the result wi
 | traces/trace-*.json.gz | Complete losslessly compressed Chrome/Perfetto CPU/CUDA traces, two active batches per seed. |
 | traces/trace-*-summary.json | Kernel counts, whole-batch windows, overlapping GPU activity union, and top kernel durations. |
 | traces/operators-*.json, operators-*.txt | Operator counts, input shapes, CPU/device time, memory-event deltas, and a readable top-operator table. Memory-event deltas are not tensor lifetimes or peak allocator values. |
-| independent-verification.json, local-verification.json | Recomputed coverage, unchanged outputs, stage accounting, control drift/overhead, and trace GPU activity. |
+| recovered-verification.json, local-verification.json, analysis.json | Recomputed coverage, unchanged outputs, stage accounting, control drift/overhead, trace GPU activity, and supplementary memory/input arithmetic. New ordinary successful runs write independent-verification.json. |
+| recovery/ | Corrected trace summaries, CPU recovery run, exact correction-source snapshots, source hashes, tests, and recovery console; original trace summaries stay unchanged. |
 | artifact-files.json, wandb-verification.json, evidence-upload.json | Uploaded file hashes, downloaded-artifact verification, and final W&B evidence receipt. |
-| slurm-accounting.tsv, slurm-output.log, publisher-accounting.tsv, publisher-output.log, exit-status.tsv | Completed-job resources, exit codes, elapsed times, and publisher output; allocation duration is not inference latency. |
+| slurm-accounting.tsv, slurm-output.log, recovery-accounting.tsv, recovery-slurm-output.log, exit-status.tsv | Completed-job resources, exit codes, elapsed times, and publisher output; allocation duration is not inference latency. |
 
-The final W&B bundle precedes its own receipt and publisher-completion log; those final files are preserved in Git. Raw datasets, weights, installed environments, and credentials remain outside Git, with pinned sources and setup paths documented in IMPLEMENTATION.md.
+The final W&B bundle precedes its own receipt and recovery-completion log/accounting; those final files are preserved in Git. Raw datasets, weights, installed environments, and credentials remain outside Git, with pinned sources and setup paths documented in IMPLEMENTATION.md.
 
 To inspect a trace, decompress its .json.gz copy and load the resulting JSON in a compatible Chrome-trace viewer such as Perfetto. CPU annotations identify preprocessing, transfer, nested image features, the first forward, and later cached forwards; use the GPU tracks to inspect actual kernel execution.
 
@@ -115,3 +128,15 @@ To inspect a trace, decompress its .json.gz copy and load the resulting JSON in 
 - GPU activity/utilization and kernel names do not by themselves prove arithmetic-throughput versus device-memory-bandwidth saturation. A strict compute-bound/memory-bound classification would need hardware-counter evidence.
 - Parameter storage, allocator peak, allocator reservation, and nvidia-smi process/device usage measure different things. Shape/memory trace collection can retain extra tensors; use the unprofiled control for baseline memory.
 - Exact output agreement on the profiling workloads preserves their behavior; full-validation quality remains the separately recorded Step 6 result. No new claim about unseen/test images follows.
+
+## Preserved attempts and recovery
+
+| Record | Outcome and interpretation |
+| --- | --- |
+| GPU 13933253, source e38b357 | Cancelled after confirming that nvidia-smi rejects PyTorch's unprefixed UUID. Its 54 partial control batches are incomplete diagnostic evidence. Dependent publisher 13933254 was cancelled. See runs/13933253/attempt-note.json. |
+| GPU 13933296, source 563898d | All control, stage, and trace workers passed. The job then failed 1:0 after 13m36s because final verification counted both CPU and mirrored GPU batch annotations. Dependent publisher 13933297 was cancelled. Original run.json correctly remains failed. |
+| CPU recovery, source e85afc1 | The corrected checker counts only CPU user_annotation ranges. It requires the exact recorded postprocessing failure and rejects unrelated failures. It checks all original trace-summary values; only the explained batch-range count changes from four to two. No GPU inference is repeated. Completion evidence is recorded below when available. |
+
+For this preserved run, use the recovery record and recovered-verification.json as the final outcome, while retaining the original failure record. The current ordinary launcher includes both telemetry and trace-range corrections, and stable JSON serialization for verification evidence. To reproduce a fresh run, use the standard submission commands above. The special recovery launcher is only for the explicitly recognized old annotation-count failure.
+
+Local checks: [ten profiling regression tests](local-checks/profiling-tests.txt), [independent trace endpoint-sweep script](local-checks/verify_trace_intervals.py), [trace check results](local-checks/trace-interval-checks.json), and [unchanged Step 4–6 checksum counts](local-checks/historical-evidence.json). These files explain and preserve the local verification performed while CPU publication was queued.

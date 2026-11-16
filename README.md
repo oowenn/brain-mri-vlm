@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 6 is complete.** The merged FP16 baseline uses **batch 4 on RTX A6000**: **2.800 images/s, 1428.367 ms mean / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches. Full validation: **85.32% accuracy, 0.856293 macro-F1, zero invalid responses**. Four predictions changed from Step 5 batch one; the quality drop passed the fixed allowance. The [Step 6 README](experiments/step6/README.md) explains the selection, timing boundaries, results, files, and reproduction. [IMPLEMENTATION.md](IMPLEMENTATION.md) records current progress and teammate setup. **Next: Step 7 stage profiling. No optimization speedup or final-test result is claimed.**
+Status: **Step 7 GPU measurements and local verification are complete; W&B publishing is pending in the CPU queue.** CPU preprocessing is the main measured cost (**74.17%**), followed by vision encoding (**13.76%**). Three saved CUDA traces show **18.83% GPU activity** within batch windows. The [Step 7 README](experiments/step7/README.md) explains the evidence, preserved postprocessing failure/recovery, and three proposed techniques. The canonical [Step 6 baseline](experiments/step6/README.md) remains **2.8004 images/s, 1428.367 ms mean batch latency, 2.776 GiB peak allocated memory, and validation macro-F1 0.856293**. [IMPLEMENTATION.md](IMPLEMENTATION.md) tracks progress and teammate setup. Optimization implementation and final-test inference remain deferred.
 
 ## Study
 
@@ -14,10 +14,11 @@ Use one fixed NVIDIA GPU type and one batch size chosen on the baseline. Measure
 
 The verified environment is pinned in [requirements-cluster.txt](requirements-cluster.txt). [Step 3 configuration](configs/step3.json) selects the eight-image compatibility sample; [Step 4 configuration](configs/step4.json) keeps the same model revision, GPU, prompt, parser, and generation protocol while selecting all validation images. The [Step 3 evidence](experiments/step3/runs/13924504/) and [Step 4 evidence](experiments/step4/runs/13925021/) record the actual environment, executed source, predictions, verification, and W&B links. The [Step 5 configuration](configs/step5.json) fixes the LoRA/selection/merge protocol; its [evidence](experiments/step5/runs/13927137/) also includes training losses, every epoch's predictions, merge checks, and downloadable checkpoint identities. Steps 4 and 5 measure validation quality. The [Step 6 evidence](experiments/step6/runs/13932242/) adds the verified batch sweep, frozen batch-4 timing/quality baseline, and downloaded W&B evidence. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
 
-Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/`, `experiments/step4/`, `experiments/step5/`, and `experiments/step6/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
+Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact run evidence and logs are tracked under `experiments/step3/`, `experiments/step4/`, `experiments/step5/`, `experiments/step6/`, and `experiments/step7/`; runs and checkpoint artifacts are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
 
 ## Experiment notes
 
+- [Step 7 profiling](experiments/step7/README.md): stage costs, compressed CUDA traces, exact-output checks, bottleneck explanation, and three proposed changes.
 - [Step 6 baseline benchmark](experiments/step6/README.md): completed sweep and repeated-trial results, quality comparison, raw evidence, file explanations, and teammate launch instructions.
 
 - [Step 5 training and merged checkpoint](experiments/step5/README.md): full epoch results, merge verification, W&B model restoration, file explanations, and reproduction.

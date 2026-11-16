@@ -1,0 +1,25 @@
+baseline B=4 trial=0 warmup 1/10: 6728.61 ms
+baseline B=4 trial=0 warmup 10/10: 1798.05 ms
+baseline B=4 trial=0 measured 1/50: 1798.45 ms
+baseline B=4 trial=0 measured 11/50: 1808.12 ms
+baseline B=4 trial=0 measured 21/50: 1846.78 ms
+baseline B=4 trial=0 measured 31/50: 1855.46 ms
+baseline B=4 trial=0 measured 41/50: 1798.05 ms
+baseline B=4 trial=0 measured 50/50: 1841.16 ms
+baseline B=4 trial=1 warmup 1/10: 1815.80 ms
+baseline B=4 trial=1 warmup 10/10: 1829.10 ms
+baseline B=4 trial=1 measured 1/50: 1815.93 ms
+baseline B=4 trial=1 measured 11/50: 1806.65 ms
+baseline B=4 trial=1 measured 21/50: 1818.14 ms
+baseline B=4 trial=1 measured 31/50: 1842.26 ms
+baseline B=4 trial=1 measured 41/50: 1842.14 ms
+baseline B=4 trial=1 measured 50/50: 1835.36 ms
+baseline B=4 trial=2 warmup 1/10: 1802.55 ms
+baseline B=4 trial=2 warmup 10/10: 1854.33 ms
+baseline B=4 trial=2 measured 1/50: 1795.12 ms
+baseline B=4 trial=2 measured 11/50: 1806.87 ms
+baseline B=4 trial=2 measured 21/50: 1781.72 ms
+baseline B=4 trial=2 measured 31/50: 1779.36 ms
+baseline B=4 trial=2 measured 41/50: 1834.96 ms
+baseline B=4 trial=2 measured 50/50: 1815.46 ms
+PASS: baseline batch 4

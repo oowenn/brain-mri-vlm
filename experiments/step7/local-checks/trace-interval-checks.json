@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 42,
+    "cpu_batches": 2,
+    "gpu_activity_us": 702096.3994140625,
+    "independent_endpoint_sweep_matches": true
+  },
+  {
+    "seed": 43,
+    "cpu_batches": 2,
+    "gpu_activity_us": 709972.8388671875,
+    "independent_endpoint_sweep_matches": true
+  },
+  {
+    "seed": 44,
+    "cpu_batches": 2,
+    "gpu_activity_us": 705326.0053710938,
+    "independent_endpoint_sweep_matches": true
+  }
+]

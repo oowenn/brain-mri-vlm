@@ -1,0 +1,120 @@
+Job: 13933296
+Host: ins092
+Started UTC: 2026-11-16T19:06:35Z
+No broken requirements found.
+test_balanced_reproducible_stream_and_wrapping (test_benchmark.BenchmarkTests.test_balanced_reproducible_stream_and_wrapping) ... ok
+test_eos_trimming_removes_only_post_completion_padding (test_benchmark.BenchmarkTests.test_eos_trimming_removes_only_post_completion_padding) ... ok
+test_fixed_checkpoint_and_inference_protocol (test_benchmark.BenchmarkTests.test_fixed_checkpoint_and_inference_protocol) ... ok
+test_independent_timing_verifier_rejects_tampered_times_and_workloads (test_benchmark.BenchmarkTests.test_independent_timing_verifier_rejects_tampered_times_and_workloads) ... ok
+test_percentile_interpolation_and_single_sample (test_benchmark.BenchmarkTests.test_percentile_interpolation_and_single_sample) ... ok
+test_selection_respects_oom_memory_and_throughput_plateau (test_benchmark.BenchmarkTests.test_selection_respects_oom_memory_and_throughput_plateau) ... ok
+test_timing_excludes_warmup_and_uses_ratio_of_totals (test_benchmark.BenchmarkTests.test_timing_excludes_warmup_and_uses_ratio_of_totals) ... ok
+test_invalid_is_a_false_negative_and_not_dropped (test_evaluate.EvaluationTests.test_invalid_is_a_false_negative_and_not_dropped) ... ok
+test_previous_eight_image_example (test_evaluate.EvaluationTests.test_previous_eight_image_example) ... ok
+test_punctuation_fix_does_not_guess_from_explanations (test_evaluate.EvaluationTests.test_punctuation_fix_does_not_guess_from_explanations) ... ok
+test_sample_is_balanced_reproducible_and_input_order_independent (test_evaluate.EvaluationTests.test_sample_is_balanced_reproducible_and_input_order_independent) ... ok
+test_patient_test_constraint_annotation_quarantine_and_unknown_identity (test_finalize_data.FinalizationTests.test_patient_test_constraint_annotation_quarantine_and_unknown_identity) ... ok
+test_pinned_inputs_immutable_outputs_and_reproducibility (test_finalize_data.FinalizationTests.test_pinned_inputs_immutable_outputs_and_reproducibility) ... ok
+test_reject_incomplete_or_unsafe_mapping (test_finalize_data.FinalizationTests.test_reject_incomplete_or_unsafe_mapping) ... ok
+test_same_patient_stays_together_and_mixed_labels_are_quarantined (test_finalize_data.FinalizationTests.test_same_patient_stays_together_and_mixed_labels_are_quarantined) ... ok
+test_every_training_image_once_with_tail_kept (test_lora.LoraTests.test_every_training_image_once_with_tail_kept) ... ok
+test_inference_protocol_and_frozen_scope (test_lora.LoraTests.test_inference_protocol_and_frozen_scope) ... ok
+test_masks_prompt_and_padding_but_keeps_target_and_eos (test_lora.LoraTests.test_masks_prompt_and_padding_but_keeps_target_and_eos) ... ok
+test_merge_gates_reject_numeric_or_generation_regressions (test_lora.LoraTests.test_merge_gates_reject_numeric_or_generation_regressions) ... ok
+test_rejects_missing_prompt_or_target (test_lora.LoraTests.test_rejects_missing_prompt_or_target) ... ok
+test_selection_uses_f1_then_loss_then_earliest_epoch (test_lora.LoraTests.test_selection_uses_f1_then_loss_then_earliest_epoch) ... ok
+test_brightness_adjusted_copy_is_detected (test_prepare_data.DataPreparationTests.test_brightness_adjusted_copy_is_detected) ... ok
+test_corrupt_images_fail_instead_of_silent_skipping (test_prepare_data.DataPreparationTests.test_corrupt_images_fail_instead_of_silent_skipping) ... Hashing source images...
+ok
+test_leakage_filter_cannot_silently_empty_a_class (test_prepare_data.DataPreparationTests.test_leakage_filter_cannot_silently_empty_a_class) ... Hashing source images...
+Comparing 32 images for duplicates...
+ok
+test_phash_collision_requires_similarity_confirmation (test_prepare_data.DataPreparationTests.test_phash_collision_requires_similarity_confirmation) ... ok
+test_portable_manifests_no_leakage_and_unchanged_test (test_prepare_data.DataPreparationTests.test_portable_manifests_no_leakage_and_unchanged_test) ... Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+ok
+test_transitive_links_and_inclusive_threshold (test_prepare_data.DataPreparationTests.test_transitive_links_and_inclusive_threshold) ... ok
+test_exact_output_gate_rejects_tokens_and_inputs (test_profiling.ProfilingTests.test_exact_output_gate_rejects_tokens_and_inputs) ... ok
+test_impossible_accounting_rejected (test_profiling.ProfilingTests.test_impossible_accounting_rejected) ... ok
+test_nested_vision_is_removed_from_prefill (test_profiling.ProfilingTests.test_nested_vision_is_removed_from_prefill) ... ok
+test_nvidia_uuid_handles_torch_and_nvidia_formats (test_profiling.ProfilingTests.test_nvidia_uuid_handles_torch_and_nvidia_formats) ... ok
+test_overlapping_gpu_intervals_count_once (test_profiling.ProfilingTests.test_overlapping_gpu_intervals_count_once) ... ok
+test_profile_keeps_frozen_batch_and_three_trials (test_profiling.ProfilingTests.test_profile_keeps_frozen_batch_and_three_trials) ... ok
+test_summary_excludes_warmup_and_preserves_residual (test_profiling.ProfilingTests.test_summary_excludes_warmup_and_preserves_residual) ... ok
+test_trace_clips_activity_to_batches (test_profiling.ProfilingTests.test_trace_clips_activity_to_batches) ... ok
+test_trace_requires_cuda_and_batch_annotations (test_profiling.ProfilingTests.test_trace_requires_cuda_and_batch_annotations) ... ok
+test_altered_metrics_rejected (test_step4.Step4Tests.test_altered_metrics_rejected) ... ok
+test_config_preserves_prior_inference_protocol (test_step4.Step4Tests.test_config_preserves_prior_inference_protocol) ... ok
+test_independent_metrics_keep_invalid_response (test_step4.Step4Tests.test_independent_metrics_keep_invalid_response) ... ok
+test_missing_duplicate_or_wrong_split_rejected (test_step4.Step4Tests.test_missing_duplicate_or_wrong_split_rejected) ... ok
+test_raw_answer_truth_or_manifest_tampering_rejected (test_step4.Step4Tests.test_raw_answer_truth_or_manifest_tampering_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 4.703s
+
+OK
+{
+  "python": "3.11.18",
+  "packages": {
+    "torch": "2.9.1+cu126",
+    "torchvision": "0.24.1+cu126",
+    "transformers": "4.57.1",
+    "accelerate": "1.10.1",
+    "peft": "0.17.1",
+    "bitsandbytes": "0.48.2",
+    "Pillow": "13.0.0",
+    "ImageHash": "4.3.2",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "wandb": "0.31.0"
+  },
+  "torch_cuda_build": "12.6",
+  "cuda_available": true
+}
+{"device": 0, "name": "NVIDIA RTX A6000", "compute_capability": [8, 6], "total_memory_bytes": 50897289216}
+FP16 CUDA smoke check passed. Model, merge and quantization checks remain.
+Verified 1000/7200 source images
+Verified 2000/7200 source images
+Verified 3000/7200 source images
+Verified 4000/7200 source images
+Verified 5000/7200 source images
+Verified 6000/7200 source images
+Verified 7000/7200 source images
+PASS: frozen manifests and all 7200 source images verified
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run wvqg8vuq
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261116_140755-wvqg8vuq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step7-13933296-profile
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/wvqg8vuq
+Starting control
+Finished control
+Starting stages
+Finished stages
+Starting traces
+Finished traces
+wandb: uploading config.yaml; uploading output.log; uploading wandb-summary.json
+wandb: 
+wandb: Run summary:
+wandb:  error Traceback (most rece...
+wandb: status failed
+wandb: 
+wandb: 🚀 View run step7-13933296-profile at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/wvqg8vuq
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261116_140755-wvqg8vuq/logs
+Traceback (most recent call last):
+  File "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/scripts/run_step7.py", line 105, in <module>
+    main()
+  File "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/scripts/run_step7.py", line 78, in main
+    report=verify_run(root,args.prepared)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/scripts/verify_step7.py", line 115, in verify_run
+    raise ValueError('Invalid trace windows/GPU activity')
+ValueError: Invalid trace windows/GPU activity

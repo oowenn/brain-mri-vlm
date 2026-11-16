@@ -1,0 +1,10 @@
+{
+  "status": "cancelled-diagnostic-attempt",
+  "gpu_job": "13933253",
+  "dependent_publisher": "13933254",
+  "reason": "nvidia-smi --id=<unprefixed PyTorch UUID> returned No devices were found, exit 6. Cancelled before stage/trace workers.",
+  "correction_commit": "563898d6e2dcac9525c9b4d306fe29c7caaf19b7",
+  "source_commit": "e38b35718eede86b89df4f3d2c5ad0b16010dd95",
+  "warning": "Original run.json may say running because Slurm terminated the process. Partial timing files are not a completed benchmark.",
+  "diagnostic_step": "Slurm job step 13933253.0 ran nvidia-smi to confirm the UUID-format problem; its nonzero exit is expected diagnostic evidence."
+}

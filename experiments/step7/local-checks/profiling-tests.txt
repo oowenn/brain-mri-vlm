@@ -1,0 +1,15 @@
+test_exact_output_gate_rejects_tokens_and_inputs (test_profiling.ProfilingTests.test_exact_output_gate_rejects_tokens_and_inputs) ... ok
+test_impossible_accounting_rejected (test_profiling.ProfilingTests.test_impossible_accounting_rejected) ... ok
+test_nested_vision_is_removed_from_prefill (test_profiling.ProfilingTests.test_nested_vision_is_removed_from_prefill) ... ok
+test_nvidia_uuid_handles_torch_and_nvidia_formats (test_profiling.ProfilingTests.test_nvidia_uuid_handles_torch_and_nvidia_formats) ... ok
+test_overlapping_gpu_intervals_count_once (test_profiling.ProfilingTests.test_overlapping_gpu_intervals_count_once) ... ok
+test_profile_keeps_frozen_batch_and_three_trials (test_profiling.ProfilingTests.test_profile_keeps_frozen_batch_and_three_trials) ... ok
+test_recovery_rejects_unrelated_failed_runs (test_profiling.ProfilingTests.test_recovery_rejects_unrelated_failed_runs) ... ok
+test_summary_excludes_warmup_and_preserves_residual (test_profiling.ProfilingTests.test_summary_excludes_warmup_and_preserves_residual) ... ok
+test_trace_clips_activity_to_batches (test_profiling.ProfilingTests.test_trace_clips_activity_to_batches) ... ok
+test_trace_requires_cuda_and_batch_annotations (test_profiling.ProfilingTests.test_trace_requires_cuda_and_batch_annotations) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK

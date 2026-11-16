@@ -1,0 +1,5 @@
+JobIDRaw|JobName|Partition|State|ExitCode|Elapsed|Start|End|NodeList|AllocCPUS|ReqMem|AllocTRES|MaxRSS
+13933296|smolmri-step7|short|FAILED|1:0|00:13:36|2026-11-16T14:06:21|2026-11-16T14:19:57|ins092|4|16G|billing=4,cpu=4,gres/gpu:a6000=1,gres/gpu=1,mem=16G,node=1|
+13933296.batch|batch||FAILED|1:0|00:13:36|2026-11-16T14:06:21|2026-11-16T14:19:57|ins092|4||cpu=4,gres/gpu:a6000=1,gres/gpu=1,mem=16G,node=1|3239092K
+13933296.extern|extern||COMPLETED|0:0|00:13:36|2026-11-16T14:06:21|2026-11-16T14:19:57|ins092|4||billing=4,cpu=4,gres/gpu:a6000=1,gres/gpu=1,mem=16G,node=1|
+13933297|smolmri-step7-evidence|short|CANCELLED by 563829|0:0|00:00:00|None|2026-11-16T14:20:48|None assigned|0|4G||

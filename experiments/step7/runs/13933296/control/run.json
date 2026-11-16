@@ -1,0 +1,109 @@
+{
+  "batch_size": 4,
+  "checkpoint": "/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/checkpoints/step5/13927137/merged-fp16",
+  "config": {
+    "attention": "sdpa",
+    "benchmark": {
+      "baseline_measured_batches": 50,
+      "baseline_seeds": [
+        42,
+        43,
+        44
+      ],
+      "candidate_batch_sizes": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "candidate_order_seed": 2026,
+      "excluded": "model loading, data/checkpoint hashing, W&B logging, JSON writing, profiler overhead, request queueing and batch formation wait",
+      "latency_definition": "all images in a batch complete together; elapsed/batch_size is amortized cost, not individual request latency",
+      "memory": "per-measurement PyTorch peak allocated and reserved bytes including resident model; reset peaks after warm-up; allocator cache retained between calls",
+      "quality_failure": "abort and investigate; do not silently select a different batch",
+      "quality_max_invalid_count": 0,
+      "quality_max_macro_f1_drop": 0.02,
+      "selection": "smallest batch within 5% of best sweep throughput among successful candidates using <=80% of GPU memory",
+      "selection_memory_fraction": 0.8,
+      "selection_throughput_tolerance": 0.05,
+      "sweep_measured_batches": 10,
+      "sweep_seeds": [
+        42,
+        43
+      ],
+      "timing_scope": "warm-filesystem-cache end-to-end batch: read/decode/EXIF/RGB, processor, blocking H2D, greedy generation, D2H, text decoding and parsing; synchronize CUDA before start and before stop",
+      "warmup_batches": 10,
+      "workload": "32 frozen validation images per class, seed-shuffled within class and interleaved; cyclic batches; measured stream restarts at index zero after warm-up; same seeded stream for every batch candidate",
+      "workload_per_class": 32
+    },
+    "checkpoint_artifact": "coms6998-team32-fall2026/brain-mri-vlm/step5-13927137-checkpoints:v0",
+    "checkpoint_artifact_digest": "c5ebce54956dc062af2323368c87cfd0",
+    "checkpoint_subdirectory": "merged-fp16",
+    "data_artifact": "coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2",
+    "do_sample": false,
+    "gpu": "NVIDIA RTX A6000",
+    "labels": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "max_new_tokens": 16,
+    "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "num_beams": 1,
+    "padding_side": "left",
+    "parser": "exact-label-optional-period-v2",
+    "per_class": 0,
+    "prompt": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+    "reference_batch_size": 1,
+    "reference_run": "experiments/step5/runs/13927137",
+    "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+    "seed": 42,
+    "stage": "step6",
+    "wandb_entity": "coms6998-team32-fall2026",
+    "wandb_project": "brain-mri-vlm"
+  },
+  "finished_utc": "2026-11-16T19:15:00.693158+00:00",
+  "mode": "baseline",
+  "started_utc": "2026-11-16T19:09:17.161094+00:00",
+  "status": "passed",
+  "summary": {
+    "batch_size": 4,
+    "images": 600,
+    "mean_amortized_image_ms": 457.57973668333335,
+    "mean_batch_ms": 1830.3189467333334,
+    "measurements": 150,
+    "p50_amortized_image_ms": 457.90874775,
+    "p50_batch_ms": 1831.634991,
+    "p95_amortized_image_ms": 464.84226955,
+    "p95_batch_ms": 1859.3690782,
+    "peak_allocated_bytes": 2980485632,
+    "peak_reserved_bytes": 3487563776,
+    "throughput_images_s": 2.1854114591006177,
+    "trial_mean_batch_ms_std": 2.0041953546420266,
+    "trials": [
+      {
+        "mean_batch_ms": 1832.55333326,
+        "samples": 50,
+        "throughput_images_s": 2.182746841470772,
+        "trial": 0
+      },
+      {
+        "mean_batch_ms": 1829.72370812,
+        "samples": 50,
+        "throughput_images_s": 2.1861224086722415,
+        "trial": 1
+      },
+      {
+        "mean_batch_ms": 1828.67979882,
+        "samples": 50,
+        "throughput_images_s": 2.187370365539717,
+        "trial": 2
+      }
+    ]
+  },
+  "test_set_inference": false,
+  "total_memory_bytes": 50897289216
+}

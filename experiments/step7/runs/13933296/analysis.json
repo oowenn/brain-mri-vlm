@@ -1,0 +1,62 @@
+{
+  "source": "Post-run arithmetic from saved control/stage files; no additional inference",
+  "stage_trial_mean_ms": [
+    {
+      "trial": 0,
+      "decode": 68.1157927,
+      "other": 4.6583801000000005,
+      "prefill": 75.3183537,
+      "preprocessing": 1346.851524,
+      "transfer": 69.9725798,
+      "vision": 250.4191137
+    },
+    {
+      "trial": 1,
+      "decode": 68.7999207,
+      "other": 4.5869864,
+      "prefill": 77.1944235,
+      "preprocessing": 1350.0998022,
+      "transfer": 70.4825007,
+      "vision": 249.3903462
+    },
+    {
+      "trial": 2,
+      "decode": 66.7683095,
+      "other": 4.5678389,
+      "prefill": 75.2488494,
+      "preprocessing": 1348.7485759,
+      "transfer": 72.4453994,
+      "vision": 250.6657227
+    }
+  ],
+  "parameter_storage_bytes": 1014964608,
+  "parameter_fraction_of_control_peak": 0.34053665520236936,
+  "resident_allocated_bytes": 1036428288,
+  "input_tensor_bytes_counts": {
+    "356591424": 30
+  },
+  "pixel_shape_counts": {
+    "[4, 17, 3, 512, 512]": 30
+  },
+  "effective_input_token_counts": {
+    "1181": 119,
+    "916": 1
+  },
+  "generated_token_counts": {
+    "3": 30,
+    "4": 59,
+    "2": 31
+  },
+  "cpu_substage_mean_ms": {
+    "image_read": 4.694890166666667,
+    "processor": 1343.7749256666666,
+    "postprocessing": 0.23950026666666666
+  },
+  "stage_device_interval_mean_ms": {
+    "preprocessing": 0,
+    "transfer": 70.81425501505534,
+    "vision": 250.07999776204426,
+    "prefill": 75.90618387858073,
+    "decode": 67.70278606414794
+  }
+}
