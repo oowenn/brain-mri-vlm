@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "runtime_artifact_payload_files_verified": 152,
+  "runtime_artifact_downloaded_files": 153,
+  "source_snapshot_counts": {
+    "experiments/step7/runs/13933296": 39,
+    "experiments/step7/runs/13933296/recovery": 39,
+    "experiments/step7/runs/13933253": 39
+  },
+  "full_cluster_tests": 42,
+  "local_profiling_tests": 10,
+  "historical_checksums": {
+    "step4": 48,
+    "step5": 99,
+    "step6": 183
+  },
+  "independent_trace_interval_sweeps": 3,
+  "exact_control_batches": 180,
+  "exact_instrumented_batches": 99,
+  "test_set_inference": false,
+  "optimizations_implemented": false
+}

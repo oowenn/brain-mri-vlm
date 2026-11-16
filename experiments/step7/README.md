@@ -1,9 +1,18 @@
 # Step 7: profile the frozen FP16 baseline
 
-Status: all GPU workers finished; CPU-only verification/publishing recovery is pending. The original GPU job failed in postprocessing because mirrored GPU annotations were counted as extra CPU batches. Measurements are retained unchanged.
+Status: **complete, with verified CPU-only recovery of a postprocessing error.** GPU workers completed on ins092; recovery job 13933535 completed 0:0 on ins003. All 42 tests, 180 control-batch comparisons, 99 instrumented-batch comparisons, and 153 downloaded W&B artifact files passed verification.
 
 Step 6 remains the canonical performance and full-validation reference. This step explains where its runtime goes and proposes two or three changes for Step 8. It does not implement those changes or evaluate the final test set.
 
+
+## Completion evidence
+
+- [Evidence checksums](checksums.sha256), [result summary](summary.json), [recovered verification](runs/13933296/recovered-verification.json), [local verification](runs/13933296/local-verification.json), and [local check report](local-checks/report.json).
+- [Verified W&B profile rvufjfp3](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/rvufjfp3) and [evidence run zm0m682b](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zm0m682b).
+- Runtime artifact **step7-13933296-profile:v0**, digest **ea4a5f4150659962be39ee2be07b4a1b**; all **153 downloaded files** matched. Final bundle **step7-checkpoint-13933296:v0**, digest **ec0085b7995cc7f0a5849763d3a96c1d**.
+- GPU measurement source [563898d](https://github.com/oowenn/brain-mri-vlm/commit/563898d6e2dcac9525c9b4d306fe29c7caaf19b7); CPU correction/recovery source [e85afc1](https://github.com/oowenn/brain-mri-vlm/commit/e85afc1f6962db2ec6246906c0635795a73b23d2). Both sets of **39 source snapshots** match their commits.
+- GPU 13933296 used **one A6000, four CPUs, 16 GiB** for **13m36s** and failed only in the final annotation-count check. CPU recovery 13933535 used **two allocated CPUs, 2 GiB**, partition/QOS **burst**, and completed in **1m31s**. The CPU job requested one CPU; Slurm allocated two. Its original short/4 GiB/45-minute request was reduced to 2 GiB/five minutes and moved to a permitted burst CPU node while queued; [scheduler snapshots](runs/13933296/scheduling/) preserve the changes.
+- All three GPU workers passed, all **7,200 source images** and **12 merged model/processor files** matched, and cached decoding remained intact. Exact comparisons include warmups; the measured subsets are **150 control batches**, **30 stage batches**, and **six traced batches**. No final-test inference occurred.
 
 ## Measured breakdown
 
@@ -101,12 +110,12 @@ The run directory will retain these files so teammates can inspect the result wi
 | tests.txt, pip-check.txt, requirements-installed.txt, pip-freeze-original.txt, cuda-check.txt | Runtime dependency/test/GPU checks and installed versions. |
 | data-verification.json, checkpoint-verification.json | Frozen manifest/source bytes and merged model/processor hashes. |
 | active-worker.json, worker-logs/, console.log | Worker commands, model warnings, progress, failures, and overall execution output. |
-| control/run.json, summary.json, timings.jsonl | Uninstrumented repeated benchmark with raw per-batch answers/tokens and timing/memory evidence. |
-| control/workload-*.json, environment.json, model-runtime.json, rendered-prompt.txt, gpu-*.csv | Fixed sample identities, actual GPU/environment, model properties, exact prompt, and hardware snapshots. |
-| stages/samples.jsonl, summary.json | Raw spans, exclusive stage accounting, native generation-call audit, and aggregated diagnostic timings. |
-| stages/workload-*.json, environment.json, model-runtime.json | Stage-workload identities, thread/GPU settings, resident parameter storage and image-processor configuration. |
+| control/{run.json, summary.json, timings.jsonl} | Uninstrumented repeated benchmark with raw per-batch answers/tokens and timing/memory evidence. |
+| control/{workload-*.json, environment.json, model-runtime.json, rendered-prompt.txt, generation-config.json, gpu-*.csv} | Fixed sample identities, actual GPU/environment, model properties, exact prompt, and hardware snapshots. |
+| stages/{samples.jsonl, summary.json} | Raw spans, exclusive stage accounting, native generation-call audit, and aggregated diagnostic timings. |
+| stages/{workload-*.json, environment.json, model-runtime.json} | Stage-workload identities, thread/GPU settings, resident parameter storage and image-processor configuration. |
 | stages/installed-modeling-idefics3.py | Exact installed Transformers source that defines the nested vision/prefill measurement boundary; original license retained. |
-| stages/gpu-samples.csv, gpu-*.csv, rendered-prompt.txt, run.json | Sampled utilization/memory/power, before/after snapshots, prompt, and worker outcome. |
+| stages/{gpu-samples.csv, gpu-*.csv, rendered-prompt.txt, run.json} | Sampled utilization/memory/power, before/after snapshots, prompt, and worker outcome. |
 | traces/ | Same sample/environment/model evidence as stages, with asynchronous launch annotations. Trace sample wall spans are CPU launch regions, not synchronized GPU stage times. |
 | traces/trace-*.json.gz | Complete losslessly compressed Chrome/Perfetto CPU/CUDA traces, two active batches per seed. |
 | traces/trace-*-summary.json | Kernel counts, whole-batch windows, overlapping GPU activity union, and top kernel durations. |
@@ -114,15 +123,16 @@ The run directory will retain these files so teammates can inspect the result wi
 | recovered-verification.json, local-verification.json, analysis.json | Recomputed coverage, unchanged outputs, stage accounting, control drift/overhead, trace GPU activity, and supplementary memory/input arithmetic. New ordinary successful runs write independent-verification.json. |
 | recovery/ | Corrected trace summaries, CPU recovery run, exact correction-source snapshots, source hashes, tests, and recovery console; original trace summaries stay unchanged. |
 | artifact-files.json, wandb-verification.json, evidence-upload.json | Uploaded file hashes, downloaded-artifact verification, and final W&B evidence receipt. |
-| slurm-accounting.tsv, slurm-output.log, recovery-accounting.tsv, recovery-slurm-output.log, exit-status.tsv | Completed-job resources, exit codes, elapsed times, and publisher output; allocation duration is not inference latency. |
+| slurm-accounting.tsv, slurm-output.log, recovery-accounting.tsv, recovery-slurm-output.log | Completed-job resources, exit codes, elapsed times, and publisher output; allocation duration is not inference latency. |
 
-The final W&B bundle precedes its own receipt and recovery-completion log/accounting; those final files are preserved in Git. Raw datasets, weights, installed environments, and credentials remain outside Git, with pinned sources and setup paths documented in IMPLEMENTATION.md.
+The final W&B bundle precedes its own receipt and recovery-completion log/accounting. Those files, scheduler snapshots, local verification, analysis.json, summary.json, and final documentation are preserved in Git. The full measured control/stage/trace evidence is in both Git and W&B. Raw datasets, weights, installed environments, and credentials remain outside Git, with pinned sources and setup paths documented in IMPLEMENTATION.md.
 
 To inspect a trace, decompress its .json.gz copy and load the resulting JSON in a compatible Chrome-trace viewer such as Perfetto. CPU annotations identify preprocessing, transfer, nested image features, the first forward, and later cached forwards; use the GPU tracks to inspect actual kernel execution.
 
 ## Interpretation boundaries
 
 - The control, synchronized diagnostics, and traces run sequentially in fresh processes. Their timing difference includes instrumentation plus phase-order and runtime variation; it is not a randomized estimate of profiler overhead.
+- The processor span includes image transforms, padding/tensor construction, and tokenization; it does not separately attribute time to each PIL/NumPy operation.
 - CUDA-event stage durations are elapsed stream intervals, including possible launch gaps. They are not sums of GPU kernel durations. The trace separately measures the union of actual kernel/copy intervals.
 - The job uses the same A6000 GPU type and thread count as Step 6, but another physical GPU/node. Any control drift is reported rather than called an optimization.
 - GPU activity/utilization and kernel names do not by themselves prove arithmetic-throughput versus device-memory-bandwidth saturation. A strict compute-bound/memory-bound classification would need hardware-counter evidence.
@@ -135,7 +145,7 @@ To inspect a trace, decompress its .json.gz copy and load the resulting JSON in 
 | --- | --- |
 | GPU 13933253, source e38b357 | Cancelled after confirming that nvidia-smi rejects PyTorch's unprefixed UUID. Its 54 partial control batches are incomplete diagnostic evidence. Dependent publisher 13933254 was cancelled. See runs/13933253/attempt-note.json. |
 | GPU 13933296, source 563898d | All control, stage, and trace workers passed. The job then failed 1:0 after 13m36s because final verification counted both CPU and mirrored GPU batch annotations. Dependent publisher 13933297 was cancelled. Original run.json correctly remains failed. |
-| CPU recovery, source e85afc1 | The corrected checker counts only CPU user_annotation ranges. It requires the exact recorded postprocessing failure and rejects unrelated failures. It checks all original trace-summary values; only the explained batch-range count changes from four to two. No GPU inference is repeated. Completion evidence is recorded below when available. |
+| CPU recovery 13933535, source e85afc1 | The corrected checker counts only CPU user_annotation ranges. It requires the exact recorded postprocessing failure and rejects unrelated failures. It checks all original trace-summary values; only the explained batch-range count changes from four to two. No GPU inference is repeated. CPU job 13933535 passed all 42 tests and completed 0:0 in 1m31s; 153 downloaded artifact files matched. |
 
 For this preserved run, use the recovery record and recovered-verification.json as the final outcome, while retaining the original failure record. The current ordinary launcher includes both telemetry and trace-range corrections, and stable JSON serialization for verification evidence. To reproduce a fresh run, use the standard submission commands above. The special recovery launcher is only for the explicitly recognized old annotation-count failure.
 

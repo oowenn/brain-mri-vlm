@@ -2,17 +2,19 @@
 
 Last updated: **2026-11-16 (America/New_York)**
 
-Latest verified implementation commit: [1697704b4e12910322f61b5259c9483184cafad2](https://github.com/oowenn/brain-mri-vlm/commit/1697704b4e12910322f61b5259c9483184cafad2) (Step 6 execution source; final result documentation and launcher resource defaults are subsequent changes).
+Verified Step 7 measurement source: [563898d](https://github.com/oowenn/brain-mri-vlm/commit/563898d6e2dcac9525c9b4d306fe29c7caaf19b7). Verified CPU correction/recovery source: [e85afc1](https://github.com/oowenn/brain-mri-vlm/commit/e85afc1f6962db2ec6246906c0635795a73b23d2). Final evidence/documentation commits follow these execution sources.
 
 ## Current position
 
-**Step 6 is complete. Step 7 GPU measurements are complete; CPU-only evidence recovery is pending after a trace annotation-count check failed.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
+**Step 7 is complete. Step 8 implementation remains deferred.** The measured bottleneck is CPU preprocessing: **1348.567 ms per batch, 74.17%** of synchronized diagnostic time. Vision features take **250.158 ms, 13.76%**; transfer, prefill, and cached decode each take about 4%. Three traces contain six active batches and show **18.83% GPU kernel/copy activity** within whole-batch windows.
 
-Batching changed four predictions from the Step 5 batch-one result (498 correct, macro-F1 0.862019). The absolute macro-F1 drop of 0.005726 passes the fixed 0.02 allowance and is preserved in the evidence. All 32 tests, source/checkpoint hashes, source snapshots, independent timing/quality checks, and W&B runtime-artifact downloads passed. Step 7 instrumentation is being prepared; no measured profiling result, optimization speedup claim, or final-test inference is available yet.
+The canonical Step 6 baseline stays **batch 4, RTX A6000, four CPU threads, 2.8004 images/s, 1428.367 ms mean batch latency, and 2.776 GiB peak allocated GPU memory**. Its full-validation macro-F1 is **0.856293**, with 494/579 correct and zero invalid outputs. Step 7's fresh control on another node measured **1830.319 ms / 2.185411 images/s**, 28.14% slower, with unchanged memory and exact reference outputs. This runtime variation is recorded, not treated as an optimization.
 
-This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
+All **180 control batches** match Step 6 tokens/answers; all **99 instrumented batches** match the control, including warmups. GPU workers passed, but the aggregate job failed in a final trace-range count check because PyTorch emits CPU and mirrored GPU annotations. CPU-only recovery corrected the counting, passed all **42 tests**, checked both **39-file source snapshots**, and verified **153 downloaded W&B files**. Original failures and traces are preserved.
 
-The latest team discussion proposes working through profiling and selecting two or three optimizations, with implementation deferred for now. Step 6 is complete with the same evidence, W&B, repository, and teammate-documentation requirements. The next work is stage profiling and evidence-based selection of techniques; implementing them remains a later step.
+Selected proposals are **parallel CPU preprocessing**, **a 2048-to-1024 image budget with 512-pixel tiles**, and **INT8/NF4 weight quantization as a lower-priority memory/latency hypothesis test**. They are specified with tradeoffs and validation gates; none is implemented. No final-test model inference has occurred.
+
+This living record follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The per-step READMEs for [Step 3](experiments/step3/README.md), [Step 4](experiments/step4/README.md), [Step 5](experiments/step5/README.md), [Step 6](experiments/step6/README.md), and [Step 7](experiments/step7/README.md) explain the actual files, results, limitations, and reproduction. The team's requested near-term scope through profiling and proposal selection is now complete.
 
 ## Roadmap status
 
@@ -24,7 +26,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
 | 6 | Select batch size and measure the FP16 baseline | Complete | Six-size sweep; frozen batch 4; three trials / 150 measurements; 2.8004 images/s; 2.776 GiB peak allocated; full validation and downloaded W&B evidence verified. |
-| 7 | Profile the five inference stages | Measurements complete; CPU verification recovery pending | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
+| 7 | Profile the five inference stages | Complete with verified CPU recovery | 30 stage batches, three traces/six active batches, CPU preprocessing 74.17%, exact output checks, 42 tests, 153 W&B files verified, and three proposals. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
 | 10 | Freeze settings and evaluate the test set | Not started | Final results on the unchanged 1,600-image test set, without using test outcomes to tune settings. |
@@ -114,6 +116,18 @@ Evidence: [Step 5 README and restore command](experiments/step5/README.md), [sum
 
 Evidence: [Step 6 README](experiments/step6/README.md), [summary](experiments/step6/summary.json), [frozen baseline](experiments/step6/runs/13932242/frozen-baseline.json), [raw timings](experiments/step6/runs/13932242/baseline/timings.jsonl), and [verification](experiments/step6/runs/13932242/local-verification.json).
 
+### Step 7: profiling and selection of proposed techniques
+
+- Used the same merged checkpoint, batch 4, A6000 type, four CPU threads, prompt, processor, SDPA, and greedy generation. Verified 7,200 source images and 12 checkpoint files.
+- Repeated the uninstrumented three-trial benchmark; measured 30 synchronized stage batches and six asynchronously executed profiler batches across three traces. Preprocessing dominates all three stage trials. Image reads average 4.695 ms; the processor averages 1343.775 ms.
+- Model parameter storage is 0.945 GiB, 34.05% of the control allocator peak. GPU activity is 18.83% in traced batch windows; this supports a host-side bottleneck. No hardware counters establish arithmetic-versus-memory-bandwidth saturation.
+- Preserved cancelled attempt 13933253 and the postprocessing failure from GPU 13933296 (13m36s, ins092). The correction counts CPU annotation windows and preserves every other trace-summary value. No GPU rerun was needed for recovery.
+- CPU recovery 13933535 completed 0:0 in 1m31s on ins003, using two allocated CPUs / 2 GiB in the permitted burst class, after a five-minute limit was set. All 42 tests, source snapshots, independent calculations, and 153 downloaded artifact files passed.
+- W&B profile [rvufjfp3](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/rvufjfp3), evidence [zm0m682b](https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zm0m682b), artifact step7-checkpoint-13933296:v0.
+- Proposed three isolated techniques with a validation macro-F1 floor of 0.8362927507 and zero invalid outputs. Step 8 implementation, Step 9 re-measurement, and Step 10 final-test evaluation remain future work.
+
+Evidence: [Step 7 README](experiments/step7/README.md), [summary](experiments/step7/summary.json), [stage samples](experiments/step7/runs/13933296/stages/samples.jsonl), [traces](experiments/step7/runs/13933296/traces/), and [recovered verification](experiments/step7/runs/13933296/recovered-verification.json).
+
 ## Implementation map
 
 | Component | Files | Current purpose |
@@ -130,7 +144,8 @@ Evidence: [Step 6 README](experiments/step6/README.md), [summary](experiments/st
 | Model backup | [`scripts/publish_step5.py`](scripts/publish_step5.py), [`cluster/publish_step5.sbatch`](cluster/publish_step5.sbatch) | Verify remote tracking and download-check every uploaded adapter, optimizer state, processor, and merged model file. |
 | Baseline benchmark | [`scripts/benchmark.py`](scripts/benchmark.py), [`scripts/benchmark_utils.py`](scripts/benchmark_utils.py), [`scripts/run_step6.py`](scripts/run_step6.py), [`configs/step6.json`](configs/step6.json), [`cluster/step6.sbatch`](cluster/step6.sbatch) | Audit batching, sweep candidates, freeze the baseline, and retain raw repeated timings and quality. Verified six-size sweep and batch-4 baseline. |
 | Baseline evidence verification | [`scripts/verify_step6.py`](scripts/verify_step6.py), [`scripts/publish_step6.py`](scripts/publish_step6.py), [`cluster/publish_step6.sbatch`](cluster/publish_step6.sbatch) | Independently recompute measurements, check W&B metrics and artifact downloads, and publish the evidence bundle. |
-| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven new benchmark tests bring the full suite to 32, all passed in cluster CPU preflight `13932248`. |
+| Profiling and recovery | [profile_baseline.py](scripts/profile_baseline.py), [profiling_utils.py](scripts/profiling_utils.py), [run_step7.py](scripts/run_step7.py), [verify_step7.py](scripts/verify_step7.py), [recover_step7.py](scripts/recover_step7.py) | Control, stage timing, CPU/CUDA traces, exact-output/accounting checks, and preserved failure recovery. See Step 7 README for every file. |
+| Tests | [`tests/`](tests/) | Ten data tests, four evaluator tests, five Step 4 verification tests, and six LoRA tests passed at Step 5 (25 total); seven benchmark tests brought Step 6 to 32; ten profiling/recovery tests bring the current suite to 42, all passed in CPU job 13933535. |
 | Evidence documentation | [`experiments/step3/README.md`](experiments/step3/README.md), [`experiments/step4/README.md`](experiments/step4/README.md), [`experiments/step5/README.md`](experiments/step5/README.md) | Explain step outputs, reproduction commands, results, and limitations. |
 | Living progress record | [`IMPLEMENTATION.md`](IMPLEMENTATION.md), [`AGENTS.md`](AGENTS.md) | Maintain the current implementation status and carry the update instruction into later repository sessions. |
 
@@ -164,20 +179,19 @@ Evidence: [Step 6 README](experiments/step6/README.md), [summary](experiments/st
 - [x] Verify completed GPU/publisher jobs, W&B metrics/configuration, and 153 downloaded runtime-artifact files.
 - [x] Preserve code snapshots, raw timing/prediction records, logs, receipts, checksums, per-file explanations, and teammate setup.
 
-## Immediate next work: Step 7
+## Step 7 completion checklist
 
-- [ ] Use the saved merged checkpoint, frozen batch 4, RTX A6000, and four CPU threads.
-- [ ] Profile preprocessing, host-to-device transfer, vision encoding, prefill, and decode.
-- [ ] Save representative traces/stage statistics and explain the dominant cost; keep profiling overhead separate from benchmark timings.
-- [ ] Propose two or three techniques tied to measured bottlenecks, with expected tradeoffs and quality checks.
-- [ ] Save the Step 7 README, W&B evidence, and tracker update before implementing optimizations.
+- [x] Use the saved merged checkpoint, frozen batch 4, RTX A6000, and four CPU threads.
+- [x] Profile preprocessing, host-to-device transfer, vision encoding, prefill, and decode.
+- [x] Save representative traces/stage statistics and explain the dominant cost; keep profiling overhead separate from benchmark timings.
+- [x] Propose two or three techniques tied to measured bottlenecks, with expected tradeoffs and quality checks.
+- [x] Save the Step 7 README, W&B evidence, and tracker update before implementing optimizations.
 
-## Remaining work after Step 6
+## Remaining work after Step 7
 
 | Step | What to implement or run | Why / completion gate |
 | --- | --- | --- |
-| 7 | Profile the five stages on the frozen batch-4 baseline; save traces and propose two or three techniques. | Explain the measured bottleneck; do not infer it from overall timing alone. |
-| 8 | If included in the next team scope, implement selected changes one at a time. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
+| 8 | Implement parallel CPU preprocessing, reduced image budget, and quantization as isolated experiments when the team resumes implementation. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
 | 9 | Repeat matched timings and full validation for each variant; re-profile as needed. | Compare to the Step 6 batch-4 FP16 quality/performance baseline, retaining regressions and failed variants. |
 | 10 | Freeze final settings and evaluate the unchanged test set. | Obtain held-out results without tuning against test outcomes. |
 | 11 | Assemble the report, presentation, reproduction guide, and demonstration. | Connect each claim to saved measurements and explain successes and failures. |
@@ -208,6 +222,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
 | Step 5 batch request | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch); Slurm actually allocated 6 CPUs. The publisher requested 1 CPU, 8 GiB RAM, and 45 minutes; Slurm allocated 2 CPUs. Actual reservations are preserved in the accounting files. |
 | Step 6 batch request | 1 A6000, 4 CPUs, 16 GiB RAM, two-hour maximum | [`cluster/step6.sbatch`](cluster/step6.sbatch); job 13932242 actually used 4 CPUs / 16 GiB. Current defaults match that successful reservation. CPU publisher requests 1 CPU / 4 GiB / 45 minutes; the recorded publisher received 2 CPUs. |
+| Step 7 allocations | GPU: one A6000, four CPUs, 16 GiB, 45-minute maximum. Recovery: one CPU requested, two allocated, 2 GiB, five-minute limit, burst partition/QOS, ins003. | [GPU launcher](cluster/step7.sbatch), [ordinary publisher](cluster/publish_step7.sbatch), [recorded special recovery](cluster/recover_step7.sbatch). Scheduler changes and actual accounting are saved with the run; teammates must check their own allowed partitions/QOS. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -226,6 +241,7 @@ Sean's `MRI_WORK` is **`/insomnia001/depts/edu/users/ct3013`**. Paths beginning 
 | `$MRI_WORK/cache/wandb/artifacts/` | W&B artifact cache, including downloaded checkpoint verification copies. | `WANDB_CACHE_DIR` |
 | `$MRI_WORK/cache/wandb/staging/` | W&B artifact upload staging, kept out of the home directory. | `WANDB_DATA_DIR` |
 | `$MRI_WORK/tmp/` | Temporary working files. | `TMPDIR` |
+| `$MRI_WORK/tmp/step7-before-sync-13933535/` | Preserved original cluster run directories before synchronizing the final Git evidence; scratch copy, not an independent backup. | Created during final Step 7 repository synchronization |
 | `brain-mri-vlm/data/prepared-v3-conservative-patients/` | Ten files from the frozen manifest artifact, including split CSVs and audit metadata. | Evaluator's default prepared-data directory |
 | `brain-mri-vlm/logs/source-root.txt` | One absolute path to the downloaded source directory containing `Training/` and `Testing/`. | Read by the batch job; `MRI_SOURCE` can override it |
 | `brain-mri-vlm/logs/` | Scheduler output and local setup logs. Preserve useful completed-run logs in the step evidence directory. | Batch output path |
@@ -234,6 +250,7 @@ Sean's `MRI_WORK` is **`/insomnia001/depts/edu/users/ct3013`**. Paths beginning 
 | `brain-mri-vlm/experiments/step5/runs/<job-id>/` | LoRA training history, loss/gradient audits, epoch predictions, selection, merge checks, source snapshots, and publishing receipts. | Created by Step 5 jobs |
 | `brain-mri-vlm/checkpoints/step5/<job-id>/` | Epoch adapter weights, optimizer/RNG states, saved merge probe logits, and merged FP16 weights. Restored through the recorded W&B model artifact. | `MRI_CHECKPOINT_DIR` when publishing; kept outside Git |
 | `brain-mri-vlm/experiments/step6/runs/<job-id>/` | Input audit, batch sweep, frozen selection, full quality, raw timing trials, GPU telemetry, and verification/publishing evidence. | Created by Step 6 jobs; `MRI_MERGED_MODEL` overrides the saved Step 5 merged-model path |
+| `brain-mri-vlm/experiments/step7/runs/<job-id>/` | Control timings/answers, stage spans, compressed CUDA traces, GPU samples, model/processor/runtime snapshots, and source evidence. The recorded run 13933296 also contains recovery/ with CPU verification and publication evidence. | Created by Step 7 launchers; same MRI_WORK, environment, source, cache, and merged-model paths as Step 6 |
 | `brain-mri-vlm/wandb/` | Local W&B working files; remote runs/artifacts provide the shared tracking record. | `WANDB_DIR` |
 
 The current source root is `/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2`. CSV image paths are relative to this source root, not to the directory containing the CSVs. A teammate's absolute source root can differ because it is recorded separately in `logs/source-root.txt`.
@@ -352,12 +369,17 @@ export WANDB_DIR="$PWD/wandb"
 
 Activation and shell exports are session state; files under `MRI_WORK` are persistent storage. Check `python scripts/check_environment.py` inside the new GPU allocation before new model work. For batch work, the submission block in D is enough once the environment, inputs, and W&B login are prepared. Keep the path map and these commands current when the setup changes.
 
+### Reproduce Step 7
+
+Follow the unchanged environment/data/checkpoint setup above, then use the [Step 7 submission commands](experiments/step7/README.md#reproduce-on-insomnia-or-a-teammates-server). Run from the checkout with logs/ present. No new packages were installed for profiling. The current ordinary pipeline includes the GPU UUID and CPU-annotation fixes; the historical recovery launcher is only for the preserved known postprocessing failure. Keep the same GPU type, batch size, and CPU thread budget, and record each server's actual paths and GPU identity.
+
 ## Limitations and operational handoff
 
 - The tested environment is pinned, but a clean-room reinstall has not been independently repeated.
 - The dataset's accepted image constraints and recovered patient IDs do not establish full patient independence. Keep the existing annotation limitations explicit.
 - Step 6 establishes a measured batch-4 baseline, not an optimization speedup. No final-test model results exist yet. The three timing trials share one allocation; the training used one seed/run. These do not establish variation across training seeds, nodes, or days.
 - The [teammate setup section](#teammate-setup-environment-and-directories) records the actual cluster paths, environment pins, cache variables, reproduction commands, and portability limitations.
+- Step 7 controls differed by 28.14% across nodes; future comparisons should pair baseline/variant runs in one allocation. Diagnostic stage and trace timing is separate from the canonical unprofiled benchmark. Full validation is inherited from Step 6; exact profiling-workload outputs were checked.
 - Recorded resource choice: account `edu`, partition `short`, RTX A6000. Recheck live job/allocation state before new work; a completed job ID is not a reusable allocation.
 - Use Slurm for model work and extended processing. Batch jobs survive SSH disconnects but still have their own time limits. Cluster scratch storage is not backed up; preserve important evidence outside it.
 - Keep compact code/configuration, metrics, predictions, and useful logs in GitHub and W&B. Keep MRI image files, weights, large caches/traces, and all credentials outside Git. Do not copy passwords, API keys, or temporary SSH connection details into this tracker.
@@ -397,10 +419,14 @@ This record is maintained as part of project work; it is not a background monito
 
 ### 2026-11-16: Step 7 execution preparation
 
-Added a frozen batch-4 control, synchronized stage diagnostics, asynchronous CPU/CUDA traces, exact-output/accounting verification, and W&B publishing. GPU job 13933253 started on ins090; publisher 13933254 depends on its success. Execution source is e38b35718eede86b89df4f3d2c5ad0b16010dd95. The existing environment and checkpoint are reused; no packages or model optimizations are changed. Step 7 requests one A6000, four CPUs, 16 GiB RAM, and 45 minutes. Run files will be under `$MRI_WORK/brain-mri-vlm/experiments/step7/runs/<job-id>/`. See [Step 7 protocol](experiments/step7/README.md).
+Added a frozen batch-4 control, synchronized stage diagnostics, asynchronous CPU/CUDA traces, exact-output/accounting verification, and W&B publishing. GPU job 13933253 started on ins090; publisher 13933254 depended on its success; both were later cancelled. Execution source is e38b35718eede86b89df4f3d2c5ad0b16010dd95. The existing environment and checkpoint are reused; no packages or model optimizations are changed. Step 7 requests one A6000, four CPUs, 16 GiB RAM, and 45 minutes. Run files will be under `$MRI_WORK/brain-mri-vlm/experiments/step7/runs/<job-id>/`. See [Step 7 protocol](experiments/step7/README.md).
 
 Step 7 attempt 13933253 was cancelled before stage profiling because nvidia-smi rejected the unprefixed UUID returned by PyTorch. The GPU- prefix is now normalized and checked before sampling; a regression test covers both formats. This attempt is diagnostic evidence, not a completed benchmark. Its dependent publisher 13933254 was cancelled too.
 
-Replacement GPU job 13933296 is running on ins092 from commit 563898d6e2dcac9525c9b4d306fe29c7caaf19b7. W&B run: wvqg8vuq. Dependent evidence job: 13933297. Completion and results remain pending.
+Replacement GPU job 13933296 ran on ins092 from commit 563898d6e2dcac9525c9b4d306fe29c7caaf19b7. W&B run: wvqg8vuq. Dependent evidence job: 13933297. Its final postprocessing failure and verified CPU recovery are recorded below.
 
-GPU job 13933296 finished all control/stage/trace workers but exited 1 during final verification: PyTorch exports both CPU and mirrored GPU annotations, and the original checker counted four batch ranges instead of two. Original logs/traces and failed status are preserved. The corrected checker selects CPU user_annotation ranges; local recovery passed all 180 control and 99 instrumented output comparisons. CPU-only recovery will publish the intact measurements, with no new inference. Preprocessing is 74.17% of diagnostic time.
+GPU job 13933296 finished all control/stage/trace workers but exited 1 during final verification: PyTorch exports both CPU and mirrored GPU annotations, and the original checker counted four batch ranges instead of two. Original logs/traces and failed status are preserved. The corrected checker selects CPU user_annotation ranges; local recovery passed all 180 control and 99 instrumented output comparisons. CPU-only recovery 13933535 published the intact measurements, with no new inference. Preprocessing is 74.17% of diagnostic time.
+
+### 2026-11-16: Step 7 verified completion
+
+GPU measurement source 563898d and CPU recovery source e85afc1 are preserved. Recovery 13933535 completed 0:0 (1m31s); all 42 tests and 153 downloaded runtime files passed. W&B rvufjfp3 / zm0m682b and checkpoint step7-checkpoint-13933296:v0 preserve the results. CPU preprocessing is 74.17% of diagnostic latency; trace GPU activity is 18.83%. The Step 7 README explains every file and the three proposals. Step 8 implementation remains deferred; no final-test inference occurred.

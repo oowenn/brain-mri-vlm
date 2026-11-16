@@ -1,0 +1,28 @@
+JobId=13933535 JobName=smolmri-step7-recover
+   UserId=ct3013(563829) GroupId=user(500) MCS_label=N/A
+   Priority=4848 Nice=0 Account=edu QOS=free
+   JobState=PENDING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-16T14:22:47 EligibleTime=2026-11-16T14:22:47
+   AccrueTime=2026-11-16T14:22:47
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-16T14:26:07 Scheduler=Main
+   Partition=short AllocNode:Sid=2402-login-001:1444681
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=2G,node=1,billing=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=2G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/cluster/recover_step7.sbatch
+   WorkDir=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm
+   StdErr=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step7-recovery-13933535.out
+   StdIn=/dev/null
+   StdOut=/insomnia001/depts/edu/users/ct3013/brain-mri-vlm/logs/step7-recovery-13933535.out
+   TresPerTask=cpu=1
+   
+

@@ -1,0 +1,124 @@
+{
+  "step": 7,
+  "status": "complete",
+  "gpu_measurement_job": "13933296",
+  "gpu_job_status": "FAILED in final annotation-count check; all three GPU workers passed",
+  "measurement_commit": "563898d6e2dcac9525c9b4d306fe29c7caaf19b7",
+  "recovery_job": "13933535",
+  "recovery_job_status": "COMPLETED 0:0",
+  "recovery_commit": "e85afc1f6962db2ec6246906c0635795a73b23d2",
+  "profile_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/rvufjfp3",
+  "evidence": {
+    "artifact_digest": "ec0085b7995cc7f0a5849763d3a96c1d",
+    "artifact_name": "step7-checkpoint-13933296:v0",
+    "profile_run_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/rvufjfp3",
+    "recovery_job": "13933535",
+    "wandb_run_id": "zm0m682b",
+    "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/zm0m682b"
+  },
+  "wandb_verification": {
+    "artifact_digest": "ea4a5f4150659962be39ee2be07b4a1b",
+    "artifact_name": "step7-13933296-profile:v0",
+    "config_and_metrics_match": true,
+    "downloaded_files_verified": 153,
+    "run_state": "finished",
+    "status": "passed"
+  },
+  "stage_profile": {
+    "measurements": 30,
+    "mean_batch_ms": 1818.1114731666667,
+    "stages": {
+      "preprocessing": {
+        "mean_ms": 1348.5666340333332,
+        "p50_ms": 1350.0627855,
+        "p95_ms": 1379.0305251,
+        "fraction": 0.7417403464730845
+      },
+      "transfer": {
+        "mean_ms": 70.96682663333334,
+        "p50_ms": 71.415842,
+        "p95_ms": 73.34986549999999,
+        "fraction": 0.03903326483591679
+      },
+      "vision": {
+        "mean_ms": 250.1583942,
+        "p50_ms": 250.651388,
+        "p95_ms": 251.34767205,
+        "fraction": 0.13759244022826092
+      },
+      "prefill": {
+        "mean_ms": 75.9205422,
+        "p50_ms": 75.34431699999999,
+        "p95_ms": 76.0378781,
+        "fraction": 0.04175791381359396
+      },
+      "decode": {
+        "mean_ms": 67.8946743,
+        "p50_ms": 67.249752,
+        "p95_ms": 75.90620565,
+        "fraction": 0.03734351567659684
+      },
+      "other": {
+        "mean_ms": 4.6044018,
+        "p50_ms": 4.585198,
+        "p95_ms": 5.0040187,
+        "fraction": 0.0025325189725470226
+      }
+    },
+    "dominant_stage": "preprocessing",
+    "peak_allocated_bytes": 2980485632,
+    "peak_reserved_bytes": 3487563776
+  },
+  "control": {
+    "batch_size": 4,
+    "measurements": 150,
+    "images": 600,
+    "mean_batch_ms": 1830.3189467333334,
+    "p50_batch_ms": 1831.634991,
+    "p95_batch_ms": 1859.3690781999999,
+    "mean_amortized_image_ms": 457.57973668333335,
+    "p50_amortized_image_ms": 457.90874775,
+    "p95_amortized_image_ms": 464.84226954999997,
+    "throughput_images_s": 2.1854114591006177,
+    "peak_allocated_bytes": 2980485632,
+    "peak_reserved_bytes": 3487563776,
+    "trials": [
+      {
+        "trial": 0,
+        "samples": 50,
+        "mean_batch_ms": 1832.55333326,
+        "throughput_images_s": 2.182746841470772
+      },
+      {
+        "trial": 1,
+        "samples": 50,
+        "mean_batch_ms": 1829.7237081199999,
+        "throughput_images_s": 2.1861224086722415
+      },
+      {
+        "trial": 2,
+        "samples": 50,
+        "mean_batch_ms": 1828.6797988199999,
+        "throughput_images_s": 2.187370365539717
+      }
+    ],
+    "trial_mean_batch_ms_std": 2.004195354642153
+  },
+  "control_drift_fraction": 0.28140644058838693,
+  "matched_stage_difference_fraction": -0.004348569254519208,
+  "trace_gpu_activity_fraction": 0.18827931813331278,
+  "exact_control_batches": 180,
+  "exact_instrumented_batches": 99,
+  "reference_macro_f1": 0.8562927506627541,
+  "validation_floor": 0.8362927506627541,
+  "full_cluster_tests": 42,
+  "proposal_order": [
+    "parallel CPU preprocessing",
+    "2048-to-1024 image budget with 512-pixel tiles",
+    "INT8/NF4 weight quantization hypothesis test"
+  ],
+  "next_step": 8,
+  "next_step_status": "proposed; implementation deferred",
+  "test_set_inference": false,
+  "optimizations_implemented": false
+}
