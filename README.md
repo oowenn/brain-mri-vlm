@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: **Step 4 is complete.** Pretrained FP16 SmolVLM evaluated all 579 frozen validation images on Insomnia: **41.45% accuracy, 0.2662 macro-F1, and 0 invalid responses**. It predicted only glioma and notumor; meningioma and pituitary recall were zero. The [Step 4 README](experiments/step4/README.md) explains the results, every evidence file, and reproduction commands. See [IMPLEMENTATION.md](IMPLEMENTATION.md) for the current roadmap, remaining work, and teammate environment/directory setup. Step 5, LoRA training and merging, has not started.
+Status: **Step 4 is complete.** Pretrained FP16 SmolVLM evaluated all 579 frozen validation images on Insomnia: **41.45% accuracy, 0.2662 macro-F1, and 0 invalid responses**. It predicted only glioma and notumor; meningioma and pituitary recall were zero. The [Step 4 README](experiments/step4/README.md) explains the results, every evidence file, and reproduction commands. See [IMPLEMENTATION.md](IMPLEMENTATION.md) for the current roadmap, remaining work, and teammate environment/directory setup. Step 5 LoRA training and merge verification is now running as job `13927137`; see the [Step 5 protocol and live status](experiments/step5/README.md). Its full result is not yet verified.
 
 ## Study
 

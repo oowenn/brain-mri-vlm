@@ -6,7 +6,7 @@ Latest verified implementation commit: [`492ab709cdf48d8416f6087050860b6254b8b5e
 
 ## Current position
 
-**Step 4 is complete. Step 5 is being implemented; no completed training result is claimed yet.** The project has frozen data, a verified GPU environment, an audited evaluator, and a full pretrained FP16 validation result: **240/579 correct (41.45% accuracy), macro-F1 0.2662, and 0 invalid responses**. It does not yet have a fine-tuned model or performance/profile results.
+**Step 4 is complete. Step 5 training job 13927137 is running on ins093; the full trained/merged result is not yet verified.** The project has frozen data, a verified GPU environment, an audited evaluator, and a full pretrained FP16 validation result: **240/579 correct (41.45% accuracy), macro-F1 0.2662, and 0 invalid responses**. It does not yet have a fine-tuned model or performance/profile results.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md) and [Step 4 README](experiments/step4/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
@@ -117,15 +117,15 @@ Evidence: [Step 4 README and confusion matrix](experiments/step4/README.md), [su
 
 The goal is **one reproducible LoRA training workflow and a verified merged FP16 checkpoint**. The Step 4 pretrained model remains the zero-shot reference; later optimization comparisons use the merged fine-tuned model.
 
-- [ ] Define the LoRA target modules, training configuration, seed, and validation/checkpoint-selection rule before training. Preserve the frozen 3,279-image training split and 579-image validation split.
-- [ ] Implement training input/label construction and verify that loss is applied to the intended target tokens. Keep validation generation aligned with the accepted inference protocol; record any deliberate change.
+- [x] Define the LoRA target modules, training configuration, seed, and validation/checkpoint-selection rule before training. Preserve the frozen 3,279-image training split and 579-image validation split.
+- [x] Implement training input/label construction and verify that loss is applied to the intended target tokens. Keep validation generation aligned with the accepted inference protocol; record any deliberate change.
 - [ ] Run training on the allocated GPU with W&B tracking, retaining configuration, losses, validation metrics, failures, and checkpoint identities.
 - [ ] Select the adapter checkpoint using validation only; save it as a reproducible artifact.
 - [ ] Merge the adapter into FP16 and check adapter-loaded versus merged behavior with an explicit numerical/generation comparison and recorded tolerances.
 - [ ] Evaluate and preserve the selected checkpoint's validation quality. Do not infer improvement from successful training alone or use the test set for selection.
 - [ ] Add the Step 5 README, evidence, artifact links, and actual outcome to this tracker before advancing to baseline timing.
 
-Completion gate: a reproducible trained adapter, selected with validation evidence, and a verified merged FP16 model. Step 5 implementation is in progress; the full training run is pending.
+Completion gate: a reproducible trained adapter, selected with validation evidence, and a verified merged FP16 model. Implementation commit `873598e`; GPU job `13927137` is running. All 25 tests, all 7,200 source checks, eight unchanged reference outputs, canonical label masks, loss reconstruction, and LoRA-only gradients passed. Full validation, checkpoint selection, and merge verification are pending.
 
 ## Remaining work after Step 4
 
@@ -163,6 +163,7 @@ These values come from the [recorded Step 3 environment](experiments/step3/runs/
 | Interactive allocation | Account `edu`, partition `short`, 1 A6000, 4 CPUs, 16 GiB RAM, 2 hours | Sean's setup allocation. Teammates must use resources permitted by their own account. |
 | Step 3 batch allocation | Same resource request, 30-minute time limit | Defined in [`cluster/step3.sbatch`](cluster/step3.sbatch); installation/downloads happen before this job. |
 | Step 4 batch allocation | Same resource request, one-hour time limit | Defined in [`cluster/step4.sbatch`](cluster/step4.sbatch); actual verified job completed in 11 minutes. |
+| Step 5 batch allocation | 1 A6000, 4 CPUs, 32 GiB RAM, six-hour maximum | Defined in [`cluster/step5.sbatch`](cluster/step5.sbatch). A separate CPU publisher requests 1 CPU, 8 GiB RAM, and 45 minutes to upload/download checkpoint artifacts. |
 
 The existing environment passed the recorded checks. **A fresh installation from the pins has not yet been independently tested.** A teammate should complete the verification below before treating a new installation as reproduced.
 
@@ -178,12 +179,16 @@ Sean's `MRI_WORK` is **`/insomnia001/depts/edu/users/ct3013`**. Paths beginning 
 | `$MRI_WORK/cache/pip/` | pip download cache. | `PIP_CACHE_DIR` |
 | `$MRI_WORK/cache/huggingface/` | Pinned SmolVLM model weights, tokenizer, and processor files. | `HF_HOME` |
 | `$MRI_WORK/cache/kaggle/` | Downloaded/extracted Kaggle source images. | `KAGGLEHUB_CACHE` |
+| `$MRI_WORK/cache/wandb/artifacts/` | W&B artifact cache, including downloaded checkpoint verification copies. | `WANDB_CACHE_DIR` |
+| `$MRI_WORK/cache/wandb/staging/` | W&B artifact upload staging, kept out of the home directory. | `WANDB_DATA_DIR` |
 | `$MRI_WORK/tmp/` | Temporary working files. | `TMPDIR` |
 | `brain-mri-vlm/data/prepared-v3-conservative-patients/` | Ten files from the frozen manifest artifact, including split CSVs and audit metadata. | Evaluator's default prepared-data directory |
 | `brain-mri-vlm/logs/source-root.txt` | One absolute path to the downloaded source directory containing `Training/` and `Testing/`. | Read by the batch job; `MRI_SOURCE` can override it |
 | `brain-mri-vlm/logs/` | Scheduler output and local setup logs. Preserve useful completed-run logs in the step evidence directory. | Batch output path |
 | `brain-mri-vlm/experiments/step3/runs/<job-id>/` | Saved predictions, metrics, environment, configuration, console output, and verification evidence for one execution. | Created by the Step 3 batch script |
 | `brain-mri-vlm/experiments/step4/runs/<job-id>/` | Full validation predictions, metrics, independent verification, source snapshots, and scheduler/W&B evidence. | Created by the Step 4 batch job; publisher receipts collected afterward |
+| `brain-mri-vlm/experiments/step5/runs/<job-id>/` | LoRA training history, loss/gradient audits, epoch predictions, selection, merge checks, source snapshots, and publishing receipts. | Created by Step 5 jobs |
+| `brain-mri-vlm/checkpoints/step5/<job-id>/` | Epoch adapter weights, optimizer/RNG states, saved merge probe logits, and merged FP16 weights. Restored through the recorded W&B model artifact. | `MRI_CHECKPOINT_DIR` when publishing; kept outside Git |
 | `brain-mri-vlm/wandb/` | Local W&B working files; remote runs/artifacts provide the shared tracking record. | `WANDB_DIR` |
 
 The current source root is `/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2`. CSV image paths are relative to this source root, not to the directory containing the CSVs. A teammate's absolute source root can differ because it is recorded separately in `logs/source-root.txt`.
@@ -210,9 +215,11 @@ export PIP_CACHE_DIR="$MRI_WORK/cache/pip"
 export HF_HOME="$MRI_WORK/cache/huggingface"
 export KAGGLEHUB_CACHE="$MRI_WORK/cache/kaggle"
 export TMPDIR="$MRI_WORK/tmp"
+export WANDB_CACHE_DIR="$MRI_WORK/cache/wandb/artifacts"
+export WANDB_DATA_DIR="$MRI_WORK/cache/wandb/staging"
 export WANDB_BASE_URL="https://api.forge.coreweave.com"
 mkdir -p "$MRI_WORK/envs" "$CONDA_PKGS_DIRS" "$PIP_CACHE_DIR" \
-  "$HF_HOME" "$KAGGLEHUB_CACHE" "$TMPDIR"
+  "$HF_HOME" "$KAGGLEHUB_CACHE" "$TMPDIR" "$WANDB_CACHE_DIR" "$WANDB_DATA_DIR"
 ```
 
 Setting cache paths before installing keeps downloads beside the project environment. Do not use Sean's `ct3013` directory as your own work root.
@@ -329,4 +336,5 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-15 | Added the teammate environment and directory handoff. | Verified the existing cluster layout and installed environment; documented per-user setup, fixed inputs, verification, and cross-server limitations. User clarified that setup documentation is required, rather than a binary environment/cache backup. No fresh reinstall or Step 4 run performed. |
 | 2026-11-15 | Started Step 4 implementation. | Added full-validation configuration, stage-aware run labels, Slurm entry points, and independent coverage/metric verification. Implementation commit `492ab70`; GPU job `13925021` submitted for full validation. |
 | 2026-11-15 | Step 4 completed and independently verified. | Execution commit `492ab70`; GPU job `13925021`; evidence job `13925075`; W&B inference `cpawhwk5`; checkpoint `step4-checkpoint-13925021:v0`. Accuracy 41.45%, macro-F1 0.2662, invalid rate 0. Next: Step 5 LoRA training and merge verification. |
-| 2026-11-15 | Started Step 5 implementation. | Fixed three epochs, rank-16 decoder LoRA, response-only loss, effective batch 16, validation checkpoint selection, and explicit FP16 merge tolerances before training. |
+| 2026-11-15 | Started Step 5 implementation. | Fixed three epochs, rank-16 decoder LoRA, response-only loss, effective batch 16, validation checkpoint selection, and explicit FP16 merge tolerances before training. Commit `873598e`; GPU job `13927137` submitted. |
+| 2026-11-15 | Step 5 preflight passed; training started. | 25 tests; 7,200 source files; 8 unchanged base outputs; response-only loss and frozen-gradient checks. W&B `0povsppx`; 8,683,520 trainable parameters in 224 decoder LoRA modules. Full training result pending. |
