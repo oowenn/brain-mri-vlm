@@ -2,7 +2,7 @@
 
 Profile-driven inference optimization of SmolVLM-500M for four-class brain MRI classification. COMS 6998 HPML, Fall 2026, Team 32.
 
-Status: CPU environment and W&B verified on Insomnia. Conservative image/patient manifests are finalized; model/GPU baseline work is next.
+Status: **Step 3 is complete.** The frozen data, RTX A6000 runtime, shared evaluator, and FP16/INT8/INT4 MRI inference were verified on Insomnia with W&B tracking. See the [Step 3 README and saved run evidence](experiments/step3/README.md). Full zero-shot validation is Step 4 and has not been run yet.
 
 ## Study
 
@@ -12,12 +12,13 @@ Use one fixed NVIDIA GPU type and one batch size chosen on the baseline. Measure
 
 ## Reproduction status
 
-Environment versions, exact GPU, dataset manifests, model revision, and commands will be frozen after the cluster smoke test. `requirements.in` is a dependency inventory, not a tested lockfile. Do not compare benchmark results across unpinned environments.
+The verified Step 3 environment is pinned in [requirements-cluster.txt](requirements-cluster.txt); model revision, GPU type, prompt, and evaluation settings are pinned in [configs/step3.json](configs/step3.json). The [run evidence](experiments/step3/runs/13924504/) records the actual environment, executed code hashes, predictions, and W&B links. These are runtime smoke checks on eight validation images, not benchmark or full validation results. A clean-room reinstall of the dependency snapshot has not been repeated. `requirements.in` remains the broader dependency inventory.
 
-Keep data, weights, credentials, profiler traces, and generated run outputs outside Git; publish selected artifacts through the shared W&B project. Planning notes and reference PDFs are kept locally and are not required to run the project.
+Keep source images, weights, credentials, large profiler traces, and W&B caches outside Git. At the user's request, compact Step 3 run evidence and logs are tracked under `experiments/step3/` and the model runs are also published through the shared W&B project. Planning notes and reference PDFs are not required to run the project.
 
 ## Experiment notes
 
+- [Step 3 runtime and evaluator](experiments/step3/README.md): completed checks, file-by-file explanations, reproduction commands, W&B runs, and limitations.
 - [Conservative data checkpoint](experiments/data_finalization.md): finalized counts, approved annotation policy, reproducibility checks and remaining identity limitations.
 - [Similarity-threshold calibration](experiments/similarity_calibration.md): patient-held-out data-quality experiment, results and decision to retain the current thresholds. Full code and generated artifacts are linked in W&B.
 
@@ -125,9 +126,18 @@ wandb artifact get coms6998-team32-fall2026/brain-mri-vlm/brain-mri-manifests:v2
 
 ## Cluster readiness
 
-Confirm the course Slurm account, partition, and GPU type before submitting work.
+The verified Step 3 setup uses Slurm account `edu`, partition `short`, one RTX A6000, Python 3.11.18, PyTorch 2.9.1+cu126, Transformers 4.57.1, and bitsandbytes 0.48.2. The complete [Step 3 instructions](experiments/step3/README.md) cover dependencies, cached inputs, W&B authentication, and all saved evidence.
 
-`requirements.in` lists candidate dependencies. Install a compatible CUDA PyTorch/torchvision build and resolve the remaining packages in a cluster Python environment. Package pins and complete installation commands will be added after verification.
+From the repository on the login node, after preparing the environment and inputs:
+
+```bash
+mkdir -p logs
+sbatch cluster/step3.sbatch
+```
+
+This verifies the source files, runs the tests, and evaluates the fixed eight-image sample in FP16, INT8, and INT4. It does not run training, full validation, final testing, or performance benchmarks. LoRA checkpoint merging remains part of Step 5.
+
+The earlier CUDA-only smoke script is retained for a lightweight environment diagnostic using a Python venv:
 
 From the repository on Insomnia, with the chosen modules loaded and environment prepared:
 
@@ -137,4 +147,4 @@ export SMOLMRI_VENV=/absolute/path/to/venv
 sbatch --account=COURSE_ACCOUNT --partition=COURSE_PARTITION --gres=gpu:VERIFIED_TYPE:1 cluster/smoke.sbatch
 ```
 
-Replace the placeholders with verified allocation values; the GPU request syntax must match the cluster. The smoke job runs `scripts/check_environment.py` to report package/GPU information and check FP16 CUDA execution. Model loading, LoRA merging, and INT8/INT4 compatibility still need separate checks.
+Replace the placeholders with verified allocation values; the GPU request syntax must match the cluster. This older smoke job runs `scripts/check_environment.py` to report package/GPU information and check FP16 CUDA execution. The full Step 3 job adds model inference and quantization compatibility checks.

@@ -1,0 +1,35 @@
+{
+  "fp16": {
+    "state": "finished",
+    "url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/7b74ixt5",
+    "metrics_match": true,
+    "artifacts": [
+      {
+        "name": "step3-13924504-fp16:v0",
+        "digest": "2b5a651cfe75b0378bd5da937df91424"
+      }
+    ]
+  },
+  "int8": {
+    "state": "finished",
+    "url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/3n3x3b29",
+    "metrics_match": true,
+    "artifacts": [
+      {
+        "name": "step3-13924504-int8:v0",
+        "digest": "418eca70323014c4afcd39aab95d792a"
+      }
+    ]
+  },
+  "int4": {
+    "state": "finished",
+    "url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/kgqava8s",
+    "metrics_match": true,
+    "artifacts": [
+      {
+        "name": "step3-13924504-int4:v0",
+        "digest": "b8cbdc2d69126df32ea95229fbae60ea"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "source_root": "/insomnia001/depts/edu/users/ct3013/cache/kaggle/datasets/masoudnickparvar/brain-tumor-mri-dataset/versions/2",
+  "source_inventory_sha256": "b5780fad11617bc3d70e32f31723ae598a6d1881a81ad9133c4ca1376bfa5d25",
+  "final_inventory_sha256": "ac8bc157c04710da31110c741fe8afa9984e78d9befaa18726d3d1727d3c824f",
+  "counts": {
+    "test": 1600,
+    "train": 3279,
+    "excluded": 1742,
+    "validation": 579
+  },
+  "images_verified": 7200
+}

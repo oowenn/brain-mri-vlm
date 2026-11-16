@@ -1,0 +1,66 @@
+{
+  "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+  "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+  "gpu": "NVIDIA RTX A6000",
+  "precision": "float16",
+  "attention": "sdpa",
+  "batch_size": 1,
+  "max_new_tokens": 16,
+  "do_sample": false,
+  "selection_seed": 42,
+  "instruction": "Classify this brain MRI image into exactly one category: glioma, meningioma, notumor, pituitary. Use notumor for an image with no tumor. Reply with only the category name, without explanation.",
+  "parser": "Exact class name after lowercasing and stripping whitespace, with one optional final period",
+  "validation_manifest_sha256": "4a8be8c87af0dd0a5b99a3727675908cba908c085c20dba8c2c8df4caffd0ab9",
+  "valid_responses": 8,
+  "results": [
+    {
+      "path": "Training/glioma/Tr-gl_896.jpg",
+      "true_label": "glioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/glioma/Tr-gl_1239.jpg",
+      "true_label": "glioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/meningioma/Tr-aug-me_56.jpg",
+      "true_label": "meningioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/meningioma/Tr-me_277.jpg",
+      "true_label": "meningioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/notumor/Tr-no_169.jpg",
+      "true_label": "notumor",
+      "prediction": "notumor",
+      "raw_response": "Notumor."
+    },
+    {
+      "path": "Training/notumor/Tr-no_14.jpg",
+      "true_label": "notumor",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_1129.jpg",
+      "true_label": "pituitary",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_773.jpg",
+      "true_label": "pituitary",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    }
+  ],
+  "smoke_correct": 3
+}

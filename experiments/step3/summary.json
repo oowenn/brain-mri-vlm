@@ -1,0 +1,65 @@
+{
+  "slurm_job_id": "13924504",
+  "state": "COMPLETED",
+  "date_local": "2026-11-15",
+  "timezone": "America/New_York",
+  "scope": "Step 3 runtime and evaluator compatibility only",
+  "runs": {
+    "fp16": {
+      "status": "passed",
+      "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/7b74ixt5",
+      "wandb_run_id": "7b74ixt5",
+      "n": 8,
+      "accuracy": 0.375,
+      "macro_f1": 0.2777777777777778,
+      "invalid_count": 0,
+      "per_class_recall": {
+        "glioma": 1.0,
+        "meningioma": 0.0,
+        "notumor": 0.5,
+        "pituitary": 0.0
+      },
+      "quantized_module_count": 0
+    },
+    "int8": {
+      "status": "passed",
+      "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/3n3x3b29",
+      "wandb_run_id": "3n3x3b29",
+      "n": 8,
+      "accuracy": 0.375,
+      "macro_f1": 0.2777777777777778,
+      "invalid_count": 0,
+      "per_class_recall": {
+        "glioma": 1.0,
+        "meningioma": 0.0,
+        "notumor": 0.5,
+        "pituitary": 0.0
+      },
+      "quantized_module_count": 297
+    },
+    "int4": {
+      "status": "passed",
+      "wandb_url": "https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/kgqava8s",
+      "wandb_run_id": "kgqava8s",
+      "n": 8,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "invalid_count": 0,
+      "per_class_recall": {
+        "glioma": 0.0,
+        "meningioma": 0.0,
+        "notumor": 0.0,
+        "pituitary": 0.0
+      },
+      "quantized_module_count": 297
+    }
+  },
+  "checks": {
+    "code_hashes_match": true,
+    "same_sample_all_modes": true,
+    "saved_metrics_recomputed": true,
+    "parser_recomputed": true,
+    "unit_tests_passed": 14,
+    "source_images_verified": 7200
+  }
+}

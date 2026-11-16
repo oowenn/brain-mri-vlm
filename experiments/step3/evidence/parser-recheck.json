@@ -1,0 +1,136 @@
+{
+  "source_file": "mri-smoke-13921940-20261116T005246Z.json",
+  "source_sha256": "6b87a6c02e5487ab4a33b30307d942698f6c8430a3859ad6ca99c442c682375f",
+  "evaluator_sha256": "3e2076d7eee4bac1d01587532fbce469f35d07eb5f13e4713f572aaf74261f12",
+  "original_valid_responses": 0,
+  "corrected_valid_responses": 8,
+  "inference_rerun": false,
+  "metrics": {
+    "n": 8,
+    "accuracy": 0.375,
+    "macro_f1": 0.2777777777777778,
+    "per_class": {
+      "glioma": {
+        "precision": 0.2857142857142857,
+        "recall": 1.0,
+        "f1": 0.4444444444444444,
+        "support": 2
+      },
+      "meningioma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      },
+      "notumor": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 2
+      },
+      "pituitary": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2
+      }
+    },
+    "invalid_count": 0,
+    "invalid_rate": 0.0,
+    "confusion_matrix": {
+      "rows": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary"
+      ],
+      "columns": [
+        "glioma",
+        "meningioma",
+        "notumor",
+        "pituitary",
+        "INVALID"
+      ],
+      "counts": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "results": [
+    {
+      "path": "Training/glioma/Tr-gl_896.jpg",
+      "true_label": "glioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/glioma/Tr-gl_1239.jpg",
+      "true_label": "glioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/meningioma/Tr-aug-me_56.jpg",
+      "true_label": "meningioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/meningioma/Tr-me_277.jpg",
+      "true_label": "meningioma",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/notumor/Tr-no_169.jpg",
+      "true_label": "notumor",
+      "prediction": "notumor",
+      "raw_response": "Notumor."
+    },
+    {
+      "path": "Training/notumor/Tr-no_14.jpg",
+      "true_label": "notumor",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_1129.jpg",
+      "true_label": "pituitary",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    },
+    {
+      "path": "Training/pituitary/Tr-pi_773.jpg",
+      "true_label": "pituitary",
+      "prediction": "glioma",
+      "raw_response": "Glioma."
+    }
+  ]
+}

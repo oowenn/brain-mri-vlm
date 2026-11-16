@@ -1,0 +1,27 @@
+test_invalid_is_a_false_negative_and_not_dropped (test_evaluate.EvaluationTests.test_invalid_is_a_false_negative_and_not_dropped) ... ok
+test_previous_eight_image_example (test_evaluate.EvaluationTests.test_previous_eight_image_example) ... ok
+test_punctuation_fix_does_not_guess_from_explanations (test_evaluate.EvaluationTests.test_punctuation_fix_does_not_guess_from_explanations) ... ok
+test_sample_is_balanced_reproducible_and_input_order_independent (test_evaluate.EvaluationTests.test_sample_is_balanced_reproducible_and_input_order_independent) ... ok
+test_patient_test_constraint_annotation_quarantine_and_unknown_identity (test_finalize_data.FinalizationTests.test_patient_test_constraint_annotation_quarantine_and_unknown_identity) ... ok
+test_pinned_inputs_immutable_outputs_and_reproducibility (test_finalize_data.FinalizationTests.test_pinned_inputs_immutable_outputs_and_reproducibility) ... ok
+test_reject_incomplete_or_unsafe_mapping (test_finalize_data.FinalizationTests.test_reject_incomplete_or_unsafe_mapping) ... ok
+test_same_patient_stays_together_and_mixed_labels_are_quarantined (test_finalize_data.FinalizationTests.test_same_patient_stays_together_and_mixed_labels_are_quarantined) ... ok
+test_brightness_adjusted_copy_is_detected (test_prepare_data.DataPreparationTests.test_brightness_adjusted_copy_is_detected) ... ok
+test_corrupt_images_fail_instead_of_silent_skipping (test_prepare_data.DataPreparationTests.test_corrupt_images_fail_instead_of_silent_skipping) ... Hashing source images...
+ok
+test_leakage_filter_cannot_silently_empty_a_class (test_prepare_data.DataPreparationTests.test_leakage_filter_cannot_silently_empty_a_class) ... Hashing source images...
+Comparing 32 images for duplicates...
+ok
+test_phash_collision_requires_similarity_confirmation (test_prepare_data.DataPreparationTests.test_phash_collision_requires_similarity_confirmation) ... ok
+test_portable_manifests_no_leakage_and_unchanged_test (test_prepare_data.DataPreparationTests.test_portable_manifests_no_leakage_and_unchanged_test) ... Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+ok
+test_transitive_links_and_inclusive_threshold (test_prepare_data.DataPreparationTests.test_transitive_links_and_inclusive_threshold) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 9.868s
+
+OK

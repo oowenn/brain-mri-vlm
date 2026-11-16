@@ -1,0 +1,78 @@
+{
+  "accuracy": 0.0,
+  "confusion_matrix": {
+    "columns": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary",
+      "INVALID"
+    ],
+    "counts": [
+      [
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "rows": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ]
+  },
+  "invalid_count": 0,
+  "invalid_rate": 0.0,
+  "macro_f1": 0.0,
+  "n": 8,
+  "per_class": {
+    "glioma": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 2
+    },
+    "meningioma": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 2
+    },
+    "notumor": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 2
+    },
+    "pituitary": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support": 2
+    }
+  }
+}

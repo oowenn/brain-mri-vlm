@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "images_verified": 7200,
+  "counts": {
+    "train": 3279,
+    "validation": 579,
+    "test": 1600,
+    "excluded": 1742
+  },
+  "final_inventory_sha256": "ac8bc157c04710da31110c741fe8afa9984e78d9befaa18726d3d1727d3c824f",
+  "source_inventory_sha256": "b5780fad11617bc3d70e32f31723ae598a6d1881a81ad9133c4ca1376bfa5d25",
+  "output_sha256": {
+    "excluded.csv": "92b60ad929f556b959748e701875da32e5cec2d03fbf63cec61e50cca0c263ff",
+    "inventory.csv": "ac8bc157c04710da31110c741fe8afa9984e78d9befaa18726d3d1727d3c824f",
+    "label_disagreements.csv": "61629fa70c89b1ff35f8f0653cd5aca3e2ec006905cc998234c780385882fbf5",
+    "test.csv": "3b8ac4853f44420b28a6767eebb90f2e715acd1bb0d0400447489cebcb91ba85",
+    "train.csv": "70b35a87815145426cdb61c137e0bea3ccfa3c69294fa8e68ebd058841644f33",
+    "validation.csv": "4a8be8c87af0dd0a5b99a3727675908cba908c085c20dba8c2c8df4caffd0ab9",
+    "withheld_identities.csv": "c4f383a3f477bf21a9dc187b6d5b1d09b114600ebc5168a35b2aa1a3f66d8a3d"
+  },
+  "limitation": "Disjoint for recovered identities and accepted image groups only. Unknown patients may still overlap. Official test labels retain one source annotation disagreement."
+}

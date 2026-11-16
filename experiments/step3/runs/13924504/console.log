@@ -1,0 +1,441 @@
+Job: 13924504
+Host: ins093
+Started UTC: 2026-11-16T01:46:11Z
+No broken requirements found.
+test_invalid_is_a_false_negative_and_not_dropped (test_evaluate.EvaluationTests.test_invalid_is_a_false_negative_and_not_dropped) ... ok
+test_previous_eight_image_example (test_evaluate.EvaluationTests.test_previous_eight_image_example) ... ok
+test_punctuation_fix_does_not_guess_from_explanations (test_evaluate.EvaluationTests.test_punctuation_fix_does_not_guess_from_explanations) ... ok
+test_sample_is_balanced_reproducible_and_input_order_independent (test_evaluate.EvaluationTests.test_sample_is_balanced_reproducible_and_input_order_independent) ... ok
+test_patient_test_constraint_annotation_quarantine_and_unknown_identity (test_finalize_data.FinalizationTests.test_patient_test_constraint_annotation_quarantine_and_unknown_identity) ... ok
+test_pinned_inputs_immutable_outputs_and_reproducibility (test_finalize_data.FinalizationTests.test_pinned_inputs_immutable_outputs_and_reproducibility) ... ok
+test_reject_incomplete_or_unsafe_mapping (test_finalize_data.FinalizationTests.test_reject_incomplete_or_unsafe_mapping) ... ok
+test_same_patient_stays_together_and_mixed_labels_are_quarantined (test_finalize_data.FinalizationTests.test_same_patient_stays_together_and_mixed_labels_are_quarantined) ... ok
+test_brightness_adjusted_copy_is_detected (test_prepare_data.DataPreparationTests.test_brightness_adjusted_copy_is_detected) ... ok
+test_corrupt_images_fail_instead_of_silent_skipping (test_prepare_data.DataPreparationTests.test_corrupt_images_fail_instead_of_silent_skipping) ... Hashing source images...
+ok
+test_leakage_filter_cannot_silently_empty_a_class (test_prepare_data.DataPreparationTests.test_leakage_filter_cannot_silently_empty_a_class) ... Hashing source images...
+Comparing 32 images for duplicates...
+ok
+test_phash_collision_requires_similarity_confirmation (test_prepare_data.DataPreparationTests.test_phash_collision_requires_similarity_confirmation) ... ok
+test_portable_manifests_no_leakage_and_unchanged_test (test_prepare_data.DataPreparationTests.test_portable_manifests_no_leakage_and_unchanged_test) ... Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+Comparing 35 images for duplicates...
+Hashing source images...
+ok
+test_transitive_links_and_inclusive_threshold (test_prepare_data.DataPreparationTests.test_transitive_links_and_inclusive_threshold) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 9.868s
+
+OK
+{
+  "python": "3.11.18",
+  "packages": {
+    "torch": "2.9.1+cu126",
+    "torchvision": "0.24.1+cu126",
+    "transformers": "4.57.1",
+    "accelerate": "1.10.1",
+    "peft": "0.17.1",
+    "bitsandbytes": "0.48.2",
+    "Pillow": "13.0.0",
+    "ImageHash": "4.3.2",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "wandb": "0.31.0"
+  },
+  "torch_cuda_build": "12.6",
+  "cuda_available": true
+}
+{"device": 0, "name": "NVIDIA RTX A6000", "compute_capability": [8, 6], "total_memory_bytes": 50897289216}
+FP16 CUDA smoke check passed. Model, merge and quantization checks remain.
+Verified 1000/7200 source images
+Verified 2000/7200 source images
+Verified 3000/7200 source images
+Verified 4000/7200 source images
+Verified 5000/7200 source images
+Verified 6000/7200 source images
+Verified 7000/7200 source images
+PASS: frozen manifests and all 7200 source images verified
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261115_205201-7b74ixt5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step3-13924504-fp16
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/7b74ixt5
+1/8 true=glioma predicted=glioma raw='Glioma.'
+2/8 true=glioma predicted=glioma raw='Glioma.'
+3/8 true=meningioma predicted=glioma raw='Glioma.'
+4/8 true=meningioma predicted=glioma raw='Glioma.'
+5/8 true=notumor predicted=notumor raw='Notumor.'
+6/8 true=notumor predicted=glioma raw='Glioma.'
+7/8 true=pituitary predicted=glioma raw='Glioma.'
+8/8 true=pituitary predicted=glioma raw='Glioma.'
+wandb: Adding directory to artifact (experiments/step3/runs/13924504/fp16)... Done. 0.0s
+wandb: updating run metadata
+wandb: uploading history steps 0-1, summary, console lines 6-8
+wandb: 
+wandb: Run history:
+wandb:          accuracy ▁
+wandb:     invalid_count ▁
+wandb:      invalid_rate ▁
+wandb:          macro_f1 ▁
+wandb:                 n ▁
+wandb:     recall/glioma ▁
+wandb: recall/meningioma ▁
+wandb:    recall/notumor ▁
+wandb:  recall/pituitary ▁
+wandb: 
+wandb: Run summary:
+wandb:               accuracy 0.375
+wandb:                    gpu NVIDIA RTX A6000
+wandb:          invalid_count 0
+wandb:           invalid_rate 0
+wandb:               macro_f1 0.27778
+wandb:                      n 8
+wandb: quantized_module_count 0
+wandb:          recall/glioma 1
+wandb:      recall/meningioma 0
+wandb:         recall/notumor 0.5
+wandb:                     +2 ...
+wandb: 
+wandb: 🚀 View run step3-13924504-fp16 at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/7b74ixt5
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 1 media file(s), 13 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261115_205201-7b74ixt5/logs
+{
+  "n": 8,
+  "accuracy": 0.375,
+  "macro_f1": 0.2777777777777778,
+  "per_class": {
+    "glioma": {
+      "precision": 0.2857142857142857,
+      "recall": 1.0,
+      "f1": 0.4444444444444444,
+      "support": 2
+    },
+    "meningioma": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "notumor": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 2
+    },
+    "pituitary": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    }
+  },
+  "invalid_count": 0,
+  "invalid_rate": 0.0,
+  "confusion_matrix": {
+    "rows": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "columns": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary",
+      "INVALID"
+    ],
+    "counts": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}
+PASS: fp16 MRI inference and scoring completed
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261115_205228-3n3x3b29
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step3-13924504-int8
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/3n3x3b29
+1/8 true=glioma predicted=glioma raw='Glioma.'
+2/8 true=glioma predicted=glioma raw='Glioma.'
+3/8 true=meningioma predicted=glioma raw='Glioma.'
+4/8 true=meningioma predicted=glioma raw='Glioma.'
+5/8 true=notumor predicted=notumor raw='Notumor.'
+6/8 true=notumor predicted=glioma raw='Glioma.'
+7/8 true=pituitary predicted=glioma raw='Glioma.'
+8/8 true=pituitary predicted=glioma raw='Glioma.'
+wandb: Adding directory to artifact (experiments/step3/runs/13924504/int8)... Done. 0.0s
+wandb: updating run metadata
+wandb: uploading history steps 0-1, summary, console lines 3-8
+wandb: 
+wandb: Run history:
+wandb:          accuracy ▁
+wandb:     invalid_count ▁
+wandb:      invalid_rate ▁
+wandb:          macro_f1 ▁
+wandb:                 n ▁
+wandb:     recall/glioma ▁
+wandb: recall/meningioma ▁
+wandb:    recall/notumor ▁
+wandb:  recall/pituitary ▁
+wandb: 
+wandb: Run summary:
+wandb:               accuracy 0.375
+wandb:                    gpu NVIDIA RTX A6000
+wandb:          invalid_count 0
+wandb:           invalid_rate 0
+wandb:               macro_f1 0.27778
+wandb:                      n 8
+wandb: quantized_module_count 297
+wandb:          recall/glioma 1
+wandb:      recall/meningioma 0
+wandb:         recall/notumor 0.5
+wandb:                     +2 ...
+wandb: 
+wandb: 🚀 View run step3-13924504-int8 at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/3n3x3b29
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 1 media file(s), 13 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261115_205228-3n3x3b29/logs
+{
+  "n": 8,
+  "accuracy": 0.375,
+  "macro_f1": 0.2777777777777778,
+  "per_class": {
+    "glioma": {
+      "precision": 0.2857142857142857,
+      "recall": 1.0,
+      "f1": 0.4444444444444444,
+      "support": 2
+    },
+    "meningioma": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "notumor": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "support": 2
+    },
+    "pituitary": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    }
+  },
+  "invalid_count": 0,
+  "invalid_rate": 0.0,
+  "confusion_matrix": {
+    "rows": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "columns": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary",
+      "INVALID"
+    ],
+    "counts": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}
+PASS: int8 MRI inference and scoring completed
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /insomnia001/home/ct3013/.netrc.
+wandb: Currently logged in as: ct3013 (ct3013-columbia-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.0
+wandb: Run data is saved locally in /insomnia001/depts/edu/users/ct3013/brain-mri-vlm/wandb/wandb/run-20261115_205315-kgqava8s
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run step3-13924504-int4
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/kgqava8s
+1/8 true=glioma predicted=notumor raw='Notumor.'
+2/8 true=glioma predicted=notumor raw='Notumor.'
+3/8 true=meningioma predicted=notumor raw='Notumor.'
+4/8 true=meningioma predicted=glioma raw='Glioma.'
+5/8 true=notumor predicted=glioma raw='Glioma.'
+6/8 true=notumor predicted=glioma raw='Glioma.'
+7/8 true=pituitary predicted=notumor raw='Notumor.'
+8/8 true=pituitary predicted=glioma raw='Glioma.'
+wandb: Adding directory to artifact (experiments/step3/runs/13924504/int4)... Done. 0.0s
+wandb: updating run metadata
+wandb: uploading history steps 0-1, summary, console lines 0-8
+wandb: 
+wandb: Run history:
+wandb:          accuracy ▁
+wandb:     invalid_count ▁
+wandb:      invalid_rate ▁
+wandb:          macro_f1 ▁
+wandb:                 n ▁
+wandb:     recall/glioma ▁
+wandb: recall/meningioma ▁
+wandb:    recall/notumor ▁
+wandb:  recall/pituitary ▁
+wandb: 
+wandb: Run summary:
+wandb:               accuracy 0
+wandb:                    gpu NVIDIA RTX A6000
+wandb:          invalid_count 0
+wandb:           invalid_rate 0
+wandb:               macro_f1 0
+wandb:                      n 8
+wandb: quantized_module_count 297
+wandb:          recall/glioma 0
+wandb:      recall/meningioma 0
+wandb:         recall/notumor 0
+wandb:                     +2 ...
+wandb: 
+wandb: 🚀 View run step3-13924504-int4 at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm/runs/kgqava8s
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/coms6998-team32-fall2026/brain-mri-vlm
+wandb: Synced 5 W&B file(s), 1 media file(s), 13 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/wandb/run-20261115_205315-kgqava8s/logs
+{
+  "n": 8,
+  "accuracy": 0.0,
+  "macro_f1": 0.0,
+  "per_class": {
+    "glioma": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "meningioma": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "notumor": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    },
+    "pituitary": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    }
+  },
+  "invalid_count": 0,
+  "invalid_rate": 0.0,
+  "confusion_matrix": {
+    "rows": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary"
+    ],
+    "columns": [
+      "glioma",
+      "meningioma",
+      "notumor",
+      "pituitary",
+      "INVALID"
+    ],
+    "counts": [
+      [
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    ]
+  }
+}
+PASS: int4 MRI inference and scoring completed
+Finished UTC: 2026-11-16T01:53:26Z

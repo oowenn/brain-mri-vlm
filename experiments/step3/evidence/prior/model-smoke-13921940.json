@@ -1,0 +1,10 @@
+{
+  "model_id": "HuggingFaceTB/SmolVLM-500M-Instruct",
+  "revision": "753c1752602b5e739af7a7fa6947a635051897a3",
+  "gpu": "NVIDIA RTX A6000",
+  "torch": "2.9.1+cu126",
+  "precision": "float16",
+  "attention": "sdpa",
+  "test": "synthetic blue image",
+  "response": "The main color of this image is blue."
+}
