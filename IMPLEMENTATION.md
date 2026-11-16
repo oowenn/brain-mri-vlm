@@ -6,9 +6,9 @@ Latest verified implementation commit: [1697704b4e12910322f61b5259c9483184cafad2
 
 ## Current position
 
-**Step 6 is complete. Step 7 profiling is next.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
+**Step 6 is complete. Step 7 profiling is implemented locally and awaiting cluster verification.** The frozen FP16 baseline uses **batch size 4 on RTX A6000 with four CPU threads**: **2.8004 images/s, 1428.367 ms mean / 1430.270 ms p50 / 1473.171 ms p95 batch latency, and 2.776 GiB peak allocated GPU memory**. Three trials produced 150 measured batches (600 image executions). Full batch-4 validation gave **494/579 correct (85.32%), macro-F1 0.856293, and zero invalid responses**.
 
-Batching changed four predictions from the Step 5 batch-one result (498 correct, macro-F1 0.862019). The absolute macro-F1 drop of 0.005726 passes the fixed 0.02 allowance and is preserved in the evidence. All 32 tests, source/checkpoint hashes, source snapshots, independent timing/quality checks, and W&B runtime-artifact downloads passed. No profiling, optimization speedup claim, or final-test inference has been performed.
+Batching changed four predictions from the Step 5 batch-one result (498 correct, macro-F1 0.862019). The absolute macro-F1 drop of 0.005726 passes the fixed 0.02 allowance and is preserved in the evidence. All 32 tests, source/checkpoint hashes, source snapshots, independent timing/quality checks, and W&B runtime-artifact downloads passed. Step 7 instrumentation is being prepared; no measured profiling result, optimization speedup claim, or final-test inference is available yet.
 
 This is the living implementation record. It follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The [Step 3 README](experiments/step3/README.md), [Step 4 README](experiments/step4/README.md), [Step 5 README](experiments/step5/README.md), and [Step 6 README](experiments/step6/README.md) contain detailed file inventories and reproduction commands; historical run files remain the evidence for what actually happened.
 
@@ -24,7 +24,7 @@ The latest team discussion proposes working through profiling and selecting two 
 | 4 | Run zero-shot evaluation | Complete | All 579 validation images; accuracy 0.414508, macro-F1 0.266220, invalid rate 0; independently verified predictions and W&B artifacts. |
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
 | 6 | Select batch size and measure the FP16 baseline | Complete | Six-size sweep; frozen batch 4; three trials / 150 measurements; 2.8004 images/s; 2.776 GiB peak allocated; full validation and downloaded W&B evidence verified. |
-| 7 | Profile the five inference stages | Not started; within proposed near-term team scope | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
+| 7 | Profile the five inference stages | Implemented; GPU evidence pending | Stage breakdown, representative traces, bottleneck explanation, and evidence-based proposals for two or three techniques. |
 | 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
 | 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
 | 10 | Freeze settings and evaluate the test set | Not started | Final results on the unchanged 1,600-image test set, without using test outcomes to tune settings. |
@@ -394,3 +394,7 @@ This record is maintained as part of project work; it is not a background monito
 | 2026-11-16 | Step 6 GPU execution started. | Job `13932242` started on `ins094` at 13:19:34 EST with 4 CPUs/16 GiB after the memory reduction. Execution source is commit `1697704`; benchmark protocol unchanged. Full GPU results still pending. |
 | 2026-11-16 | Step 6 GPU preflight passed; sweep started. | All 32 tests, 7,200 source-image hashes, FP16 CUDA execution, and eight exact Step 5 batch-one outputs passed. W&B baseline run `apjpl38l`; first sweep candidate is batch 16. Final selection, quality, and timing results still pending. |
 | 2026-11-16 | Step 6 completed and independently verified. | Execution commit 1697704; GPU 13932242 (25m12s), publisher 13932262 (53s), both 0:0. Batch 4: 2.8004 images/s, 1428.367 ms mean / 1473.171 ms p95, 2.776 GiB allocated; accuracy 85.32%, F1 0.856293. W&B apjpl38l/z3njw1g9; 153 downloaded runtime files and 32 source snapshots verified. Next: Step 7 profiling. |
+
+### 2026-11-16: Step 7 execution preparation
+
+Added a frozen batch-4 control, synchronized stage diagnostics, asynchronous CPU/CUDA traces, exact-output/accounting verification, and W&B publishing. GPU execution is pending. The existing environment and checkpoint are reused; no packages or model optimizations are changed. Step 7 requests one A6000, four CPUs, 16 GiB RAM, and 45 minutes. Run files will be under `$MRI_WORK/brain-mri-vlm/experiments/step7/runs/<job-id>/`. See [Step 7 protocol](experiments/step7/README.md).
