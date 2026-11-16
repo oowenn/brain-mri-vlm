@@ -22,4 +22,28 @@ export WANDB_DATA_DIR="$MRI_WORK/cache/wandb/staging"
 mkdir -p "$WANDB_CACHE_DIR" "$WANDB_DATA_DIR" "$TMPDIR"
 export WANDB_DIR="$PWD/wandb"
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+gpu_job="$(basename "$MRI_RUN_DIR")"
+[[ "$gpu_job" =~ ^[0-9]+$ ]] || { echo 'Expected a numeric GPU job directory'; exit 1; }
+sacct -j "$gpu_job" --parsable2 \
+    --format=JobIDRaw,JobName,Partition,State,ExitCode,Elapsed,Start,End,NodeList,AllocCPUS,ReqMem,AllocTRES,MaxRSS \
+    > "$MRI_RUN_DIR/slurm-accounting.tsv"
+cp "logs/step6-$gpu_job.out" "$MRI_RUN_DIR/slurm-output.log"
+python - <<'PY'
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+root=Path(os.environ['MRI_RUN_DIR'])
+commit=(root/'base-commit.txt').read_text().strip()
+verified={}
+for path in sorted((root/'source').rglob('*')):
+    if path.is_file():
+        name=str(path.relative_to(root/'source'))
+        original=subprocess.check_output(['git','show',f'{commit}:{name}'])
+        if path.read_bytes()!=original:
+            raise ValueError(f'Execution source differs from commit: {name}')
+        verified[name]=hashlib.sha256(original).hexdigest()
+(root/'source-provenance.json').write_text(json.dumps(dict(status='passed',commit=commit,files=verified),indent=2)+'\n')
+PY
 python -u scripts/publish_step6.py --run-dir "$MRI_RUN_DIR"

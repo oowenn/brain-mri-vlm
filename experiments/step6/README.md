@@ -51,7 +51,7 @@ Reference documentation: [PyTorch 2.9 CUDA synchronization and memory semantics]
 | `tests/test_benchmark.py` | Seven tests for workload balance/reproducibility, EOS handling, units/percentiles, warm-up exclusion, ratio-of-totals throughput, memory-aware selection, tampering detection, and frozen protocol. |
 | `cluster/step6.sbatch` | Request one A6000, 4 CPUs, 32 GiB host RAM, and up to two hours; run the full test suite and data checks, then benchmark and independently verify. Actual allocated resources come from Slurm accounting. |
 | `cluster/preflight_step6.sbatch` | Optional small CPU job on `edu1`: run the complete suite, verify saved model hashes, and audit batched processing while waiting for GPU allocation. It does not measure GPU performance. |
-| `cluster/publish_step6.sbatch` | Request 1 CPU, 8 GiB RAM, and 45 minutes for remote verification/publication after GPU release. |
+| `cluster/publish_step6.sbatch` | Request 1 CPU, 8 GiB RAM, and 45 minutes after GPU release; collect scheduler output, verify every source snapshot against the execution commit, then verify/publish remote evidence. Supports an `afterok` Slurm dependency. |
 | `preflight/` | CPU preflight logs, executed launcher, commit, tests, checkpoint hashes, and input audit. GPU preflight repeats these checks in its own recorded runtime. |
 | `scheduling/` | Scheduler evidence for an initial reservation canceled before execution; this is not a benchmark run. |
 | `local-checks/` | Current macOS CPU-test logs, source hashes, environment identity, and the explicit boundary that no GPU/timing result has been measured. |
@@ -96,6 +96,14 @@ cp logs/step6-JOB_ID.out "$MRI_RUN_DIR/slurm-output.log"
 sbatch cluster/publish_step6.sbatch
 ```
 
+To queue publication in advance, after submitting the GPU job and setting `MRI_RUN_DIR` to that job's run directory:
+
+```bash
+sbatch --dependency=afterok:JOB_ID cluster/publish_step6.sbatch
+```
+
+The publisher collects GPU accounting/logs automatically and refuses to publish a failed or incomplete benchmark. If the GPU job fails, the dependency will not run; preserve the failure and cancel or replace the dependent publisher after investigation.
+
 Preserve the publisher's final output/accounting and copy the completed compact run into GitHub. Retain weights and caches outside Git. The GPU batch job survives an SSH disconnect; its own time limit still applies.
 
 ## Generated evidence guide
@@ -104,7 +112,7 @@ These are intended outputs under `runs/<job-id>/`; their existence and verificat
 
 | File or directory | What it proves or records |
 | --- | --- |
-| `base-commit.txt`, `source/` | Execution commit and frozen copies of code, tests, configurations, batch scripts, and environment pins. |
+| `base-commit.txt`, `source/`, `source-provenance.json` | Execution commit, frozen copies of code/tests/configs/batch scripts/environment pins, and byte-for-byte verification against that commit. |
 | `tests.txt`, `pip-check.txt`, `cuda-check.txt`, package listings | Full-suite status, dependency consistency, GPU execution, and installed environment. |
 | `data-verification.json`, `checkpoint-verification.json` | Frozen manifests/all 7,200 images and every merged model/processor file match their recorded hashes. |
 | `run.json` | Overall status, effective config, selected batch, quality/timing results, and W&B identity. |
