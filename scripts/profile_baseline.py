@@ -14,7 +14,7 @@ import subprocess
 import time
 import traceback
 
-from benchmark import load_images,cpu_inputs,telemetry
+from benchmark import load_images,cpu_inputs,telemetry,configure_processor
 from benchmark_utils import scheduled_batch,workload,trim_after_eos
 from evaluate import parse_prediction,runtime_snapshot,write_json
 from profiling_utils import stage_times,summarize_stages,trace_summary,nvidia_uuid
@@ -144,6 +144,7 @@ def main():
         (args.output/'gpu-before.csv').write_text(telemetry()+'\n')
         processor=AutoProcessor.from_pretrained(args.checkpoint,local_files_only=True)
         processor.tokenizer.padding_side=baseline['padding_side']
+        configure_processor(processor,baseline)
         model=AutoModelForImageTextToText.from_pretrained(args.checkpoint,local_files_only=True,
             dtype=torch.float16,attn_implementation=baseline['attention'],use_safetensors=True).to('cuda').eval()
         if any(p.dtype!=torch.float16 or str(p.device)!='cuda:0' for p in model.parameters()):

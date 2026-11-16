@@ -32,6 +32,19 @@ def cpu_inputs(processor, prompt, images):
                      padding=True, return_tensors='pt')
 
 
+def configure_processor(processor, cfg):
+    """Opt-in Step 8 resize change; older configurations keep their native processor."""
+    if 'processor_longest_edge' not in cfg:
+        return
+    edge = cfg['processor_longest_edge']
+    image = processor.image_processor
+    if edge not in (1024, 2048):
+        raise ValueError('Step 8 supports only the declared 2048/1024 comparison')
+    if image.size != {'longest_edge': 2048} or image.max_image_size != {'longest_edge': 512} or not image.do_image_splitting:
+        raise ValueError('Saved processor differs from the frozen 2048/512 split-image baseline')
+    image.size = {'longest_edge': edge}
+
+
 def infer_batch(model, processor, cfg, rows, source, prompt):
     import torch
     images = load_images(rows, source)
@@ -122,6 +135,8 @@ def main():
         (args.output/'gpu-before.csv').write_text(telemetry()+'\n')
         processor = AutoProcessor.from_pretrained(args.checkpoint, local_files_only=True)
         processor.tokenizer.padding_side = cfg['padding_side']
+        configure_processor(processor, cfg)
+        write_json(args.output/'processor.json', json.loads(processor.image_processor.to_json_string()))
         model = AutoModelForImageTextToText.from_pretrained(args.checkpoint, local_files_only=True,
                     dtype=torch.float16, attn_implementation=cfg['attention'], use_safetensors=True).to('cuda').eval()
         if any(p.dtype != torch.float16 or str(p.device) != 'cuda:0' for p in model.parameters()):
@@ -134,6 +149,9 @@ def main():
         rows = sorted(read_csv(args.prepared/'validation.csv'), key=lambda r:r['path'])
         messages = [{'role':'user','content':[{'type':'image'},{'type':'text','text':cfg['prompt']}]}]
         prompt = processor.apply_chat_template(messages, add_generation_prompt=True)
+        if 'processor_longest_edge' in cfg:
+            probes = select_sample(rows, 2, cfg['seed'])
+            write_json(args.output/'input-audit.json', input_audit(processor, prompt, probes, args.source))
         (args.output/'rendered-prompt.txt').write_text(prompt)
         (args.output/'generation-config.json').write_text(model.generation_config.to_json_string())
         if args.mode == 'audit':

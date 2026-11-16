@@ -6,15 +6,15 @@ Verified Step 7 measurement source: [563898d](https://github.com/oowenn/brain-mr
 
 ## Current position
 
-**Step 7 is complete. Step 8 implementation remains deferred.** The measured bottleneck is CPU preprocessing: **1348.567 ms per batch, 74.17%** of synchronized diagnostic time. Vision features take **250.158 ms, 13.76%**; transfer, prefill, and cached decode each take about 4%. Three traces contain six active batches and show **18.83% GPU kernel/copy activity** within whole-batch windows.
+**Step 7 is complete. Step 8 is authorized for one image-budget experiment, with matched Step 9 measurements before the midpoint report.** The measured bottleneck is CPU preprocessing: **1348.567 ms per batch, 74.17%** of synchronized diagnostic time. Vision features take **250.158 ms, 13.76%**; transfer, prefill, and cached decode each take about 4%. Three traces contain six active batches and show **18.83% GPU kernel/copy activity** within whole-batch windows.
 
 The canonical Step 6 baseline stays **batch 4, RTX A6000, four CPU threads, 2.8004 images/s, 1428.367 ms mean batch latency, and 2.776 GiB peak allocated GPU memory**. Its full-validation macro-F1 is **0.856293**, with 494/579 correct and zero invalid outputs. Step 7's fresh control on another node measured **1830.319 ms / 2.185411 images/s**, 28.14% slower, with unchanged memory and exact reference outputs. This runtime variation is recorded, not treated as an optimization.
 
 All **180 control batches** match Step 6 tokens/answers; all **99 instrumented batches** match the control, including warmups. GPU workers passed, but the aggregate job failed in a final trace-range count check because PyTorch emits CPU and mirrored GPU annotations. CPU-only recovery corrected the counting, passed all **42 tests**, checked both **39-file source snapshots**, and verified **153 downloaded W&B files**. Original failures and traces are preserved.
 
-Selected proposals are **parallel CPU preprocessing**, **a 2048-to-1024 image budget with 512-pixel tiles**, and **INT8/NF4 weight quantization as a lower-priority memory/latency hypothesis test**. They are specified with tradeoffs and validation gates; none is implemented. No final-test model inference has occurred.
+Selected proposals are **parallel CPU preprocessing**, **a 2048-to-1024 image budget with 512-pixel tiles**, and **INT8/NF4 weight quantization as a lower-priority memory/latency hypothesis test**. The user has prioritized the 2048-to-1024 image-budget experiment to close the midpoint-report evidence gap. Implementation is underway; no new optimization result is available yet. Parallel preprocessing and quantization remain deferred. No final-test model inference has occurred.
 
-This living record follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The per-step READMEs for [Step 3](experiments/step3/README.md), [Step 4](experiments/step4/README.md), [Step 5](experiments/step5/README.md), [Step 6](experiments/step6/README.md), and [Step 7](experiments/step7/README.md) explain the actual files, results, limitations, and reproduction. The team's requested near-term scope through profiling and proposal selection is now complete.
+This living record follows the numbering in the [project roadmap](output/pdf/brain-mri-vlm-roadmap.pdf). The per-step READMEs for [Step 3](experiments/step3/README.md), [Step 4](experiments/step4/README.md), [Step 5](experiments/step5/README.md), [Step 6](experiments/step6/README.md), and [Step 7](experiments/step7/README.md) explain the actual files, results, limitations, and reproduction. The scope now includes one measured before/after experiment and a Word/PDF midpoint report.
 
 ## Roadmap status
 
@@ -27,10 +27,10 @@ This living record follows the numbering in the [project roadmap](output/pdf/bra
 | 5 | Fine-tune once with LoRA and merge into FP16 | Complete | Three epochs, 615 updates, epoch 3 selected; merged FP16 validation accuracy 0.860104, macro-F1 0.862019; merge and downloaded checkpoint hashes verified. |
 | 6 | Select batch size and measure the FP16 baseline | Complete | Six-size sweep; frozen batch 4; three trials / 150 measurements; 2.8004 images/s; 2.776 GiB peak allocated; full validation and downloaded W&B evidence verified. |
 | 7 | Profile the five inference stages | Complete with verified CPU recovery | 30 stage batches, three traces/six active batches, CPU preprocessing 74.17%, exact output checks, 42 tests, 153 W&B files verified, and three proposals. |
-| 8 | Implement selected techniques | Deferred under current team discussion | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
-| 9 | Re-measure, re-profile, and validate variants | Not started; follows Step 8 | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
+| 8 | Implement selected techniques | Image-budget variant in progress; other techniques deferred | Isolated implementations/configurations based on the measured bottleneck. Step 3 quantization loading is only a compatibility check. |
+| 9 | Re-measure, re-profile, and validate variants | Matched image-budget experiment planned | Matched before/after measurements and validation quality checks, including unsuccessful variants. |
 | 10 | Freeze settings and evaluate the test set | Not started | Final results on the unchanged 1,600-image test set, without using test outcomes to tune settings. |
-| 11 | Explain results and deliver the project | Not started as a final deliverable | Reproduction instructions, report/presentation, bottleneck explanation, and demonstration. Existing notes and evidence provide a foundation. |
+| 11 | Explain results and deliver the project | Midpoint report requested; final deliverable pending | Reproduction instructions, report/presentation, bottleneck explanation, and demonstration. Existing notes and evidence provide a foundation. |
 
 ## Completed work
 
@@ -191,7 +191,7 @@ Evidence: [Step 7 README](experiments/step7/README.md), [summary](experiments/st
 
 | Step | What to implement or run | Why / completion gate |
 | --- | --- | --- |
-| 8 | Implement parallel CPU preprocessing, reduced image budget, and quantization as isolated experiments when the team resumes implementation. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
+| 8 | Execute the authorized image-budget experiment now; parallel CPU preprocessing and quantization remain deferred. | Attribute effects to specific changes. Earlier pretrained quantization checks are not optimization evidence for this merged model. |
 | 9 | Repeat matched timings and full validation for each variant; re-profile as needed. | Compare to the Step 6 batch-4 FP16 quality/performance baseline, retaining regressions and failed variants. |
 | 10 | Freeze final settings and evaluate the unchanged test set. | Obtain held-out results without tuning against test outcomes. |
 | 11 | Assemble the report, presentation, reproduction guide, and demonstration. | Connect each claim to saved measurements and explain successes and failures. |
@@ -430,3 +430,7 @@ GPU job 13933296 finished all control/stage/trace workers but exited 1 during fi
 ### 2026-11-16: Step 7 verified completion
 
 GPU measurement source 563898d and CPU recovery source e85afc1 are preserved. Recovery 13933535 completed 0:0 (1m31s); all 42 tests and 153 downloaded runtime files passed. W&B rvufjfp3 / zm0m682b and checkpoint step7-checkpoint-13933296:v0 preserve the results. CPU preprocessing is 74.17% of diagnostic latency; trace GPU activity is 18.83%. The Step 7 README explains every file and the three proposals. Step 8 implementation remains deferred; no final-test inference occurred.
+
+### 2026-11-16: Midpoint experiment authorized
+
+The user requested one matched baseline/variant experiment before report completion. Change only the processor longest edge from 2048 to 1024, retaining 512-pixel tiles, splitting, merged FP16 weights, SDPA, prompt, generation settings, batch 4, and four CPU threads. Use one A6000 allocation; alternate baseline/variant order over seeds 42/43/44, with 10 warmups and 50 measured batches per setting per seed in fresh workers. Evaluate all 579 validation images for both settings and collect separate synchronized stage diagnostics. Require unchanged baseline outputs against Step 6 and variant macro-F1 >= 0.8362927507 with zero invalid responses; also report its drop against the fresh baseline. Preserve negative results, raw outputs, timings, source/environment records, W&B artifacts, and per-file explanations under experiments/step8/. No test inference, parallel-preprocessing optimization, or quantization experiment is authorized by this scoped change. Report generation resumes after verification.
