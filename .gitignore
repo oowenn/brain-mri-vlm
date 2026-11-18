@@ -28,8 +28,16 @@ cluster/*.local
 *.pth
 *.ckpt
 
-# Local planning and reference material
-/docs/
+# Local planning and reference material (keep them outside docs/, which is tracked)
 /COMS 6998 Proposal.pdf
 /HPML-Final-Project-Fall2026.pdf
 /cluster/ssh_config.example
+
+# Kept on local machines only: the published repository holds code, configs and run evidence
+/notebooks/
+/output/
+/reports/
+/requirements/
+/tests/
+/docs/
+*.md

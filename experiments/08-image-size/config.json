@@ -1,0 +1,18 @@
+{
+  "stage": "step8",
+  "baseline_config": "experiments/06-baseline-benchmark/config.json",
+  "reference_run": "experiments/06-baseline-benchmark/runs/13932242",
+  "batch_size": 4,
+  "seeds": [42, 43, 44],
+  "trial_orders": [["baseline", "image1024"], ["image1024", "baseline"], ["baseline", "image1024"]],
+  "longest_edges": {"baseline": 2048, "image1024": 1024},
+  "warmup_batches": 10,
+  "measured_batches": 50,
+  "stage_batches_per_trial": 10,
+  "quality_max_macro_f1_drop": 0.02,
+  "quality_max_invalid_count": 0,
+  "scope": "One isolated image-budget change; complete timing/validation and stage diagnostics, retaining failed quality gates. No final-test inference.",
+  "timing_design": "One physical A6000 allocation, four CPU threads, fresh process per setting/seed, alternating order. Same frozen balanced validation workload and Step 6 timing boundary.",
+  "wandb_entity": "coms6998-team32-fall2026",
+  "wandb_project": "brain-mri-vlm"
+}
